@@ -2,18 +2,18 @@
 
 namespace Zerotoprod\DataModelOpenapi30;
 
-use Zerotoprod\DataModel\DataModel;
 use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModel\PropertyRequiredException;
+use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 class OpenApi30
 {
     use DataModel;
 
     /**
-     * REQUIRED. This string MUST be the version number of the OpenAPI
+     * **REQUIRED**. This string MUST be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
-     * SHOULD be used by tooling to interpret the OpenAPI Document.
+     * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -21,7 +21,7 @@ class OpenApi30
     public const openapi = 'openapi';
 
     /**
-     * REQUIRED. Provides metadata about the API. The metadata MAY
+     * **REQUIRED**. Provides metadata about the API. The metadata ***MAY***
      * be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -39,9 +39,9 @@ class OpenApi30
     public const servers = 'servers';
 
     /**
-     * REQUIRED. This string MUST be the version number of the OpenAPI
+     * **REQUIRED**. This string MUST be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
-     * SHOULD be used by tooling to interpret the OpenAPI Document.
+     * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -53,7 +53,7 @@ class OpenApi30
     public string $openapi;
 
     /**
-     * REQUIRED. Provides metadata about the API. The metadata MAY
+     * **REQUIRED**. Provides metadata about the API. The metadata ***MAY***
      * be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -76,6 +76,21 @@ class OpenApi30
         'type' => Server::class
     ])]
     public array|Server $servers;
+
+    /**
+     * Holds the relative paths to the individual endpoints and their
+     * operations. The path is appended to the URL from the Server
+     * Object in order to construct the full URL. The Paths Object
+     * ***MAY*** be empty, due to Access Control List (ACL) constraints.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => PathItem::class,
+        'required'
+    ])]
+    public ?array $paths;
 
     public static function servers(mixed $value): array|Server
     {

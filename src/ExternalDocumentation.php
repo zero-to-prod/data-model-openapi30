@@ -16,7 +16,7 @@ class ExternalDocumentation
 
     /**
      * A description of the target documentation. [CommonMark] syntax
-     * MAY be used for rich text representation.
+     * ***MAY*** be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
@@ -24,7 +24,7 @@ class ExternalDocumentation
     public const description = 'description';
 
     /**
-     * REQUIRED. The URL for the target documentation. This MUST be
+     * **REQUIRED**. The URL for the target documentation. This MUST be
      * in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
@@ -33,7 +33,7 @@ class ExternalDocumentation
 
     /**
      * A description of the target documentation. [CommonMark] syntax
-     * MAY be used for rich text representation.
+     * ***MAY*** be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
@@ -42,7 +42,7 @@ class ExternalDocumentation
     public ?string $description;
 
     /**
-     * REQUIRED. The URL for the target documentation. This MUST be
+     * **REQUIRED**. The URL for the target documentation. This MUST be
      * in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
