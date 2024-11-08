@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Info;
-use Zerotoprod\DataModelOpenapi30\InvalidTermsOfServiceException;
+use Zerotoprod\DataModelOpenapi30\InvalidUrlException;
 
 class InfoTest extends TestCase
 {
@@ -54,7 +54,7 @@ class InfoTest extends TestCase
 
     #[Test] public function invalid_termsOfService(): void
     {
-        $this->expectException(InvalidTermsOfServiceException::class);
+        $this->expectException(InvalidUrlException::class);
 
         Info::from([
             Info::title => 'title',

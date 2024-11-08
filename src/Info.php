@@ -77,7 +77,7 @@ class Info
      */
     #[Describe([
         'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidTermsOfServiceException::class,
+        'exception' => InvalidUrlException::class,
     ])]
     public ?string $termsOfService;
 
@@ -90,5 +90,4 @@ class Info
      */
     #[Describe(['required'])]
     public string $version;
-
 }
