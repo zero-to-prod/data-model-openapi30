@@ -1,0 +1,43 @@
+{
+  "type": "library",
+  "name": "zero-to-prod/data-model-openapi30",
+  "description": "DataModels for OpenAPI 3.0.*",
+  "keywords": [
+    "zero-to-prod",
+    "DataModelAdapterOpenApi30",
+    "data-model-openapi30"
+  ],
+  "homepage": "https://github.com/zero-to-prod/data-model-openapi30",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Smith",
+      "email": "dave0016@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1.0",
+    "zero-to-prod/data-model": "^81.6",
+    "zero-to-prod/transformable": "^71.0",
+    "zero-to-prod/data-model-helper": "^81.5",
+    "zero-to-prod/data-model-factory": "^71.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zerotoprod\\DataModelOpenapi30\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/",
+      "Factories\\": "factories/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  },
+  "suggest": {
+    "zero-to-prod/data-model": "Transform Data to Type-Safe DTOs",
+    "zero-to-prod/data-model-helper": "Helpers for a DataModel."
+  }
+}
