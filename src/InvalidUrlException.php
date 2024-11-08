@@ -4,7 +4,7 @@ namespace Zerotoprod\DataModelOpenapi30;
 
 use RuntimeException;
 
-class InvalidTermsOfServiceException extends RuntimeException
+class InvalidUrlException extends RuntimeException
 {
 
 }
