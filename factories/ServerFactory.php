@@ -2,7 +2,7 @@
 
 namespace Factories;
 
-use Zerotoprod\DataModelAdapterOpenapi30\Server;
+use Zerotoprod\DataModelOpenapi30\Server;
 use Zerotoprod\DataModelFactory\Factory;
 
 class ServerFactory

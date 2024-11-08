@@ -2,7 +2,7 @@
 
 namespace Factories;
 
-use Zerotoprod\DataModelAdapterOpenapi30\Info;
+use Zerotoprod\DataModelOpenapi30\Info;
 use Zerotoprod\DataModelFactory\Factory;
 
 class InfoFactory

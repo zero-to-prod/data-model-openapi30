@@ -3,7 +3,7 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModelAdapterOpenapi30\Helpers\DataModel;
+use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
  * An object representing a Server Variable for server URL

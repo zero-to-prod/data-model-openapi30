@@ -5,8 +5,8 @@ namespace Tests\Unit;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelAdapterOpenapi30\Server;
-use Zerotoprod\DataModelAdapterOpenapi30\ServerVariable;
+use Zerotoprod\DataModelOpenapi30\Server;
+use Zerotoprod\DataModelOpenapi30\ServerVariable;
 
 class ServerTest extends TestCase
 {

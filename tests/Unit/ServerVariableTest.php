@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelAdapterOpenapi30\DefaultMissingInEnumException;
-use Zerotoprod\DataModelAdapterOpenapi30\ServerVariable;
+use Zerotoprod\DataModelOpenapi30\DefaultMissingInEnumException;
+use Zerotoprod\DataModelOpenapi30\ServerVariable;
 
 class ServerVariableTest extends TestCase
 {

@@ -5,8 +5,8 @@ namespace Tests\Unit;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelAdapterOpenapi30\Info;
-use Zerotoprod\DataModelAdapterOpenapi30\InvalidTermsOfServiceException;
+use Zerotoprod\DataModelOpenapi30\Info;
+use Zerotoprod\DataModelOpenapi30\InvalidTermsOfServiceException;
 
 class InfoTest extends TestCase
 {

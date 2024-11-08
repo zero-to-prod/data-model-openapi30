@@ -7,8 +7,8 @@ use Factories\ServerFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelAdapterOpenapi30\InvalidOpenAPIVersionException;
-use Zerotoprod\DataModelAdapterOpenapi30\OpenApi30;
+use Zerotoprod\DataModelOpenapi30\InvalidOpenAPIVersionException;
+use Zerotoprod\DataModelOpenapi30\OpenApi30;
 
 class OpenApi30Test extends TestCase
 {
