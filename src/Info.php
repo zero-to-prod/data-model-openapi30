@@ -35,7 +35,7 @@ class Info
 
     /**
      * A URL for the Terms of Service for the API.
-     * This MUST be in the form of a URL.
+     * This ***MUST*** be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
@@ -71,7 +71,7 @@ class Info
 
     /**
      * A URL for the Terms of Service for the API.
-     * This MUST be in the form of a URL.
+     * This ***MUST*** be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */

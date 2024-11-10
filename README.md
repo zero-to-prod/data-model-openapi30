@@ -13,3 +13,14 @@ DataModels for OpenAPI 3.0.*
 ```shell
 ./vendor/bin/phpunit
 ```
+## Validation
+### [4.7.1](https://spec.openapis.org/oas/v3.0.4.html#openapi-object)
+This is the root object of the OpenAPI Description.
+
+| Field   | Type              | Status             |
+|---------|-------------------|--------------------|
+| openapi | `string`          | :white_check_mark: |
+| info    | `Info Object`     |                    |
+| servers | `[Server Object]` |                    |
+| paths   | `Paths Object`    |                    |
+|         |                   |                    |

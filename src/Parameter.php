@@ -14,7 +14,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * including interactions with the `application/x-www-form-urlencoded` query string format.
  *
  * The rules for serialization of the parameter are specified in one of two ways.
- * Parameter Objects **MUST** include either a `content` field or a `schema` field, but
+ * Parameter Objects *****MUST***** include either a `content` field or a `schema` field, but
  * not both. See Appendix B for a discussion of converting values of various
  * types to string representations.
  *
@@ -31,7 +31,7 @@ class Parameter
     /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
-     * - If `in` is `"path"`, the name field MUST correspond to a template expression
+     * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
@@ -66,7 +66,7 @@ class Parameter
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value **MUST**
+     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
      * be `true`. Otherwise, the field ***MAY*** be included and its default
      * value is `false`.
      *
@@ -86,7 +86,7 @@ class Parameter
     /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
-     * - If `in` is `"path"`, the name field MUST correspond to a template expression
+     * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
@@ -124,7 +124,7 @@ class Parameter
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value **MUST**
+     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
      * be `true`. Otherwise, the field ***MAY*** be included and its default
      * value is `false`.
      *

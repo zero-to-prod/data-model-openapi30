@@ -19,7 +19,7 @@ class PathItem
 
     /**
      * Allows for a referenced definition of this path item. The value
-     * MUST be in the form of a URL, and the referenced structure MUST
+     * ***MUST*** be in the form of a URL, and the referenced structure ***MUST***
      * be in the form of a Path Item Object. In case a Path Item
      * Object field appears both in the defined object and the
      * referenced object, the behavior is undefined. See the
@@ -51,7 +51,7 @@ class PathItem
 
     /**
      * Allows for a referenced definition of this path item. The value
-     * MUST be in the form of a URL, and the referenced structure MUST
+     * ***MUST*** be in the form of a URL, and the referenced structure ***MUST***
      * be in the form of a Path Item Object. In case a Path Item
      * Object field appears both in the defined object and the
      * referenced object, the behavior is undefined. See the

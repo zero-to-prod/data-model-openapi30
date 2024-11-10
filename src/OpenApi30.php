@@ -5,13 +5,15 @@ namespace Zerotoprod\DataModelOpenapi30;
 use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
+use Zerotoprod\DataModelSemver\Semver;
+use Zerotoprod\ValidateSemVer\ValidateSemVer;
 
 class OpenApi30
 {
     use DataModel;
 
     /**
-     * **REQUIRED**. This string MUST be the version number of the OpenAPI
+     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -39,7 +41,7 @@ class OpenApi30
     public const servers = 'servers';
 
     /**
-     * **REQUIRED**. This string MUST be the version number of the OpenAPI
+     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -105,9 +107,13 @@ class OpenApi30
             throw new PropertyRequiredException('Property `$openapi` is required.');
         }
 
-        $components = explode('.', $value);
+        if (!ValidateSemVer::isValid($value)) {
+            throw new InvalidOpenAPIVersionException('`$openapi` is an invalid version.');
+        }
 
-        if ($components[0] !== '3' || $components[1] !== '0') {
+        $Semver = Semver::from($value);
+
+        if ($Semver->major !== 3 || $Semver->minor !== 0 || $Semver->patch < 0) {
             throw new InvalidOpenAPIVersionException('Version should be 3.0.*');
         }
 

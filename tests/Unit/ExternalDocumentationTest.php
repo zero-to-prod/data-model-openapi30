@@ -24,7 +24,7 @@ class ExternalDocumentationTest extends TestCase
     /** @link  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8 */
     #[Test] public function invalid_url(): void
     {
-        /** This MUST be in the form of a URL. */
+        /** This ***MUST*** be in the form of a URL. */
         $this->expectException(InvalidUrlException::class);
 
         ExternalDocumentation::from([
@@ -42,7 +42,7 @@ class ExternalDocumentationTest extends TestCase
         self::assertEquals(
             'https://example.com/',
             $ExternalDocumentation->url,
-            'REQUIRED. The URL for the target documentation. This MUST be in the form of a URL.'
+            'REQUIRED. The URL for the target documentation. This ***MUST*** be in the form of a URL.'
         );
     }
 

@@ -47,7 +47,7 @@ class Operation
     public const externalDocs = 'externalDocs';
 
     /**
-     * Unique string used to identify the operation. The id MUST be unique
+     * Unique string used to identify the operation. The id ***MUST*** be unique
      * among all operations described in the API. The operationId value
      * is case-sensitive. Tools and libraries ***MAY*** use the operationId
      * to uniquely identify an operation, therefore, it is
