@@ -41,6 +41,16 @@ class OpenApi30
     public const servers = 'servers';
 
     /**
+     * Holds the relative paths to the individual endpoints and their
+     * operations. The path is appended to the URL from the Server
+     * Object in order to construct the full URL. The Paths Object
+     * ***MAY*** be empty, due to Access Control List (ACL) constraints.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
+     */
+    public const paths = 'paths';
+
+    /**
      * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.

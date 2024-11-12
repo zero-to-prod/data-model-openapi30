@@ -17,10 +17,27 @@ DataModels for OpenAPI 3.0.*
 ### [4.7.1](https://spec.openapis.org/oas/v3.0.4.html#openapi-object)
 This is the root object of the OpenAPI Description.
 
-| Field   | Type              | Status             |
-|---------|-------------------|--------------------|
-| openapi | `string`          | :white_check_mark: |
-| info    | `Info Object`     | :white_check_mark: |
-| servers | `[Server Object]` | :white_check_mark: |
-| paths   | `Paths Object`    |                    |
-|         |                   |                    |
+| Field        | Type                            | Status             |
+|--------------|---------------------------------|--------------------|
+| openapi      | `string`                        | :white_check_mark: |
+| info         | `Info Object`                   | :white_check_mark: |
+| servers      | `[Server Object]`               | :white_check_mark: |
+| paths        | `Paths Object`                  |                    |
+| components   | `Components Object`             |                    |
+| security     | `Security Requirement Object`   |                    |
+| tags         | `Tag Object`                    |                    |
+| externalDocs | `External Documentation Object` |                    |
+
+### [4.7.2](https://spec.openapis.org/oas/v3.0.4.html#info-object)
+The object provides metadata about the API. 
+The metadata MAY be used by the clients if needed, and MAY be presented in editing or 
+documentation generation tools for convenience.
+
+| Field          | Type             | Status             |
+|----------------|------------------|--------------------|
+| title          | `string`         | :white_check_mark: |
+| description    | `string`         | :white_check_mark: |
+| termsOfService | `string`         | :white_check_mark: |
+| contact        | `Contact Object` |                    |
+| license        | `License Object` |                    |
+| version        | `string`         | :white_check_mark: |

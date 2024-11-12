@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Info;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
@@ -8,9 +8,14 @@ use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Info;
 use Zerotoprod\DataModelOpenapi30\InvalidUrlException;
 
-class InfoTest extends TestCase
+class TitleTest extends TestCase
 {
 
+    /**
+     * **REQUIRED**. The title of the API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
     #[Test] public function missing_title(): void
     {
         $this->expectException(PropertyRequiredException::class);
@@ -21,6 +26,7 @@ class InfoTest extends TestCase
         ]);
     }
 
+    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0 */
     #[Test] public function title(): void
     {
         $Info = Info::from([
@@ -28,7 +34,11 @@ class InfoTest extends TestCase
             Info::version => 'version',
         ]);
 
-        self::assertEquals('title', $Info->title);
+        self::assertEquals(
+            expected: 'title',
+            actual: $Info->title,
+            message: 'REQUIRED. The title of the API.',
+        );
     }
 
     #[Test] public function missing_description(): void
