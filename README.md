@@ -20,7 +20,7 @@ This is the root object of the OpenAPI Description.
 | Field   | Type              | Status             |
 |---------|-------------------|--------------------|
 | openapi | `string`          | :white_check_mark: |
-| info    | `Info Object`     |                    |
-| servers | `[Server Object]` |                    |
+| info    | `Info Object`     | :white_check_mark: |
+| servers | `[Server Object]` | :white_check_mark: |
 | paths   | `Paths Object`    |                    |
 |         |                   |                    |
