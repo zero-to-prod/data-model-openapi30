@@ -67,7 +67,7 @@ License information for the exposed API.
 | name  | `string` | :white_check_mark: |
 | url   | `string` | :white_check_mark: |
 
-### [4.7.4 Server Object](https://spec.openapis.org/oas/v3.0.4.html#license-object)
+### [4.7.5 Server Object](https://spec.openapis.org/oas/v3.0.4.html#server-object)
 
 An object representing a Server.
 
@@ -77,3 +77,12 @@ An object representing a Server.
 | description | `string`                                | :white_check_mark: |
 | variables   | Map[`string`, `Server Variable Object`] | :white_check_mark: |
 
+### [4.7.6 Server Object](https://spec.openapis.org/oas/v3.0.4.html#server-variable-object)
+
+An object representing a Server Variable for server URL template substitution.
+
+| Field       | Type       | Status             |
+|-------------|------------|--------------------|
+| enum        | [`string`] | :white_check_mark: |
+| default     | `string`   | :white_check_mark: |
+| description | `string`   | :white_check_mark: |
