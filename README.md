@@ -13,8 +13,11 @@ DataModels for OpenAPI 3.0.*
 ```shell
 ./vendor/bin/phpunit
 ```
+
 ## Validation
-### [4.7.1](https://spec.openapis.org/oas/v3.0.4.html#openapi-object)
+
+### [4.7.1 OpenAPI Object](https://spec.openapis.org/oas/v3.0.4.html#openapi-object)
+
 This is the root object of the OpenAPI Description.
 
 | Field        | Type                            | Status             |
@@ -28,9 +31,10 @@ This is the root object of the OpenAPI Description.
 | tags         | `Tag Object`                    |                    |
 | externalDocs | `External Documentation Object` |                    |
 
-### [4.7.2](https://spec.openapis.org/oas/v3.0.4.html#info-object)
-The object provides metadata about the API. 
-The metadata MAY be used by the clients if needed, and MAY be presented in editing or 
+### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
+
+The object provides metadata about the API.
+The metadata MAY be used by the clients if needed, and MAY be presented in editing or
 documentation generation tools for convenience.
 
 | Field          | Type             | Status             |
@@ -42,7 +46,8 @@ documentation generation tools for convenience.
 | license        | `License Object` | :white_check_mark: |
 | version        | `string`         | :white_check_mark: |
 
-### [4.7.3](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
+### [4.7.3 Contact Object](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
+
 The object provides metadata about the API.
 The metadata MAY be used by the clients if needed, and MAY be presented in editing or
 documentation generation tools for convenience.
@@ -53,11 +58,22 @@ documentation generation tools for convenience.
 | url   | `string` | :white_check_mark: |
 | email | `email`  | :white_check_mark: |
 
-### [4.7.4](https://spec.openapis.org/oas/v3.0.4.html#license-object)
+### [4.7.4 License Object](https://spec.openapis.org/oas/v3.0.4.html#license-object)
+
 License information for the exposed API.
 
 | Field | Type     | Status             |
 |-------|----------|--------------------|
 | name  | `string` | :white_check_mark: |
 | url   | `string` | :white_check_mark: |
+
+### [4.7.4 Server Object](https://spec.openapis.org/oas/v3.0.4.html#license-object)
+
+An object representing a Server.
+
+| Field       | Type                                    | Status             |
+|-------------|-----------------------------------------|--------------------|
+| url         | `string`                                | :white_check_mark: |
+| description | `string`                                | :white_check_mark: |
+| variables   | Map[`string`, `Server Variable Object`] | :white_check_mark: |
 
