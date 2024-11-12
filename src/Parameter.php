@@ -84,6 +84,24 @@ class Parameter
     public const deprecated = 'deprecated';
 
     /**
+     * If `true`, clients ***MAY*** pass a zero-length string value in place
+     * of parameters that would otherwise be omitted entirely, which the
+     * server ***SHOULD*** interpret as the parameter being unused.
+     * Default value is `false`. If `style` is used, and if behavior
+     * is n/a (cannot be serialized), the value of `allowEmptyValue`
+     * ***SHALL*** be ignored. Interactions between this field
+     * and the parameter’s Schema Object are implementation-defined.
+     * This field is valid only for query parameters. Use of
+     * this field is ***NOT RECOMMENDED***, and it is likely
+     * to be removed in a later revision.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
+     */
+    public const allowEmptyValue = 'allowEmptyValue';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -131,7 +149,7 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      */
-    #[Describe(['default' => false])]
+    #[Describe(['cast' => [self::class, 'required']])]
     public bool $required;
 
     /**
@@ -156,9 +174,27 @@ class Parameter
      * to be removed in a later revision.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see https://spec.openapis.org/oas/v3.0.4.html#parameter-style
-     * @see https://spec.openapis.org/oas/v3.0.4.html#style-examples
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
      */
     #[Describe(['default' => false])]
     public bool $allowEmptyValue;
+
+    /**
+     * @param $value
+     * @param $context
+     *
+     * @return bool
+     * @link https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     */
+    public static function required($value, $context): bool
+    {
+        if (!$value && isset($context[self::in]) && $context[self::in] === 'path') {
+            throw new InvalidInValueException('Should be true when $in is "path"');
+        }
+
+        return empty($value)
+            ? false
+            : $value;
+    }
 }

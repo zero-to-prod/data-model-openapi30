@@ -136,3 +136,16 @@ Allows referencing an external resource for extended documentation.
 |-------------|----------|--------------------|
 | description | `string` | :white_check_mark: |
 | url         | `string` | :white_check_mark: |
+
+### [4.7.12 Parameter Object](https://spec.openapis.org/oas/v3.0.4.html#parameter-object)
+
+Describes a single operation parameter.
+
+| Field           | Type        | Status             |
+|-----------------|-------------|--------------------|
+| name            | `string`    | :white_check_mark: |
+| in              | `string`    | :white_check_mark: |
+| description     | `string`    | :white_check_mark: |
+| required        | `boolean`   | :white_check_mark: |
+| deprecated      | `boolean`   | :white_check_mark: |
+| allowEmptyValue | [`boolean`] | :white_check_mark: |
