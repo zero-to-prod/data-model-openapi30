@@ -50,5 +50,5 @@ documentation generation tools for convenience.
 | Field | Type     | Status             |
 |-------|----------|--------------------|
 | name  | `string` | :white_check_mark: |
-| url   | `string` |                    |
+| url   | `string` | :white_check_mark: |
 | email | `email`  |                    |
