@@ -38,8 +38,8 @@ documentation generation tools for convenience.
 | title          | `string`         | :white_check_mark: |
 | description    | `string`         | :white_check_mark: |
 | termsOfService | `string`         | :white_check_mark: |
-| contact        | `Contact Object` |                    |
-| license        | `License Object` |                    |
+| contact        | `Contact Object` | :white_check_mark: |
+| license        | `License Object` | :white_check_mark: |
 | version        | `string`         | :white_check_mark: |
 
 ### [4.7.3](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
@@ -52,3 +52,12 @@ documentation generation tools for convenience.
 | name  | `string` | :white_check_mark: |
 | url   | `string` | :white_check_mark: |
 | email | `email`  | :white_check_mark: |
+
+### [4.7.4](https://spec.openapis.org/oas/v3.0.4.html#license-object)
+License information for the exposed API.
+
+| Field | Type     | Status             |
+|-------|----------|--------------------|
+| name  | `string` | :white_check_mark: |
+| url   | `string` | :white_check_mark: |
+
