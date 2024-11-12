@@ -12,9 +12,7 @@ class UrlTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#contact-object */
     #[Test] public function missing_url(): void
     {
-        $Contact = Contact::from([
-            Contact::name => 'name'
-        ]);
+        $Contact = Contact::from();
 
         self::assertNull(
             actual: $Contact->url,
