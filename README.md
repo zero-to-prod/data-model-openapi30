@@ -86,3 +86,53 @@ An object representing a Server Variable for server URL template substitution.
 | enum        | [`string`] | :white_check_mark: |
 | default     | `string`   | :white_check_mark: |
 | description | `string`   | :white_check_mark: |
+
+### [4.7.9 Path Item Object](https://spec.openapis.org/oas/v3.0.4.html#path-item-object)
+
+Describes the operations available on a single path.
+A Path Item MAY be empty, due to ACL constraints.
+The path itself is still exposed to the documentation viewer but they will not know which operations and parameters are available.
+
+| Field       | Type                                       | Status |
+|-------------|--------------------------------------------|--------|
+| $ref        | `string`                                   |        |
+| summary     | `string`                                   |        |
+| description | `string`                                   |        |
+| get         | `Operation Object`                         |        |
+| put         | `Operation Object`                         |        |
+| post        | `Operation Object`                         |        |
+| delete      | `Operation Object`                         |        |
+| options     | `Operation Object`                         |        |
+| head        | `Operation Object`                         |        |
+| patch       | `Operation Object`                         |        |
+| trace       | `Operation Object`                         |        |
+| servers     | `Server Object`                            |        |
+| parameters  | [`Parameter Object` \| `Reference Object`] |        |
+
+### [4.7.10 Operation Object](https://spec.openapis.org/oas/v3.0.4.html#operation-object)
+
+Describes a single API operation on a path.
+
+| Field        | Type                                                   | Status |
+|--------------|--------------------------------------------------------|--------|
+| tags         | [`string`]                                             |        |
+| summary      | `string`                                               |        |
+| description  | `string`                                               |        |
+| externalDocs | `External Documentation Object`                        |        |
+| operationId  | `string`                                               |        |
+| parameters   | [`Parameter Object` \| `Reference Object`]             |        |
+| requestBody  | `Request Body Object` \| `Reference Object`            |        |
+| responses    | `Responses Object`                                     |        |
+| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`] |        |
+| deprecated   | `boolean`                                              |        |
+| security     | [`Security Requirement Object`]                        |        |
+| servers      | `Server Object`                                        |        |
+
+### [4.7.6 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
+
+Allows referencing an external resource for extended documentation.
+
+| Field       | Type     | Status             |
+|-------------|----------|--------------------|
+| description | `string` | :white_check_mark: |
+| url         | `string` | :white_check_mark: |
