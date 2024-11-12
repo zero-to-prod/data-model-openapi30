@@ -30,6 +30,14 @@ class Contact
     public const url = 'url';
 
     /**
+     * The email address of the contact person/organization.
+     * This MUST be in the form of an email address.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     */
+    public const email = 'email';
+
+    /**
      * The identifying name of the contact person/organization.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
@@ -48,4 +56,16 @@ class Contact
         'exception' => InvalidUrlException::class,
     ])]
     public ?string $url;
+
+    /**
+     * The email address of the contact person/organization.
+     * This MUST be in the form of an email address.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     */
+    #[Describe([
+        'cast' => [self::class, 'isEmail'],
+        'exception' => InvalidEmailException::class,
+    ])]
+    public ?string $email;
 }
