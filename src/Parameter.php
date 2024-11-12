@@ -102,6 +102,16 @@ class Parameter
     public const allowEmptyValue = 'allowEmptyValue';
 
     /**
+     * Describes how the parameter value will be serialized depending on the
+     * type of the parameter value. Default values (based on value of `in`):
+     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
+     * - `"simple"`; for `"cookie"` - `"form"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const style = 'style';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -181,6 +191,32 @@ class Parameter
     public bool $allowEmptyValue;
 
     /**
+     * Describes how the parameter value will be serialized depending on the
+     * type of the parameter value. Default values (based on value of `in`):
+     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
+     * - `"simple"`; for `"cookie"` - `"form"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    #[Describe(['cast' => [self::class, 'style']])]
+    public ?string $style;
+
+    public static function style($value, $context): ?string
+    {
+        if (!$value && isset($context[self::in])) {
+            return match ($context[self::in]) {
+                'query', 'cookie' => 'form',
+                'path', 'header' => 'simple',
+                default => null,
+            };
+        }
+
+        return is_string($value)
+            ? $value
+            : null;
+    }
+
+    /**
      * @param $value
      * @param $context
      *
@@ -190,7 +226,7 @@ class Parameter
     public static function required($value, $context): bool
     {
         if (!$value && isset($context[self::in]) && $context[self::in] === 'path') {
-            throw new InvalidInValueException('Should be true when $in is "path"');
+            throw new InvalidInValueException('Property $required Should be true when $in is "path"');
         }
 
         return empty($value)
