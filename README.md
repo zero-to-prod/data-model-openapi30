@@ -41,3 +41,14 @@ documentation generation tools for convenience.
 | contact        | `Contact Object` |                    |
 | license        | `License Object` |                    |
 | version        | `string`         | :white_check_mark: |
+
+### [4.7.3](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
+The object provides metadata about the API.
+The metadata MAY be used by the clients if needed, and MAY be presented in editing or
+documentation generation tools for convenience.
+
+| Field | Type     | Status             |
+|-------|----------|--------------------|
+| name  | `string` | :white_check_mark: |
+| url   | `string` |                    |
+| email | `email`  |                    |
