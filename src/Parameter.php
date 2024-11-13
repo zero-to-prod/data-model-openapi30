@@ -124,6 +124,23 @@ class Parameter
     public const explode = 'explode';
 
     /**
+     * When this is `true`, parameter values are serialized using reserved expansion, as
+     * defined by [RFC6570] Section 3.2.3, which allows RFC3986’s reserved character set,
+     * as well as percent-encoded triples, to pass through unchanged, while still
+     * percent-encoding all other disallowed characters (including `%` outside of
+     * percent-encoded triples). Applications are still responsible for
+     * percent-encoding reserved characters that are not allowed in the
+     * query string (`[`, `]`, `#`), or have a special meaning in
+     * `application/x-www-form-urlencoded` (`-`, `&`, `+`); see
+     * Appendices C and E for details. This field only applies
+     * to parameters with an `in` value of `query`. The
+     * default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const allowReserved = 'allowReserved';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -225,6 +242,24 @@ class Parameter
      */
     #[Describe(['cast' => [self::class, 'explode']])]
     public bool $explode;
+
+    /**
+     * When this is `true`, parameter values are serialized using reserved expansion, as
+     * defined by [RFC6570] Section 3.2.3, which allows RFC3986’s reserved character set,
+     * as well as percent-encoded triples, to pass through unchanged, while still
+     * percent-encoding all other disallowed characters (including `%` outside of
+     * percent-encoded triples). Applications are still responsible for
+     * percent-encoding reserved characters that are not allowed in the
+     * query string (`[`, `]`, `#`), or have a special meaning in
+     * `application/x-www-form-urlencoded` (`-`, `&`, `+`); see
+     * Appendices C and E for details. This field only applies
+     * to parameters with an `in` value of `query`. The
+     * default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    #[Describe(['default' => false])]
+    public bool $allowReserved;
 
     /**
      * When this is `true`, parameter values of type `array` or `object` generate separate

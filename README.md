@@ -149,3 +149,6 @@ Describes a single operation parameter.
 | required        | `boolean`   | :white_check_mark: |
 | deprecated      | `boolean`   | :white_check_mark: |
 | allowEmptyValue | [`boolean`] | :white_check_mark: |
+| style           | `string`    | :white_check_mark: |
+| explode         | `boolean`   | :white_check_mark: |
+| allowReserved   | `boolean`   | :white_check_mark: |
