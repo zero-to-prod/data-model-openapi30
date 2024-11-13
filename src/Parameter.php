@@ -112,6 +112,18 @@ class Parameter
     public const style = 'style';
 
     /**
+     * When this is `true`, parameter values of type `array` or `object` generate separate
+     * parameters for each value of the array or key-value pair of the map. For other
+     * types of parameters this field has no effect. When `style` is `"form"`, the
+     * default value is `true`. For all other styles, the default value is `false`.
+     * Note that despite `false` being the default for `deepObject`, the
+     * combination of false with `deepObject` is undefined.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const explode = 'explode';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -201,6 +213,29 @@ class Parameter
     #[Describe(['cast' => [self::class, 'style']])]
     public ?string $style;
 
+    /**
+     * When this is `true`, parameter values of type `array` or `object` generate separate
+     * parameters for each value of the array or key-value pair of the map. For other
+     * types of parameters this field has no effect. When `style` is `"form"`, the
+     * default value is `true`. For all other styles, the default value is `false`.
+     * Note that despite `false` being the default for `deepObject`, the
+     * combination of false with `deepObject` is undefined.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    #[Describe(['cast' => [self::class, 'explode']])]
+    public bool $explode;
+
+    /**
+     * When this is `true`, parameter values of type `array` or `object` generate separate
+     * parameters for each value of the array or key-value pair of the map. For other
+     * types of parameters this field has no effect. When `style` is `"form"`, the
+     * default value is `true`. For all other styles, the default value is `false`.
+     * Note that despite `false` being the default for `deepObject`, the
+     * combination of false with `deepObject` is undefined.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
     public static function style($value, $context): ?string
     {
         if (!$value && isset($context[self::in])) {
@@ -217,11 +252,32 @@ class Parameter
     }
 
     /**
-     * @param $value
-     * @param $context
+     * Describes how the parameter value will be serialized depending on the
+     * type of the parameter value. Default values (based on value of `in`):
+     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
+     * - `"simple"`; for `"cookie"` - `"form"`.
      *
-     * @return bool
-     * @link https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public static function explode($value, $context): bool
+    {
+        if (empty($value) && !is_bool($value) && isset($context[self::style])) {
+            return $context[self::style] === 'form';
+        }
+
+        return is_bool($value)
+            ? $value
+            : false;
+    }
+
+    /**
+     * Determines whether this parameter is mandatory. If the parameter
+     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
+     * be `true`. Otherwise, the field ***MAY*** be included and its default
+     * value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      */
     public static function required($value, $context): bool
     {
