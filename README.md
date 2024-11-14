@@ -152,3 +152,19 @@ Describes a single operation parameter.
 | style           | `string`    | :white_check_mark: |
 | explode         | `boolean`   | :white_check_mark: |
 | allowReserved   | `boolean`   | :white_check_mark: |
+
+### [4.7.24 Schema Object](https://spec.openapis.org/oas/v3.0.4.html#schema-object)
+
+The Schema Object allows the definition of input and output data types.
+
+| Field    | Type      | Status             |
+|----------|-----------|--------------------|
+| nullable | `boolean` | :white_check_mark: |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
+|          |           |                    |
