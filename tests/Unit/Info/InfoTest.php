@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Info;
 
-class InfoObjectTest extends TestCase
+class InfoTest extends TestCase
 {
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0 */
     #[Test] public function missing_description(): void
