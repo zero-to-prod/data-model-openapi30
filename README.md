@@ -135,17 +135,28 @@ Allows referencing an external resource for extended documentation.
 
 Describes a single operation parameter.
 
-| Field           | Type        | Status             |
-|-----------------|-------------|--------------------|
-| name            | `string`    | :white_check_mark: |
-| in              | `string`    | :white_check_mark: |
-| description     | `string`    | :white_check_mark: |
-| required        | `boolean`   | :white_check_mark: |
-| deprecated      | `boolean`   | :white_check_mark: |
-| allowEmptyValue | [`boolean`] | :white_check_mark: |
-| style           | `string`    | :white_check_mark: |
-| explode         | `boolean`   | :white_check_mark: |
-| allowReserved   | `boolean`   | :white_check_mark: |
+| Field           | Type                                                   | Status             |
+|-----------------|--------------------------------------------------------|--------------------|
+| name            | `string`                                               | :white_check_mark: |
+| in              | `string`                                               | :white_check_mark: |
+| description     | `string`                                               | :white_check_mark: |
+| required        | `boolean`                                              | :white_check_mark: |
+| deprecated      | `boolean`                                              | :white_check_mark: |
+| allowEmptyValue | [`boolean`]                                            | :white_check_mark: |
+| style           | `string`                                               | :white_check_mark: |
+| explode         | `boolean`                                              | :white_check_mark: |
+| allowReserved   | `boolean`                                              | :white_check_mark: |
+| schema          | `Schema Object` \| `Reference Object`                  |                    |
+| example         | Any                                                    |                    |
+| examples        | Map[ `string`, `Example Object` \| `Reference Object`] |                    |
+
+### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)
+
+A simple object to allow referencing other components in the OpenAPI Description, internally and externally.
+
+| Field | Type     | Status             |
+|-------|----------|--------------------|
+| $ref  | `string` | :white_check_mark: |
 
 ### [4.7.24 Schema Object](https://spec.openapis.org/oas/v3.0.4.html#schema-object)
 
@@ -159,7 +170,7 @@ The Schema Object allows the definition of input and output data types.
 | writeOnly     | `boolean`                       |                    |
 | xml           | `XML Object`                    |                    |
 | externalDocs  | `External Documentation Object` |                    |
-| example       | Any                             |                    |
+| example       | Any                             | :white_check_mark: |
 | deprecated    | `boolean`                       |                    |
 
 ### [4.7.25 Discriminator Object](https://spec.openapis.org/oas/v3.0.4.html#discriminator-object)

@@ -141,6 +141,21 @@ class Parameter
     public const allowReserved = 'allowReserved';
 
     /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const schema = 'schema';
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
+    public const example = 'example';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -260,6 +275,23 @@ class Parameter
      */
     #[Describe(['default' => false])]
     public bool $allowReserved;
+
+    /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    #[Describe(['missing_as_null'])]
+    public null|Schema|Reference $schema;
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $example;
 
     /**
      * When this is `true`, parameter values of type `array` or `object` generate separate
