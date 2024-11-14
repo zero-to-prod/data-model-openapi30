@@ -51,6 +51,20 @@ class Info
     public const version = 'version';
 
     /**
+     * The contact information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    public const contact = 'contact';
+
+    /**
+     * The license information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    public const licence = 'licence';
+
+    /**
      * The title of the API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
@@ -90,4 +104,20 @@ class Info
      */
     #[Describe(['required'])]
     public string $version;
+
+    /**
+     * The contact information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Contact $contact;
+
+    /**
+     * The license information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    #[Describe(['missing_as_null'])]
+    public ?License $license;
 }
