@@ -34,8 +34,6 @@ This is the root object of the OpenAPI Description.
 ### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
 
 The object provides metadata about the API.
-The metadata MAY be used by the clients if needed, and MAY be presented in editing or
-documentation generation tools for convenience.
 
 | Field          | Type             | Status             |
 |----------------|------------------|--------------------|
@@ -48,9 +46,7 @@ documentation generation tools for convenience.
 
 ### [4.7.3 Contact Object](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
 
-The object provides metadata about the API.
-The metadata MAY be used by the clients if needed, and MAY be presented in editing or
-documentation generation tools for convenience.
+Contact information for the exposed API.
 
 | Field | Type     | Status             |
 |-------|----------|--------------------|
@@ -90,8 +86,6 @@ An object representing a Server Variable for server URL template substitution.
 ### [4.7.9 Path Item Object](https://spec.openapis.org/oas/v3.0.4.html#path-item-object)
 
 Describes the operations available on a single path.
-A Path Item MAY be empty, due to ACL constraints.
-The path itself is still exposed to the documentation viewer but they will not know which operations and parameters are available.
 
 | Field       | Type                                       | Status |
 |-------------|--------------------------------------------|--------|
@@ -157,14 +151,23 @@ Describes a single operation parameter.
 
 The Schema Object allows the definition of input and output data types.
 
-| Field    | Type      | Status             |
-|----------|-----------|--------------------|
-| nullable | `boolean` | :white_check_mark: |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
-|          |           |                    |
+| Field         | Type                            | Status             |
+|---------------|---------------------------------|--------------------|
+| nullable      | `boolean`                       | :white_check_mark: |
+| discriminator | `Discriminator Object`          |                    |
+| readOnly      | `boolean`                       |                    |
+| writeOnly     | `boolean`                       |                    |
+| xml           | `XML Object`                    |                    |
+| externalDocs  | `External Documentation Object` |                    |
+| example       | Any                             |                    |
+| deprecated    | `boolean`                       |                    |
+
+### [4.7.25 Discriminator Object](https://spec.openapis.org/oas/v3.0.4.html#discriminator-object)
+
+When request bodies or response payloads may be one of a number of different schemas,
+a Discriminator Object gives a hint about the expected schema of the document.
+
+| Field        | Type                    | Status |
+|--------------|-------------------------|--------|
+| propertyName | `string`                |        |
+| mapping      | Map[`string`, `string`] |        |
