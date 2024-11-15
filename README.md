@@ -209,7 +209,7 @@ An object grouping an internal or external example value with basic summary and 
 
 ### [4.7.21 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
 
-Describes a single header for HTTP responses and for individual parts in multipart representations
+Describes a single header for HTTP responses and for individual parts in multipart representations.
 
 | Field       | Type                                                   | Status             |
 |-------------|--------------------------------------------------------|--------------------|
@@ -221,3 +221,15 @@ Describes a single header for HTTP responses and for individual parts in multipa
 | schema      | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
 | example     | Any                                                    | :white_check_mark: |
 | examples    | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
+
+### [4.7.15 Encoding Object](https://spec.openapis.org/oas/v3.0.4.html#encoding-object)
+
+A single encoding definition applied to a single schema property..
+
+| Field         | Type                                                 | Status             |
+|---------------|------------------------------------------------------|--------------------|
+| contentType   | `string`                                             | :white_check_mark: |
+| headers       | Map[`string`, `Header Object` \| `Reference Object`] | :white_check_mark: |
+| style         | `string`                                             | :white_check_mark: |
+| explode       | `boolean`                                            | :white_check_mark: |
+| allowReserved | `boolean`                                            | :white_check_mark: |
