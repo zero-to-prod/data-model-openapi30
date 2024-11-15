@@ -182,3 +182,16 @@ a Discriminator Object gives a hint about the expected schema of the document.
 |--------------|-------------------------|--------------------|
 | propertyName | `string`                | :white_check_mark: |
 | mapping      | Map[`string`, `string`] | :white_check_mark: |
+
+### [4.7.26 XML Object](https://spec.openapis.org/oas/v3.0.4.html#xml-object)
+
+A metadata object that allows for more fine-tuned XML model definitions.
+
+| Field     | Type      | Status             |
+|-----------|-----------|--------------------|
+| name      | `string`  | :white_check_mark: |
+| namespace | `string`  | :white_check_mark: |
+| prefix    | `string`  | :white_check_mark: |
+| attribute | `boolean` | :white_check_mark: |
+| wrapped   | `boolean` | :white_check_mark: |
+
