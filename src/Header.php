@@ -61,6 +61,16 @@ class Header
     public const style = 'style';
 
     /**
+     * When this is true, header values of type `array` or `object` generate a single
+     * header whose value is a comma-separated list of the array items or
+     * key-value pairs of the map, see Style Examples. For other data
+     * types this field has no effect. The default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     */
+    public const explode = 'explode';
+
+    /**
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax MAY be used for rich text representation.
      *
@@ -93,4 +103,15 @@ class Header
      */
     #[Describe(['missing_as_null'])]
     public ?string $style;
+
+    /**
+     * When this is true, header values of type `array` or `object` generate a single
+     * header whose value is a comma-separated list of the array items or
+     * key-value pairs of the map, see Style Examples. For other data
+     * types this field has no effect. The default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     */
+    #[Describe(['default' => false])]
+    public bool $explode;
 }
