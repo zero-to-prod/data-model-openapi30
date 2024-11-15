@@ -88,6 +88,14 @@ class Schema
     public const externalDocs = 'externalDocs';
 
     /**
+     * Specifies that a schema is deprecated and **SHOULD** be transitioned
+     * out of usage. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const deprecated = 'deprecated';
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -157,6 +165,15 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public ?ExternalDocumentation $externalDocs;
+
+    /**
+     * Specifies that a schema is deprecated and **SHOULD** be transitioned
+     * out of usage. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['default' => false])]
+    public bool $deprecated;
 
     public static function readOnly($value, array $context): bool
     {

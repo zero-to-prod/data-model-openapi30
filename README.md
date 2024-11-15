@@ -171,7 +171,7 @@ The Schema Object allows the definition of input and output data types.
 | xml           | `XML Object`                    | :white_check_mark: |
 | externalDocs  | `External Documentation Object` | :white_check_mark: |
 | example       | Any                             | :white_check_mark: |
-| deprecated    | `boolean`                       |                    |
+| deprecated    | `boolean`                       | :white_check_mark: |
 
 ### [4.7.25 Discriminator Object](https://spec.openapis.org/oas/v3.0.4.html#discriminator-object)
 
