@@ -71,6 +71,27 @@ class Header
     public const explode = 'explode';
 
     /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const schema = 'schema';
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const example = 'example';
+
+    /**
+     * Examples of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const examples = 'examples';
+
+    /**
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax MAY be used for rich text representation.
      *
@@ -114,4 +135,62 @@ class Header
      */
     #[Describe(['default' => false])]
     public bool $explode;
+
+    /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    #[Describe(['cast' => [self::class, 'schema']])]
+    public null|Schema|Reference $schema;
+
+    public static function schema($value, array $context): Schema|Reference|null
+    {
+        if (!isset($context[self::schema])) {
+            return null;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : Schema::from($value);
+    }
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $example;
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @var array<string, Example|Reference> $examples
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
+    #[Describe(['cast' => [self::class, 'examples']])]
+    public ?array $examples;
+
+    /**
+     * Examples of the parameter’s potential value; see Working With Examples.
+     *
+     * @return ?array<string, Example|Reference>
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
+    public static function examples($value, array $context): ?array
+    {
+        return isset($context[self::examples])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Example::from($value),
+                $value
+            )
+            : null;
+    }
 }

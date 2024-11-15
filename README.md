@@ -211,10 +211,13 @@ An object grouping an internal or external example value with basic summary and 
 
 Describes a single header for HTTP responses and for individual parts in multipart representations
 
-| Field       | Type      | Status             |
-|-------------|-----------|--------------------|
-| description | `string`  | :white_check_mark: |
-| required    | `boolean` | :white_check_mark: |
-| deprecated  | `boolean` | :white_check_mark: |
-| style       | `string`  | :white_check_mark: |
-| explode     | `boolean` | :white_check_mark: |
+| Field       | Type                                                   | Status             |
+|-------------|--------------------------------------------------------|--------------------|
+| description | `string`                                               | :white_check_mark: |
+| required    | `boolean`                                              | :white_check_mark: |
+| deprecated  | `boolean`                                              | :white_check_mark: |
+| style       | `string`                                               | :white_check_mark: |
+| explode     | `boolean`                                              | :white_check_mark: |
+| schema      | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
+| example     | Any                                                    | :white_check_mark: |
+| examples    | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
