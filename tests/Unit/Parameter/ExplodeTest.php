@@ -10,7 +10,7 @@ class ExplodeTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema */
-    #[Test] public function default_form(): void
+    #[Test] public function default_from(): void
     {
         $Parameter = Parameter::from([
             Parameter::in => 'query',

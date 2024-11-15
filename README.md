@@ -146,8 +146,8 @@ Describes a single operation parameter.
 | style           | `string`                                               | :white_check_mark: |
 | explode         | `boolean`                                              | :white_check_mark: |
 | allowReserved   | `boolean`                                              | :white_check_mark: |
-| schema          | `Schema Object` \| `Reference Object`                  |                    |
-| example         | Any                                                    |                    |
+| schema          | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
+| example         | Any                                                    | :white_check_mark: |
 | examples        | Map[ `string`, `Example Object` \| `Reference Object`] |                    |
 
 ### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)

@@ -96,6 +96,16 @@ class Schema
     public const deprecated = 'deprecated';
 
     /**
+     * A free-form field to include an example of an instance for this schema.
+     * To represent examples that cannot be naturally represented in JSON or
+     * YAML, a string value can be used to contain the example with escaping
+     * where necessary.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const example = 'example';
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -174,6 +184,17 @@ class Schema
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
+
+    /**
+     * A free-form field to include an example of an instance for this schema.
+     * To represent examples that cannot be naturally represented in JSON or
+     * YAML, a string value can be used to contain the example with escaping
+     * where necessary.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $example;
 
     public static function readOnly($value, array $context): bool
     {

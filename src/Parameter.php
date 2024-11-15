@@ -151,7 +151,7 @@ class Parameter
      * Example of the parameter’s potential value; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
     public const example = 'example';
 
@@ -281,14 +281,25 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
+
+    public static function schema($value, array $context): Schema|Reference|null
+    {
+        if (!isset($context[self::schema])) {
+            return null;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : Schema::from($value);
+    }
 
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
     #[Describe(['missing_as_null'])]
     public mixed $example;
