@@ -211,8 +211,8 @@ An object grouping an internal or external example value with basic summary and 
 
 Describes a single header for HTTP responses and for individual parts in multipart representations
 
-| Field       | Type      | Status |
-|-------------|-----------|--------|
-| description | `string`  |        |
-| required    | `boolean` |        |
-| deprecated  | `boolean` |        |
+| Field       | Type      | Status             |
+|-------------|-----------|--------------------|
+| description | `string`  | :white_check_mark: |
+| required    | `boolean` | :white_check_mark: |
+| deprecated  | `boolean` | :white_check_mark: |
