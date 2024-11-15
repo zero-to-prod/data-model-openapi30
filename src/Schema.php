@@ -81,6 +81,13 @@ class Schema
     public const xml = 'xml';
 
     /**
+     * Additional external documentation for this schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const externalDocs = 'externalDocs';
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -142,6 +149,14 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public ?Xml $xml;
+
+    /**
+     * Additional external documentation for this schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['missing_as_null'])]
+    public ?ExternalDocumentation $externalDocs;
 
     public static function readOnly($value, array $context): bool
     {
