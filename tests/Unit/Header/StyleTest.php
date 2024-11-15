@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Header;
 
-class DescriptionTest extends TestCase
+class StyleTest extends TestCase
 {
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema-0 */
     #[Test] public function nullable(): void
@@ -14,8 +14,8 @@ class DescriptionTest extends TestCase
         $Header = Header::from();
 
         self::assertNull(
-            actual: $Header->description,
-            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            actual: $Header->style,
+            message: 'Describes how the header value will be serialized. The default (and only legal value for headers) is "simple".'
         );
     }
 
@@ -23,13 +23,13 @@ class DescriptionTest extends TestCase
     #[Test] public function string(): void
     {
         $Header = Header::from([
-            Header::description => 'description',
+            Header::style => 'simple',
         ]);
 
         self::assertEquals(
-            expected: 'description',
-            actual: $Header->description,
-            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            expected: 'simple',
+            actual: $Header->style,
+            message: 'Describes how the header value will be serialized. The default (and only legal value for headers) is "simple".'
         );
     }
 }

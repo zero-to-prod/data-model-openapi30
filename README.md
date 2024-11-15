@@ -216,3 +216,4 @@ Describes a single header for HTTP responses and for individual parts in multipa
 | description | `string`  | :white_check_mark: |
 | required    | `boolean` | :white_check_mark: |
 | deprecated  | `boolean` | :white_check_mark: |
+| style       | `string`  | :white_check_mark: |

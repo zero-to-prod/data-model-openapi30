@@ -53,6 +53,14 @@ class Header
     public const deprecated = 'deprecated';
 
     /**
+     * Describes how the header value will be serialized. The default (and only
+     * legal value for headers) is "`simple`".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     */
+    public const style = 'style';
+
+    /**
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax MAY be used for rich text representation.
      *
@@ -76,4 +84,13 @@ class Header
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
+
+    /**
+     * Describes how the header value will be serialized. The default (and only
+     * legal value for headers) is "`simple`".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $style;
 }
