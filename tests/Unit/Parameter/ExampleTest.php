@@ -19,7 +19,7 @@ class ExampleTest extends TestCase
 
         self::assertNull(
             actual: $Parameter->example,
-            message: 'A free-form field to include an example of an instance for this schema.'
+            message: 'Example of the parameter’s potential value; see Working With Examples.'
         );
     }
 
@@ -35,7 +35,7 @@ class ExampleTest extends TestCase
         self::assertEquals(
             expected: 'example',
             actual: $Parameter->example,
-            message: 'A free-form field to include an example of an instance for this schema.'
+            message: 'Example of the parameter’s potential value; see Working With Examples.'
         );
     }
 
@@ -50,7 +50,7 @@ class ExampleTest extends TestCase
 
         self::assertIsBool(
             actual: $Parameter->example,
-            message: 'A free-form field to include an example of an instance for this schema.'
+            message: 'Example of the parameter’s potential value; see Working With Examples.'
         );
     }
 }

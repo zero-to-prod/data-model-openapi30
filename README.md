@@ -148,7 +148,8 @@ Describes a single operation parameter.
 | allowReserved   | `boolean`                                              | :white_check_mark: |
 | schema          | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
 | example         | Any                                                    | :white_check_mark: |
-| examples        | Map[ `string`, `Example Object` \| `Reference Object`] |                    |
+| examples        | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
+| content         | Map[string, Media Type Object]                         |                    |
 
 ### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)
 
@@ -199,9 +200,19 @@ A metadata object that allows for more fine-tuned XML model definitions.
 
 An object grouping an internal or external example value with basic summary and description metadata.
 
-| Field         | Type     | Status              |
-|---------------|----------|---------------------|
-| summary       | `string` | :white_check_mark:  |
-| description   | `string` | :white_check_mark:  |
-| value         | Any      | :white_check_mark:  |
-| externalValue | `string` | :white_check_mark:  |
+| Field         | Type     | Status             |
+|---------------|----------|--------------------|
+| summary       | `string` | :white_check_mark: |
+| description   | `string` | :white_check_mark: |
+| value         | Any      | :white_check_mark: |
+| externalValue | `string` | :white_check_mark: |
+
+### [4.7.21 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
+
+Describes a single header for HTTP responses and for individual parts in multipart representations
+
+| Field       | Type      | Status |
+|-------------|-----------|--------|
+| description | `string`  |        |
+| required    | `boolean` |        |
+| deprecated  | `boolean` |        |

@@ -156,6 +156,13 @@ class Parameter
     public const example = 'example';
 
     /**
+     * Examples of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     */
+    public const examples = 'examples';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
@@ -207,6 +214,26 @@ class Parameter
     public bool $required;
 
     /**
+     * Determines whether this parameter is mandatory. If the parameter
+     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
+     * be `true`. Otherwise, the field ***MAY*** be included and its default
+     * value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     */
+    public static function required($value, $context): bool
+    {
+        if (!$value && isset($context[self::in]) && $context[self::in] === 'path') {
+            throw new InvalidInValueException('Property $required Should be true when $in is "path"');
+        }
+
+        return empty($value)
+            ? false
+            : $value;
+    }
+
+    /**
      * Specifies that a parameter is deprecated and ***SHOULD*** be transitioned
      * out of usage. Default value is `false`.
      *
@@ -255,8 +282,52 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      */
+    public static function style($value, $context): ?string
+    {
+        if (!$value && isset($context[self::in])) {
+            return match ($context[self::in]) {
+                'query', 'cookie' => 'form',
+                'path', 'header' => 'simple',
+                default => null,
+            };
+        }
+
+        return is_string($value)
+            ? $value
+            : null;
+    }
+
+    /**
+     * When this is `true`, parameter values of type `array` or `object` generate separate
+     * parameters for each value of the array or key-value pair of the map. For other
+     * types of parameters this field has no effect. When `style` is `"form"`, the
+     * default value is `true`. For all other styles, the default value is `false`.
+     * Note that despite `false` being the default for `deepObject`, the
+     * combination of false with `deepObject` is undefined.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
     #[Describe(['cast' => [self::class, 'explode']])]
     public bool $explode;
+
+    /**
+     * Describes how the parameter value will be serialized depending on the
+     * type of the parameter value. Default values (based on value of `in`):
+     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
+     * - `"simple"`; for `"cookie"` - `"form"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public static function explode($value, $context): bool
+    {
+        if (empty($value) && !is_bool($value) && isset($context[self::style])) {
+            return $context[self::style] === 'form';
+        }
+
+        return is_bool($value)
+            ? $value
+            : false;
+    }
 
     /**
      * When this is `true`, parameter values are serialized using reserved expansion, as
@@ -305,66 +376,33 @@ class Parameter
     public mixed $example;
 
     /**
-     * When this is `true`, parameter values of type `array` or `object` generate separate
-     * parameters for each value of the array or key-value pair of the map. For other
-     * types of parameters this field has no effect. When `style` is `"form"`, the
-     * default value is `true`. For all other styles, the default value is `false`.
-     * Note that despite `false` being the default for `deepObject`, the
-     * combination of false with `deepObject` is undefined.
+     * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public static function style($value, $context): ?string
-    {
-        if (!$value && isset($context[self::in])) {
-            return match ($context[self::in]) {
-                'query', 'cookie' => 'form',
-                'path', 'header' => 'simple',
-                default => null,
-            };
-        }
-
-        return is_string($value)
-            ? $value
-            : null;
-    }
-
-    /**
-     * Describes how the parameter value will be serialized depending on the
-     * type of the parameter value. Default values (based on value of `in`):
-     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
-     * - `"simple"`; for `"cookie"` - `"form"`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public static function explode($value, $context): bool
-    {
-        if (empty($value) && !is_bool($value) && isset($context[self::style])) {
-            return $context[self::style] === 'form';
-        }
-
-        return is_bool($value)
-            ? $value
-            : false;
-    }
-
-    /**
-     * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
-     * be `true`. Otherwise, the field ***MAY*** be included and its default
-     * value is `false`.
+     * @var array<string, Example|Reference> $examples
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
-    public static function required($value, $context): bool
-    {
-        if (!$value && isset($context[self::in]) && $context[self::in] === 'path') {
-            throw new InvalidInValueException('Property $required Should be true when $in is "path"');
-        }
+    #[Describe(['cast' => [self::class, 'examples']])]
+    public ?array $examples;
 
-        return empty($value)
-            ? false
-            : $value;
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @return ?array<string, Example|Reference>
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
+    public static function examples($value, array $context): ?array
+    {
+        return isset($context[self::examples])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Example::from($value),
+                $value
+            )
+            : null;
     }
 }
