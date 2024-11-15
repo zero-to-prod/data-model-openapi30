@@ -195,3 +195,13 @@ A metadata object that allows for more fine-tuned XML model definitions.
 | attribute | `boolean` | :white_check_mark: |
 | wrapped   | `boolean` | :white_check_mark: |
 
+### [4.7.19 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
+
+An object grouping an internal or external example value with basic summary and description metadata.
+
+| Field         | Type     | Status              |
+|---------------|----------|---------------------|
+| summary       | `string` | :white_check_mark:  |
+| description   | `string` | :white_check_mark:  |
+| value         | Any      | :white_check_mark:  |
+| externalValue | `string` | :white_check_mark:  |
