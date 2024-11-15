@@ -166,8 +166,8 @@ The Schema Object allows the definition of input and output data types.
 |---------------|---------------------------------|--------------------|
 | nullable      | `boolean`                       | :white_check_mark: |
 | discriminator | `Discriminator Object`          | :white_check_mark: |
-| readOnly      | `boolean`                       |                    |
-| writeOnly     | `boolean`                       |                    |
+| readOnly      | `boolean`                       | :white_check_mark: |
+| writeOnly     | `boolean`                       | :white_check_mark: |
 | xml           | `XML Object`                    |                    |
 | externalDocs  | `External Documentation Object` |                    |
 | example       | Any                             | :white_check_mark: |
@@ -178,7 +178,7 @@ The Schema Object allows the definition of input and output data types.
 When request bodies or response payloads may be one of a number of different schemas,
 a Discriminator Object gives a hint about the expected schema of the document.
 
-| Field        | Type                    | Status              |
-|--------------|-------------------------|---------------------|
-| propertyName | `string`                | :white_check_mark:  |
-| mapping      | Map[`string`, `string`] | :white_check_mark:  |
+| Field        | Type                    | Status             |
+|--------------|-------------------------|--------------------|
+| propertyName | `string`                | :white_check_mark: |
+| mapping      | Map[`string`, `string`] | :white_check_mark: |

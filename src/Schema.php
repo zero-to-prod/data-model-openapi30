@@ -44,6 +44,34 @@ class Schema
     public const discriminator = 'discriminator';
 
     /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “read only”. This means that it **MAY** be sent as part
+     * of a response but **SHOULD NOT** be sent as part of the request.
+     * If the property is marked as `readOnly` being `true` and is in
+     * the `required` list, the `required` will take effect on the
+     * response only. A property **MUST NOT** be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const readOnly = 'readOnly';
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “write only”. Therefore, it **MAY** be sent as part of a
+     * request but **SHOULD NOT** be sent as part of the response. If the
+     * property is marked as `writeOnly` being `true` and is in the
+     * `required` list, the `required` will take effect on the
+     * request only. A property **MUST NOT** be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const writeOnly = 'writeOnly';
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -65,4 +93,56 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public ?Discriminator $discriminator;
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “read only”. This means that it **MAY** be sent as part
+     * of a response but **SHOULD NOT** be sent as part of the request.
+     * If the property is marked as `readOnly` being `true` and is in
+     * the `required` list, the `required` will take effect on the
+     * response only. A property **MUST NOT** be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['cast' => [self::class, 'readOnly']])]
+    public bool $readOnly;
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “write only”. Therefore, it **MAY** be sent as part of a
+     * request but **SHOULD NOT** be sent as part of the response. If the
+     * property is marked as `writeOnly` being `true` and is in the
+     * `required` list, the `required` will take effect on the
+     * request only. A property **MUST NOT** be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['cast' => [self::class, 'writeOnly']])]
+    public bool $writeOnly;
+
+    public static function readOnly($value, array $context): bool
+    {
+        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
+            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
+        }
+
+        return isset($context[self::readOnly])
+            ? $value
+            : false;
+    }
+
+    public static function writeOnly($value, array $context): bool
+    {
+        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
+            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
+        }
+
+        return isset($context[self::writeOnly])
+            ? $value
+            : false;
+    }
 }
