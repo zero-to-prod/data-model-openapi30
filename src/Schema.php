@@ -72,6 +72,15 @@ class Schema
     public const writeOnly = 'writeOnly';
 
     /**
+     * This **MAY** be used only on property schemas. It has no effect on
+     * root schemas. Adds additional metadata to describe the XML
+     * representation of this property.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const xml = 'xml';
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -123,6 +132,16 @@ class Schema
      */
     #[Describe(['cast' => [self::class, 'writeOnly']])]
     public bool $writeOnly;
+
+    /**
+     * This **MAY** be used only on property schemas. It has no effect on
+     * root schemas. Adds additional metadata to describe the XML
+     * representation of this property.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Xml $xml;
 
     public static function readOnly($value, array $context): bool
     {

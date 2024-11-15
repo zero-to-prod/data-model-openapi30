@@ -168,7 +168,7 @@ The Schema Object allows the definition of input and output data types.
 | discriminator | `Discriminator Object`          | :white_check_mark: |
 | readOnly      | `boolean`                       | :white_check_mark: |
 | writeOnly     | `boolean`                       | :white_check_mark: |
-| xml           | `XML Object`                    |                    |
+| xml           | `XML Object`                    | :white_check_mark: |
 | externalDocs  | `External Documentation Object` |                    |
 | example       | Any                             | :white_check_mark: |
 | deprecated    | `boolean`                       |                    |
