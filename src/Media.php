@@ -32,12 +32,27 @@ class Media
     public const schema = 'schema';
 
     /**
+     * Example of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public const example = 'example';
+
+    /**
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      */
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
+
+    /**
+     * The schema defining the content of the request, response, parameter, or header.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $example;
 
     public static function schema($value, array $context): Schema|Reference|null
     {
