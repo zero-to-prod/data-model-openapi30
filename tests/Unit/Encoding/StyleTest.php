@@ -15,7 +15,7 @@ class StyleTest extends TestCase
 
         self::assertNull(
             actual: $Encoding->style,
-            message: 'Describes how a specific property value will be serialized depending on its type. See Parameter Object for details on the style field. The behavior follows the same values as query parameters, including default values. Note that the initial ? used in query strings is not used in application/x-www-form-urlencoded message bodies, and MUST be removed (if using an RFC6570 implementation) or simply not added (if constructing the string manually). This field SHALL be ignored if the request body media type is not application/x-www-form-urlencoded.'
+            message: 'Describes how a specific property value will be serialized depending on its type. See Parameter Object for details on the style field. The behavior follows the same values as query parameters, including default values. Note that the initial ? used in query strings is not used in application/x-www-form-urlencoded message bodies, and MUST be removed (if using an RFC6570 implementation) or simply not added (if constructing the string manually). This field _SHALL_ be ignored if the request body media type is not application/x-www-form-urlencoded.'
         );
     }
 
@@ -29,7 +29,7 @@ class StyleTest extends TestCase
         self::assertEquals(
             expected: 'simple',
             actual: $Encoding->style,
-            message: 'Describes how a specific property value will be serialized depending on its type. See Parameter Object for details on the style field. The behavior follows the same values as query parameters, including default values. Note that the initial ? used in query strings is not used in application/x-www-form-urlencoded message bodies, and MUST be removed (if using an RFC6570 implementation) or simply not added (if constructing the string manually). This field SHALL be ignored if the request body media type is not application/x-www-form-urlencoded.'
+            message: 'Describes how a specific property value will be serialized depending on its type. See Parameter Object for details on the style field. The behavior follows the same values as query parameters, including default values. Note that the initial ? used in query strings is not used in application/x-www-form-urlencoded message bodies, and MUST be removed (if using an RFC6570 implementation) or simply not added (if constructing the string manually). This field _SHALL_ be ignored if the request body media type is not application/x-www-form-urlencoded.'
         );
     }
 }

@@ -37,8 +37,8 @@ class Encoding
 
     /**
      * A map allowing additional information to be provided as headers.
-     * `Content-Type` is described separately and **SHALL** be ignored
-     * in this section. This field **SHALL** be ignored if the request
+     * `Content-Type` is described separately and _SHALL_ be ignored
+     * in this section. This field _SHALL_ be ignored if the request
      * body media type is not a multipart.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
@@ -53,7 +53,7 @@ class Encoding
      * `application/x-www-form-urlencoded` message bodies, and
      * _MUST_ be removed (if using an RFC6570 implementation)
      * or simply not added (if constructing the string
-     * manually). This field **SHALL** be ignored if
+     * manually). This field _SHALL_ be ignored if
      * the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
@@ -68,7 +68,7 @@ class Encoding
      * default value is `true`. For all other styles, the default value is `false`.
      * Note that despite `false` being the default for `deepObject`, the
      * combination of `false` with `deepObject` is undefined. This field
-     * **SHALL** be ignored if the request body media type is not
+     * _SHALL_ be ignored if the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
@@ -86,7 +86,7 @@ class Encoding
      * string (`[`, `]`, `#`), or have a special meaning in
      * `application/x-www-form-urlencoded` (`-`, `&`, `+`);
      * see Appendices C and E for details. The default
-     * value is `false`. This field **SHALL** be
+     * value is `false`. This field _SHALL_ be
      * ignored if the request body media type is
      * not `application/x-www-form-urlencoded`.
      *
@@ -108,8 +108,8 @@ class Encoding
 
     /**
      * A map allowing additional information to be provided as headers.
-     * `Content-Type` is described separately and **SHALL** be ignored
-     * in this section. This field **SHALL** be ignored if the request
+     * `Content-Type` is described separately and _SHALL_ be ignored
+     * in this section. This field _SHALL_ be ignored if the request
      * body media type is not a multipart.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
@@ -136,7 +136,7 @@ class Encoding
      * `application/x-www-form-urlencoded` message bodies, and
      * _MUST_ be removed (if using an RFC6570 implementation)
      * or simply not added (if constructing the string
-     * manually). This field **SHALL** be ignored if
+     * manually). This field _SHALL_ be ignored if
      * the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
@@ -152,7 +152,7 @@ class Encoding
      * default value is `true`. For all other styles, the default value is `false`.
      * Note that despite `false` being the default for `deepObject`, the
      * combination of `false` with `deepObject` is undefined. This field
-     * **SHALL** be ignored if the request body media type is not
+     * _SHALL_ be ignored if the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
@@ -171,7 +171,7 @@ class Encoding
      * string (`[`, `]`, `#`), or have a special meaning in
      * `application/x-www-form-urlencoded` (`-`, `&`, `+`);
      * see Appendices C and E for details. The default
-     * value is `false`. This field **SHALL** be
+     * value is `false`. This field _SHALL_ be
      * ignored if the request body media type is
      * not `application/x-www-form-urlencoded`.
      *

@@ -45,7 +45,7 @@ class Header
     public const required = 'required';
 
     /**
-     * Specifies that the header is deprecated and SHOULD be transitioned out of
+     * Specifies that the header is deprecated and _SHOULD_ be transitioned out of
      * usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1

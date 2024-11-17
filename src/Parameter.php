@@ -35,7 +35,7 @@ class Parameter
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
-     * `"Authorization"`, the parameter definition ***SHALL*** be ignored.
+     * `"Authorization"`, the parameter definition _SHALL_ be ignored.
      * - For all other cases, the `name` corresponds to the parameter name used
      * by the `in` field.
      *
@@ -76,7 +76,7 @@ class Parameter
     public const required = 'required';
 
     /**
-     * Specifies that a parameter is deprecated and ***SHOULD*** be transitioned
+     * Specifies that a parameter is deprecated and ***_SHOULD_*** be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -86,10 +86,10 @@ class Parameter
     /**
      * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
-     * server ***SHOULD*** interpret as the parameter being unused.
+     * server ***_SHOULD_*** interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
      * is n/a (cannot be serialized), the value of `allowEmptyValue`
-     * ***SHALL*** be ignored. Interactions between this field
+     * _SHALL_ be ignored. Interactions between this field
      * and the parameter’s Schema Object are implementation-defined.
      * This field is valid only for query parameters. Use of
      * this field is ***NOT _RECOMMENDED_***, and it is likely
@@ -169,7 +169,7 @@ class Parameter
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
-     * `"Authorization"`, the parameter definition ***SHALL*** be ignored.
+     * `"Authorization"`, the parameter definition _SHALL_ be ignored.
      * - For all other cases, the `name` corresponds to the parameter name used
      * by the `in` field.
      *
@@ -234,7 +234,7 @@ class Parameter
     }
 
     /**
-     * Specifies that a parameter is deprecated and ***SHOULD*** be transitioned
+     * Specifies that a parameter is deprecated and ***_SHOULD_*** be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -245,10 +245,10 @@ class Parameter
     /**
      * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
-     * server ***SHOULD*** interpret as the parameter being unused.
+     * server ***_SHOULD_*** interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
      * is n/a (cannot be serialized), the value of `allowEmptyValue`
-     * ***SHALL*** be ignored. Interactions between this field
+     * _SHALL_ be ignored. Interactions between this field
      * and the parameter’s Schema Object are implementation-defined.
      * This field is valid only for query parameters. Use of
      * this field is ***NOT _RECOMMENDED_***, and it is likely

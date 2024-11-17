@@ -19,7 +19,7 @@ class DeprecatedTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->deprecated,
-            message: 'Specifies that a parameter is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a parameter is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -34,7 +34,7 @@ class DeprecatedTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->deprecated,
-            message: 'Specifies that a parameter is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a parameter is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -49,7 +49,7 @@ class DeprecatedTest extends TestCase
 
         self::assertTrue(
             condition: $Parameter->deprecated,
-            message: 'Specifies that a parameter is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a parameter is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 }

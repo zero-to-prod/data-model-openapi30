@@ -46,7 +46,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **SHOULD NOT** be sent as part of the request.
+     * of a response but **_SHOULD_ NOT** be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property **MUST NOT** be marked as both
@@ -60,7 +60,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **SHOULD NOT** be sent as part of the response. If the
+     * request but **_SHOULD_ NOT** be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
      * request only. A property **MUST NOT** be marked as both
@@ -88,7 +88,7 @@ class Schema
     public const externalDocs = 'externalDocs';
 
     /**
-     * Specifies that a schema is deprecated and **SHOULD** be transitioned
+     * Specifies that a schema is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
@@ -131,7 +131,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **SHOULD NOT** be sent as part of the request.
+     * of a response but **_SHOULD_ NOT** be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property **MUST NOT** be marked as both
@@ -146,7 +146,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **SHOULD NOT** be sent as part of the response. If the
+     * request but **_SHOULD_ NOT** be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
      * request only. A property **MUST NOT** be marked as both
@@ -177,7 +177,7 @@ class Schema
     public ?ExternalDocumentation $externalDocs;
 
     /**
-     * Specifies that a schema is deprecated and **SHOULD** be transitioned
+     * Specifies that a schema is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20

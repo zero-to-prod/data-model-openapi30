@@ -21,14 +21,14 @@ class Reference
     use DataModel;
 
     /**
-     * **REQUIRED*. The reference string.
+     * **REQUIRED**. The reference string.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
      */
     public const ref = '$ref';
 
     /**
-     * **REQUIRED*. The reference string.
+     * **REQUIRED**. The reference string.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
      */

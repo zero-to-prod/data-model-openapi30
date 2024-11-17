@@ -16,7 +16,7 @@ class ExplodeTest extends TestCase
 
         self::assertFalse(
             condition: $Encoding->explode,
-            message: 'Specifies that the header is explode and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that the header is explode and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -29,7 +29,7 @@ class ExplodeTest extends TestCase
 
         self::assertFalse(
             condition: $Encoding->explode,
-            message: 'Specifies that the header is explode and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that the header is explode and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -42,7 +42,7 @@ class ExplodeTest extends TestCase
 
         self::assertTrue(
             condition: $Encoding->explode,
-            message: 'Specifies that the header is explode and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that the header is explode and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 }

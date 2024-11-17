@@ -17,16 +17,16 @@ class ServerVariable
 
     /**
      * An enumeration of string values to be used if the substitution
-     * options are from a limited set. The array ***SHOULD*** NOT be empty.
+     * options are from a limited set. The array ***_SHOULD_*** NOT be empty.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      */
     public const enum = 'enum';
 
     /**
-     * **REQUIRED**. The default value to use for substitution, which ***SHALL***
+     * **REQUIRED**. The default value to use for substitution, which _SHALL_
      * be sent if an alternate value is not supplied. If the enum is
-     * defined, the value ***SHOULD*** exist in the enum’s values. Note
+     * defined, the value ***_SHOULD_*** exist in the enum’s values. Note
      * that this behavior is different from the Schema Object’s
      * default keyword, which documents the receiver’s behavior
      * rather than inserting the value into the data.
@@ -46,7 +46,7 @@ class ServerVariable
 
     /**
      * An enumeration of string values to be used if the substitution
-     * options are from a limited set. The array ***SHOULD*** NOT be empty.
+     * options are from a limited set. The array ***_SHOULD_*** NOT be empty.
      *
      * @var string[]
      *
@@ -56,9 +56,9 @@ class ServerVariable
     public ?array $enum;
 
     /**
-     * **REQUIRED**. The default value to use for substitution, which ***SHALL***
+     * **REQUIRED**. The default value to use for substitution, which _SHALL_
      * be sent if an alternate value is not supplied. If the enum is
-     * defined, the value ***SHOULD*** exist in the enum’s values. Note
+     * defined, the value ***_SHOULD_*** exist in the enum’s values. Note
      * that this behavior is different from the Schema Object’s
      * default keyword, which documents the receiver’s behavior
      * rather than inserting the value into the data.

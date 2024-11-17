@@ -17,7 +17,7 @@ class NameTest extends TestCase
      *  occurring within the path field in the Paths Object. See Path Templating
      *  for further information.
      *  - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
-     *  `"Authorization"`, the parameter definition ***SHALL*** be ignored.
+     *  `"Authorization"`, the parameter definition _SHALL_ be ignored.
      *  - For all other cases, the `name` corresponds to the parameter name used
      *  by the `in` field.
      *
@@ -40,7 +40,7 @@ class NameTest extends TestCase
      *  occurring within the path field in the Paths Object. See Path Templating
      *  for further information.
      *  - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
-     *  `"Authorization"`, the parameter definition ***SHALL*** be ignored.
+     *  `"Authorization"`, the parameter definition _SHALL_ be ignored.
      *  - For all other cases, the `name` corresponds to the parameter name used
      *  by the `in` field.
      *

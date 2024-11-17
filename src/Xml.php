@@ -9,7 +9,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * A metadata object that allows for more fine-tuned XML model definitions.
  *
  * When using arrays, XML element names are not inferred (for singular/plural
- * forms) and the name field **SHOULD** be used to add that information.
+ * forms) and the name field _SHOULD_ be used to add that information.
  * See examples for expected behavior.
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#xml-object

@@ -20,7 +20,7 @@ class EnumTest extends TestCase
         self::assertEquals(
             expected: 'default',
             actual: $ServerVariable->enum[0],
-            message: 'An enumeration of string values to be used if the substitution options are from a limited set. The array SHOULD NOT be empty.'
+            message: 'An enumeration of string values to be used if the substitution options are from a limited set. The array _SHOULD_ NOT be empty.'
         );
     }
 
@@ -33,7 +33,7 @@ class EnumTest extends TestCase
 
         self::assertNull(
             actual: $ServerVariable->enum,
-            message: 'An enumeration of string values to be used if the substitution options are from a limited set. The array SHOULD NOT be empty.'
+            message: 'An enumeration of string values to be used if the substitution options are from a limited set. The array _SHOULD_ NOT be empty.'
         );
     }
 }

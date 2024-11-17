@@ -16,7 +16,7 @@ class DeprecatedTest extends TestCase
 
         self::assertFalse(
             condition: $Schema->deprecated,
-            message: 'Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a schema is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -29,7 +29,7 @@ class DeprecatedTest extends TestCase
 
         self::assertFalse(
             condition: $Schema->deprecated,
-            message: 'Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a schema is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 
@@ -42,7 +42,7 @@ class DeprecatedTest extends TestCase
 
         self::assertTrue(
             condition: $Schema->deprecated,
-            message: 'Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.'
+            message: 'Specifies that a schema is deprecated and _SHOULD_ be transitioned out of usage. Default value is false.'
         );
     }
 }
