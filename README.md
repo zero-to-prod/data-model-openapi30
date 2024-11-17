@@ -107,20 +107,20 @@ Describes the operations available on a single path.
 
 Describes a single API operation on a path.
 
-| Field        | Type                                                   | Status |
-|--------------|--------------------------------------------------------|--------|
-| tags         | [`string`]                                             |        |
-| summary      | `string`                                               |        |
-| description  | `string`                                               |        |
-| externalDocs | `External Documentation Object`                        |        |
-| operationId  | `string`                                               |        |
-| parameters   | [`Parameter Object` \| `Reference Object`]             |        |
-| requestBody  | `Request Body Object` \| `Reference Object`            |        |
-| responses    | `Responses Object`                                     |        |
-| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`] |        |
-| deprecated   | `boolean`                                              |        |
-| security     | [`Security Requirement Object`]                        |        |
-| servers      | `Server Object`                                        |        |
+| Field        | Type                                                   | Status             |
+|--------------|--------------------------------------------------------|--------------------|
+| tags         | [`string`]                                             | :white_check_mark: |
+| summary      | `string`                                               | :white_check_mark: |
+| description  | `string`                                               | :white_check_mark: |
+| externalDocs | `External Documentation Object`                        | :white_check_mark: |
+| operationId  | `string`                                               | :white_check_mark: |
+| parameters   | [`Parameter Object` \| `Reference Object`]             |                    |
+| requestBody  | `Request Body Object` \| `Reference Object`            |                    |
+| responses    | `Responses Object`                                     |                    |
+| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`] |                    |
+| deprecated   | `boolean`                                              |                    |
+| security     | [`Security Requirement Object`]                        |                    |
+| servers      | `Server Object`                                        |                    |
 
 ### [4.7.6 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
 
