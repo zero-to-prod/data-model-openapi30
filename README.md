@@ -84,6 +84,7 @@ An object representing a Server Variable for server URL template substitution.
 | description | `string`   | :white_check_mark: |
 
 ### [4.7.7 Server Object](https://spec.openapis.org/oas/v3.0.4.html#components-object)
+
 Holds a set of reusable objects for different aspects of the OAS.
 
 ### [4.7.9 Path Item Object](https://spec.openapis.org/oas/v3.0.4.html#path-item-object)
@@ -158,12 +159,12 @@ Describes a single operation parameter.
 
 Each Media Type Object provides schema and examples for the media type identified by its key.
 
-| Field    | Type                                                   | Status |
-|----------|--------------------------------------------------------|--------|
-| schema   | `Schema Object` \| `Reference Object`                  |        |
-| example  | Any                                                    |        |
-| examples | Map[ `string`, `Example Object` \| `Reference Object`] |        |
-| encoding | Map[`string`, `Encoding Object`]                       |        |
+| Field    | Type                                                   | Status             |
+|----------|--------------------------------------------------------|--------------------|
+| schema   | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
+| example  | Any                                                    | :white_check_mark: |
+| examples | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
+| encoding | Map[`string`, `Encoding Object`]                       | :white_check_mark: |
 
 ### [4.7.15 Encoding Object](https://spec.openapis.org/oas/v3.0.4.html#encoding-object)
 
