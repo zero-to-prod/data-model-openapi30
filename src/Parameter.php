@@ -163,6 +163,15 @@ class Parameter
     public const examples = 'examples';
 
     /**
+     * A map containing the representations for the parameter. The key is the
+     * media type and the value describes it. The map _MUST_ only contain one
+     * entry.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     */
+    public const content = 'content';
+
+    /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
      * - If `in` is `"path"`, the name field _MUST_ correspond to a template expression
@@ -405,4 +414,19 @@ class Parameter
             )
             : null;
     }
+
+    /**
+     * A map containing the representations for the parameter. The key is the
+     * media type and the value describes it. The map _MUST_ only contain one
+     * entry.
+     *
+     * @var array<string, Media> $content
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => Media::class,
+    ])]
+    public ?array $content;
 }

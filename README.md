@@ -153,7 +153,7 @@ Describes a single operation parameter.
 | schema          | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
 | example         | Any                                                    | :white_check_mark: |
 | examples        | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
-| content         | Map[string, Media Type Object]                         |                    |
+| content         | Map[string, Media Type Object]                         | :white_check_mark: |
 
 ### [4.7.14 Media Type Object](https://spec.openapis.org/oas/v3.0.4.html#media-type-object)
 
@@ -168,7 +168,7 @@ Each Media Type Object provides schema and examples for the media type identifie
 
 ### [4.7.15 Encoding Object](https://spec.openapis.org/oas/v3.0.4.html#encoding-object)
 
-A single encoding definition applied to a single schema property..
+A single encoding definition applied to a single schema property.
 
 | Field         | Type                                                 | Status             |
 |---------------|------------------------------------------------------|--------------------|
