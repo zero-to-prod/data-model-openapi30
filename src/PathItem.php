@@ -6,7 +6,7 @@ use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
- * Describes the operations available on a single path. A Path Item ***MAY***
+ * Describes the operations available on a single path. A Path Item _MAY_
  * be empty, due to ACL constraints. The path itself is still exposed
  * to the documentation viewer but they will not know which
  * operations and parameters are available.
@@ -19,7 +19,7 @@ class PathItem
 
     /**
      * Allows for a referenced definition of this path item. The value
-     * ***MUST*** be in the form of a URL, and the referenced structure ***MUST***
+     * _MUST_ be in the form of a URL, and the referenced structure _MUST_
      * be in the form of a Path Item Object. In case a Path Item
      * Object field appears both in the defined object and the
      * referenced object, the behavior is undefined. See the
@@ -41,7 +41,7 @@ class PathItem
 
     /**
      * An optional string description, intended to apply to all operations
-     * in this path. [CommonMark] syntax ***MAY*** be used for rich text
+     * in this path. [CommonMark] syntax _MAY_ be used for rich text
      * representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
@@ -51,7 +51,7 @@ class PathItem
 
     /**
      * Allows for a referenced definition of this path item. The value
-     * ***MUST*** be in the form of a URL, and the referenced structure ***MUST***
+     * _MUST_ be in the form of a URL, and the referenced structure _MUST_
      * be in the form of a Path Item Object. In case a Path Item
      * Object field appears both in the defined object and the
      * referenced object, the behavior is undefined. See the
@@ -78,7 +78,7 @@ class PathItem
 
     /**
      * An optional string description, intended to apply to all operations
-     * in this path. [CommonMark] syntax ***MAY*** be used for rich text
+     * in this path. [CommonMark] syntax _MAY_ be used for rich text
      * representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6

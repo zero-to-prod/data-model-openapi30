@@ -12,7 +12,7 @@ class InfoTest extends TestCase
 
     /**
      * **REQUIRED**. Provides metadata about the API. The metadata
-     * **MAY** be used by tooling as required.
+     * _MAY_ be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */

@@ -18,7 +18,7 @@ class XmlTest extends TestCase
 
         self::assertNull(
             actual: $Schema->xml,
-            message: 'This MAY be used only on property schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.'
+            message: 'This _MAY_ be used only on property schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.'
         );
     }
 
@@ -34,7 +34,7 @@ class XmlTest extends TestCase
         self::assertEquals(
             expected: 'attribute',
             actual: $Schema->xml->attribute,
-            message: 'This MAY be used only on property schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.'
+            message: 'This _MAY_ be used only on property schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.'
         );
     }
 }

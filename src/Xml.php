@@ -32,7 +32,7 @@ class Xml
     public const name = 'name';
 
     /**
-     * The URI of the namespace definition. Value **MUST** be in the form of a non-relative URI.
+     * The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */
@@ -54,7 +54,7 @@ class Xml
     public const attribute = 'attribute';
 
     /**
-     * **MAY** be used only for an array definition. Signifies whether the
+     * _MAY_ be used only for an array definition. Signifies whether the
      * array is wrapped (for example, `<books><book/><book/></books>`) or
      * unwrapped (`<book/><book/>`). Default value is `false`. The
      * definition takes effect only when defined alongside `type`
@@ -79,7 +79,7 @@ class Xml
     public ?string $name;
 
     /**
-     * The URI of the namespace definition. Value **MUST** be in the form of a non-relative URI.
+     * The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */
@@ -107,7 +107,7 @@ class Xml
     public bool $attribute;
 
     /**
-     * **MAY** be used only for an array definition. Signifies whether the
+     * _MAY_ be used only for an array definition. Signifies whether the
      * array is wrapped (for example, `<books><book/><book/></books>`) or
      * unwrapped (`<book/><book/>`). Default value is `false`. The
      * definition takes effect only when defined alongside `type`

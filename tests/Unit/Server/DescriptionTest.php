@@ -18,7 +18,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $Server->description,
-            message: 'An optional string describing the host designated by the URL. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'An optional string describing the host designated by the URL. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -33,7 +33,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $Server->description,
-            message: 'An optional string describing the host designated by the URL. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'An optional string describing the host designated by the URL. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

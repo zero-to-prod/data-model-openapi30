@@ -13,7 +13,7 @@ class OpenapiTest extends TestCase
 {
 
     /**
-     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
+     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -31,7 +31,7 @@ class OpenapiTest extends TestCase
     }
 
     /**
-     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
+     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -49,7 +49,7 @@ class OpenapiTest extends TestCase
     }
 
     /**
-     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
+     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -82,7 +82,7 @@ class OpenapiTest extends TestCase
     }
 
     /**
-     * This string ***MUST*** be the version number of the OpenAPI
+     * This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -97,7 +97,7 @@ class OpenapiTest extends TestCase
     }
 
     /**
-     * This string ***MUST*** be the version number of the OpenAPI
+     * This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields

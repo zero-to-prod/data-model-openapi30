@@ -45,7 +45,7 @@ class Schema
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “read only”. This means that it **MAY** be sent as part
+     * property as “read only”. This means that it _MAY_ be sent as part
      * of a response but **SHOULD NOT** be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
@@ -59,7 +59,7 @@ class Schema
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “write only”. Therefore, it **MAY** be sent as part of a
+     * property as “write only”. Therefore, it _MAY_ be sent as part of a
      * request but **SHOULD NOT** be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
@@ -72,7 +72,7 @@ class Schema
     public const writeOnly = 'writeOnly';
 
     /**
-     * This **MAY** be used only on property schemas. It has no effect on
+     * This _MAY_ be used only on property schemas. It has no effect on
      * root schemas. Adds additional metadata to describe the XML
      * representation of this property.
      *
@@ -130,7 +130,7 @@ class Schema
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “read only”. This means that it **MAY** be sent as part
+     * property as “read only”. This means that it _MAY_ be sent as part
      * of a response but **SHOULD NOT** be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
@@ -145,7 +145,7 @@ class Schema
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “write only”. Therefore, it **MAY** be sent as part of a
+     * property as “write only”. Therefore, it _MAY_ be sent as part of a
      * request but **SHOULD NOT** be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
@@ -159,7 +159,7 @@ class Schema
     public bool $writeOnly;
 
     /**
-     * This **MAY** be used only on property schemas. It has no effect on
+     * This _MAY_ be used only on property schemas. It has no effect on
      * root schemas. Adds additional metadata to describe the XML
      * representation of this property.
      *

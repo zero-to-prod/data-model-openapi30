@@ -11,7 +11,7 @@ class UrlTest extends TestCase
 {
 
     /**
-     * **REQUIRED**. A URL to the target host. This URL supports Server Variables and **MAY**
+     * **REQUIRED**. A URL to the target host. This URL supports Server Variables and _MAY_
      * be relative, to indicate that the host location is relative to the location where the
      * document containing the Server Object is being served. Variable substitutions will
      * be made when a variable is named in {braces}.
@@ -36,7 +36,7 @@ class UrlTest extends TestCase
         self::assertEquals(
             expected: '/relative/{id}',
             actual: $Server->url,
-            message: ' A URL to the target host. This URL supports Server Variables and MAY be relative, to indicate that the host location is relative to the location where the document containing the Server Object is being served. Variable substitutions will be made when a variable is named in {braces}.'
+            message: ' A URL to the target host. This URL supports Server Variables and _MAY_ be relative, to indicate that the host location is relative to the location where the document containing the Server Object is being served. Variable substitutions will be made when a variable is named in {braces}.'
         );
     }
 }

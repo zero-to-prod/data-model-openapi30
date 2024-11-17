@@ -20,7 +20,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $Info->description,
-            message: 'A description of the API. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A description of the API. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -36,7 +36,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $Info->description,
-            message: 'A description of the API. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A description of the API. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

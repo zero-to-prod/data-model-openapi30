@@ -16,7 +16,7 @@ class Server
 
     /**
      * **REQUIRED**. A URL to the target host. This URL supports Server Variables
-     * and ***MAY*** be relative, to indicate that the host location is relative
+     * and _MAY_ be relative, to indicate that the host location is relative
      * to the location where the document containing the Server Object is
      * being served. Variable substitutions will be made when a variable
      * is named in {braces}.
@@ -27,7 +27,7 @@ class Server
 
     /**
      * An optional string describing the host designated by the URL.
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @link https://spec.commonmark.org/
@@ -44,7 +44,7 @@ class Server
 
     /**
      * **REQUIRED**. A URL to the target host. This URL supports Server Variables
-     * and ***MAY*** be relative, to indicate that the host location is relative
+     * and _MAY_ be relative, to indicate that the host location is relative
      * to the location where the document containing the Server Object is
      * being served. Variable substitutions will be made when a variable
      * is named in {braces}.
@@ -56,7 +56,7 @@ class Server
 
     /**
      * An optional string describing the host designated by the URL.
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @link https://spec.commonmark.org/

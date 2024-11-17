@@ -18,9 +18,9 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  *
  * 1. `name` **MUST NOT** be specified, it is given in the corresponding `headers` map.
  * 2. `in` **MUST NOT** be specified, it is implicitly in `header`.
- * 3. All traits that are affected by the location **MUST** be applicable to a location
+ * 3. All traits that are affected by the location _MUST_ be applicable to a location
  * of `header` (for example, `style`). This means that `allowEmptyValue` and
- * `allowReserved` MUST NOT be used, and style, if used, **MUST** be limited
+ * `allowReserved` MUST NOT be used, and style, if used, _MUST_ be limited
  * to "simple".
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#reference-object
@@ -31,7 +31,7 @@ class Header
 
     /**
      * A brief description of the header. This could contain examples of use.
-     * [CommonMark] syntax MAY be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */
@@ -93,7 +93,7 @@ class Header
 
     /**
      * A brief description of the header. This could contain examples of use.
-     * [CommonMark] syntax MAY be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */

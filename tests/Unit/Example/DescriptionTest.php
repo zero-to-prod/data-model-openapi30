@@ -15,7 +15,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $Example->description,
-            message: 'Long description for the example. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'Long description for the example. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -29,7 +29,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $Example->description,
-            message: 'Long description for the example. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'Long description for the example. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

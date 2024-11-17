@@ -20,7 +20,7 @@ class RequiredTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field MAY be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
@@ -35,7 +35,7 @@ class RequiredTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field MAY be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
@@ -50,14 +50,14 @@ class RequiredTest extends TestCase
 
         self::assertTrue(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field MAY be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
      * location is "path", this field is REQUIRED and its value MUST
-     * be true. Otherwise, the field MAY be included and its default
+     * be true. Otherwise, the field _MAY_ be included and its default
      * value is false.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields

@@ -15,7 +15,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $Header->description,
-            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -29,7 +29,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $Header->description,
-            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A brief description of the header. This could contain examples of use. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

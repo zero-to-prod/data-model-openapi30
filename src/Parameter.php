@@ -14,7 +14,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * including interactions with the `application/x-www-form-urlencoded` query string format.
  *
  * The rules for serialization of the parameter are specified in one of two ways.
- * Parameter Objects *****MUST***** include either a `content` field or a `schema` field, but
+ * Parameter Objects ***_MUST_*** include either a `content` field or a `schema` field, but
  * not both. See Appendix B for a discussion of converting values of various
  * types to string representations.
  *
@@ -31,7 +31,7 @@ class Parameter
     /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
-     * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
+     * - If `in` is `"path"`, the name field _MUST_ correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
@@ -57,7 +57,7 @@ class Parameter
 
     /**
      * A brief description of the parameter. This could contain examples of use.
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
@@ -66,8 +66,8 @@ class Parameter
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
-     * be `true`. Otherwise, the field ***MAY*** be included and its default
+     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
+     * be `true`. Otherwise, the field _MAY_ be included and its default
      * value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -84,7 +84,7 @@ class Parameter
     public const deprecated = 'deprecated';
 
     /**
-     * If `true`, clients ***MAY*** pass a zero-length string value in place
+     * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
      * server ***SHOULD*** interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
@@ -92,7 +92,7 @@ class Parameter
      * ***SHALL*** be ignored. Interactions between this field
      * and the parameter’s Schema Object are implementation-defined.
      * This field is valid only for query parameters. Use of
-     * this field is ***NOT RECOMMENDED***, and it is likely
+     * this field is ***NOT _RECOMMENDED_***, and it is likely
      * to be removed in a later revision.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -165,7 +165,7 @@ class Parameter
     /**
      * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
      *
-     * - If `in` is `"path"`, the name field ***MUST*** correspond to a template expression
+     * - If `in` is `"path"`, the name field _MUST_ correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
      * for further information.
      * - If `in` is `"header"` and the name field is `"Accept"`, `"Content-Type"` or
@@ -193,7 +193,7 @@ class Parameter
 
     /**
      * A brief description of the parameter. This could contain examples of use.
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
@@ -203,8 +203,8 @@ class Parameter
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
-     * be `true`. Otherwise, the field ***MAY*** be included and its default
+     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
+     * be `true`. Otherwise, the field _MAY_ be included and its default
      * value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -215,8 +215,8 @@ class Parameter
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value *****MUST*****
-     * be `true`. Otherwise, the field ***MAY*** be included and its default
+     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
+     * be `true`. Otherwise, the field _MAY_ be included and its default
      * value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -243,7 +243,7 @@ class Parameter
     public bool $deprecated;
 
     /**
-     * If `true`, clients ***MAY*** pass a zero-length string value in place
+     * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
      * server ***SHOULD*** interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
@@ -251,7 +251,7 @@ class Parameter
      * ***SHALL*** be ignored. Interactions between this field
      * and the parameter’s Schema Object are implementation-defined.
      * This field is valid only for query parameters. Use of
-     * this field is ***NOT RECOMMENDED***, and it is likely
+     * this field is ***NOT _RECOMMENDED_***, and it is likely
      * to be removed in a later revision.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields

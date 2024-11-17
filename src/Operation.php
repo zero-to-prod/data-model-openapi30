@@ -32,10 +32,10 @@ class Operation
 
     /**
      * A verbose explanation of the operation behavior. [CommonMark]
-     * syntax ***MAY*** be used for rich text representation.
+     * syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
-     * @see https://spec.commonmark.org/
+     * @see  https://spec.commonmark.org/
      */
     public const description = 'description';
 
@@ -47,12 +47,11 @@ class Operation
     public const externalDocs = 'externalDocs';
 
     /**
-     * Unique string used to identify the operation. The id ***MUST*** be unique
-     * among all operations described in the API. The operationId value
-     * is case-sensitive. Tools and libraries ***MAY*** use the operationId
-     * to uniquely identify an operation, therefore, it is
-     * RECOMMENDED to follow common programming naming
-     * conventions.
+     * Unique string used to identify the operation. The id _MUST_ be unique
+     * among all operations described in the API. The `operationId` value is
+     * **case-sensitive**. Tools and libraries _MAY_ use the `operationId`
+     * to uniquely identify an operation, therefore, it is _RECOMMENDED_
+     * to follow common programming naming conventions.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
@@ -80,10 +79,10 @@ class Operation
 
     /**
      * A verbose explanation of the operation behavior. [CommonMark]
-     * syntax ***MAY*** be used for rich text representation.
+     * syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
-     * @see https://spec.commonmark.org/
+     * @see  https://spec.commonmark.org/
      */
     #[Describe(['missing_as_null'])]
     public ?string $description;
@@ -95,4 +94,16 @@ class Operation
      */
     #[Describe(['missing_as_null'])]
     public ?ExternalDocumentation $externalDocs;
+
+    /**
+     * Unique string used to identify the operation. The id _MUST_ be unique
+     * among all operations described in the API. The `operationId` value is
+     * **case-sensitive**. Tools and libraries _MAY_ use the `operationId`
+     * to uniquely identify an operation, therefore, it is _RECOMMENDED_
+     * to follow common programming naming conventions.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $operationId;
 }

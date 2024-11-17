@@ -13,7 +13,7 @@ class UrlTest extends TestCase
 
     /**
      * **REQUIRED*. The URL for the target documentation.
-     * This **MUST** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      */
@@ -28,7 +28,7 @@ class UrlTest extends TestCase
 
     /**
      * **REQUIRED*. The URL for the target documentation.
-     * This **MUST** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      */

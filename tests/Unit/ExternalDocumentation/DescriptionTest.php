@@ -18,7 +18,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             $ExternalDocumentation->description,
-            'A description of the target documentation. [CommonMark] syntax MAY be used for rich text representation.'
+            'A description of the target documentation. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -33,7 +33,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $ExternalDocumentation->description,
-            message: 'A description of the target documentation. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A description of the target documentation. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

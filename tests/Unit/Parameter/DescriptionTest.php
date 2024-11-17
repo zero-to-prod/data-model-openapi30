@@ -18,7 +18,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $Parameter->description,
-            message: 'A brief description of the parameter. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A brief description of the parameter. This could contain examples of use. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -34,7 +34,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $Parameter->description,
-            message: 'A brief description of the parameter. This could contain examples of use. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'A brief description of the parameter. This could contain examples of use. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

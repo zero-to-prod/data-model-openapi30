@@ -23,7 +23,7 @@ class Contact
 
     /**
      * The URL for the contact information.
-     * This ***MUST*** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
@@ -47,7 +47,7 @@ class Contact
 
     /**
      * The URL for the contact information.
-     * This ***MUST*** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */

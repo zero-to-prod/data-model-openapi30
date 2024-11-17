@@ -29,7 +29,7 @@ class Example
     public const summary = 'summary';
 
     /**
-     * Long description for the example. [CommonMark] syntax **MAY** be
+     * Long description for the example. [CommonMark] syntax _MAY_ be
      * used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
@@ -65,7 +65,7 @@ class Example
     public ?string $summary;
 
     /**
-     * Long description for the example. [CommonMark] syntax **MAY** be
+     * Long description for the example. [CommonMark] syntax _MAY_ be
      *  used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15

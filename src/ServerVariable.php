@@ -37,7 +37,7 @@ class ServerVariable
 
     /**
      * An optional description for the server variable. [CommonMark]
-     * syntax ***MAY*** be used for rich text representation.
+     * syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  https://spec.commonmark.org/
@@ -73,7 +73,7 @@ class ServerVariable
 
     /**
      * An optional description for the server variable. [CommonMark]
-     * syntax ***MAY*** be used for rich text representation.
+     * syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  https://spec.commonmark.org/

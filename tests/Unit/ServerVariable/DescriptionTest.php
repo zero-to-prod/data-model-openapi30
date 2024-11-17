@@ -18,7 +18,7 @@ class DescriptionTest extends TestCase
 
         self::assertNull(
             actual: $ServerVariable->description,
-            message: 'An optional description for the server variable. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'An optional description for the server variable. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 
@@ -34,7 +34,7 @@ class DescriptionTest extends TestCase
         self::assertEquals(
             expected: 'description',
             actual: $ServerVariable->description,
-            message: 'An optional description for the server variable. [CommonMark] syntax MAY be used for rich text representation.'
+            message: 'An optional description for the server variable. [CommonMark] syntax _MAY_ be used for rich text representation.'
         );
     }
 }

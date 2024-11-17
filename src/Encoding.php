@@ -51,7 +51,7 @@ class Encoding
      * follows the same values as `query` parameters, including default values.
      * Note that the initial `?` used in query strings is not used in
      * `application/x-www-form-urlencoded` message bodies, and
-     * **MUST** be removed (if using an RFC6570 implementation)
+     * _MUST_ be removed (if using an RFC6570 implementation)
      * or simply not added (if constructing the string
      * manually). This field **SHALL** be ignored if
      * the request body media type is not
@@ -134,7 +134,7 @@ class Encoding
      * follows the same values as `query` parameters, including default values.
      * Note that the initial `?` used in query strings is not used in
      * `application/x-www-form-urlencoded` message bodies, and
-     * **MUST** be removed (if using an RFC6570 implementation)
+     * _MUST_ be removed (if using an RFC6570 implementation)
      * or simply not added (if constructing the string
      * manually). This field **SHALL** be ignored if
      * the request body media type is not

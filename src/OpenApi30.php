@@ -13,7 +13,7 @@ class OpenApi30
     use DataModel;
 
     /**
-     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
+     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -23,7 +23,7 @@ class OpenApi30
     public const openapi = 'openapi';
 
     /**
-     * **REQUIRED**. Provides metadata about the API. The metadata ***MAY***
+     * **REQUIRED**. Provides metadata about the API. The metadata _MAY_
      * be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -44,14 +44,14 @@ class OpenApi30
      * Holds the relative paths to the individual endpoints and their
      * operations. The path is appended to the URL from the Server
      * Object in order to construct the full URL. The Paths Object
-     * ***MAY*** be empty, due to Access Control List (ACL) constraints.
+     * _MAY_ be empty, due to Access Control List (ACL) constraints.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
      */
     public const paths = 'paths';
 
     /**
-     * **REQUIRED**. This string ***MUST*** be the version number of the OpenAPI
+     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
      * Specification that the OpenAPI Document uses. The openapi field
      * ***SHOULD*** be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
@@ -65,7 +65,7 @@ class OpenApi30
     public string $openapi;
 
     /**
-     * **REQUIRED**. Provides metadata about the API. The metadata ***MAY***
+     * **REQUIRED**. Provides metadata about the API. The metadata _MAY_
      * be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
@@ -93,7 +93,7 @@ class OpenApi30
      * Holds the relative paths to the individual endpoints and their
      * operations. The path is appended to the URL from the Server
      * Object in order to construct the full URL. The Paths Object
-     * ***MAY*** be empty, due to Access Control List (ACL) constraints.
+     * _MAY_ be empty, due to Access Control List (ACL) constraints.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
      */

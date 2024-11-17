@@ -6,8 +6,8 @@ use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
- * The object provides metadata about the API. The metadata ***MAY***
- * be used by the clients if needed, and ***MAY*** be presented in
+ * The object provides metadata about the API. The metadata _MAY_
+ * be used by the clients if needed, and _MAY_ be presented in
  * editing or documentation generation tools for convenience.
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#info-object
@@ -26,7 +26,7 @@ class Info
     /**
      * A description of the API.
      *
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      * @see  https://spec.commonmark.org/
@@ -35,7 +35,7 @@ class Info
 
     /**
      * A URL for the Terms of Service for the API.
-     * This ***MUST*** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
@@ -75,7 +75,7 @@ class Info
     /**
      * A description of the API.
      *
-     * [CommonMark] syntax ***MAY*** be used for rich text representation.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      * @see  https://spec.commonmark.org/
@@ -85,7 +85,7 @@ class Info
 
     /**
      * A URL for the Terms of Service for the API.
-     * This ***MUST*** be in the form of a URL.
+     * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
