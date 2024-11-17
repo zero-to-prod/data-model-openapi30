@@ -39,6 +39,13 @@ class Media
     public const example = 'example';
 
     /**
+     * Examples of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public const examples = 'examples';
+
+    /**
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
@@ -51,9 +58,6 @@ class Media
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      */
-    #[Describe(['missing_as_null'])]
-    public mixed $example;
-
     public static function schema($value, array $context): Schema|Reference|null
     {
         if (!isset($context[self::schema])) {
@@ -63,5 +67,38 @@ class Media
         return isset($value[Reference::ref])
             ? Reference::from($value)
             : Schema::from($value);
+    }
+
+    /**
+     * The schema defining the content of the request, response, parameter, or header.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $example;
+
+    /**
+     * Examples of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    #[Describe(['cast' => [self::class, 'examples']])]
+    public ?array $examples;
+
+    /**
+     * Examples of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public static function examples($value, array $context): ?array
+    {
+        return isset($context[self::examples])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Example::from($value),
+                $value
+            )
+            : null;
     }
 }
