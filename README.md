@@ -118,7 +118,7 @@ Describes a single API operation on a path.
 | description  | `string`                                               | :white_check_mark: |
 | externalDocs | `External Documentation Object`                        | :white_check_mark: |
 | operationId  | `string`                                               | :white_check_mark: |
-| parameters   | [`Parameter Object` \| `Reference Object`]             |                    |
+| parameters   | [`Parameter Object` \| `Reference Object`]             | :white_check_mark: |
 | requestBody  | `Request Body Object` \| `Reference Object`            |                    |
 | responses    | `Responses Object`                                     |                    |
 | callbacks    | Map[`string`, `Callback Object` \| `Reference Object`] |                    |

@@ -16,11 +16,11 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * determining its serialization strategy based on whether `schema` or
  * `content` is present, with the following changes:
  *
- * 1. `name` **MUST NOT** be specified, it is given in the corresponding `headers` map.
- * 2. `in` **MUST NOT** be specified, it is implicitly in `header`.
+ * 1. `name` _MUST NOT_ be specified, it is given in the corresponding `headers` map.
+ * 2. `in` _MUST NOT_ be specified, it is implicitly in `header`.
  * 3. All traits that are affected by the location _MUST_ be applicable to a location
  * of `header` (for example, `style`). This means that `allowEmptyValue` and
- * `allowReserved` MUST NOT be used, and style, if used, _MUST_ be limited
+ * `allowReserved` _MUST NOT_ be used, and style, if used, _MUST_ be limited
  * to "simple".
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#reference-object

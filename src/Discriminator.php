@@ -14,7 +14,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * possible values of a named property with alternative
  * schemas.
  *
- * Note that `discriminator` **MUST NOT** change the validation outcome of the schema.
+ * Note that `discriminator` _MUST NOT_ change the validation outcome of the schema.
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
  */
