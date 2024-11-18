@@ -102,6 +102,14 @@ class Operation
     public const callbacks = 'callbacks';
 
     /**
+     * Declares this operation to be deprecated. Consumers _SHOULD_ refrain
+     * from usage of the declared operation. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const deprecated = 'deprecated';
+
+    /**
      * A list of tags for API documentation control. Tags can be used
      * for logical grouping of operations by resources or any other
      * qualifier.
@@ -286,5 +294,14 @@ class Operation
             )
             : null;
     }
+
+    /**
+     * Declares this operation to be deprecated. Consumers _SHOULD_ refrain
+     * from usage of the declared operation. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['default' => false])]
+    public bool $deprecated;
 
 }
