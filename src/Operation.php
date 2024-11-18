@@ -110,6 +110,20 @@ class Operation
     public const deprecated = 'deprecated';
 
     /**
+     * A declaration of which security mechanisms can be used for this operation.
+     * The list of values includes alternative Security Requirement Objects that
+     * can be used. Only one of the Security Requirement Objects need to be
+     * satisfied to authorize a request. To make security optional, an
+     * empty security requirement (`{}`) can be included in the array.
+     * This definition overrides any declared top-level security.
+     * To remove a top-level `security` declaration, an empty
+     * array can be used.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const security = 'security';
+
+    /**
      * A list of tags for API documentation control. Tags can be used
      * for logical grouping of operations by resources or any other
      * qualifier.
@@ -303,5 +317,22 @@ class Operation
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
+
+    /**
+     * A declaration of which security mechanisms can be used for this operation.
+     * The list of values includes alternative Security Requirement Objects that
+     * can be used. Only one of the Security Requirement Objects need to be
+     * satisfied to authorize a request. To make security optional, an
+     * empty security requirement (`{}`) can be included in the array.
+     * This definition overrides any declared top-level security.
+     * To remove a top-level `security` declaration, an empty
+     * array can be used.
+     *
+     * @var array<string, string[]> $security
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['missing_as_null'])]
+    public ?array $security;
 
 }
