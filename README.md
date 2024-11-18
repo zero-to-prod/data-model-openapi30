@@ -14,74 +14,90 @@ DataModels for OpenAPI 3.0.*
 ./vendor/bin/phpunit
 ```
 
-## Validation
+# [4.0 Specification](https://spec.openapis.org/oas/v3.0.4.html#specification)
+
+## [4.7 Schema](https://spec.openapis.org/oas/v3.0.4.html#schema-0)
+
+This section describes the structure of the OpenAPI Description format
 
 ### [4.7.1 OpenAPI Object](https://spec.openapis.org/oas/v3.0.4.html#openapi-object)
 
 This is the root object of the OpenAPI Description.
 
-| Field        | Type                            | Status             |
-|--------------|---------------------------------|--------------------|
-| openapi      | `string`                        | :white_check_mark: |
-| info         | `Info Object`                   | :white_check_mark: |
-| servers      | `[Server Object]`               | :white_check_mark: |
-| paths        | `Paths Object`                  |                    |
-| components   | `Components Object`             |                    |
-| security     | `Security Requirement Object`   |                    |
-| tags         | `Tag Object`                    |                    |
-| externalDocs | `External Documentation Object` |                    |
+#### [4.7.1.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields)
+
+| Field Name   | Type                                  | Status             |
+|--------------|---------------------------------------|--------------------|
+| openapi      | [`string`](./src/OpenApi30.php)       | :white_check_mark: |
+| info         | [`Info Object`](./src/Info.php)       | :white_check_mark: |
+| servers      | [`[Server Object]`](./src/Server.php) | :white_check_mark: |
+| paths        | `Paths Object`                        |                    |
+| components   | `Components Object`                   |                    |
+| security     | `Security Requirement Object`         |                    |
+| tags         | `Tag Object`                          |                    |
+| externalDocs | `External Documentation Object`       |                    |
 
 ### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
 
 The object provides metadata about the API.
 
-| Field          | Type             | Status             |
-|----------------|------------------|--------------------|
-| title          | `string`         | :white_check_mark: |
-| description    | `string`         | :white_check_mark: |
-| termsOfService | `string`         | :white_check_mark: |
-| contact        | `Contact Object` | :white_check_mark: |
-| license        | `License Object` | :white_check_mark: |
-| version        | `string`         | :white_check_mark: |
+#### [4.7.2.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0)
+
+| Field Name     | Type                                  | Status             |
+|----------------|---------------------------------------|--------------------|
+| title          | [`string`](./src/Info.php)            | :white_check_mark: |
+| description    | [`string`](./src/Info.php)            | :white_check_mark: |
+| termsOfService | [`string`](./src/Info.php)            | :white_check_mark: |
+| contact        | [`Contact Object`](./src/Contact.php) | :white_check_mark: |
+| license        | [`License Object`](./src/License.php) | :white_check_mark: |
+| version        | [`string`](./src/Info.php)            | :white_check_mark: |
 
 ### [4.7.3 Contact Object](https://spec.openapis.org/oas/v3.0.4.html#contact-object)
 
 Contact information for the exposed API.
 
-| Field | Type     | Status             |
-|-------|----------|--------------------|
-| name  | `string` | :white_check_mark: |
-| url   | `string` | :white_check_mark: |
-| email | `email`  | :white_check_mark: |
+#### [4.7.3.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-1)
+
+| Field | Type                          | Status             |
+|-------|-------------------------------|--------------------|
+| name  | [`string`](./src/Contact.php) | :white_check_mark: |
+| url   | [`string`](./src/Contact.php) | :white_check_mark: |
+| email | [`email`](./src/Contact.php)  | :white_check_mark: |
 
 ### [4.7.4 License Object](https://spec.openapis.org/oas/v3.0.4.html#license-object)
 
 License information for the exposed API.
 
-| Field | Type     | Status             |
-|-------|----------|--------------------|
-| name  | `string` | :white_check_mark: |
-| url   | `string` | :white_check_mark: |
+#### [4.7.4.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-2)
+
+| Field | Type                          | Status             |
+|-------|-------------------------------|--------------------|
+| name  | [`string`](./src/License.php) | :white_check_mark: |
+| url   | [`string`](./src/License.php) | :white_check_mark: |
 
 ### [4.7.5 Server Object](https://spec.openapis.org/oas/v3.0.4.html#server-object)
 
 An object representing a Server.
 
-| Field       | Type                                    | Status             |
-|-------------|-----------------------------------------|--------------------|
-| url         | `string`                                | :white_check_mark: |
-| description | `string`                                | :white_check_mark: |
-| variables   | Map[`string`, `Server Variable Object`] | :white_check_mark: |
+#### [4.7.5.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3)
+
+| Field Name  | Type                                                                                    | Status             |
+|-------------|-----------------------------------------------------------------------------------------|--------------------|
+| url         | [`string`](./src/Server.php)                                                            | :white_check_mark: |
+| description | [`string`](./src/Server.php)                                                            | :white_check_mark: |
+| variables   | Map[[`string`](./src/Server.php), [`Server Variable Object`](./src/ServerVariable.php)] | :white_check_mark: |
 
 ### [4.7.6 Server Object](https://spec.openapis.org/oas/v3.0.4.html#server-variable-object)
 
 An object representing a Server Variable for server URL template substitution.
 
-| Field       | Type       | Status             |
-|-------------|------------|--------------------|
-| enum        | [`string`] | :white_check_mark: |
-| default     | `string`   | :white_check_mark: |
-| description | `string`   | :white_check_mark: |
+#### [4.7.6.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4)
+
+| Field Name  | Type                                   | Status             |
+|-------------|----------------------------------------|--------------------|
+| enum        | [[`string`]](./src/ServerVariable.php) | :white_check_mark: |
+| default     | [`string`](./src/ServerVariable.php)   | :white_check_mark: |
+| description | [`string`](./src/ServerVariable.php)   | :white_check_mark: |
 
 ### [4.7.7 Server Object](https://spec.openapis.org/oas/v3.0.4.html#components-object)
 
@@ -91,7 +107,7 @@ Holds a set of reusable objects for different aspects of the OAS.
 
 Describes the operations available on a single path.
 
-| Field       | Type                                       | Status |
+| Field Name  | Type                                       | Status |
 |-------------|--------------------------------------------|--------|
 | $ref        | `string`                                   |        |
 | summary     | `string`                                   |        |
@@ -111,7 +127,7 @@ Describes the operations available on a single path.
 
 Describes a single API operation on a path.
 
-| Field        | Type                                                   | Status             |
+| Field Name   | Type                                                   | Status             |
 |--------------|--------------------------------------------------------|--------------------|
 | tags         | [`string`]                                             | :white_check_mark: |
 | summary      | `string`                                               | :white_check_mark: |
@@ -130,7 +146,7 @@ Describes a single API operation on a path.
 
 Allows referencing an external resource for extended documentation.
 
-| Field       | Type     | Status             |
+| Field Name  | Type     | Status             |
 |-------------|----------|--------------------|
 | description | `string` | :white_check_mark: |
 | url         | `string` | :white_check_mark: |
@@ -139,7 +155,7 @@ Allows referencing an external resource for extended documentation.
 
 Describes a single operation parameter.
 
-| Field           | Type                                                   | Status             |
+| Field Name      | Type                                                   | Status             |
 |-----------------|--------------------------------------------------------|--------------------|
 | name            | `string`                                               | :white_check_mark: |
 | in              | `string`                                               | :white_check_mark: |
@@ -159,7 +175,7 @@ Describes a single operation parameter.
 
 Allows referencing an external resource for extended documentation.
 
-| Field       | Type                               | Status             |
+| Field Name  | Type                               | Status             |
 |-------------|------------------------------------|--------------------|
 | description | `string`                           | :white_check_mark: |
 | content     | Map[`string`, `Media Type Object`] | :white_check_mark: |
@@ -169,18 +185,18 @@ Allows referencing an external resource for extended documentation.
 
 Each Media Type Object provides schema and examples for the media type identified by its key.
 
-| Field    | Type                                                   | Status             |
-|----------|--------------------------------------------------------|--------------------|
-| schema   | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
-| example  | Any                                                    | :white_check_mark: |
-| examples | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
-| encoding | Map[`string`, `Encoding Object`]                       | :white_check_mark: |
+| Field Name | Type                                                   | Status             |
+|------------|--------------------------------------------------------|--------------------|
+| schema     | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
+| example    | Any                                                    | :white_check_mark: |
+| examples   | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
+| encoding   | Map[`string`, `Encoding Object`]                       | :white_check_mark: |
 
 ### [4.7.15 Encoding Object](https://spec.openapis.org/oas/v3.0.4.html#encoding-object)
 
 A single encoding definition applied to a single schema property.
 
-| Field         | Type                                                 | Status             |
+| Field Name    | Type                                                 | Status             |
 |---------------|------------------------------------------------------|--------------------|
 | contentType   | `string`                                             | :white_check_mark: |
 | headers       | Map[`string`, `Header Object` \| `Reference Object`] | :white_check_mark: |
@@ -192,7 +208,7 @@ A single encoding definition applied to a single schema property.
 
 An object grouping an internal or external example value with basic summary and description metadata.
 
-| Field         | Type     | Status             |
+| Field Name    | Type     | Status             |
 |---------------|----------|--------------------|
 | summary       | `string` | :white_check_mark: |
 | description   | `string` | :white_check_mark: |
@@ -203,7 +219,7 @@ An object grouping an internal or external example value with basic summary and 
 
 Describes a single header for HTTP responses and for individual parts in multipart representations.
 
-| Field       | Type                                                   | Status             |
+| Field Name  | Type                                                   | Status             |
 |-------------|--------------------------------------------------------|--------------------|
 | description | `string`                                               | :white_check_mark: |
 | required    | `boolean`                                              | :white_check_mark: |
@@ -226,7 +242,7 @@ A simple object to allow referencing other components in the OpenAPI Description
 
 The Schema Object allows the definition of input and output data types.
 
-| Field         | Type                            | Status             |
+| Field Name    | Type                            | Status             |
 |---------------|---------------------------------|--------------------|
 | nullable      | `boolean`                       | :white_check_mark: |
 | discriminator | `Discriminator Object`          | :white_check_mark: |
@@ -242,7 +258,7 @@ The Schema Object allows the definition of input and output data types.
 When request bodies or response payloads may be one of a number of different schemas,
 a Discriminator Object gives a hint about the expected schema of the document.
 
-| Field        | Type                    | Status             |
+| Field Name   | Type                    | Status             |
 |--------------|-------------------------|--------------------|
 | propertyName | `string`                | :white_check_mark: |
 | mapping      | Map[`string`, `string`] | :white_check_mark: |
@@ -251,10 +267,10 @@ a Discriminator Object gives a hint about the expected schema of the document.
 
 A metadata object that allows for more fine-tuned XML model definitions.
 
-| Field     | Type      | Status             |
-|-----------|-----------|--------------------|
-| name      | `string`  | :white_check_mark: |
-| namespace | `string`  | :white_check_mark: |
-| prefix    | `string`  | :white_check_mark: |
-| attribute | `boolean` | :white_check_mark: |
-| wrapped   | `boolean` | :white_check_mark: |
+| Field Name | Type      | Status             |
+|------------|-----------|--------------------|
+| name       | `string`  | :white_check_mark: |
+| namespace  | `string`  | :white_check_mark: |
+| prefix     | `string`  | :white_check_mark: |
+| attribute  | `boolean` | :white_check_mark: |
+| wrapped    | `boolean` | :white_check_mark: |
