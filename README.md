@@ -123,21 +123,21 @@ Describes the operations available on a single path.
 
 #### [4.7.9.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6)
 
-| Field Name  | Type                                                                                 | Status |
-|-------------|--------------------------------------------------------------------------------------|--------|
-| $ref        | [`string`](src/PathItem.php)                                                         |        |
-| summary     | [`string`](src/PathItem.php)                                                         |        |
-| description | [`string`](src/PathItem.php)                                                         |        |
-| get         | [`Operation Object`](src/Operation.php)                                              |        |
-| put         | [`Operation Object`](src/Operation.php)                                              |        |
-| post        | [`Operation Object`](src/Operation.php)                                              |        |
-| delete      | [`Operation Object`](src/Operation.php)                                              |        |
-| options     | [`Operation Object`](src/Operation.php)                                              |        |
-| head        | [`Operation Object`](src/Operation.php)                                              |        |
-| patch       | [`Operation Object`](src/Operation.php)                                              |        |
-| trace       | [`Operation Object`](src/Operation.php)                                              |        |
-| servers     | [`Server Object`](src/Server.php)                                                    |        |
-| parameters  | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)] |        |
+| Field Name  | Type                                                                                 | Status             |
+|-------------|--------------------------------------------------------------------------------------|--------------------|
+| $ref        | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
+| summary     | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
+| description | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
+| get         | [`Operation Object`](src/Operation.php)                                              |                    |
+| put         | [`Operation Object`](src/Operation.php)                                              |                    |
+| post        | [`Operation Object`](src/Operation.php)                                              |                    |
+| delete      | [`Operation Object`](src/Operation.php)                                              |                    |
+| options     | [`Operation Object`](src/Operation.php)                                              |                    |
+| head        | [`Operation Object`](src/Operation.php)                                              |                    |
+| patch       | [`Operation Object`](src/Operation.php)                                              |                    |
+| trace       | [`Operation Object`](src/Operation.php)                                              |                    |
+| servers     | [`Server Object`](src/Server.php)                                                    |                    |
+| parameters  | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)] |                    |
 
 ### [4.7.10 Operation Object](https://spec.openapis.org/oas/v3.0.4.html#operation-object)
 
@@ -158,7 +158,7 @@ Describes a single API operation on a path.
 | callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  | :white_check_mark: |
 | deprecated   | [`boolean`](src/Operation.php)                                                          | :white_check_mark: |
 | security     | [`Security Requirement Object`]                                                         | :white_check_mark: |
-| servers      | [`Server Object`](src/Server.php)                                                       | :white_check_mark: |
+| servers      | [[`Server Object`]](src/Server.php)                                                     | :white_check_mark: |
 
 ### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
 

@@ -45,9 +45,16 @@ class PathItem
      * representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
-     * @see https://spec.commonmark.org/
+     * @see  https://spec.commonmark.org/
      */
     public const description = 'description';
+
+    /**
+     * A definition of a GET operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    public const get = 'get';
 
     /**
      * Allows for a referenced definition of this path item. The value
@@ -61,10 +68,7 @@ class PathItem
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-item-object
      * @see  https://spec.openapis.org/oas/v3.0.4.html#relative-references-in-urls
      */
-    #[Describe([
-        'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidUrlException::class,
-    ])]
+    #[Describe(['missing_as_null'])]
     public ?string $ref;
 
     /**
@@ -82,9 +86,17 @@ class PathItem
      * representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
-     * @see https://spec.commonmark.org/
+     * @see  https://spec.commonmark.org/
      */
     #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * A definition of a GET operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $get;
 
 }
