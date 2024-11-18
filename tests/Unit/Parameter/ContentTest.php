@@ -4,7 +4,7 @@ namespace Tests\Unit\Parameter;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Media;
+use Zerotoprod\DataModelOpenapi30\MediaType;
 use Zerotoprod\DataModelOpenapi30\Parameter;
 
 class ContentTest extends TestCase
@@ -32,13 +32,13 @@ class ContentTest extends TestCase
             Parameter::in => 'query',
             Parameter::content => [
                 'content1' => [
-                    Media::example => 'example'
+                    MediaType::example => 'example'
                 ]
             ],
         ]);
 
         self::assertInstanceOf(
-            expected: Media::class,
+            expected: MediaType::class,
             actual: $Parameter->content['content1'],
             message: 'A map containing the representations for the parameter.'
         );

@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\Media;
+namespace Tests\Unit\MediaType;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Encoding;
-use Zerotoprod\DataModelOpenapi30\Media;
+use Zerotoprod\DataModelOpenapi30\MediaType;
 
 class EncodingTest extends TestCase
 {
@@ -13,7 +13,7 @@ class EncodingTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function nullable(): void
     {
-        $Media = Media::from();
+        $Media = MediaType::from();
 
         self::assertNull(
             actual: $Media->encoding,
@@ -24,8 +24,8 @@ class EncodingTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function encoding(): void
     {
-        $Media = Media::from([
-            Media::encoding => [
+        $Media = MediaType::from([
+            MediaType::encoding => [
                 'example1' => [
                     Encoding::contentType => 'contentType'
                 ]

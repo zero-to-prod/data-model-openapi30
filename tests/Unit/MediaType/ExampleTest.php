@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Media;
+namespace Tests\Unit\MediaType;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Media;
+use Zerotoprod\DataModelOpenapi30\MediaType;
 
 class ExampleTest extends TestCase
 {
@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function default_example(): void
     {
-        $Media = Media::from();
+        $Media = MediaType::from();
 
         self::assertNull(
             actual: $Media->example,
@@ -23,8 +23,8 @@ class ExampleTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function string_example(): void
     {
-        $Media = Media::from([
-            Media::example => 'example',
+        $Media = MediaType::from([
+            MediaType::example => 'example',
         ]);
 
         self::assertEquals(
@@ -37,8 +37,8 @@ class ExampleTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function bool_example(): void
     {
-        $Media = Media::from([
-            Media::example => true,
+        $Media = MediaType::from([
+            MediaType::example => true,
         ]);
 
         self::assertIsBool(

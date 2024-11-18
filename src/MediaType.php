@@ -6,7 +6,7 @@ use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
- * Each Media Type Object provides schema and examples for the media type
+ * Each MediaType Type Object provides schema and examples for the media type
  * identified by its key.
  *
  * When `example` or `examples` are provided, the example _SHOULD_ match the
@@ -20,7 +20,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#media-type-object
  */
-class Media
+class MediaType
 {
     use DataModel;
 

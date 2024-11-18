@@ -155,6 +155,16 @@ Describes a single operation parameter.
 | examples        | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
 | content         | Map[string, Media Type Object]                         | :white_check_mark: |
 
+### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
+
+Allows referencing an external resource for extended documentation.
+
+| Field       | Type                               | Status             |
+|-------------|------------------------------------|--------------------|
+| description | `string`                           | :white_check_mark: |
+| content     | Map[`string`, `Media Type Object`] | :white_check_mark: |
+| required    | `boolean`                          | :white_check_mark: |
+
 ### [4.7.14 Media Type Object](https://spec.openapis.org/oas/v3.0.4.html#media-type-object)
 
 Each Media Type Object provides schema and examples for the media type identified by its key.

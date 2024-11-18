@@ -22,7 +22,8 @@ class ServersTest extends TestCase
     {
         $OpenApi30 = OpenApi30::from([
             OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => InfoFactory::factory()->make()
+            OpenApi30::info => InfoFactory::factory()->make(),
+            OpenApi30::paths => []
         ]);
 
         self::assertEquals(
@@ -39,7 +40,8 @@ class ServersTest extends TestCase
         $OpenApi30 = OpenApi30::from([
             OpenApi30::openapi => '3.0.4',
             OpenApi30::info => InfoFactory::factory()->make(),
-            OpenApi30::servers => [$Server]
+            OpenApi30::servers => [$Server],
+            OpenApi30::paths => []
         ]);
 
         self::assertEquals(

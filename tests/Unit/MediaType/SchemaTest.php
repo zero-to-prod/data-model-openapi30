@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Media;
+namespace Tests\Unit\MediaType;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Media;
+use Zerotoprod\DataModelOpenapi30\MediaType;
 use Zerotoprod\DataModelOpenapi30\Reference;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
@@ -14,7 +14,7 @@ class SchemaTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function default_value(): void
     {
-        $Media = Media::from();
+        $Media = MediaType::from();
 
         self::assertNull(
             actual: $Media->schema,
@@ -25,8 +25,8 @@ class SchemaTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function reference(): void
     {
-        $Media = Media::from([
-            Media::schema => [
+        $Media = MediaType::from([
+            MediaType::schema => [
                 Reference::ref => 'ref'
             ]
         ]);
@@ -47,8 +47,8 @@ class SchemaTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11 */
     #[Test] public function schema(): void
     {
-        $Media = Media::from([
-            Media::schema => [
+        $Media = MediaType::from([
+            MediaType::schema => [
                 Schema::example => 'example'
             ]
         ]);

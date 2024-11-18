@@ -71,7 +71,8 @@ class OpenapiTest extends TestCase
     {
         $OpenApi30 = OpenApi30::from([
             OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => InfoFactory::factory()->make()
+            OpenApi30::info => InfoFactory::factory()->make(),
+            OpenApi30::paths => []
         ]);
 
         self::assertEquals(

@@ -71,6 +71,19 @@ class Operation
     public const parameters = 'parameters';
 
     /**
+     * The request body applicable for this operation. The `requestBody` is only supported
+     * in HTTP methods where the HTTP 1.1 specification [RFC7231] Section 4.3.1 has
+     * explicitly defined semantics for request bodies. In other cases where the
+     * HTTP spec is vague (such as GET, HEAD and DELETE), `requestBody` _SHALL_ be
+     * ignored by consumers.
+     *
+     * @var array<string, RequestBody|Reference> $parameters
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const requestBody = 'requestBody';
+
+    /**
      * A list of tags for API documentation control. Tags can be used
      * for logical grouping of operations by resources or any other
      * qualifier.
@@ -157,5 +170,39 @@ class Operation
                 $value
             )
             : null;
+    }
+
+    /**
+     * The request body applicable for this operation. The `requestBody` is only supported
+     * in HTTP methods where the HTTP 1.1 specification [RFC7231] Section 4.3.1 has
+     * explicitly defined semantics for request bodies. In other cases where the
+     * HTTP spec is vague (such as GET, HEAD and DELETE), `requestBody` _SHALL_ be
+     * ignored by consumers.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['cast' => [self::class, 'requestBody']])]
+    public null|RequestBody|Reference $requestBody;
+
+    /**
+     * A list of parameters that are applicable for this operation. If a parameter
+     * is already defined in the Path Item, the new definition will override it
+     * but can never remove it. The list _MUST NOT_ include duplicated
+     * parameters. A unique parameter is defined by a combination of a
+     * name and location. The list can use the Reference Object to link
+     * to parameters that are defined in the OpenAPI Object’s
+     * `components.parameters`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public static function requestBody($value, array $context): null|RequestBody|Reference
+    {
+        if (isset($context[self::requestBody])) {
+            return isset($context[self::requestBody][Reference::ref])
+                ? Reference::from($value)
+                : RequestBody::from($value);
+        }
+
+        return null;
     }
 }

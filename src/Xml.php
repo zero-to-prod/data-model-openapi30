@@ -22,7 +22,7 @@ class Xml
      * Replaces the name of the element/attribute used for the described
      * schema property. When defined within `items`, it will affect the
      * name of the individual XML elements within the list. When
-     * defined alongside `type` being "`array`" (outside the
+     * defined alongside `type` being `"array"` (outside the
      * `items`), it will affect the wrapping element if and
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
@@ -58,7 +58,7 @@ class Xml
      * array is wrapped (for example, `<books><book/><book/></books>`) or
      * unwrapped (`<book/><book/>`). Default value is `false`. The
      * definition takes effect only when defined alongside `type`
-     * being "`array`" (outside the `items`).
+     * being `"array"` (outside the `items`).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */
@@ -68,7 +68,7 @@ class Xml
      * Replaces the name of the element/attribute used for the described
      * schema property. When defined within `items`, it will affect the
      * name of the individual XML elements within the list. When
-     * defined alongside `type` being "`array`" (outside the
+     * defined alongside `type` being `"array"` (outside the
      * `items`), it will affect the wrapping element if and
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
@@ -111,7 +111,7 @@ class Xml
      * array is wrapped (for example, `<books><book/><book/></books>`) or
      * unwrapped (`<book/><book/>`). Default value is `false`. The
      * definition takes effect only when defined alongside `type`
-     * being "`array`" (outside the `items`).
+     * being `"array"` (outside the `items`).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */

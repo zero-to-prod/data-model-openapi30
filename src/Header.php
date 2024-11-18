@@ -54,7 +54,7 @@ class Header
 
     /**
      * Describes how the header value will be serialized. The default (and only
-     * legal value for headers) is "`simple`".
+     * legal value for headers) is `"simple`".
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */
@@ -118,7 +118,7 @@ class Header
 
     /**
      * Describes how the header value will be serialized. The default (and only
-     * legal value for headers) is "`simple`".
+     * legal value for headers) is `"simple`".
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */

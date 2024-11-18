@@ -42,7 +42,7 @@ class NameSpaceTest extends TestCase
      * Replaces the name of the element/attribute used for the described
      * schema property. When defined within `items`, it will affect the
      * name of the individual XML elements within the list. When
-     * defined alongside `type` being "`array`" (outside the
+     * defined alongside `type` being `"array"` (outside the
      * `items`), it will affect the wrapping element if and
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
@@ -61,7 +61,7 @@ class NameSpaceTest extends TestCase
      * Replaces the name of the element/attribute used for the described
      * schema property. When defined within `items`, it will affect the
      * name of the individual XML elements within the list. When
-     * defined alongside `type` being "`array`" (outside the
+     * defined alongside `type` being `"array"` (outside the
      * `items`), it will affect the wrapping element if and
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
@@ -80,7 +80,7 @@ class NameSpaceTest extends TestCase
      * Replaces the name of the element/attribute used for the described
      * schema property. When defined within `items`, it will affect the
      * name of the individual XML elements within the list. When
-     * defined alongside `type` being "`array`" (outside the
+     * defined alongside `type` being `"array"` (outside the
      * `items`), it will affect the wrapping element if and
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.

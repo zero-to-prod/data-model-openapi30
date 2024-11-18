@@ -420,13 +420,13 @@ class Parameter
      * media type and the value describes it. The map _MUST_ only contain one
      * entry.
      *
-     * @var array<string, Media> $content
+     * @var array<string, MediaType> $content
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
-        'type' => Media::class,
+        'type' => MediaType::class,
     ])]
     public ?array $content;
 }
