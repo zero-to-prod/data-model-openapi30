@@ -15,7 +15,7 @@ class OperationRefTest extends TestCase
 
         self::assertNull(
             actual: $Link->operationRef,
-            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and MUST point to an Operation Object.'
+            message: 'The name of an existing, resolvable OAS operation, as defined with a unique operationId. This field is mutually exclusive of the operationRef field.'
         );
     }
 
@@ -29,7 +29,7 @@ class OperationRefTest extends TestCase
         self::assertEquals(
             expected: 'operationRef',
             actual: $Link->operationRef,
-            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and MUST point to an Operation Object.'
+            message: 'The name of an existing, resolvable OAS operation, as defined with a unique operationId. This field is mutually exclusive of the operationRef field.'
         );
     }
 }

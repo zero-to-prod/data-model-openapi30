@@ -293,7 +293,7 @@ The Link Object represents a possible design-time link for a response.
 |--------------|------------------------------------------------------------------------------------|--------------------|
 | operationRef | [`string`](src/Link.php)                                                           | :white_check_mark: |
 | operationId  | [`string`](src/Link.php)                                                           | :white_check_mark: |
-| operationId  | Map[[`string`](src/Link.php), [Any](src/Link.php) \| [{expression}](src/Link.php)] |                    |
+| parameters   | Map[[`string`](src/Link.php), [Any](src/Link.php) \| [{expression}](src/Link.php)] | :white_check_mark: |
 | requestBody  | [Any](src/Link.php) \| [{expression}](src/Link.php)                                |                    |
 | description  | [`string`](src/Link.php)                                                           |                    |
 | server       | [`Server Object`](src/Server.php)                                                  |                    |
