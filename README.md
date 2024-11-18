@@ -31,7 +31,7 @@ This is the root object of the OpenAPI Description.
 | openapi      | [`string`](src/OpenApi30.php)       | :white_check_mark: |
 | info         | [`Info Object`](src/Info.php)       | :white_check_mark: |
 | servers      | [`[Server Object]`](src/Server.php) | :white_check_mark: |
-| paths        | `Paths Object`                      |                    |
+| paths        | `Paths Object`                      | :white_check_mark: |
 | components   | `Components Object`                 |                    |
 | security     | `Security Requirement Object`       |                    |
 | tags         | `Tag Object`                        |                    |
@@ -262,7 +262,7 @@ These fields _MAY_ be used either with or without the RFC6570-style serializatio
 
 ### [4.7.16 Responses Object](https://spec.openapis.org/oas/v3.0.4.html#responses-object)
 
-A container for the expected responses of an operation. The container maps a HTTP response code to the expected response.
+A container for the expected responses of an operation. The container maps an HTTP response code to the expected response.
 
 #### [4.7.16.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-13)
 

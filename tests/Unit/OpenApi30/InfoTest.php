@@ -5,7 +5,9 @@ namespace Tests\Unit\OpenApi30;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
+use Zerotoprod\DataModelOpenapi30\Info;
 use Zerotoprod\DataModelOpenapi30\OpenApi30;
+use Zerotoprod\DataModelOpenapi30\Operation;
 
 class InfoTest extends TestCase
 {
@@ -16,7 +18,7 @@ class InfoTest extends TestCase
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
-    #[Test] public function required_info(): void
+    #[Test] public function required(): void
     {
         $this->expectException(PropertyRequiredException::class);
         $this->expectExceptionMessage('Property `$info` is required.');
@@ -24,5 +26,29 @@ class InfoTest extends TestCase
         OpenApi30::from([
             OpenApi30::openapi => '3.0.4'
         ]);
+    }
+
+    /**
+     * **REQUIRED**. Provides metadata about the API. The metadata
+     * _MAY_ be used by tooling as required.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    #[Test] public function info(): void
+    {
+        $OpenApi30 = OpenApi30::from([
+            OpenApi30::openapi => '3.0.4',
+            OpenApi30::info => [
+                Info::title => 'title',
+                Info::version => '1.0.0'
+            ],
+            OpenApi30::paths => []
+        ]);
+
+        self::assertEquals(
+            expected: 'title',
+            actual: $OpenApi30->info->title,
+            message: 'REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.'
+        );
     }
 }

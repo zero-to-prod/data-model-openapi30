@@ -14,7 +14,7 @@ class ServersTest extends TestCase
      * An array of Server Objects, which provide connectivity information
      * to a target server. If the servers field is not provided, or is
      * an empty array, the default value would be a Server Object with
-     * a url value of /.
+     * an url value of `/`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */

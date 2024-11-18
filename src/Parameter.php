@@ -76,7 +76,7 @@ class Parameter
     public const required = 'required';
 
     /**
-     * Specifies that a parameter is deprecated and ***_SHOULD_*** be transitioned
+     * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -86,7 +86,7 @@ class Parameter
     /**
      * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
-     * server ***_SHOULD_*** interpret as the parameter being unused.
+     * server _SHOULD_ interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
      * is n/a (cannot be serialized), the value of `allowEmptyValue`
      * _SHALL_ be ignored. Interactions between this field
@@ -243,7 +243,7 @@ class Parameter
     }
 
     /**
-     * Specifies that a parameter is deprecated and ***_SHOULD_*** be transitioned
+     * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
@@ -254,7 +254,7 @@ class Parameter
     /**
      * If `true`, clients _MAY_ pass a zero-length string value in place
      * of parameters that would otherwise be omitted entirely, which the
-     * server ***_SHOULD_*** interpret as the parameter being unused.
+     * server _SHOULD_ interpret as the parameter being unused.
      * Default value is `false`. If `style` is used, and if behavior
      * is n/a (cannot be serialized), the value of `allowEmptyValue`
      * _SHALL_ be ignored. Interactions between this field
