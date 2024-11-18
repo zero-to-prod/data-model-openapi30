@@ -99,110 +99,166 @@ An object representing a Server Variable for server URL template substitution.
 | default     | [`string`](./src/ServerVariable.php)   | :white_check_mark: |
 | description | [`string`](./src/ServerVariable.php)   | :white_check_mark: |
 
-### [4.7.7 Server Object](https://spec.openapis.org/oas/v3.0.4.html#components-object)
+### [4.7.7 Components Object](https://spec.openapis.org/oas/v3.0.4.html#components-object)
 
 Holds a set of reusable objects for different aspects of the OAS.
+
+### [4.7.7.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5)
+
+todo
+
+### [4.7.8 Paths Object](https://spec.openapis.org/oas/v3.0.4.html#paths-object)
+
+Holds the relative paths to the individual endpoints and their operations.
+
+#### [4.7.8.1 Patterned Fields](https://spec.openapis.org/oas/v3.0.4.html#patterned-fields)
+
+| Field Name | Type                                   | Status             |
+|------------|----------------------------------------|--------------------|
+| /{path}    | [Path Item Object](./src/PathItem.php) | :white_check_mark: |
 
 ### [4.7.9 Path Item Object](https://spec.openapis.org/oas/v3.0.4.html#path-item-object)
 
 Describes the operations available on a single path.
 
-| Field Name  | Type                                       | Status |
-|-------------|--------------------------------------------|--------|
-| $ref        | `string`                                   |        |
-| summary     | `string`                                   |        |
-| description | `string`                                   |        |
-| get         | `Operation Object`                         |        |
-| put         | `Operation Object`                         |        |
-| post        | `Operation Object`                         |        |
-| delete      | `Operation Object`                         |        |
-| options     | `Operation Object`                         |        |
-| head        | `Operation Object`                         |        |
-| patch       | `Operation Object`                         |        |
-| trace       | `Operation Object`                         |        |
-| servers     | `Server Object`                            |        |
-| parameters  | [`Parameter Object` \| `Reference Object`] |        |
+#### [4.7.9.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6)
+
+| Field Name  | Type                                                                                     | Status |
+|-------------|------------------------------------------------------------------------------------------|--------|
+| $ref        | [`string`](./src/PathItem.php)                                                           |        |
+| summary     | [`string`](./src/PathItem.php)                                                           |        |
+| description | [`string`](./src/PathItem.php)                                                           |        |
+| get         | [`Operation Object`](./src/Operation.php)                                                |        |
+| put         | [`Operation Object`](./src/Operation.php)                                                |        |
+| post        | [`Operation Object`](./src/Operation.php)                                                |        |
+| delete      | [`Operation Object`](./src/Operation.php)                                                |        |
+| options     | [`Operation Object`](./src/Operation.php)                                                |        |
+| head        | [`Operation Object`](./src/Operation.php)                                                |        |
+| patch       | [`Operation Object`](./src/Operation.php)                                                |        |
+| trace       | [`Operation Object`](./src/Operation.php)                                                |        |
+| servers     | [`Server Object`](./src/Server.php)                                                      |        |
+| parameters  | [[`Parameter Object`](./src/Parameter.php) \| [`Reference Object`](./src/Reference.php)] |        |
 
 ### [4.7.10 Operation Object](https://spec.openapis.org/oas/v3.0.4.html#operation-object)
 
 Describes a single API operation on a path.
 
-| Field Name   | Type                                                   | Status             |
-|--------------|--------------------------------------------------------|--------------------|
-| tags         | [`string`]                                             | :white_check_mark: |
-| summary      | `string`                                               | :white_check_mark: |
-| description  | `string`                                               | :white_check_mark: |
-| externalDocs | `External Documentation Object`                        | :white_check_mark: |
-| operationId  | `string`                                               | :white_check_mark: |
-| parameters   | [`Parameter Object` \| `Reference Object`]             | :white_check_mark: |
-| requestBody  | `Request Body Object` \| `Reference Object`            |                    |
-| responses    | `Responses Object`                                     |                    |
-| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`] |                    |
-| deprecated   | `boolean`                                              |                    |
-| security     | [`Security Requirement Object`]                        |                    |
-| servers      | `Server Object`                                        |                    |
+#### [4.7.10.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7)
+
+| Field Name   | Type                                                                                        | Status             |
+|--------------|---------------------------------------------------------------------------------------------|--------------------|
+| tags         | [[`string`]](./src/Operation.php)                                                           | :white_check_mark: |
+| summary      | [`string`](./src/Operation.php)                                                             | :white_check_mark: |
+| description  | [`string`](./src/Operation.php)                                                             | :white_check_mark: |
+| externalDocs | [`External Documentation Object`](./src/ExternalDocumentation.php)                          | :white_check_mark: |
+| operationId  | [`string`](./src/Operation.php)                                                             | :white_check_mark: |
+| parameters   | [[`Parameter Object`](./src/Parameter.php) \| [`Reference Object`](./src/Reference.php)]    | :white_check_mark: |
+| requestBody  | [`Request Body Object`](./src/RequestBody.php) \| [`Reference Object`](./src/Reference.php) | :white_check_mark: |
+| responses    | `Responses Object`                                                                          |                    |
+| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                      |                    |
+| deprecated   | [`boolean`](./src/Operation.php)                                                            |                    |
+| security     | [`Security Requirement Object`]                                                             |                    |
+| servers      | [`Server Object`](./src/Server.php)                                                         |                    |
 
 ### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
 
 Allows referencing an external resource for extended documentation.
 
-| Field Name  | Type     | Status             |
-|-------------|----------|--------------------|
-| description | `string` | :white_check_mark: |
-| url         | `string` | :white_check_mark: |
+#### [4.7.11.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8)
+
+| Field Name  | Type                                        | Status             |
+|-------------|---------------------------------------------|--------------------|
+| description | [`string`](./src/ExternalDocumentation.php) | :white_check_mark: |
+| url         | [`string`](./src/ExternalDocumentation.php) | :white_check_mark: |
 
 ### [4.7.12 Parameter Object](https://spec.openapis.org/oas/v3.0.4.html#parameter-object)
 
 Describes a single operation parameter.
 
-| Field Name      | Type                                                   | Status             |
-|-----------------|--------------------------------------------------------|--------------------|
-| name            | `string`                                               | :white_check_mark: |
-| in              | `string`                                               | :white_check_mark: |
-| description     | `string`                                               | :white_check_mark: |
-| required        | `boolean`                                              | :white_check_mark: |
-| deprecated      | `boolean`                                              | :white_check_mark: |
-| allowEmptyValue | [`boolean`]                                            | :white_check_mark: |
-| style           | `string`                                               | :white_check_mark: |
-| explode         | `boolean`                                              | :white_check_mark: |
-| allowReserved   | `boolean`                                              | :white_check_mark: |
-| schema          | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
-| example         | Any                                                    | :white_check_mark: |
-| examples        | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
-| content         | Map[string, Media Type Object]                         | :white_check_mark: |
+#### [4.7.12.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-9)
 
-### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
+The rules for serialization of the parameter are specified in one of two ways. Parameter Objects _MUST_ include either a `content` field or a `schema`
+field, but not both.
 
-Allows referencing an external resource for extended documentation.
+##### [4.7.12.2.1 Common Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields)
 
-| Field Name  | Type                               | Status             |
-|-------------|------------------------------------|--------------------|
-| description | `string`                           | :white_check_mark: |
-| content     | Map[`string`, `Media Type Object`] | :white_check_mark: |
-| required    | `boolean`                          | :white_check_mark: |
+These fields _MAY_ be used with either `content` or `schema`.
+
+| Field Name      | Type                               | Status             |
+|-----------------|------------------------------------|--------------------|
+| name            | [`string`](./src/Parameter.php)    | :white_check_mark: |
+| in              | [`string`](./src/Parameter.php)    | :white_check_mark: |
+| description     | [`string`](./src/Parameter.php)    | :white_check_mark: |
+| required        | [`boolean`](./src/Parameter.php)   | :white_check_mark: |
+| deprecated      | [`boolean`](./src/Parameter.php)   | :white_check_mark: |
+| allowEmptyValue | [[`boolean`]](./src/Parameter.php) | :white_check_mark: |
+
+##### [4.7.12.2.2 Fixed Fields for use with `schema`](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema)
+
+For simpler scenarios, a `schema` and `style` can describe the structure and syntax of the parameter.
+
+| Field Name    | Type                                                                                                                   | Status             |
+|---------------|------------------------------------------------------------------------------------------------------------------------|--------------------|
+| style         | [`string`](./src/Parameter.php)                                                                                        | :white_check_mark: |
+| explode       | [`boolean`](./src/Parameter.php)                                                                                       | :white_check_mark: |
+| allowReserved | [`boolean`](./src/Parameter.php)                                                                                       | :white_check_mark: |
+| schema        | [`Schema Object`](./src/Schema.php) \| [`Reference Object`](./src/Reference.php)                                       | :white_check_mark: |
+| example       | [Any](./src/Schema.php)                                                                                                | :white_check_mark: |
+| examples      | Map[ [`string`](./src/Schema.php), [`Example Object`](./src/Example.php) \| [`Reference Object`](./src/Reference.php)] | :white_check_mark: |
+
+##### [4.7.12.2.3 Fixed Fields for use with `content`](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content)
+
+| Field Name | Type                                                                       | Status             |
+|------------|----------------------------------------------------------------------------|--------------------|
+| content    | Map[[`string`](./src/Schema.php), [`Media Type Object`](./src/Schema.php)] | :white_check_mark: |
+
+### [4.7.13 Request Body Object](https://spec.openapis.org/oas/v3.0.4.html#request-body-object)
+
+Describes a single request body.
+
+#### [4.7.13.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10)
+
+| Field Name  | Type                                                                               | Status             |
+|-------------|------------------------------------------------------------------------------------|--------------------|
+| description | [`string`](./src/RequestBody.php)                                                  | :white_check_mark: |
+| content     | Map[[`string`](./src/RequestBody.php), [`Media Type Object`](./src/MediaType.php)] | :white_check_mark: |
+| required    | [`boolean`](./src/RequestBody.php)                                                 | :white_check_mark: |
 
 ### [4.7.14 Media Type Object](https://spec.openapis.org/oas/v3.0.4.html#media-type-object)
 
 Each Media Type Object provides schema and examples for the media type identified by its key.
 
-| Field Name | Type                                                   | Status             |
-|------------|--------------------------------------------------------|--------------------|
-| schema     | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
-| example    | Any                                                    | :white_check_mark: |
-| examples   | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
-| encoding   | Map[`string`, `Encoding Object`]                       | :white_check_mark: |
+#### [4.7.14.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11)
+
+| Field Name | Type                                                                                                                     | Status             |
+|------------|--------------------------------------------------------------------------------------------------------------------------|--------------------|
+| schema     | [`Schema Object`](./src/Schema.php) \| [`Reference Object`](./src/Reference.php)                                         | :white_check_mark: |
+| example    | [Any](./src/MediaType.php)                                                                                               | :white_check_mark: |
+| examples   | Map[[`string`](./src/MediaType.php), [`Example Object`](./src/Example.php) \| [`Reference Object`](./src/Reference.php)] | :white_check_mark: |
+| encoding   | Map[[`string`](./src/MediaType.php), [`Encoding Object`](./src/Encoding.php)]                                            | :white_check_mark: |
 
 ### [4.7.15 Encoding Object](https://spec.openapis.org/oas/v3.0.4.html#encoding-object)
 
 A single encoding definition applied to a single schema property.
 
-| Field Name    | Type                                                 | Status             |
-|---------------|------------------------------------------------------|--------------------|
-| contentType   | `string`                                             | :white_check_mark: |
-| headers       | Map[`string`, `Header Object` \| `Reference Object`] | :white_check_mark: |
-| style         | `string`                                             | :white_check_mark: |
-| explode       | `boolean`                                            | :white_check_mark: |
-| allowReserved | `boolean`                                            | :white_check_mark: |
+#### [4.7.15.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-12)
+
+##### [4.7.15.1.1 Common Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0)
+
+These fields _MAY_ be used either with or without the RFC6570-style serialization fields defined in the next section below.
+
+| Field Name  | Type                                                                                                                  | Status             |
+|-------------|-----------------------------------------------------------------------------------------------------------------------|--------------------|
+| contentType | [`string`](./src/Encoding.php)                                                                                        | :white_check_mark: |
+| headers     | Map[[`string`](./src/Encoding.php), [`Header Object`](./src/Header.php) \| [`Reference Object`](./src/Reference.php)] | :white_check_mark: |
+
+##### [4.7.15.1.2 Fixed Fields for RFC6570-style Serialization](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-rfc6570-style-serialization)
+
+| Field Name    | Type                            | Status             |
+|---------------|---------------------------------|--------------------|
+| style         | [`string`](./src/Encoding.php)  | :white_check_mark: |
+| explode       | [`boolean`](./src/Encoding.php) | :white_check_mark: |
+| allowReserved | [`boolean`](./src/Encoding.php) | :white_check_mark: |
 
 ### [4.7.19 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
 
