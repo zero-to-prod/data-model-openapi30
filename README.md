@@ -313,6 +313,8 @@ For more complex scenarios, the content field can define the media type and sche
 
 A simple object to allow referencing other components in the OpenAPI Description, internally and externally.
 
+#### [4.7.23.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19)
+
 | Field | Type     | Status             |
 |-------|----------|--------------------|
 | $ref  | `string` | :white_check_mark: |
@@ -321,35 +323,41 @@ A simple object to allow referencing other components in the OpenAPI Description
 
 The Schema Object allows the definition of input and output data types.
 
-| Field Name    | Type                            | Status             |
-|---------------|---------------------------------|--------------------|
-| nullable      | `boolean`                       | :white_check_mark: |
-| discriminator | `Discriminator Object`          | :white_check_mark: |
-| readOnly      | `boolean`                       | :white_check_mark: |
-| writeOnly     | `boolean`                       | :white_check_mark: |
-| xml           | `XML Object`                    | :white_check_mark: |
-| externalDocs  | `External Documentation Object` | :white_check_mark: |
-| example       | Any                             | :white_check_mark: |
-| deprecated    | `boolean`                       | :white_check_mark: |
+#### [4.7.24.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20)
+
+| Field Name    | Type                                                               | Status             |
+|---------------|--------------------------------------------------------------------|--------------------|
+| nullable      | [`boolean`](./src/Schema.php)                                      | :white_check_mark: |
+| discriminator | `Discriminator Object`                                             | :white_check_mark: |
+| readOnly      | [`boolean`](./src/Schema.php)                                      | :white_check_mark: |
+| writeOnly     | [`boolean`](./src/Schema.php)                                      | :white_check_mark: |
+| xml           | [`XML Object`](./src/Xml.php)                                      | :white_check_mark: |
+| externalDocs  | [`External Documentation Object`](./src/ExternalDocumentation.php) | :white_check_mark: |
+| example       | [Any](./src/Schema.php)                                            | :white_check_mark: |
+| deprecated    | [`boolean`](./src/Schema.php)                                      | :white_check_mark: |
 
 ### [4.7.25 Discriminator Object](https://spec.openapis.org/oas/v3.0.4.html#discriminator-object)
 
 When request bodies or response payloads may be one of a number of different schemas,
 a Discriminator Object gives a hint about the expected schema of the document.
 
-| Field Name   | Type                    | Status             |
-|--------------|-------------------------|--------------------|
-| propertyName | `string`                | :white_check_mark: |
-| mapping      | Map[`string`, `string`] | :white_check_mark: |
+#### [4.7.25.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-21)
+
+| Field Name   | Type                                               | Status             |
+|--------------|----------------------------------------------------|--------------------|
+| propertyName | [`string`](./src/Discriminator.php)                | :white_check_mark: |
+| mapping      | Map[[`string`](./src/Discriminator.php), `string`] | :white_check_mark: |
 
 ### [4.7.26 XML Object](https://spec.openapis.org/oas/v3.0.4.html#xml-object)
 
 A metadata object that allows for more fine-tuned XML model definitions.
 
-| Field Name | Type      | Status             |
-|------------|-----------|--------------------|
-| name       | `string`  | :white_check_mark: |
-| namespace  | `string`  | :white_check_mark: |
-| prefix     | `string`  | :white_check_mark: |
-| attribute  | `boolean` | :white_check_mark: |
-| wrapped    | `boolean` | :white_check_mark: |
+#### [4.7.26.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22)
+
+| Field Name | Type                       | Status             |
+|------------|----------------------------|--------------------|
+| name       | [`string`](./src/Xml.php)  | :white_check_mark: |
+| namespace  | [`string`](./src/Xml.php)  | :white_check_mark: |
+| prefix     | [`string`](./src/Xml.php)  | :white_check_mark: |
+| attribute  | [`boolean`](./src/Xml.php) | :white_check_mark: |
+| wrapped    | [`boolean`](./src/Xml.php) | :white_check_mark: |
