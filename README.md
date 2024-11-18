@@ -158,7 +158,7 @@ Describes a single API operation on a path.
 | callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  | :white_check_mark: |
 | deprecated   | [`boolean`](src/Operation.php)                                                          | :white_check_mark: |
 | security     | [`Security Requirement Object`]                                                         | :white_check_mark: |
-| servers      | [`Server Object`](src/Server.php)                                                       |                    |
+| servers      | [`Server Object`](src/Server.php)                                                       | :white_check_mark: |
 
 ### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
 

@@ -124,6 +124,17 @@ class Operation
     public const security = 'security';
 
     /**
+     * An alternative `servers` array to service this operation. If a `servers`
+     * array is specified at the Path Item Object or OpenAPI Object level,
+     * it will be overridden by this value.
+     *
+     * @var Server[]
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const servers = 'servers';
+
+    /**
      * A list of tags for API documentation control. Tags can be used
      * for logical grouping of operations by resources or any other
      * qualifier.
@@ -335,4 +346,18 @@ class Operation
     #[Describe(['missing_as_null'])]
     public ?array $security;
 
+    /**
+     * An alternative `servers` array to service this operation. If a `servers`
+     * array is specified at the Path Item Object or OpenAPI Object level,
+     * it will be overridden by this value.
+     *
+     * @var Server[]
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => Server::class
+    ])]
+    public ?array $servers;
 }
