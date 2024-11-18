@@ -14,7 +14,7 @@ class RequestBodyTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7 */
     #[Test] public function nullable(): void
     {
-        $Operation = Operation::from();
+        $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
         self::assertNull(
             actual: $Operation->requestBody,
@@ -28,7 +28,8 @@ class RequestBodyTest extends TestCase
         $Operation = Operation::from([
             Operation::requestBody => [
                 Reference::ref => 'ref'
-            ]
+            ],
+            Operation::responses => ['example1' => [Reference::ref => 'ref']]
         ]);
 
         self::assertInstanceOf(
@@ -51,7 +52,8 @@ class RequestBodyTest extends TestCase
             Operation::requestBody => [
                 RequestBody::description => 'description',
                 RequestBody::content => [],
-            ]
+            ],
+            Operation::responses => ['example1' => [Reference::ref => 'ref']]
         ]);
 
         self::assertInstanceOf(

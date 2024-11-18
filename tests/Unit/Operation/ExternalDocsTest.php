@@ -6,6 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\ExternalDocumentation;
 use Zerotoprod\DataModelOpenapi30\Operation;
+use Zerotoprod\DataModelOpenapi30\Reference;
 
 class ExternalDocsTest extends TestCase
 {
@@ -13,7 +14,7 @@ class ExternalDocsTest extends TestCase
     /**@link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7 */
     #[Test] public function nullable(): void
     {
-        $Operation = Operation::from();
+        $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
         self::assertNull(
             actual: $Operation->externalDocs,
@@ -28,6 +29,7 @@ class ExternalDocsTest extends TestCase
             Operation::externalDocs => [
                 ExternalDocumentation::url => 'https://example.com',
             ],
+            Operation::responses => ['example1' => [Reference::ref => 'ref']]
         ]);
 
         self::assertEquals(

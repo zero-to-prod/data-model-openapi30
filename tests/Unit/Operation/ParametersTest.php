@@ -14,7 +14,7 @@ class ParametersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7 */
     #[Test] public function nullable(): void
     {
-        $Operation = Operation::from();
+        $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
         self::assertNull(
             actual: $Operation->parameters,
@@ -31,6 +31,11 @@ class ParametersTest extends TestCase
                     Reference::ref => 'ref'
                 ]
             ],
+            Operation::responses => [
+                'example1' => [
+                    Reference::ref => 'ref'
+                ]
+            ]
         ]);
 
         self::assertInstanceOf(
@@ -56,6 +61,7 @@ class ParametersTest extends TestCase
                     Parameter::in => 'in',
                 ]
             ],
+            Operation::responses => ['example1' => [Reference::ref => 'ref']]
         ]);
 
         self::assertInstanceOf(

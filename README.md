@@ -154,7 +154,7 @@ Describes a single API operation on a path.
 | operationId  | [`string`](src/Operation.php)                                                           | :white_check_mark: |
 | parameters   | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]    | :white_check_mark: |
 | requestBody  | [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php) | :white_check_mark: |
-| responses    | `Responses Object`                                                                      |                    |
+| responses    | [`Responses Object`](src/Response.php)                                                  | :white_check_mark: |
 | callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  |                    |
 | deprecated   | [`boolean`](src/Operation.php)                                                          |                    |
 | security     | [`Security Requirement Object`]                                                         |                    |
@@ -259,6 +259,22 @@ These fields _MAY_ be used either with or without the RFC6570-style serializatio
 | style         | [`string`](src/Encoding.php)  | :white_check_mark: |
 | explode       | [`boolean`](src/Encoding.php) | :white_check_mark: |
 | allowReserved | [`boolean`](src/Encoding.php) | :white_check_mark: |
+
+### [4.7.16 Responses Object](https://spec.openapis.org/oas/v3.0.4.html#responses-object)
+
+A container for the expected responses of an operation. The container maps a HTTP response code to the expected response.
+
+#### [4.7.16.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-13)
+
+| Field Name | Type                                                                             | Status             |
+|------------|----------------------------------------------------------------------------------|--------------------|
+| default    | [`Response Object`](src/Response.php) \| [`Reference Object`](src/Reference.php) | :white_check_mark: |
+
+#### [4.7.16.2 Patterned Fields](https://spec.openapis.org/oas/v3.0.4.html#patterned-fields-0)
+
+| Field Name       | Type                                                                             | Status             |
+|------------------|----------------------------------------------------------------------------------|--------------------|
+| HTTP Status Code | [`Response Object`](src/Response.php) \| [`Reference Object`](src/Reference.php) | :white_check_mark: |
 
 ### [4.7.17 Response Object](https://spec.openapis.org/oas/v3.0.4.html#response-object)
 

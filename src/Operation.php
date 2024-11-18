@@ -3,6 +3,7 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
+use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -82,6 +83,14 @@ class Operation
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     public const requestBody = 'requestBody';
+
+    /**
+     * **REQUIRED**. The list of possible responses as they are returned
+     * from executing this operation.
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const responses = 'responses';
 
     /**
      * A list of tags for API documentation control. Tags can be used
@@ -205,4 +214,36 @@ class Operation
 
         return null;
     }
+
+    /**
+     * **REQUIRED**. The list of possible responses as they are returned
+     * from executing this operation.
+     *
+     * @var array<string, Response|Reference> $examples
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['cast' => [self::class, 'responses']])]
+    public ?array $responses;
+
+    /**
+     * **REQUIRED**. The list of possible responses as they are returned
+     * from executing this operation.
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public static function responses($value, array $context): ?array
+    {
+        if (!isset($context[self::responses])) {
+            throw new PropertyRequiredException('Property `$responses` is required.');
+        }
+
+        return array_map(
+            static fn($value) => isset($value[Reference::ref])
+                ? Reference::from($value)
+                : Response::from($value),
+            $value
+        );
+    }
+
 }

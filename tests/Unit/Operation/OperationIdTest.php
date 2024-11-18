@@ -5,13 +5,14 @@ namespace Tests\Unit\Operation;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Operation;
+use Zerotoprod\DataModelOpenapi30\Reference;
 
 class OperationIdTest extends TestCase
 {
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7 */
     #[Test] public function nullable(): void
     {
-        $Operation = Operation::from();
+        $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
         self::assertNull(
             actual: $Operation->operationId,
@@ -24,6 +25,7 @@ class OperationIdTest extends TestCase
     {
         $Operation = Operation::from([
             Operation::operationId => 'operationId',
+            Operation::responses => ['example1' => [Reference::ref => 'ref']]
         ]);
 
         self::assertEquals(
