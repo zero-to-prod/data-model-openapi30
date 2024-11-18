@@ -93,6 +93,15 @@ class Operation
     public const responses = 'responses';
 
     /**
+     * A map of possible out-of band callbacks related to the parent operation.
+     * The key is a unique identifier for the Callback Object. Each value in
+     * the map is a Callback Object that describes a request that may be
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public const callbacks = 'callbacks';
+
+    /**
      * A list of tags for API documentation control. Tags can be used
      * for logical grouping of operations by resources or any other
      * qualifier.
@@ -224,7 +233,7 @@ class Operation
      * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     #[Describe(['cast' => [self::class, 'responses']])]
-    public ?array $responses;
+    public array $responses;
 
     /**
      * **REQUIRED**. The list of possible responses as they are returned
@@ -244,6 +253,38 @@ class Operation
                 : Response::from($value),
             $value
         );
+    }
+
+    /**
+     * A map of possible out-of band callbacks related to the parent operation.
+     * The key is a unique identifier for the Callback Object. Each value in
+     * the map is a Callback Object that describes a request that may be
+     * initiated by the API provider and the expected responses.
+     *
+     * @var array<string, PathItem|Reference> $examples
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    #[Describe(['cast' => [self::class, 'callbacks']])]
+    public ?array $callbacks;
+
+    /**
+     * A map of possible out-of band callbacks related to the parent operation.
+     * The key is a unique identifier for the Callback Object. Each value in
+     * the map is a Callback Object that describes a request that may be
+     *
+     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     */
+    public static function callbacks($value, array $context): ?array
+    {
+        return isset($context[self::callbacks])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : array_map(static fn($item) => PathItem::from($item), $value),
+                $value
+            )
+            : null;
     }
 
 }

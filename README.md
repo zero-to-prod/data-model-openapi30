@@ -155,7 +155,7 @@ Describes a single API operation on a path.
 | parameters   | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]    | :white_check_mark: |
 | requestBody  | [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php) | :white_check_mark: |
 | responses    | [`Responses Object`](src/Response.php)                                                  | :white_check_mark: |
-| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  |                    |
+| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  | :white_check_mark: |
 | deprecated   | [`boolean`](src/Operation.php)                                                          |                    |
 | security     | [`Security Requirement Object`]                                                         |                    |
 | servers      | [`Server Object`](src/Server.php)                                                       |                    |
