@@ -57,6 +57,62 @@ class PathItem
     public const get = 'get';
 
     /**
+     * A definition of a PUT operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const put = 'put';
+
+    /**
+     * A definition of a POST operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const post = 'post';
+
+    /**
+     * A definition of a DELETE operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const delete = 'delete';
+
+    /**
+     * A definition of a OPTIONS operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const options = 'options';
+
+    /**
+     * A definition of a HEAD operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_PATCH_null'])]
+    public const head = 'head';
+
+    /**
+     * A definition of a PATCH operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const patch = 'patch';
+
+    /**
+     * A definition of a TRACE operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public const trace = 'trace';
+
+    /**
      * Allows for a referenced definition of this path item. The value
      * _MUST_ be in the form of a URL, and the referenced structure _MUST_
      * be in the form of a Path Item Object. In case a Path Item
@@ -99,4 +155,59 @@ class PathItem
     #[Describe(['missing_as_null'])]
     public ?Operation $get;
 
+    /**
+     * A definition of a PUT operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $put;
+
+    /**
+     * A definition of a POST operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $post;
+
+    /**
+     * A definition of a DELETE operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $delete;
+
+    /**
+     * A definition of a OPTIONS operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $options;
+
+    /**
+     * A definition of a HEAD operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $head;
+
+    /**
+     * A definition of a PATCH operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $patch;
+
+    /**
+     * A definition of a TRACE operation on this path.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Operation $trace;
 }

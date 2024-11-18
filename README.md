@@ -128,14 +128,14 @@ Describes the operations available on a single path.
 | $ref        | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
 | summary     | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
 | description | [`string`](src/PathItem.php)                                                         | :white_check_mark: |
-| get         | [`Operation Object`](src/Operation.php)                                              |                    |
-| put         | [`Operation Object`](src/Operation.php)                                              |                    |
-| post        | [`Operation Object`](src/Operation.php)                                              |                    |
-| delete      | [`Operation Object`](src/Operation.php)                                              |                    |
-| options     | [`Operation Object`](src/Operation.php)                                              |                    |
-| head        | [`Operation Object`](src/Operation.php)                                              |                    |
-| patch       | [`Operation Object`](src/Operation.php)                                              |                    |
-| trace       | [`Operation Object`](src/Operation.php)                                              |                    |
+| get         | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| put         | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| post        | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| delete      | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| options     | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| head        | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| patch       | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
+| trace       | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
 | servers     | [`Server Object`](src/Server.php)                                                    |                    |
 | parameters  | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)] |                    |
 
