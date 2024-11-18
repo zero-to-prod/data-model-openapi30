@@ -92,6 +92,17 @@ class Header
     public const examples = 'examples';
 
     /**
+     * A map containing the representations for the header. The key is the
+     * media type and the value describes it. The map _MUST_ only contain
+     * one entry.
+     *
+     * @var array<string, MediaType> $content
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     */
+    public const content = 'content';
+
+    /**
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
@@ -193,4 +204,19 @@ class Header
             )
             : null;
     }
+
+    /**
+     * A map containing the representations for the header. The key is the
+     * media type and the value describes it. The map _MUST_ only contain
+     * one entry.
+     *
+     * @var array<string, MediaType> $content
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => MediaType::class
+    ])]
+    public ?array $content;
 }

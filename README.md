@@ -260,31 +260,54 @@ These fields _MAY_ be used either with or without the RFC6570-style serializatio
 | explode       | [`boolean`](./src/Encoding.php) | :white_check_mark: |
 | allowReserved | [`boolean`](./src/Encoding.php) | :white_check_mark: |
 
-### [4.7.19 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
+### [4.7.19 Example Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
 
-An object grouping an internal or external example value with basic summary and description metadata.
+An object grouping an internal or external example value with basic `summary` and `description` metadata.
 
-| Field Name    | Type     | Status             |
-|---------------|----------|--------------------|
-| summary       | `string` | :white_check_mark: |
-| description   | `string` | :white_check_mark: |
-| value         | Any      | :white_check_mark: |
-| externalValue | `string` | :white_check_mark: |
+#### [4.7.19.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15)
 
-### [4.7.21 XML Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
+| Field Name    | Type                          | Status             |
+|---------------|-------------------------------|--------------------|
+| summary       | [`string`](./src/Example.php) | :white_check_mark: |
+| description   | [`string`](./src/Example.php) | :white_check_mark: |
+| value         | [Any](./src/Example.php)      | :white_check_mark: |
+| externalValue | [`string`](./src/Example.php) | :white_check_mark: |
+
+### [4.7.21 Header Object](https://spec.openapis.org/oas/v3.0.4.html#header-object)
 
 Describes a single header for HTTP responses and for individual parts in multipart representations.
 
-| Field Name  | Type                                                   | Status             |
-|-------------|--------------------------------------------------------|--------------------|
-| description | `string`                                               | :white_check_mark: |
-| required    | `boolean`                                              | :white_check_mark: |
-| deprecated  | `boolean`                                              | :white_check_mark: |
-| style       | `string`                                               | :white_check_mark: |
-| explode     | `boolean`                                              | :white_check_mark: |
-| schema      | `Schema Object` \| `Reference Object`                  | :white_check_mark: |
-| example     | Any                                                    | :white_check_mark: |
-| examples    | Map[ `string`, `Example Object` \| `Reference Object`] | :white_check_mark: |
+#### [4.7.21.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-17)
+
+##### [4.7.21.1.1 Common Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1)
+
+These fields _MAY_ be used with either `content` or `schema`.
+
+| Field Name  | Type                          | Status             |
+|-------------|-------------------------------|--------------------|
+| description | [`string`](./src/Header.php)  | :white_check_mark: |
+| required    | [`boolean`](./src/Header.php) | :white_check_mark: |
+| deprecated  | [`boolean`](./src/Header.php) | :white_check_mark: |
+
+###### [4.7.21.1.2 Fixed Fields for use with `schema`](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema-0)
+
+For simpler scenarios, a schema and style can describe the structure and syntax of the header.
+
+| Field Name | Type                                                                                                                  | Status             |
+|------------|-----------------------------------------------------------------------------------------------------------------------|--------------------|
+| style      | [`string`](./src/Header.php)                                                                                          | :white_check_mark: |
+| explode    | [`boolean`](./src/Header.php)                                                                                         | :white_check_mark: |
+| schema     | [`Schema Object`](./src/Schema.php) \| [`Reference Object`](./src/Reference.php)                                      | :white_check_mark: |
+| example    | [Any](./src/Header.php)                                                                                               | :white_check_mark: |
+| examples   | Map[[`string`](./src/Header.php), [`Example Object`](./src/Example.php) \| [`Reference Object`](./src/Reference.php)] | :white_check_mark: |
+
+##### [4.7.21.1.3 Fixed Fields for use with `content`](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0)
+
+For more complex scenarios, the content field can define the media type and schema of the header, as well as give examples of its use.
+
+| Field Name | Type                                                                          | Status             |
+|------------|-------------------------------------------------------------------------------|--------------------|
+| content    | Map[[`string`](./src/Header.php), [`Media Type Object`](./src/MediaType.php)] | :white_check_mark: |
 
 ### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)
 
