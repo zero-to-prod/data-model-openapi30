@@ -294,9 +294,9 @@ The Link Object represents a possible design-time link for a response.
 | operationRef | [`string`](src/Link.php)                                                           | :white_check_mark: |
 | operationId  | [`string`](src/Link.php)                                                           | :white_check_mark: |
 | parameters   | Map[[`string`](src/Link.php), [Any](src/Link.php) \| [{expression}](src/Link.php)] | :white_check_mark: |
-| requestBody  | [Any](src/Link.php) \| [{expression}](src/Link.php)                                |                    |
-| description  | [`string`](src/Link.php)                                                           |                    |
-| server       | [`Server Object`](src/Server.php)                                                  |                    |
+| requestBody  | [Any](src/Link.php) \| [{expression}](src/Link.php)                                | :white_check_mark: |
+| description  | [`string`](src/Link.php)                                                           | :white_check_mark: |
+| server       | [`Server Object`](src/Server.php)                                                  | :white_check_mark: |
 
 ### [4.7.21 Header Object](https://spec.openapis.org/oas/v3.0.4.html#header-object)
 
