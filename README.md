@@ -266,9 +266,12 @@ Describes a single response from an API operation, including design-time, static
 
 #### [4.7.17.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14)
 
-| Field Name  | Type | Status |
-|-------------|------|--------|
-| description |      |        |
+| Field Name  | Type                                                                                                        | Status             |
+|-------------|-------------------------------------------------------------------------------------------------------------|--------------------|
+| description | [`string`](src/Response.php)                                                                                | :white_check_mark: |
+| headers     | Map[[`string`](src/Response.php), [Header Object](src/Header.php) \| [Reference Object](src/Reference.php)] | :white_check_mark: |
+| content     | Map[[`string`](src/Response.php), [Media Type Object](src/Header.php)]                                      | :white_check_mark: |
+| links       | Map[[`string`](src/Response.php), [Link Object](src/Link.php) \| [Reference Object](src/Reference.php)]     | :white_check_mark: |
 
 ### [4.7.19 Example Object](https://spec.openapis.org/oas/v3.0.4.html#example-object)
 

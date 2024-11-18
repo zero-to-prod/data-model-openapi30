@@ -23,11 +23,11 @@ class DescriptionTest extends TestCase
     #[Test] public function string(): void
     {
         $Link = Link::from([
-            Link::description => '1',
+            Link::description => 'description',
         ]);
 
         self::assertEquals(
-            expected: '1',
+            expected: 'description',
             actual: $Link->description,
             message: 'A literal value or {expression} to use as a request body when calling the target operation.'
         );
