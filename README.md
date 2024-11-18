@@ -136,8 +136,8 @@ Describes the operations available on a single path.
 | head        | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
 | patch       | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
 | trace       | [`Operation Object`](src/Operation.php)                                              | :white_check_mark: |
-| servers     | [`Server Object`](src/Server.php)                                                    |                    |
-| parameters  | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)] |                    |
+| servers     | [`Server Object`](src/Server.php)                                                    | :white_check_mark: |
+| parameters  | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
 
 ### [4.7.10 Operation Object](https://spec.openapis.org/oas/v3.0.4.html#operation-object)
 

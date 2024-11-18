@@ -113,6 +113,28 @@ class PathItem
     public const trace = 'trace';
 
     /**
+     * An alternative `servers` array to service this operation. If a `servers`
+     * array is specified at the Path Item Object or OpenAPI Object level,
+     * it will be overridden by this value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    public const servers = 'servers';
+
+    /**
+     * A list of parameters that are applicable for this operation. If a parameter
+     * is already defined in the Path Item, the new definition will override it
+     * but can never remove it. The list _MUST NOT_ include duplicated
+     * parameters. A unique parameter is defined by a combination of a
+     * name and location. The list can use the Reference Object to link
+     * to parameters that are defined in the OpenAPI Object’s
+     * `components.parameters`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    public const parameters = 'parameters';
+
+    /**
      * Allows for a referenced definition of this path item. The value
      * _MUST_ be in the form of a URL, and the referenced structure _MUST_
      * be in the form of a Path Item Object. In case a Path Item
@@ -210,4 +232,59 @@ class PathItem
      */
     #[Describe(['missing_as_null'])]
     public ?Operation $trace;
+
+    /**
+     * An alternative `servers` array to service this operation. If a `servers`
+     * array is specified at the Path Item Object or OpenAPI Object level,
+     * it will be overridden by this value.
+     *
+     * @var Server[]
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => Server::class
+    ])]
+    public ?array $servers;
+
+    /**
+     * A list of parameters that are applicable for this operation. If a parameter
+     * is already defined in the Path Item, the new definition will override it
+     * but can never remove it. The list _MUST NOT_ include duplicated
+     * parameters. A unique parameter is defined by a combination of a
+     * name and location. The list can use the Reference Object to link
+     * to parameters that are defined in the OpenAPI Object’s
+     * `components.parameters`.
+     *
+     * @var array<string, Parameter|Reference> $parameters
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    #[Describe(['cast' => [self::class, 'parameters']])]
+    public ?array $parameters;
+
+    /**
+     * A list of parameters that are applicable for this operation. If a parameter
+     * is already defined in the Path Item, the new definition will override it
+     * but can never remove it. The list _MUST NOT_ include duplicated
+     * parameters. A unique parameter is defined by a combination of a
+     * name and location. The list can use the Reference Object to link
+     * to parameters that are defined in the OpenAPI Object’s
+     * `components.parameters`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     */
+    public static function parameters($value, array $context): ?array
+    {
+        return isset($context[self::parameters])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Parameter::from($value),
+                $value
+            )
+            : null;
+    }
+
 }
