@@ -177,6 +177,37 @@ class Schema
     public null|int|float $minimum;
 
     /**
+     * The value of "exclusiveMinimum" _MUST_ be a boolean, representing
+     * whether the limit in "minimum" is exclusive or not.  An undefined
+     * value is the same as false.
+     *
+     * If "exclusiveMinimum" is true, then a numeric instance SHOULD NOT be
+     * equal to the value specified in "minimum".  If "exclusiveMinimum" is
+     * false (or not specified), then a numeric instance MAY be equal to the
+     * value of "minimum".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.5
+     */
+    public const exclusiveMinimum = 'exclusiveMinimum';
+
+    /**
+     * The value of "exclusiveMinimum" _MUST_ be a boolean, representing
+     * whether the limit in "minimum" is exclusive or not.  An undefined
+     * value is the same as false.
+     *
+     * If "exclusiveMinimum" is true, then a numeric instance SHOULD NOT be
+     * equal to the value specified in "minimum".  If "exclusiveMinimum" is
+     * false (or not specified), then a numeric instance MAY be equal to the
+     * value of "minimum".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.5
+     */
+    #[Describe(['default' => false])]
+    public bool $exclusiveMinimum;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object

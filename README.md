@@ -376,7 +376,7 @@ The Schema Object allows the definition of input and output data types.
 | maximum          | [`number`](src/Schema.php)  | :white_check_mark: |
 | exclusiveMaximum | [`boolean`](src/Schema.php) | :white_check_mark: |
 | minimum          | [`number`](src/Schema.php)  | :white_check_mark: |
-| exclusiveMinimum | [`boolean`](src/Schema.php) |                    |
+| exclusiveMinimum | [`boolean`](src/Schema.php) | :white_check_mark: |
 | maxLength        | [`integer`](src/Schema.php) |                    |
 | minLength        | [`integer`](src/Schema.php) |                    |
 | pattern          | [`string`](src/Schema.php)  |                    |
