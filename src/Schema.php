@@ -58,7 +58,7 @@ class Schema
      * results in an integer.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
      */
     public const multipleOf = 'multipleOf';
 
@@ -69,7 +69,7 @@ class Schema
      * results in an integer.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
      */
     #[Describe(['cast' => [self::class, 'multipleOf']])]
     public null|float|int $multipleOf;
@@ -86,6 +86,35 @@ class Schema
 
         return $value;
     }
+
+    /**
+     * The value of "maximum" MUST be a number, representing an upper limit
+     * for a numeric instance.
+     *
+     * If the instance is a number, then this keyword validates if
+     * "exclusiveMaximum" is true and instance is less than the provided
+     * value, or else if the instance is less than or exactly equal to the
+     * provided value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
+     */
+    public const maximum = 'maximum';
+
+    /**
+     * The value of "maximum" MUST be a number, representing an upper limit
+     * for a numeric instance.
+     *
+     * If the instance is a number, then this keyword validates if
+     * "exclusiveMaximum" is true and instance is less than the provided
+     * value, or else if the instance is less than or exactly equal to the
+     * provided value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
+     */
+    #[Describe(['missing_as_null'])]
+    public null|int|float $maximum;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
