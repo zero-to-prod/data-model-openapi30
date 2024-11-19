@@ -88,7 +88,7 @@ class Schema
     }
 
     /**
-     * The value of "maximum" MUST be a number, representing an upper limit
+     * The value of "maximum" _MUST_ be a number, representing an upper limit
      * for a numeric instance.
      *
      * If the instance is a number, then this keyword validates if
@@ -102,7 +102,7 @@ class Schema
     public const maximum = 'maximum';
 
     /**
-     * The value of "maximum" MUST be a number, representing an upper limit
+     * The value of "maximum" _MUST_ be a number, representing an upper limit
      * for a numeric instance.
      *
      * If the instance is a number, then this keyword validates if
@@ -115,6 +115,37 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public null|int|float $maximum;
+
+    /**
+     * The value of "exclusiveMaximum" _MUST_ be a boolean, representing
+     * whether the limit in "maximum" is exclusive or not.  An undefined
+     * value is the same as false.
+     *
+     * If "exclusiveMaximum" is true, then a numeric instance SHOULD NOT be
+     * equal to the value specified in "maximum".  If "exclusiveMaximum" is
+     * false (or not specified), then a numeric instance MAY be equal to the
+     * value of "maximum".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.3
+     */
+    public const exclusiveMaximum = 'exclusiveMaximum';
+
+    /**
+     * The value of "exclusiveMaximum" _MUST_ be a boolean, representing
+     * whether the limit in "maximum" is exclusive or not.  An undefined
+     * value is the same as false.
+     *
+     * If "exclusiveMaximum" is true, then a numeric instance SHOULD NOT be
+     * equal to the value specified in "maximum".  If "exclusiveMaximum" is
+     * false (or not specified), then a numeric instance MAY be equal to the
+     * value of "maximum".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.3
+     */
+    #[Describe(['default' => false])]
+    public bool $exclusiveMaximum;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
