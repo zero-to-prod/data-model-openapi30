@@ -23,6 +23,35 @@ class Schema
     use DataModel;
 
     /**
+     * The value of both of these keywords MUST be a string.
+     *
+     * Both of these keywords can be used to decorate a user interface with
+     * information about the data produced by this user interface.  A title
+     * will preferrably be short, whereas a description will provide
+     * explanation about the purpose of the instance described by this
+     * schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     */
+    public const title = 'title';
+
+    /**
+     * The value of both of these keywords MUST be a string.
+     *
+     * Both of these keywords can be used to decorate a user interface with
+     * information about the data produced by this user interface.  A title
+     * will preferably be short, whereas a description will provide
+     * explanation about the purpose of the instance described by this
+     * schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $title;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
