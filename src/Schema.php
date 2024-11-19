@@ -208,6 +208,69 @@ class Schema
     public bool $exclusiveMinimum;
 
     /**
+     * The value of this keyword _MUST_ be a non-negative integer.
+     *
+     * The value of this keyword _MUST_ be an integer. This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * A string instance is valid against this keyword if its length is less
+     * than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
+     */
+    public const maxLength = 'maxLength';
+
+    /**
+     * The value of this keyword _MUST_ be a non-negative integer.
+     *
+     * The value of this keyword _MUST_ be an integer. This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * A string instance is valid against this keyword if its length is less
+     * than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
+     */
+    #[Describe(['cast' => [self::class, 'maxLength']])]
+    public null|int $maxLength;
+
+    /**
+     * The value of this keyword _MUST_ be a non-negative integer.
+     *
+     * The value of this keyword _MUST_ be an integer. This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * A string instance is valid against this keyword if its length is less
+     * than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
+     */
+    public static function maxLength($value, array $context): ?int
+    {
+        if (!isset($context[self::maxLength])) {
+            return null;
+        }
+
+        if (!($value >= 0)) {
+            throw new InvalidMaxLengthException('$maxLength must be a positive integer');
+        }
+
+        return $value;
+    }
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -282,6 +345,29 @@ class Schema
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “read only”. This means that it _MAY_ be sent as part
+     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * If the property is marked as `readOnly` being `true` and is in
+     * the `required` list, the `required` will take effect on the
+     * response only. A property _MUST NOT_ be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public static function readOnly($value, array $context): bool
+    {
+        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
+            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
+        }
+
+        return isset($context[self::readOnly])
+            ? $value
+            : false;
+    }
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
      * request but **_SHOULD_ NOT** be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
@@ -308,6 +394,29 @@ class Schema
      */
     #[Describe(['cast' => [self::class, 'writeOnly']])]
     public bool $writeOnly;
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “write only”. Therefore, it _MAY_ be sent as part of a
+     * request but **_SHOULD_ NOT** be sent as part of the response. If the
+     * property is marked as `writeOnly` being `true` and is in the
+     * `required` list, the `required` will take effect on the
+     * request only. A property _MUST NOT_ be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public static function writeOnly($value, array $context): bool
+    {
+        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
+            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
+        }
+
+        return isset($context[self::writeOnly])
+            ? $value
+            : false;
+    }
 
     /**
      * This _MAY_ be used only on property schemas. It has no effect on
@@ -380,26 +489,4 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public mixed $example;
-
-    public static function readOnly($value, array $context): bool
-    {
-        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
-            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
-        }
-
-        return isset($context[self::readOnly])
-            ? $value
-            : false;
-    }
-
-    public static function writeOnly($value, array $context): bool
-    {
-        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
-            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
-        }
-
-        return isset($context[self::writeOnly])
-            ? $value
-            : false;
-    }
 }
