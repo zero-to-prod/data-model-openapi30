@@ -369,24 +369,24 @@ The Schema Object allows the definition of input and output data types.
 
 #### [4.7.24.1 JSON Schema Keywords](https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords)
 
-| Field Name       | Type                        | Status               |
-|------------------|-----------------------------|----------------------|
-| title            | [`string`](src/Schema.php)  | :white_check_mark:   |
-| multipleOf       | [`float`](src/Schema.php)   |                      |
-| maximum          | [`float`](src/Schema.php)   |                      |
-| exclusiveMaximum | [`boolean`](src/Schema.php) |                      |
-| minimum          | [`float`](src/Schema.php)   |                      |
-| exclusiveMinimum | [`boolean`](src/Schema.php) |                      |
-| maxLength        | [`integer`](src/Schema.php) |                      |
-| minLength        | [`integer`](src/Schema.php) |                      |
-| pattern          | [`string`](src/Schema.php)  |                      |
-| maxItems         | [`integer`](src/Schema.php) |                      |
-| minItems         | [`integer`](src/Schema.php) |                      |
-| uniqueItems      | [`boolean`](src/Schema.php) |                      |
-| maxProperties    | [`integer`](src/Schema.php) |                      |
-| minProperties    | [`integer`](src/Schema.php) |                      |
-| required         | [`array`](src/Schema.php)   |                      |
-| enum             | [`array`](src/Schema.php)   |                      |
+| Field Name       | Type                        | Status             |
+|------------------|-----------------------------|--------------------|
+| title            | [`string`](src/Schema.php)  | :white_check_mark: |
+| multipleOf       | [`number`](src/Schema.php)  | :white_check_mark: |
+| maximum          | [`number`](src/Schema.php)  |                    |
+| exclusiveMaximum | [`boolean`](src/Schema.php) |                    |
+| minimum          | [`number`](src/Schema.php)  |                    |
+| exclusiveMinimum | [`boolean`](src/Schema.php) |                    |
+| maxLength        | [`integer`](src/Schema.php) |                    |
+| minLength        | [`integer`](src/Schema.php) |                    |
+| pattern          | [`string`](src/Schema.php)  |                    |
+| maxItems         | [`integer`](src/Schema.php) |                    |
+| minItems         | [`integer`](src/Schema.php) |                    |
+| uniqueItems      | [`boolean`](src/Schema.php) |                    |
+| maxProperties    | [`integer`](src/Schema.php) |                    |
+| minProperties    | [`integer`](src/Schema.php) |                    |
+| required         | [`array`](src/Schema.php)   |                    |
+| enum             | [`array`](src/Schema.php)   |                    |
 
 #### [4.7.24.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20)
 

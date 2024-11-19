@@ -32,7 +32,7 @@ class Schema
      * schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
      */
     public const title = 'title';
 
@@ -46,10 +46,46 @@ class Schema
      * schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
      */
     #[Describe(['missing_as_null'])]
     public ?string $title;
+
+    /**
+     * The value of "multipleOf" _MUST_ be a number, strictly greater than 0.
+     *
+     * A numeric instance is only valid if division by this keyword's value
+     * results in an integer.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     */
+    public const multipleOf = 'multipleOf';
+
+    /**
+     * The value of "multipleOf" _MUST_ be a number, strictly greater than 0.
+     *
+     * A numeric instance is only valid if division by this keyword's value
+     * results in an integer.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     */
+    #[Describe(['cast' => [self::class, 'multipleOf']])]
+    public null|float|int $multipleOf;
+
+    public static function multipleOf(mixed $value, array $context): mixed
+    {
+        if (!isset($context[self::multipleOf])) {
+            return null;
+        }
+
+        if (!is_numeric($value) || $value <= 0) {
+            throw new InvalidMultipleException('$multipleOf must be a positive integer');
+        }
+
+        return $value;
+    }
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
