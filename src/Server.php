@@ -26,23 +26,6 @@ class Server
     public const url = 'url';
 
     /**
-     * An optional string describing the host designated by the URL.
-     * [CommonMark] syntax _MAY_ be used for rich text representation.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
-     * @link https://spec.commonmark.org/
-     */
-    public const description = 'description';
-
-    /**
-     * A map between a variable name and its value. The value is used
-     * for substitution in the server’s URL template.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
-     */
-    public const variables = 'variables';
-
-    /**
      * **REQUIRED**. A URL to the target host. This URL supports Server Variables
      * and _MAY_ be relative, to indicate that the host location is relative
      * to the location where the document containing the Server Object is
@@ -61,8 +44,25 @@ class Server
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @link https://spec.commonmark.org/
      */
+    public const description = 'description';
+
+    /**
+     * An optional string describing the host designated by the URL.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @link https://spec.commonmark.org/
+     */
     #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * A map between a variable name and its value. The value is used
+     * for substitution in the server’s URL template.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     */
+    public const variables = 'variables';
 
     /**
      * A map between a variable name and its value. The value is used

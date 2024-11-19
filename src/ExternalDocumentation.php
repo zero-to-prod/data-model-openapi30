@@ -24,14 +24,6 @@ class ExternalDocumentation
     public const description = 'description';
 
     /**
-     * **REQUIRED**. The URL for the target documentation. This _MUST_ be
-     * in the form of a URL.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
-     */
-    public const url = 'url';
-
-    /**
      * A description of the target documentation. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
@@ -40,6 +32,14 @@ class ExternalDocumentation
      */
     #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * **REQUIRED**. The URL for the target documentation. This _MUST_ be
+     * in the form of a URL.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     */
+    public const url = 'url';
 
     /**
      * **REQUIRED**. The URL for the target documentation. This _MUST_ be

@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -28,6 +27,15 @@ class RequestBody
     public const description = 'description';
 
     /**
+     * A brief description of the request body. This could contain examples
+     * of use. [CommonMark] syntax MAY be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $description;
+
+    /**
      * **REQUIRED**. The content of the request body. The key is a media type or
      * media type range, see [RFC7231] Appendix D, and the value describes it.
      * For requests that match multiple keys, only the most specific key is
@@ -36,22 +44,6 @@ class RequestBody
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
      */
     public const content = 'content';
-
-    /**
-     * Determines if the request body is required in the request. Defaults to `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
-     */
-    public const required = 'required';
-
-    /**
-     * A brief description of the request body. This could contain examples
-     * of use. [CommonMark] syntax MAY be used for rich text representation.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
-     */
-    #[Describe(['missing_as_null'])]
-    public ?string $description;
 
     /**
      * **REQUIRED**. The content of the request body. The key is a media type or
@@ -70,6 +62,12 @@ class RequestBody
     ])]
     public ?array $content;
 
+    /**
+     * Determines if the request body is required in the request. Defaults to `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     */
+    public const required = 'required';
 
     /**
      * Determines if the request body is required in the request. Defaults to `false`.

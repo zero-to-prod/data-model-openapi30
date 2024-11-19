@@ -33,14 +33,6 @@ class Discriminator
     public const propertyName = 'propertyName';
 
     /**
-     * An object to hold mappings between payload values and schema names or
-     * URI references.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
-     */
-    public const mapping = 'mapping';
-
-    /**
      * **REQUIRED**. The name of the property in the payload that will hold
      * the discriminating value. This property _SHOULD_ be required in the
      * payload schema, as the behavior when the property is absent is
@@ -50,6 +42,14 @@ class Discriminator
      */
     #[Describe(['required'])]
     public string $propertyName;
+
+    /**
+     * An object to hold mappings between payload values and schema names or
+     * URI references.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
+     */
+    public const mapping = 'mapping';
 
     /**
      * An object to hold mappings between payload values and schema names or

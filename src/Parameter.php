@@ -29,7 +29,7 @@ class Parameter
     use DataModel;
 
     /**
-     * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
+     * **REQUIRED**. The name of the parameter. Parameter names are case-sensitive.
      *
      * - If `in` is `"path"`, the name field _MUST_ correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
@@ -48,131 +48,7 @@ class Parameter
     public const name = 'name';
 
     /**
-     * **REQUIRED**. The location of the parameter. Possible values are `"query"`,
-     * `"header"`, `"path"` or `"cookie"`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     */
-    public const in = 'in';
-
-    /**
-     * A brief description of the parameter. This could contain examples of use.
-     * [CommonMark] syntax _MAY_ be used for rich text representation.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.commonmark.org/
-     */
-    public const description = 'description';
-
-    /**
-     * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
-     * be `true`. Otherwise, the field _MAY_ be included and its default
-     * value is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
-     */
-    public const required = 'required';
-
-    /**
-     * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
-     * out of usage. Default value is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     */
-    public const deprecated = 'deprecated';
-
-    /**
-     * If `true`, clients _MAY_ pass a zero-length string value in place
-     * of parameters that would otherwise be omitted entirely, which the
-     * server _SHOULD_ interpret as the parameter being unused.
-     * Default value is `false`. If `style` is used, and if behavior
-     * is n/a (cannot be serialized), the value of `allowEmptyValue`
-     * _SHALL_ be ignored. Interactions between this field
-     * and the parameter’s Schema Object are implementation-defined.
-     * This field is valid only for query parameters. Use of
-     * this field is ***NOT _RECOMMENDED_***, and it is likely
-     * to be removed in a later revision.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
-     */
-    public const allowEmptyValue = 'allowEmptyValue';
-
-    /**
-     * Describes how the parameter value will be serialized depending on the
-     * type of the parameter value. Default values (based on value of `in`):
-     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
-     * - `"simple"`; for `"cookie"` - `"form"`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public const style = 'style';
-
-    /**
-     * When this is `true`, parameter values of type `array` or `object` generate separate
-     * parameters for each value of the array or key-value pair of the map. For other
-     * types of parameters this field has no effect. When `style` is `"form"`, the
-     * default value is `true`. For all other styles, the default value is `false`.
-     * Note that despite `false` being the default for `deepObject`, the
-     * combination of false with `deepObject` is undefined.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public const explode = 'explode';
-
-    /**
-     * When this is `true`, parameter values are serialized using reserved expansion, as
-     * defined by [RFC6570] Section 3.2.3, which allows RFC3986’s reserved character set,
-     * as well as percent-encoded triples, to pass through unchanged, while still
-     * percent-encoding all other disallowed characters (including `%` outside of
-     * percent-encoded triples). Applications are still responsible for
-     * percent-encoding reserved characters that are not allowed in the
-     * query string (`[`, `]`, `#`), or have a special meaning in
-     * `application/x-www-form-urlencoded` (`-`, `&`, `+`); see
-     * Appendices C and E for details. This field only applies
-     * to parameters with an `in` value of `query`. The
-     * default value is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public const allowReserved = 'allowReserved';
-
-    /**
-     * The schema defining the type used for the parameter.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
-     */
-    public const schema = 'schema';
-
-    /**
-     * Example of the parameter’s potential value; see Working With Examples.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
-     */
-    public const example = 'example';
-
-    /**
-     * Examples of the parameter’s potential value; see Working With Examples.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     */
-    public const examples = 'examples';
-
-    /**
-     * A map containing the representations for the parameter. The key is the
-     * media type and the value describes it. The map _MUST_ only contain one
-     * entry.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
-     */
-    public const content = 'content';
-
-    /**
-     * **REQUIRED**. The name of the parameter. Parameter names are case sensitive.
+     * **REQUIRED**. The name of the parameter. Parameter names are case-sensitive.
      *
      * - If `in` is `"path"`, the name field _MUST_ correspond to a template expression
      * occurring within the path field in the Paths Object. See Path Templating
@@ -197,6 +73,14 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      */
+    public const in = 'in';
+
+    /**
+     * **REQUIRED**. The location of the parameter. Possible values are `"query"`,
+     * `"header"`, `"path"` or `"cookie"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     */
     #[Describe(['required'])]
     public string $in;
 
@@ -207,8 +91,28 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
      */
+    public const description = 'description';
+
+    /**
+     * A brief description of the parameter. This could contain examples of use.
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.commonmark.org/
+     */
     #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * Determines whether this parameter is mandatory. If the parameter
+     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
+     * be `true`. Otherwise, the field _MAY_ be included and its default
+     * value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     */
+    public const required = 'required';
 
     /**
      * Determines whether this parameter is mandatory. If the parameter
@@ -248,6 +152,14 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      */
+    public const deprecated = 'deprecated';
+
+    /**
+     * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
+     * out of usage. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     */
     #[Describe(['default' => false])]
     public bool $deprecated;
 
@@ -267,8 +179,36 @@ class Parameter
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
      * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
      */
+    public const allowEmptyValue = 'allowEmptyValue';
+
+    /**
+     * If `true`, clients _MAY_ pass a zero-length string value in place
+     * of parameters that would otherwise be omitted entirely, which the
+     * server _SHOULD_ interpret as the parameter being unused.
+     * Default value is `false`. If `style` is used, and if behavior
+     * is n/a (cannot be serialized), the value of `allowEmptyValue`
+     * _SHALL_ be ignored. Interactions between this field
+     * and the parameter’s Schema Object are implementation-defined.
+     * This field is valid only for query parameters. Use of
+     * this field is ***NOT _RECOMMENDED_***, and it is likely
+     * to be removed in a later revision.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
+     */
     #[Describe(['default' => false])]
     public bool $allowEmptyValue;
+
+    /**
+     * Describes how the parameter value will be serialized depending on the
+     * type of the parameter value. Default values (based on value of `in`):
+     * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
+     * - `"simple"`; for `"cookie"` - `"form"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const style = 'style';
 
     /**
      * Describes how the parameter value will be serialized depending on the
@@ -305,6 +245,18 @@ class Parameter
             ? $value
             : null;
     }
+
+    /**
+     * When this is `true`, parameter values of type `array` or `object` generate separate
+     * parameters for each value of the array or key-value pair of the map. For other
+     * types of parameters this field has no effect. When `style` is `"form"`, the
+     * default value is `true`. For all other styles, the default value is `false`.
+     * Note that despite `false` being the default for `deepObject`, the
+     * combination of false with `deepObject` is undefined.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const explode = 'explode';
 
     /**
      * When this is `true`, parameter values of type `array` or `object` generate separate
@@ -353,8 +305,32 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      */
+    public const allowReserved = 'allowReserved';
+
+    /**
+     * When this is `true`, parameter values are serialized using reserved expansion, as
+     * defined by [RFC6570] Section 3.2.3, which allows RFC3986’s reserved character set,
+     * as well as percent-encoded triples, to pass through unchanged, while still
+     * percent-encoding all other disallowed characters (including `%` outside of
+     * percent-encoded triples). Applications are still responsible for
+     * percent-encoding reserved characters that are not allowed in the
+     * query string (`[`, `]`, `#`), or have a special meaning in
+     * `application/x-www-form-urlencoded` (`-`, `&`, `+`); see
+     * Appendices C and E for details. This field only applies
+     * to parameters with an `in` value of `query`. The
+     * default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
     #[Describe(['default' => false])]
     public bool $allowReserved;
+
+    /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     */
+    public const schema = 'schema';
 
     /**
      * The schema defining the type used for the parameter.
@@ -381,8 +357,23 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
+    public const example = 'example';
+
+    /**
+     * Example of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     */
     #[Describe(['missing_as_null'])]
     public mixed $example;
+
+    /**
+     * Examples of the parameter’s potential value; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     */
+    public const examples = 'examples';
 
     /**
      * Example of the parameter’s potential value; see Working With Examples.
@@ -414,6 +405,15 @@ class Parameter
             )
             : null;
     }
+
+    /**
+     * A map containing the representations for the parameter. The key is the
+     * media type and the value describes it. The map _MUST_ only contain one
+     * entry.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     */
+    public const content = 'content';
 
     /**
      * A map containing the representations for the parameter. The key is the

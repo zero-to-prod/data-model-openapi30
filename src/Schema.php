@@ -35,77 +35,6 @@ class Schema
     public const nullable = 'nullable';
 
     /**
-     * Adds support for polymorphism. The discriminator is used to determine
-     * which of a set of schemas a payload is expected to satisfy. See
-     * Composition and Inheritance for more details.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const discriminator = 'discriminator';
-
-    /**
-     * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **_SHOULD_ NOT** be sent as part of the request.
-     * If the property is marked as `readOnly` being `true` and is in
-     * the `required` list, the `required` will take effect on the
-     * response only. A property _MUST NOT_ be marked as both
-     * `readOnly` and `writeOnly` being `true`. Default value
-     * is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const readOnly = 'readOnly';
-
-    /**
-     * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **_SHOULD_ NOT** be sent as part of the response. If the
-     * property is marked as `writeOnly` being `true` and is in the
-     * `required` list, the `required` will take effect on the
-     * request only. A property _MUST NOT_ be marked as both
-     * `readOnly` and `writeOnly` being `true`. Default value
-     * is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const writeOnly = 'writeOnly';
-
-    /**
-     * This _MAY_ be used only on property schemas. It has no effect on
-     * root schemas. Adds additional metadata to describe the XML
-     * representation of this property.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const xml = 'xml';
-
-    /**
-     * Additional external documentation for this schema.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const externalDocs = 'externalDocs';
-
-    /**
-     * Specifies that a schema is deprecated and _SHOULD_ be transitioned
-     * out of usage. Default value is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const deprecated = 'deprecated';
-
-    /**
-     * A free-form field to include an example of an instance for this schema.
-     * To represent examples that cannot be naturally represented in JSON or
-     * YAML, a string value can be used to contain the example with escaping
-     * where necessary.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     */
-    public const example = 'example';
-
-    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
@@ -125,8 +54,31 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
+    public const discriminator = 'discriminator';
+
+    /**
+     * Adds support for polymorphism. The discriminator is used to determine
+     * which of a set of schemas a payload is expected to satisfy. See
+     * Composition and Inheritance for more details.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
     #[Describe(['missing_as_null'])]
     public ?Discriminator $discriminator;
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “read only”. This means that it _MAY_ be sent as part
+     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * If the property is marked as `readOnly` being `true` and is in
+     * the `required` list, the `required` will take effect on the
+     * response only. A property _MUST NOT_ be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const readOnly = 'readOnly';
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
@@ -155,8 +107,31 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
+    public const writeOnly = 'writeOnly';
+
+    /**
+     * Relevant only for Schema Object `properties` definitions. Declares the
+     * property as “write only”. Therefore, it _MAY_ be sent as part of a
+     * request but **_SHOULD_ NOT** be sent as part of the response. If the
+     * property is marked as `writeOnly` being `true` and is in the
+     * `required` list, the `required` will take effect on the
+     * request only. A property _MUST NOT_ be marked as both
+     * `readOnly` and `writeOnly` being `true`. Default value
+     * is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
     #[Describe(['cast' => [self::class, 'writeOnly']])]
     public bool $writeOnly;
+
+    /**
+     * This _MAY_ be used only on property schemas. It has no effect on
+     * root schemas. Adds additional metadata to describe the XML
+     * representation of this property.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const xml = 'xml';
 
     /**
      * This _MAY_ be used only on property schemas. It has no effect on
@@ -173,6 +148,13 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
+    public const externalDocs = 'externalDocs';
+
+    /**
+     * Additional external documentation for this schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
     #[Describe(['missing_as_null'])]
     public ?ExternalDocumentation $externalDocs;
 
@@ -182,8 +164,26 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
+    public const deprecated = 'deprecated';
+
+    /**
+     * Specifies that a schema is deprecated and _SHOULD_ be transitioned
+     * out of usage. Default value is `false`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
     #[Describe(['default' => false])]
     public bool $deprecated;
+
+    /**
+     * A free-form field to include an example of an instance for this schema.
+     * To represent examples that cannot be naturally represented in JSON or
+     * YAML, a string value can be used to contain the example with escaping
+     * where necessary.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     */
+    public const example = 'example';
 
     /**
      * A free-form field to include an example of an instance for this schema.

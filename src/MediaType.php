@@ -32,36 +32,6 @@ class MediaType
     public const schema = 'schema';
 
     /**
-     * Example of the media type; see Working With Examples.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
-     */
-    public const example = 'example';
-
-    /**
-     * Examples of the media type; see Working With Examples.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
-     */
-    public const examples = 'examples';
-
-    /**
-     * A map between a property name and its encoding information. The key,
-     * being the property name, _MUST_ exist in the schema as a property.
-     * The `encoding` field _SHALL_ only apply to Request Body Objects,
-     * and only when the media type is `multipart` or
-     * `application/x-www-form-urlencoded`. If no
-     * Encoding Object is provided for a property,
-     * the behavior is determined by the default
-     * values documented for the Encoding Object.
-     *
-     * @var array<string, Encoding> $encoding
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
-     */
-    public const encoding = 'encoding';
-
-    /**
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
@@ -86,12 +56,26 @@ class MediaType
     }
 
     /**
+     * Example of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public const example = 'example';
+
+    /**
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      */
     #[Describe(['missing_as_null'])]
     public mixed $example;
+
+    /**
+     * Examples of the media type; see Working With Examples.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public const examples = 'examples';
 
     /**
      * Examples of the media type; see Working With Examples.
@@ -119,6 +103,20 @@ class MediaType
             )
             : null;
     }
+
+    /**
+     * A map between a property name and its encoding information. The key,
+     * being the property name, _MUST_ exist in the schema as a property.
+     * The `encoding` field _SHALL_ only apply to Request Body Objects,
+     * and only when the media type is `multipart` or
+     * `application/x-www-form-urlencoded`. If no
+     * Encoding Object is provided for a property,
+     * the behavior is determined by the default
+     * values documented for the Encoding Object.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     */
+    public const encoding = 'encoding';
 
     /**
      * A map between a property name and its encoding information. The key,

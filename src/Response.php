@@ -24,35 +24,6 @@ class Response
     public const description = 'description';
 
     /**
-     * Maps a header name to its definition. [RFC7230] Section 3.2 states
-     * header names are case insensitive. If a response header is defined
-     * with the name `"Content-Type"`, it _SHALL_ be ignored.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
-     */
-    public const headers = 'headers';
-
-    /**
-     * A map containing descriptions of potential response payloads. The key
-     * is a media type or media type range, see [RFC7231] Appendix D, and
-     * the value describes it. For responses that match multiple keys,
-     * only the most specific key is applicable. e.g. `"text/plain"`
-     * overrides `"text/*"`
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
-     */
-    public const content = 'content';
-
-    /**
-     * A map of operations links that can be followed from the response.
-     * The key of the map is a short name for the link, following the
-     * naming constraints of the names for Component Objects.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
-     */
-    public const links = 'links';
-
-    /**
      * **REQUIRED**. A description of the response. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
@@ -63,7 +34,16 @@ class Response
 
     /**
      * Maps a header name to its definition. [RFC7230] Section 3.2 states
-     * header names are case insensitive. If a response header is defined
+     * header names are case-insensitive. If a response header is defined
+     * with the name `"Content-Type"`, it _SHALL_ be ignored.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     */
+    public const headers = 'headers';
+
+    /**
+     * Maps a header name to its definition. [RFC7230] Section 3.2 states
+     * header names are case-insensitive. If a response header is defined
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
@@ -96,6 +76,17 @@ class Response
      * only the most specific key is applicable. e.g. `"text/plain"`
      * overrides `"text/*"`
      *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     */
+    public const content = 'content';
+
+    /**
+     * A map containing descriptions of potential response payloads. The key
+     * is a media type or media type range, see [RFC7231] Appendix D, and
+     * the value describes it. For responses that match multiple keys,
+     * only the most specific key is applicable. e.g. `"text/plain"`
+     * overrides `"text/*"`
+     *
      * @var array<string, MediaType> $content
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
@@ -105,6 +96,15 @@ class Response
         'type' => MediaType::class,
     ])]
     public ?array $content;
+
+    /**
+     * A map of operations links that can be followed from the response.
+     * The key of the map is a short name for the link, following the
+     * naming constraints of the names for Component Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     */
+    public const links = 'links';
 
     /**
      * A map of operations links that can be followed from the response.

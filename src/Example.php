@@ -29,12 +29,29 @@ class Example
     public const summary = 'summary';
 
     /**
+     * Short description for the example.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $summary;
+
+    /**
      * Long description for the example. [CommonMark] syntax _MAY_ be
      * used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
      */
     public const description = 'description';
+
+    /**
+     * Long description for the example. [CommonMark] syntax _MAY_ be
+     *  used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $description;
 
     /**
      * Embedded literal example. The `value` field and `externalValue` field
@@ -45,33 +62,6 @@ class Example
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
      */
     public const value = 'value';
-
-    /**
-     * A URL that points to the literal example. This provides the capability
-     * to reference examples that cannot easily be included in JSON or YAML
-     * documents. The `value` field and `externalValue` field are mutually
-     * exclusive. See the rules for resolving Relative References.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
-     */
-    public const externalValue = 'externalValue';
-
-    /**
-     * Short description for the example.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
-     */
-    #[Describe(['missing_as_null'])]
-    public ?string $summary;
-
-    /**
-     * Long description for the example. [CommonMark] syntax _MAY_ be
-     *  used for rich text representation.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
-     */
-    #[Describe(['missing_as_null'])]
-    public ?string $description;
 
     /**
      * Embedded literal example. The `value` field and `externalValue` field
@@ -92,6 +82,16 @@ class Example
 
         return $context[self::value] ?? null;
     }
+
+    /**
+     * A URL that points to the literal example. This provides the capability
+     * to reference examples that cannot easily be included in JSON or YAML
+     * documents. The `value` field and `externalValue` field are mutually
+     * exclusive. See the rules for resolving Relative References.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
+     */
+    public const externalValue = 'externalValue';
 
     /**
      * A URL that points to the literal example. This provides the capability

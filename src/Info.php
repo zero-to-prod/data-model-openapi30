@@ -24,47 +24,6 @@ class Info
     public const title = 'title';
 
     /**
-     * A description of the API.
-     *
-     * [CommonMark] syntax _MAY_ be used for rich text representation.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
-     * @see  https://spec.commonmark.org/
-     */
-    public const description = 'description';
-
-    /**
-     * A URL for the Terms of Service for the API.
-     * This _MUST_ be in the form of a URL.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
-     */
-    public const termsOfService = 'termsOfService';
-
-    /**
-     * **REQUIRED**. The version of the OpenAPI Document (which is distinct from the
-     * OpenAPI Specification version or the version of the API being described
-     * or the version of the OpenAPI Description).
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
-     */
-    public const version = 'version';
-
-    /**
-     * The contact information for the exposed API.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
-     */
-    public const contact = 'contact';
-
-    /**
-     * The license information for the exposed API.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
-     */
-    public const licence = 'licence';
-
-    /**
      * The title of the API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
@@ -80,8 +39,26 @@ class Info
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      * @see  https://spec.commonmark.org/
      */
+    public const description = 'description';
+
+    /**
+     * A description of the API.
+     *
+     * [CommonMark] syntax _MAY_ be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  https://spec.commonmark.org/
+     */
     #[Describe(['missing_as_null' => true])]
     public ?string $description;
+
+    /**
+     * A URL for the Terms of Service for the API.
+     * This _MUST_ be in the form of a URL.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    public const termsOfService = 'termsOfService';
 
     /**
      * A URL for the Terms of Service for the API.
@@ -102,6 +79,15 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
+    public const version = 'version';
+
+    /**
+     * **REQUIRED**. The version of the OpenAPI Document (which is distinct from the
+     * OpenAPI Specification version or the version of the API being described
+     * or the version of the OpenAPI Description).
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
     #[Describe(['required'])]
     public string $version;
 
@@ -110,8 +96,22 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
+    public const contact = 'contact';
+
+    /**
+     * The contact information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
     #[Describe(['missing_as_null'])]
     public ?Contact $contact;
+
+    /**
+     * The license information for the exposed API.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     */
+    public const licence = 'licence';
 
     /**
      * The license information for the exposed API.
