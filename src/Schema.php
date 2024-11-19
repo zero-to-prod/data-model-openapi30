@@ -271,6 +271,72 @@ class Schema
     }
 
     /**
+     * A string instance is valid against this keyword if its length is
+     * greater than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * "minLength", if absent, may be considered as being present with
+     * integer value 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     */
+    public const minLength = 'minLength';
+
+    /**
+     * A string instance is valid against this keyword if its length is
+     * greater than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * "minLength", if absent, may be considered as being present with
+     * integer value 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     */
+    #[Describe(['cast' => [self::class, 'minLength']])]
+    public null|int $minLength;
+
+    /**
+     * A string instance is valid against this keyword if its length is
+     * greater than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * "minLength", if absent, may be considered as being present with
+     * integer value 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     */
+    public static function minLength($value, array $context): ?int
+    {
+        if (!isset($context[self::minLength])) {
+            return null;
+        }
+
+        if (!($value >= 0)) {
+            throw new InvalidMaxLengthException('$minLength must be a positive integer');
+        }
+
+        return $value;
+    }
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
