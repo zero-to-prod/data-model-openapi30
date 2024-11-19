@@ -2,6 +2,7 @@
 
 namespace Zerotoprod\DataModelOpenapi30;
 
+use Throwable;
 use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
@@ -331,6 +332,72 @@ class Schema
 
         if (!($value >= 0)) {
             throw new InvalidMaxLengthException('$minLength must be a positive integer');
+        }
+
+        return $value;
+    }
+
+    /**
+     * The value of this keyword MUST be a string.  This string SHOULD be a
+     * valid regular expression, according to the ECMA 262 regular
+     * expression dialect.
+     *
+     * A string instance is considered valid if the regular expression
+     * matches the instance successfully.  Recall: regular expressions are
+     * not implicitly anchored.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.8
+     */
+    public const pattern = 'pattern';
+
+    /**
+     * A string instance is valid against this keyword if its length is
+     * greater than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * "pattern", if absent, may be considered as being present with
+     * integer value 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     */
+    #[Describe(['cast' => [self::class, 'pattern']])]
+    public null|string $pattern;
+
+    /**
+     * A string instance is valid against this keyword if its length is
+     * greater than, or equal to, the value of this keyword.
+     *
+     * The length of a string instance is defined as the number of its
+     * characters as defined by RFC 7159 [RFC7159].
+     *
+     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * "pattern", if absent, may be considered as being present with
+     * integer value 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     */
+    public static function pattern($value, array $context): ?string
+    {
+        if (!isset($context[self::pattern])) {
+            return null;
+        }
+
+        try {
+            if (@preg_match($value, '') === false) {
+                throw new InvalidPatternException('$pattern must be a valid regular expression');
+            }
+        } catch (Throwable $e) {
+            throw new InvalidPatternException('$pattern must be a valid regular expression', 0, $e);
         }
 
         return $value;
