@@ -825,7 +825,7 @@ class Schema
             return false;
         }
 
-        if(is_bool($value)) {
+        if (is_bool($value)) {
             return $value;
         }
 
@@ -865,6 +865,29 @@ class Schema
      */
     #[Describe(['missing_as_null'])]
     public ?string $format;
+
+    /**
+     * The default value represents what would be assumed by the consumer of the
+     * input as the value of the schema if one is not provided. Unlike JSON
+     * Schema, the value _MUST_ conform to the defined type for the Schema
+     * Object defined at the same level. For example, if `type` is
+     * `"string"`, then `default` can be `"foo"` but cannot be 1.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const default = 'default';
+
+    /**
+     * The default value represents what would be assumed by the consumer of the
+     * input as the value of the schema if one is not provided. Unlike JSON
+     * Schema, the value _MUST_ conform to the defined type for the Schema
+     * Object defined at the same level. For example, if `type` is
+     * `"string"`, then `default` can be `"foo"` but cannot be 1.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['missing_as_null'])]
+    public mixed $default;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
