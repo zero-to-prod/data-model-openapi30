@@ -420,6 +420,37 @@ class Schema
     public null|int $minItems;
 
     /**
+     * The value of this keyword _MUST_ be a boolean.
+     *
+     * If this keyword has boolean value false, the instance validates
+     * successfully.  If it has boolean value true, the instance validates
+     * successfully if all of its elements are unique.
+     *
+     * If not present, this keyword may be considered present with boolean
+     * value false.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.12
+     */
+    public const uniqueItems = 'uniqueItems';
+
+    /**
+     * The value of this keyword _MUST_ be a boolean.
+     *
+     * If this keyword has boolean value false, the instance validates
+     * successfully.  If it has boolean value true, the instance validates
+     * successfully if all of its elements are unique.
+     *
+     * If not present, this keyword may be considered present with boolean
+     * value false.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.12
+     */
+    #[Describe(['default' => false])]
+    public bool $uniqueItems;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
