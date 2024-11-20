@@ -72,21 +72,14 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
      */
-    #[Describe(['cast' => [self::class, 'multipleOf']])]
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value > 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMultipleException::class,
+        'message' => '$multipleOf must be a positive integer'
+    ])]
     public null|float|int $multipleOf;
-
-    public static function multipleOf(mixed $value, array $context): mixed
-    {
-        if (!isset($context[self::multipleOf])) {
-            return null;
-        }
-
-        if (!is_numeric($value) || $value <= 0) {
-            throw new InvalidMultipleException('$multipleOf must be a positive integer');
-        }
-
-        return $value;
-    }
 
     /**
      * The value of "maximum" _MUST_ be a number, representing an upper limit
@@ -240,36 +233,14 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
      */
-    #[Describe(['cast' => [self::class, 'maxLength']])]
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMaxLengthException::class,
+        'message' => '$maxLength must be a positive integer'
+    ])]
     public null|int $maxLength;
-
-    /**
-     * The value of this keyword _MUST_ be a non-negative integer.
-     *
-     * The value of this keyword _MUST_ be an integer. This integer MUST be
-     * greater than, or equal to, 0.
-     *
-     * A string instance is valid against this keyword if its length is less
-     * than, or equal to, the value of this keyword.
-     *
-     * The length of a string instance is defined as the number of its
-     * characters as defined by RFC 7159 [RFC7159].
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
-     */
-    public static function maxLength($value, array $context): ?int
-    {
-        if (!isset($context[self::maxLength])) {
-            return null;
-        }
-
-        if (!($value >= 0)) {
-            throw new InvalidMaxLengthException('$maxLength must be a positive integer');
-        }
-
-        return $value;
-    }
 
     /**
      * A string instance is valid against this keyword if its length is
@@ -305,37 +276,14 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
      */
-    #[Describe(['cast' => [self::class, 'minLength']])]
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMinLengthException::class,
+        'message' => '$minLength must be a positive integer'
+    ])]
     public null|int $minLength;
-
-    /**
-     * A string instance is valid against this keyword if its length is
-     * greater than, or equal to, the value of this keyword.
-     *
-     * The length of a string instance is defined as the number of its
-     * characters as defined by RFC 7159 [RFC7159].
-     *
-     * The value of this keyword _MUST_ be an integer.  This integer MUST be
-     * greater than, or equal to, 0.
-     *
-     * "minLength", if absent, may be considered as being present with
-     * integer value 0.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
-     */
-    public static function minLength($value, array $context): ?int
-    {
-        if (!isset($context[self::minLength])) {
-            return null;
-        }
-
-        if (!($value >= 0)) {
-            throw new InvalidMaxLengthException('$minLength must be a positive integer');
-        }
-
-        return $value;
-    }
 
     /**
      * The value of this keyword MUST be a string.  This string SHOULD be a
@@ -402,6 +350,37 @@ class Schema
 
         return $value;
     }
+
+    /**
+     * The value of this keyword MUST be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * An array instance is valid against "maxItems" if its size is less
+     * than, or equal to, the value of this keyword.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
+     */
+    public const maxItems = 'maxItems';
+
+    /**
+     * The value of this keyword MUST be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * An array instance is valid against "maxItems" if its size is less
+     * than, or equal to, the value of this keyword.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMaxItemsException::class,
+        'message' => '$maxItems must be greater than, or equal to, 0.'
+    ])]
+    public null|int $maxItems;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
