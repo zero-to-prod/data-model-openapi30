@@ -584,6 +584,21 @@ class Schema
     public null|array $enum;
 
     /**
+     * Value _MUST_ be a string. Multiple types via an array are not supported
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const type = 'type';
+
+    /**
+     * Value _MUST_ be a string. Multiple types via an array are not supported
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $type;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object

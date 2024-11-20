@@ -14,7 +14,7 @@ class TypeTest extends TestCase
         $Schema = Schema::from();
 
         self::assertNull(
-            actual: $Schema->title,
+            actual: $Schema->type,
         );
     }
 
@@ -22,12 +22,12 @@ class TypeTest extends TestCase
     #[Test] public function string(): void
     {
         $Schema = Schema::from([
-            Schema::title => 'title',
+            Schema::type => 'type',
         ]);
 
         self::assertEquals(
-            expected: 'title',
-            actual: $Schema->title,
+            expected: 'type',
+            actual: $Schema->type,
         );
     }
 }
