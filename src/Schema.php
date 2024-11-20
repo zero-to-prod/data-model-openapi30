@@ -414,7 +414,7 @@ class Schema
         'cast' => [self::class, 'when'],
         'eval' => '$value >= 0',
         'false' => [self::class, 'throwException'],
-        'exception' => InvalidMaxItemsException::class,
+        'exception' => InvalidMinItemsException::class,
         'message' => '$minItems must be greater than, or equal to, 0.'
     ])]
     public null|int $minItems;
@@ -449,6 +449,37 @@ class Schema
      */
     #[Describe(['default' => false])]
     public bool $uniqueItems;
+
+    /**
+     * The value of this keyword MUST be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * An object instance is valid against "maxProperties" if its number of
+     * properties is less than, or equal to, the value of this keyword.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
+     */
+    public const maxProperties = 'maxProperties';
+
+    /**
+     * The value of this keyword MUST be an integer.  This integer MUST be
+     * greater than, or equal to, 0.
+     *
+     * An object instance is valid against "maxProperties" if its number of
+     * properties is less than, or equal to, the value of this keyword.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMaxPropertiesException::class,
+        'message' => '$maxProperties must be greater than, or equal to, 0.'
+    ])]
+    public null|int $maxProperties;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
