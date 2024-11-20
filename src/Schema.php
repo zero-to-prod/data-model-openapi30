@@ -516,6 +516,39 @@ class Schema
     public null|int $minProperties;
 
     /**
+     * The value of this keyword _MUST_ be an array.  This array _MUST_ have at
+     * least one element.  Elements of this array MUST be strings, and _MUST_
+     * be unique.
+     *
+     * An object instance is valid against this keyword if its property set
+     * contains all elements in this keyword's array value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
+     */
+    public const required = 'required';
+
+    /**
+     * The value of this keyword _MUST_ be an array.  This array _MUST_ have at
+     * least one element.  Elements of this array MUST be strings, and _MUST_
+     * be unique.
+     *
+     * An object instance is valid against this keyword if its property set
+     * contains all elements in this keyword's array value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => 'isset($value[0]) && count(array_filter($value, "is_string")) === count($value)',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidRequiredException::class,
+        'message' => '$required must have at least 1 element, all as strings.'
+    ])]
+    public null|array $required;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
