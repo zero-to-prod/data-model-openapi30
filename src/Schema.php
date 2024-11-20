@@ -723,7 +723,7 @@ class Schema
     }
 
     /**
-     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * Value _MUST_ be an object and not an array. Inline or referenced
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
@@ -732,7 +732,7 @@ class Schema
     public const items = 'items';
 
     /**
-     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * Value _MUST_ be an object and not an array. Inline or referenced
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
@@ -742,7 +742,7 @@ class Schema
     public null|self|Reference $items;
 
     /**
-     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * Value _MUST_ be an object and not an array. Inline or referenced
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
@@ -751,6 +751,40 @@ class Schema
     public static function items($value, array $context): Schema|Reference|null
     {
         if (!isset($context[self::items])) {
+            return null;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : self::from($value);
+    }
+
+    /**
+     * Property definitions _MUST_ be a Schema Object and not a standard
+     * JSON Schema (inline or referenced).
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const properties = 'properties';
+
+    /**
+     * Property definitions _MUST_ be a Schema Object and not a standard
+     * JSON Schema (inline or referenced).
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['cast' => [self::class, 'properties']])]
+    public null|self|Reference $properties;
+
+    /**
+     * Property definitions _MUST_ be a Schema Object and not a standard
+     * JSON Schema (inline or referenced).
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public static function properties($value, array $context): Schema|Reference|null
+    {
+        if (!isset($context[self::properties])) {
             return null;
         }
 
