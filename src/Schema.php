@@ -661,6 +661,37 @@ class Schema
     }
 
     /**
+     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const anyOf = 'anyOf';
+
+    /**
+     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['cast' => [self::class, 'anyOf']])]
+    public null|self|Reference $anyOf;
+
+    /**
+     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public static function anyOf($value, array $context): Schema|Reference|null
+    {
+        if (!isset($context[self::anyOf])) {
+            return null;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : self::from($value);
+    }
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object
