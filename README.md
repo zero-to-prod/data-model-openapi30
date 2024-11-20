@@ -115,6 +115,7 @@ Holds a set of reusable objects for different aspects of the OAS.
 | headers         | Map[[`string`](src/Component.php), [`Header Object`](src/Header.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
 | securitySchemes | Map[[`string`](src/Component.php), [`Security Scheme Object`](src/SecurityScheme.php) \| [`Reference Object`](src/Reference.php)] |                    |
 | links           | Map[[`string`](src/Component.php), [`Link Object`](src/Link.php) \| [`Reference Object`](src/Reference.php)]                      | :white_check_mark: |
+| callbacks       | Map[[`string`](src/Component.php), [`Callback Object`](src/PathItem.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
 
 ### [4.7.8 Paths Object](https://spec.openapis.org/oas/v3.0.4.html#paths-object)
 
@@ -154,20 +155,20 @@ Describes a single API operation on a path.
 
 #### [4.7.10.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7)
 
-| Field Name   | Type                                                                                    | Status             |
-|--------------|-----------------------------------------------------------------------------------------|--------------------|
-| tags         | [[`string`]](src/Operation.php)                                                         | :white_check_mark: |
-| summary      | [`string`](src/Operation.php)                                                           | :white_check_mark: |
-| description  | [`string`](src/Operation.php)                                                           | :white_check_mark: |
-| externalDocs | [`External Documentation Object`](src/ExternalDocumentation.php)                        | :white_check_mark: |
-| operationId  | [`string`](src/Operation.php)                                                           | :white_check_mark: |
-| parameters   | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]    | :white_check_mark: |
-| requestBody  | [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php) | :white_check_mark: |
-| responses    | [`Responses Object`](src/Response.php)                                                  | :white_check_mark: |
-| callbacks    | Map[`string`, `Callback Object` \| `Reference Object`]                                  | :white_check_mark: |
-| deprecated   | [`boolean`](src/Operation.php)                                                          | :white_check_mark: |
-| security     | [`Security Requirement Object`]                                                         | :white_check_mark: |
-| servers      | [[`Server Object`]](src/Server.php)                                                     | :white_check_mark: |
+| Field Name   | Type                                                                                                                 | Status             |
+|--------------|----------------------------------------------------------------------------------------------------------------------|--------------------|
+| tags         | [[`string`]](src/Operation.php)                                                                                      | :white_check_mark: |
+| summary      | [`string`](src/Operation.php)                                                                                        | :white_check_mark: |
+| description  | [`string`](src/Operation.php)                                                                                        | :white_check_mark: |
+| externalDocs | [`External Documentation Object`](src/ExternalDocumentation.php)                                                     | :white_check_mark: |
+| operationId  | [`string`](src/Operation.php)                                                                                        | :white_check_mark: |
+| parameters   | [[`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]                                 | :white_check_mark: |
+| requestBody  | [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php)                              | :white_check_mark: |
+| responses    | [`Responses Object`](src/Response.php)                                                                               | :white_check_mark: |
+| callbacks    | Map[[`string`](src/Operation.php), [`Callback Object`](src/PathItem.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
+| deprecated   | [`boolean`](src/Operation.php)                                                                                       | :white_check_mark: |
+| security     | [`Security Requirement Object`]                                                                                      | :white_check_mark: |
+| servers      | [[`Server Object`]](src/Server.php)                                                                                  | :white_check_mark: |
 
 ### [4.7.11 External Documentation Object](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object)
 

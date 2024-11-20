@@ -255,4 +255,38 @@ class Component
             )
             : null;
     }
+
+    /**
+     * An object to hold reusable Callback Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const callbacks = 'callbacks';
+
+    /**
+     * An object to hold reusable Callback Objects.
+     *
+     * @var array<string, array<string, PathItem>> $callbacks
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'callbacks']])]
+    public ?array $callbacks;
+
+    /**
+     * An object to hold reusable Callback Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function callbacks($value, array $context): ?array
+    {
+        return isset($context[self::callbacks])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : array_map(static fn($item) => PathItem::from($item), $value),
+                $value
+            )
+            : null;
+    }
 }

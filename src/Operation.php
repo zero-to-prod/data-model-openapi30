@@ -209,7 +209,7 @@ class Operation
      * **REQUIRED**. The list of possible responses as they are returned
      * from executing this operation.
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     public const responses = 'responses';
 
@@ -219,7 +219,7 @@ class Operation
      *
      * @var array<string, Response|Reference> $examples
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     #[Describe(['cast' => [self::class, 'responses']])]
     public array $responses;
@@ -228,7 +228,7 @@ class Operation
      * **REQUIRED**. The list of possible responses as they are returned
      * from executing this operation.
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     public static function responses($value, array $context): ?array
     {
@@ -249,7 +249,7 @@ class Operation
      * The key is a unique identifier for the Callback Object. Each value in
      * the map is a Callback Object that describes a request that may be
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     public const callbacks = 'callbacks';
 
@@ -259,9 +259,9 @@ class Operation
      * the map is a Callback Object that describes a request that may be
      * initiated by the API provider and the expected responses.
      *
-     * @var array<string, PathItem|Reference> $examples
+     * @var array<string, array<string, PathItem>> $callbacks
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     #[Describe(['cast' => [self::class, 'callbacks']])]
     public ?array $callbacks;
@@ -271,7 +271,7 @@ class Operation
      * The key is a unique identifier for the Callback Object. Each value in
      * the map is a Callback Object that describes a request that may be
      *
-     * @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     public static function callbacks($value, array $context): ?array
     {
