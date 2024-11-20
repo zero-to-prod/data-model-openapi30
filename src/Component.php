@@ -221,4 +221,38 @@ class Component
             )
             : null;
     }
+
+    /**
+     * An object to hold reusable Link Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const links = 'links';
+
+    /**
+     * An object to hold reusable Link Objects.
+     *
+     * @var null|array<string, Link|Reference> $links
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'links']])]
+    public ?array $links;
+
+    /**
+     * An object to hold reusable Link Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function links($value, array $context): ?array
+    {
+        return isset($context[self::links])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Link::from($value),
+                $value
+            )
+            : null;
+    }
 }
