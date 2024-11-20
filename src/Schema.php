@@ -541,7 +541,7 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => 'isset($value[0]) && count(array_filter($value, "is_string")) === count($value)',
+        'eval' => 'count($value) && count(array_filter($value, "is_string")) === count($value)',
         'false' => [self::class, 'throwException'],
         'exception' => InvalidRequiredException::class,
         'message' => '$required must have at least 1 element, all as strings.'
@@ -595,7 +595,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * of a response but _SHOULD_NOT_ be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property _MUST NOT_ be marked as both
@@ -609,7 +609,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * of a response but _SHOULD_NOT_ be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property _MUST NOT_ be marked as both
@@ -624,7 +624,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * of a response but _SHOULD_NOT_ be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property _MUST NOT_ be marked as both
@@ -647,7 +647,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **_SHOULD_ NOT** be sent as part of the response. If the
+     * request but _SHOULD_NOT_ be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
      * request only. A property _MUST NOT_ be marked as both
@@ -661,7 +661,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **_SHOULD_ NOT** be sent as part of the response. If the
+     * request but _SHOULD_NOT_ be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
      * request only. A property _MUST NOT_ be marked as both
@@ -676,7 +676,7 @@ class Schema
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but **_SHOULD_ NOT** be sent as part of the response. If the
+     * request but _SHOULD_NOT_ be sent as part of the response. If the
      * property is marked as `writeOnly` being `true` and is in the
      * `required` list, the `required` will take effect on the
      * request only. A property _MUST NOT_ be marked as both

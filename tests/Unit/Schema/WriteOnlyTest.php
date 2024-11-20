@@ -52,7 +52,7 @@ class WriteOnlyTest extends TestCase
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
      * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but **_SHOULD_ NOT** be sent as part of the request.
+     * of a response but _SHOULD_NOT_ be sent as part of the request.
      * If the property is marked as `readOnly` being `true` and is in
      * the `required` list, the `required` will take effect on the
      * response only. A property _MUST NOT_ be marked as both

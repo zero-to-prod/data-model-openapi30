@@ -33,6 +33,16 @@ class RequiredTest extends TestCase
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
+    #[Test] public function empty_array(): void
+    {
+        $this->expectException(InvalidRequiredException::class);
+
+        Schema::from([
+            Schema::required => [],
+        ]);
+    }
+
+    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
     #[Test] public function not_string(): void
     {
         $this->expectException(InvalidRequiredException::class);
