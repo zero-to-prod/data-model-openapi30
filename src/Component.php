@@ -69,6 +69,11 @@ class Component
     #[Describe(['cast' => [self::class, 'responses']])]
     public ?array $responses;
 
+    /**
+     * An object to hold reusable Response Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
     public static function responses($value, array $context): ?array
     {
         return isset($context[self::responses])
@@ -76,6 +81,40 @@ class Component
                 static fn($value) => isset($value[Reference::ref])
                     ? Reference::from($value)
                     : Response::from($value),
+                $value
+            )
+            : null;
+    }
+
+    /**
+     * An object to hold reusable Parameter Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const parameters = 'parameters';
+
+    /**
+     * An object to hold reusable Parameter Objects.
+     *
+     * @var null|array<string, Parameter|Reference> $parameters
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'parameters']])]
+    public ?array $parameters;
+
+    /**
+     * An object to hold reusable Parameter Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function parameters($value, array $context): ?array
+    {
+        return isset($context[self::parameters])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Parameter::from($value),
                 $value
             )
             : null;
