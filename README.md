@@ -105,7 +105,9 @@ Holds a set of reusable objects for different aspects of the OAS.
 
 ### [4.7.7.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5)
 
-todo
+| Field Name | Type                                                                                                             | Status             |
+|------------|------------------------------------------------------------------------------------------------------------------|--------------------|
+| schemas    | Map[[`string`](src/Component.php), [`Schema Object`](src/Schema.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
 
 ### [4.7.8 Paths Object](https://spec.openapis.org/oas/v3.0.4.html#paths-object)
 
