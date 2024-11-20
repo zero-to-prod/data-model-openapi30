@@ -599,14 +599,14 @@ class Schema
     public ?string $type;
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     public const allOf = 'allOf';
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -614,7 +614,7 @@ class Schema
     public null|self|Reference $allOf;
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -630,14 +630,14 @@ class Schema
     }
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     public const oneOf = 'oneOf';
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -645,7 +645,7 @@ class Schema
     public null|self|Reference $oneOf;
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -661,14 +661,14 @@ class Schema
     }
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     public const anyOf = 'anyOf';
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -676,7 +676,7 @@ class Schema
     public null|self|Reference $anyOf;
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -692,14 +692,14 @@ class Schema
     }
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     public const not = 'not';
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -707,13 +707,50 @@ class Schema
     public null|self|Reference $not;
 
     /**
-     * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
+     * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     public static function not($value, array $context): Schema|Reference|null
     {
         if (!isset($context[self::not])) {
+            return null;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : self::from($value);
+    }
+
+    /**
+     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
+     * `items` _MUST_ be present if type is "array".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const items = 'items';
+
+    /**
+     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
+     * `items` _MUST_ be present if type is "array".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['cast' => [self::class, 'items']])]
+    public null|self|Reference $items;
+
+    /**
+     * items - Value _MUST_ be an object and not an array. Inline or referenced
+     * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
+     * `items` _MUST_ be present if type is "array".
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public static function items($value, array $context): Schema|Reference|null
+    {
+        if (!isset($context[self::items])) {
             return null;
         }
 

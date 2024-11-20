@@ -392,6 +392,7 @@ The Schema Object allows the definition of input and output data types.
 | oneOf            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
 | anyOf            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
 | not              | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
+| items            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
 
 #### [4.7.24.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20)
 
