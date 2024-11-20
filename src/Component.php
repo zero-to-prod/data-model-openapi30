@@ -187,4 +187,38 @@ class Component
             )
             : null;
     }
+
+    /**
+     * An object to hold reusable Header Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const headers = 'headers';
+
+    /**
+     * An object to hold reusable Header Objects.
+     *
+     * @var null|array<string, Header|Reference> $headers
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'headers']])]
+    public ?array $headers;
+
+    /**
+     * An object to hold reusable Header Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function headers($value, array $context): ?array
+    {
+        return isset($context[self::headers])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Header::from($value),
+                $value
+            )
+            : null;
+    }
 }
