@@ -15,7 +15,7 @@ class OperationIdTest extends TestCase
 
         self::assertNull(
             actual: $Link->operationId,
-            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and MUST point to an Operation Object.'
+            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and _MUST_ point to an Operation Object.'
         );
     }
 
@@ -29,7 +29,7 @@ class OperationIdTest extends TestCase
         self::assertEquals(
             expected: 'operationId',
             actual: $Link->operationId,
-            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and MUST point to an Operation Object.'
+            message: 'A URI reference to an OAS operation. This field is mutually exclusive of the operationId field, and _MUST_ point to an Operation Object.'
         );
     }
 }

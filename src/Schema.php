@@ -24,7 +24,7 @@ class Schema
     use DataModel;
 
     /**
-     * The value of both of these keywords MUST be a string.
+     * The value of both of these keywords _MUST_ be a string.
      *
      * Both of these keywords can be used to decorate a user interface with
      * information about the data produced by this user interface.  A title
@@ -38,7 +38,7 @@ class Schema
     public const title = 'title';
 
     /**
-     * The value of both of these keywords MUST be a string.
+     * The value of both of these keywords _MUST_ be a string.
      *
      * Both of these keywords can be used to decorate a user interface with
      * information about the data produced by this user interface.  A title
@@ -204,7 +204,7 @@ class Schema
     /**
      * The value of this keyword _MUST_ be a non-negative integer.
      *
-     * The value of this keyword _MUST_ be an integer. This integer MUST be
+     * The value of this keyword _MUST_ be an integer. This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * A string instance is valid against this keyword if its length is less
@@ -221,7 +221,7 @@ class Schema
     /**
      * The value of this keyword _MUST_ be a non-negative integer.
      *
-     * The value of this keyword _MUST_ be an integer. This integer MUST be
+     * The value of this keyword _MUST_ be an integer. This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * A string instance is valid against this keyword if its length is less
@@ -249,7 +249,7 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * "minLength", if absent, may be considered as being present with
@@ -267,7 +267,7 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * "minLength", if absent, may be considered as being present with
@@ -286,7 +286,7 @@ class Schema
     public null|int $minLength;
 
     /**
-     * The value of this keyword MUST be a string.  This string SHOULD be a
+     * The value of this keyword _MUST_ be a string.  This string SHOULD be a
      * valid regular expression, according to the ECMA 262 regular
      * expression dialect.
      *
@@ -306,7 +306,7 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * "pattern", if absent, may be considered as being present with
@@ -325,7 +325,7 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * The value of this keyword _MUST_ be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * "pattern", if absent, may be considered as being present with
@@ -352,7 +352,7 @@ class Schema
     }
 
     /**
-     * The value of this keyword MUST be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * An array instance is valid against "maxItems" if its size is less
@@ -364,7 +364,7 @@ class Schema
     public const maxItems = 'maxItems';
 
     /**
-     * The value of this keyword MUST be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * An array instance is valid against "maxItems" if its size is less
@@ -381,6 +381,43 @@ class Schema
         'message' => '$maxItems must be greater than, or equal to, 0.'
     ])]
     public null|int $maxItems;
+
+    /**
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
+     * greater than, or equal to, 0.
+     *
+     * An array instance is valid against "minItems" if its size is greater
+     * than, or equal to, the value of this keyword.
+     *
+     * If this keyword is not present, it may be considered present with a
+     * value of 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
+     */
+    public const minItems = 'minItems';
+
+    /**
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
+     * greater than, or equal to, 0.
+     *
+     * An array instance is valid against "minItems" if its size is greater
+     * than, or equal to, the value of this keyword.
+     *
+     * If this keyword is not present, it may be considered present with a
+     * value of 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMaxItemsException::class,
+        'message' => '$minItems must be greater than, or equal to, 0.'
+    ])]
+    public null|int $minItems;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the

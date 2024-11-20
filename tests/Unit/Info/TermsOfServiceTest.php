@@ -11,7 +11,7 @@ use Zerotoprod\DataModelOpenapi30\InvalidUrlException;
 class TermsOfServiceTest extends TestCase
 {
     /**
-     * A URL for the Terms of Service for the API. This MUST be in the form of a URL.
+     * A URL for the Terms of Service for the API. This _MUST_ be in the form of a URL.
      *
      * link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
@@ -38,7 +38,7 @@ class TermsOfServiceTest extends TestCase
         self::assertEquals(
             expected: 'https://example.com/',
             actual: $Info->termsOfService,
-            message: 'A URL for the Terms of Service for the API. This MUST be in the form of a URL.'
+            message: 'A URL for the Terms of Service for the API. This _MUST_ be in the form of a URL.'
         );
     }
 

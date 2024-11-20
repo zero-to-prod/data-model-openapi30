@@ -78,7 +78,7 @@ class OpenapiTest extends TestCase
         self::assertEquals(
             expected: '3.0.4',
             actual: $OpenApi30->openapi,
-            message: 'This string MUST be the version number of the OpenAPI Specification that the OpenAPI Document uses.'
+            message: 'This string _MUST_ be the version number of the OpenAPI Specification that the OpenAPI Document uses.'
         );
     }
 

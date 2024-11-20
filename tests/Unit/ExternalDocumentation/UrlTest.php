@@ -51,7 +51,7 @@ class UrlTest extends TestCase
         self::assertEquals(
             expected: 'https://example.com/',
             actual: $ExternalDocumentation->url,
-            message: 'REQUIRED. The URL for the target documentation. This MUST be in the form of a URL.'
+            message: 'REQUIRED. The URL for the target documentation. This _MUST_ be in the form of a URL.'
         );
     }
 }

@@ -51,7 +51,7 @@ class Contact
 
     /**
      * The email address of the contact person/organization.
-     * This MUST be in the form of an email address.
+     * This _MUST_ be in the form of an email address.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
@@ -59,7 +59,7 @@ class Contact
 
     /**
      * The email address of the contact person/organization.
-     * This MUST be in the form of an email address.
+     * This _MUST_ be in the form of an email address.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */

@@ -20,7 +20,7 @@ class NameSpaceTest extends TestCase
 
         self::assertNull(
             actual: $Xml->namespace,
-            message: 'The URI of the namespace definition. Value MUST be in the form of a non-relative URI.'
+            message: 'The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.'
         );
     }
 
@@ -34,7 +34,7 @@ class NameSpaceTest extends TestCase
         self::assertEquals(
             expected: 'https://example.com/schemas/',
             actual: $Xml->namespace,
-            message: 'The URI of the namespace definition. Value MUST be in the form of a non-relative URI.'
+            message: 'The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.'
         );
     }
 

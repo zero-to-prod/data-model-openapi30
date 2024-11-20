@@ -16,12 +16,12 @@ class UrlTest extends TestCase
 
         self::assertNull(
             actual: $Contact->url,
-            message: 'The URL for the contact information. This MUST be in the form of a URL.'
+            message: 'The URL for the contact information. This _MUST_ be in the form of a URL.'
         );
     }
 
     /**
-     * The URL for the contact information. This MUST be in the form of a URL.
+     * The URL for the contact information. This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
@@ -44,7 +44,7 @@ class UrlTest extends TestCase
         self::assertEquals(
             expected: 'https://example.com/',
             actual: $Contact->url,
-            message: 'The URL for the contact information. This MUST be in the form of a URL.'
+            message: 'The URL for the contact information. This _MUST_ be in the form of a URL.'
         );
     }
 }

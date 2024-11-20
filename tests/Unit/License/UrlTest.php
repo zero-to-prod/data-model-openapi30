@@ -18,12 +18,12 @@ class UrlTest extends TestCase
 
         self::assertNull(
             actual: $License->url,
-            message: 'A URL for the license used for the API. This MUST be in the form of a URL.'
+            message: 'A URL for the license used for the API. This _MUST_ be in the form of a URL.'
         );
     }
 
     /**
-     * A URL for the license used for the API. This MUST be in the form of a URL.
+     * A URL for the license used for the API. This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-2
      */
@@ -48,7 +48,7 @@ class UrlTest extends TestCase
         self::assertEquals(
             expected: 'https://example.com/',
             actual: $License->url,
-            message: 'A URL for the license used for the API. This MUST be in the form of a URL.'
+            message: 'A URL for the license used for the API. This _MUST_ be in the form of a URL.'
         );
     }
 }

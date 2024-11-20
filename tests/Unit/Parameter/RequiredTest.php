@@ -20,7 +20,7 @@ class RequiredTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value _MUST_ be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
@@ -35,7 +35,7 @@ class RequiredTest extends TestCase
 
         self::assertFalse(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value _MUST_ be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
@@ -50,7 +50,7 @@ class RequiredTest extends TestCase
 
         self::assertTrue(
             condition: $Parameter->required,
-            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value MUST be true. Otherwise, the field _MAY_ be included and its default value is false.'
+            message: 'Determines whether this parameter is mandatory. If the parameter location is "path", this field is REQUIRED and its value _MUST_ be true. Otherwise, the field _MAY_ be included and its default value is false.'
         );
     }
 
