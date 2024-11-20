@@ -153,4 +153,38 @@ class Component
             )
             : null;
     }
+
+    /**
+     * An object to hold reusable Request Body Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const requestBodies = 'requestBodies';
+
+    /**
+     * An object to hold reusable Request Body Objects.
+     *
+     * @var null|array<string, RequestBody|Reference> $requestBodies
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'requestBodies']])]
+    public ?array $requestBodies;
+
+    /**
+     * An object to hold reusable Request Body Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function requestBodies($value, array $context): ?array
+    {
+        return isset($context[self::requestBodies])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : RequestBody::from($value),
+                $value
+            )
+            : null;
+    }
 }
