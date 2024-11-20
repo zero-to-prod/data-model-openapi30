@@ -8,7 +8,7 @@ use Zerotoprod\DataModelOpenapi30\Example;
 use Zerotoprod\DataModelOpenapi30\Component;
 use Zerotoprod\DataModelOpenapi30\Reference;
 
-class ExamplesTest extends TestCase
+class SchemasTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
@@ -17,8 +17,8 @@ class ExamplesTest extends TestCase
         $Component = Component::from();
 
         self::assertNull(
-            actual: $Component->examples,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            actual: $Component->schemas,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
@@ -26,7 +26,7 @@ class ExamplesTest extends TestCase
     #[Test] public function ref(): void
     {
         $Component = Component::from([
-            Component::examples => [
+            Component::schemas => [
                 'example1' => [
                     Reference::ref => 'ref'
                 ]
@@ -35,14 +35,14 @@ class ExamplesTest extends TestCase
 
         self::assertInstanceOf(
             expected: Reference::class,
-            actual: $Component->examples['example1'],
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            actual: $Component->schemas['example1'],
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'ref',
-            actual: $Component->examples['example1']->ref,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            actual: $Component->schemas['example1']->ref,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
@@ -50,7 +50,7 @@ class ExamplesTest extends TestCase
     #[Test] public function example(): void
     {
         $Component = Component::from([
-            Component::examples => [
+            Component::schemas => [
                 'example1' => [
                     Example::value => 'value'
                 ]
@@ -59,14 +59,14 @@ class ExamplesTest extends TestCase
 
         self::assertInstanceOf(
             expected: Example::class,
-            actual: $Component->examples['example1'],
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            actual: $Component->schemas['example1'],
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'value',
-            actual: $Component->examples['example1']->value,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            actual: $Component->schemas['example1']->value,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 }

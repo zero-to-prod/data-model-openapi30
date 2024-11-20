@@ -119,4 +119,38 @@ class Component
             )
             : null;
     }
+
+    /**
+     * An object to hold reusable Example Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const examples = 'examples';
+
+    /**
+     * An object to hold reusable Example Objects.
+     *
+     * @var null|array<string, Example|Reference> $examples
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'examples']])]
+    public ?array $examples;
+
+    /**
+     * An object to hold reusable Example Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function examples($value, array $context): ?array
+    {
+        return isset($context[self::examples])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Example::from($value),
+                $value
+            )
+            : null;
+    }
 }
