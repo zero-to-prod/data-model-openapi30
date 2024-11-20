@@ -794,6 +794,47 @@ class Schema
     }
 
     /**
+     * Value can be boolean or object. Inline or referenced schema _MUST_ be of a
+     * Schema Object and not a standard JSON Schema. Consistent with JSON
+     * Schema, `additionalProperties` defaults to `true`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public const additionalProperties = 'additionalProperties';
+
+    /**
+     * Value can be boolean or object. Inline or referenced schema _MUST_ be of a
+     * Schema Object and not a standard JSON Schema. Consistent with JSON
+     * Schema, `additionalProperties` defaults to `true`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    #[Describe(['cast' => [self::class, 'additionalProperties']])]
+    public bool|self|Reference $additionalProperties;
+
+    /**
+     * Value can be boolean or object. Inline or referenced schema _MUST_ be of a
+     * Schema Object and not a standard JSON Schema. Consistent with JSON
+     * Schema, `additionalProperties` defaults to `true`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     */
+    public static function additionalProperties($value, array $context): Schema|Reference|bool
+    {
+        if (!isset($context[self::additionalProperties])) {
+            return false;
+        }
+
+        if(is_bool($value)) {
+            return $value;
+        }
+
+        return isset($value[Reference::ref])
+            ? Reference::from($value)
+            : self::from($value);
+    }
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object

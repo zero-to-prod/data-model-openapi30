@@ -369,31 +369,32 @@ The Schema Object allows the definition of input and output data types.
 
 #### [4.7.24.1 JSON Schema Keywords](https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords)
 
-| Field Name       | Type                                                                         | Status             |
-|------------------|------------------------------------------------------------------------------|--------------------|
-| title            | [`string`](src/Schema.php)                                                   | :white_check_mark: |
-| multipleOf       | [`number`](src/Schema.php)                                                   | :white_check_mark: |
-| maximum          | [`number`](src/Schema.php)                                                   | :white_check_mark: |
-| exclusiveMaximum | [`boolean`](src/Schema.php)                                                  | :white_check_mark: |
-| minimum          | [`number`](src/Schema.php)                                                   | :white_check_mark: |
-| exclusiveMinimum | [`boolean`](src/Schema.php)                                                  | :white_check_mark: |
-| maxLength        | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| minLength        | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| pattern          | [`string`](src/Schema.php)                                                   | :white_check_mark: |
-| maxItems         | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| minItems         | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| uniqueItems      | [`boolean`](src/Schema.php)                                                  | :white_check_mark: |
-| maxProperties    | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| minProperties    | [`integer`](src/Schema.php)                                                  | :white_check_mark: |
-| required         | [`array`](src/Schema.php)                                                    | :white_check_mark: |
-| enum             | [`array`](src/Schema.php)                                                    | :white_check_mark: |
-| type             | [`string`](src/Schema.php)                                                   | :white_check_mark: |
-| allOf            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
-| oneOf            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
-| anyOf            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
-| not              | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
-| items            | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
-| properties       | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
+| Field Name           | Type                                                                                                          | Status             |
+|----------------------|---------------------------------------------------------------------------------------------------------------|--------------------|
+| title                | [`string`](src/Schema.php)                                                                                    | :white_check_mark: |
+| multipleOf           | [`number`](src/Schema.php)                                                                                    | :white_check_mark: |
+| maximum              | [`number`](src/Schema.php)                                                                                    | :white_check_mark: |
+| exclusiveMaximum     | [`boolean`](src/Schema.php)                                                                                   | :white_check_mark: |
+| minimum              | [`number`](src/Schema.php)                                                                                    | :white_check_mark: |
+| exclusiveMinimum     | [`boolean`](src/Schema.php)                                                                                   | :white_check_mark: |
+| maxLength            | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| minLength            | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| pattern              | [`string`](src/Schema.php)                                                                                    | :white_check_mark: |
+| maxItems             | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| minItems             | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| uniqueItems          | [`boolean`](src/Schema.php)                                                                                   | :white_check_mark: |
+| maxProperties        | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| minProperties        | [`integer`](src/Schema.php)                                                                                   | :white_check_mark: |
+| required             | [`array`](src/Schema.php)                                                                                     | :white_check_mark: |
+| enum                 | [`array`](src/Schema.php)                                                                                     | :white_check_mark: |
+| type                 | [`string`](src/Schema.php)                                                                                    | :white_check_mark: |
+| allOf                | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| oneOf                | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| anyOf                | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| not                  | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| items                | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| properties           | [`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php)                                  | :white_check_mark: |
+| additionalProperties | [`boolean`](src/Reference.php) \|[`Reference Object`](src/Reference.php) \| [`Schema Object`](src/Schema.php) | :white_check_mark: |
 
 #### [4.7.24.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20)
 
