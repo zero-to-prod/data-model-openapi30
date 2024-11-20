@@ -1,4 +1,4 @@
-# `Zerotoprod\DataModelGenerator`
+# Zerotoprod\DataModelOpenapi30
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/data-model-openapi30)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/data-model-openapi30/test.yml?label=tests)](https://github.com/zero-to-prod/data-model-openapi30/actions)
