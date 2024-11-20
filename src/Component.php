@@ -35,6 +35,11 @@ class Component
     #[Describe(['cast' => [self::class, 'schemas']])]
     public ?array $schemas;
 
+    /**
+     * An object to hold reusable Schema Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
     public static function schemas($value, array $context): ?array
     {
         return isset($context[self::schemas])
@@ -42,6 +47,35 @@ class Component
                 static fn($value) => isset($value[Reference::ref])
                     ? Reference::from($value)
                     : Example::from($value),
+                $value
+            )
+            : null;
+    }
+
+    /**
+     * An object to hold reusable Response Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const responses = 'responses';
+
+    /**
+     * An object to hold reusable Response Objects.
+     *
+     * @var null|array<string, Response|Reference> $responses
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'responses']])]
+    public ?array $responses;
+
+    public static function responses($value, array $context): ?array
+    {
+        return isset($context[self::responses])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : Response::from($value),
                 $value
             )
             : null;

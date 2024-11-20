@@ -11,18 +11,18 @@ use Zerotoprod\DataModelOpenapi30\Reference;
 class ExamplesTest extends TestCase
 {
 
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20 */
+    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function nullable(): void
     {
         $Component = Component::from();
 
         self::assertNull(
             actual: $Component->schemas,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20 */
+    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
         $Component = Component::from([
@@ -36,17 +36,17 @@ class ExamplesTest extends TestCase
         self::assertInstanceOf(
             expected: Reference::class,
             actual: $Component->schemas['example1'],
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'ref',
             actual: $Component->schemas['example1']->ref,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20 */
+    /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function example(): void
     {
         $Component = Component::from([
@@ -60,13 +60,13 @@ class ExamplesTest extends TestCase
         self::assertInstanceOf(
             expected: Example::class,
             actual: $Component->schemas['example1'],
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'value',
             actual: $Component->schemas['example1']->value,
-            message: 'Examples of the parameter’s potential value; see Working With Examples.'
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 }
