@@ -435,23 +435,20 @@ class Schema
     public const uniqueItems = 'uniqueItems';
 
     /**
-     * The value of this keyword _MUST_ be a boolean.
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
+     * greater than, or equal to, 0.
      *
-     * If this keyword has boolean value false, the instance validates
-     * successfully.  If it has boolean value true, the instance validates
-     * successfully if all of its elements are unique.
-     *
-     * If not present, this keyword may be considered present with boolean
-     * value false.
+     * An object instance is valid against "maxProperties" if its number of
+     * properties is less than, or equal to, the value of this keyword.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.12
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
      */
     #[Describe(['default' => false])]
     public bool $uniqueItems;
 
     /**
-     * The value of this keyword MUST be an integer.  This integer MUST be
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
      * greater than, or equal to, 0.
      *
      * An object instance is valid against "maxProperties" if its number of
@@ -480,6 +477,43 @@ class Schema
         'message' => '$maxProperties must be greater than, or equal to, 0.'
     ])]
     public null|int $maxProperties;
+
+    /**
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
+     * greater than, or equal to, 0.
+     *
+     * An object instance is valid against "minProperties" if its number of
+     * properties is greater than, or equal to, the value of this keyword.
+     *
+     * If this keyword is not present, it may be considered present with a
+     * value of 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
+     */
+    public const minProperties = 'minProperties';
+
+    /**
+     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
+     * greater than, or equal to, 0.
+     *
+     * An object instance is valid against "minProperties" if its number of
+     * properties is greater than, or equal to, the value of this keyword.
+     *
+     * If this keyword is not present, it may be considered present with a
+     * value of 0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => '$value >= 0',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidMinPropertiesException::class,
+        'message' => '$minProperties must be greater than, or equal to, 0.'
+    ])]
+    public null|int $minProperties;
 
     /**
      * This keyword only takes effect if `type` is explicitly defined within the
