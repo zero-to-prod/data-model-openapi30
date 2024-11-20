@@ -549,6 +549,41 @@ class Schema
     public null|array $required;
 
     /**
+     * The value of this keyword _MUST_ be an array.  This array _SHOULD_ have
+     * at least one element.  Elements in the array _SHOULD_ be unique.
+     *
+     * Elements in the array _MAY_ be of any type, including null.
+     *
+     * An instance validates successfully against this keyword if its value
+     * is equal to one of the elements in this keyword's array value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
+     */
+    public const enum = 'enum';
+
+    /**
+     * The value of this keyword _MUST_ be an array.  This array _SHOULD_ have
+     * at least one element.  Elements in the array _SHOULD_ be unique.
+     *
+     * Elements in the array _MAY_ be of any type, including null.
+     *
+     * An instance validates successfully against this keyword if its value
+     * is equal to one of the elements in this keyword's array value.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => 'count($value)',
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidEnumException::class,
+        'message' => '$enum must have at least 1 element'
+    ])]
+    public null|array $enum;
+
+    /**
      * This keyword only takes effect if `type` is explicitly defined within the
      * same Schema Object. A `true` value indicates that both `null` values and
      * values of the type specified by `type` are allowed. Other Schema Object

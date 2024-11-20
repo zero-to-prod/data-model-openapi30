@@ -386,7 +386,8 @@ The Schema Object allows the definition of input and output data types.
 | maxProperties    | [`integer`](src/Schema.php) | :white_check_mark: |
 | minProperties    | [`integer`](src/Schema.php) | :white_check_mark: |
 | required         | [`array`](src/Schema.php)   | :white_check_mark: |
-| enum             | [`array`](src/Schema.php)   |                    |
+| enum             | [`array`](src/Schema.php)   | :white_check_mark: |
+| type             | [`string`](src/Schema.php)  | :white_check_mark: |
 
 #### [4.7.24.2 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20)
 
