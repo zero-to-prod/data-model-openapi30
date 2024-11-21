@@ -43,4 +43,21 @@ class OAuthFlows
      */
     #[Describe(['missing_as_null'])]
     public ?OAuthFlow $password;
+
+    /**
+     * Configuration for the OAuth Client Credentials flow.
+     * Previously called `application` in OpenAPI 2.0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    public const clientCredentials = 'clientCredentials';
+
+    /**
+     * Configuration for the OAuth Client Credentials flow.
+     * Previously called `application` in OpenAPI 2.0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    #[Describe(['missing_as_null'])]
+    public ?OAuthFlow $clientCredentials;
 }

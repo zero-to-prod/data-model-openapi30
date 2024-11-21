@@ -471,10 +471,11 @@ Allows configuration of the supported OAuth Flows.
 
 #### [4.7.28.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24)
 
-| Field Name | Type                                     | Status             |
-|------------|------------------------------------------|--------------------|
-| implicit   | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
-| password   | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
+| Field Name        | Type                                     | Status             |
+|-------------------|------------------------------------------|--------------------|
+| implicit          | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
+| password          | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
+| clientCredentials | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
 
 ### [4.7.29 OAuth Flow Object](https://spec.openapis.org/oas/v3.0.4.html#security-scheme-object-0)
 
