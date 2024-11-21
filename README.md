@@ -454,10 +454,14 @@ Defines a security scheme that can be used by the operations.
 
 #### [4.7.27.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23)
 
-| Field Name  | Type                               | Status             |
-|-------------|------------------------------------|--------------------|
-| type        | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| description | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| name        | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| in          | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| scheme      | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| Field Name       | Type                               | Status             |
+|------------------|------------------------------------|--------------------|
+| type             | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| description      | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| name             | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| in               | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| scheme           | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| bearerFormat     | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| flows            | [`string`](src/OauthFlows.php)     |                    |
+| openIdConnectUrl | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+
