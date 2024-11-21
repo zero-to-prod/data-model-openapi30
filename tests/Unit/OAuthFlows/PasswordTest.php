@@ -7,7 +7,7 @@ use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\OAuthFlow;
 use Zerotoprod\DataModelOpenapi30\OAuthFlows;
 
-class ImplicitTest extends TestCase
+class PasswordTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24 */
@@ -16,8 +16,8 @@ class ImplicitTest extends TestCase
         $OAuthFlow = OAuthFlows::from();
 
         self::assertNull(
-            actual: $OAuthFlow->password,
-            message: 'Configuration for the OAuth Resource Owner Password flow'
+            actual: $OAuthFlow->implicit,
+            message: 'Configuration for the OAuth Implicit flow'
         );
     }
 
@@ -25,7 +25,7 @@ class ImplicitTest extends TestCase
     #[Test] public function oauth(): void
     {
         $OAuthFlows = OAuthFlows::from([
-            OAuthFlows::password => [
+            OAuthFlows::implicit => [
                 OAuthFlow::authorizationUrl => 'authorizationUrl',
                 OAuthFlow::tokenUrl => 'tokenUrl',
                 OAuthFlow::scopes => []
@@ -34,8 +34,8 @@ class ImplicitTest extends TestCase
 
         self::assertEquals(
             expected: 'authorizationUrl',
-            actual: $OAuthFlows->password->authorizationUrl,
-            message: 'Configuration for the OAuth Resource Owner Password flow'
+            actual: $OAuthFlows->implicit->authorizationUrl,
+            message: 'Configuration for the OAuth Implicit flow'
         );
     }
 }

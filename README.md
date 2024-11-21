@@ -474,6 +474,7 @@ Allows configuration of the supported OAuth Flows.
 | Field Name | Type                                     | Status             |
 |------------|------------------------------------------|--------------------|
 | implicit   | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
+| password   | [`OAuth Flow Object`](src/OAuthFlow.php) | :white_check_mark: |
 
 ### [4.7.29 OAuth Flow Object](https://spec.openapis.org/oas/v3.0.4.html#security-scheme-object-0)
 
