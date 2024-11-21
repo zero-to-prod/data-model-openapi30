@@ -16,6 +16,7 @@ class DescriptionTest extends TestCase
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
 
         self::assertNull(
@@ -32,6 +33,7 @@ class DescriptionTest extends TestCase
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
 
         $this->assertEquals(

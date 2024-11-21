@@ -20,6 +20,7 @@ class NameTest extends TestCase
         SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
     }
 
@@ -30,6 +31,7 @@ class NameTest extends TestCase
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
 
         $this->assertEquals(

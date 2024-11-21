@@ -20,6 +20,7 @@ class TypeTest extends TestCase
         SecurityScheme::from([
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
     }
 
@@ -32,6 +33,7 @@ class TypeTest extends TestCase
             SecurityScheme::type => 'bogus',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
     }
 
@@ -42,6 +44,7 @@ class TypeTest extends TestCase
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
+            SecurityScheme::scheme => 'scheme',
         ]);
 
         $this->assertEquals(

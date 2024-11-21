@@ -108,4 +108,30 @@ class SecurityScheme
         'required'
     ])]
     public string $in;
+
+    /**
+     * **REQUIRED**. The name of the HTTP Authentication scheme to be used
+     * in the Authorization header as defined in [RFC7235] Section 5.1.
+     * The values used SHOULD be registered in the IANA Authentication
+     * Scheme registry. The value is case-insensitive, as defined in [
+     * RFC7235] Section 2.1.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    public const scheme = 'scheme';
+
+    /**
+     * **REQUIRED**. The name of the HTTP Authentication scheme to be used
+     * in the Authorization header as defined in [RFC7235] Section 5.1.
+     * The values used SHOULD be registered in the IANA Authentication
+     * Scheme registry. The value is case-insensitive, as defined in [
+     * RFC7235] Section 2.1.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'required'
+    ])]
+    public string $scheme;
 }
