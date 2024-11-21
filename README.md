@@ -447,3 +447,13 @@ A metadata object that allows for more fine-tuned XML model definitions.
 | prefix     | [`string`](src/Xml.php)  | :white_check_mark: |
 | attribute  | [`boolean`](src/Xml.php) | :white_check_mark: |
 | wrapped    | [`boolean`](src/Xml.php) | :white_check_mark: |
+
+### [4.7.27 Security Scheme Object](https://spec.openapis.org/oas/v3.0.4.html#security-scheme-object-0)
+
+Defines a security scheme that can be used by the operations.
+
+#### [4.7.27.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23)
+
+| Field Name | Type                               | Status             |
+|------------|------------------------------------|--------------------|
+| type       | [`string`](src/SecurityScheme.php) | :white_check_mark: |

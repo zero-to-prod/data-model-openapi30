@@ -18,6 +18,6 @@ trait DataModel
     {
         $args = $Attribute?->getArguments()[0];
 
-        throw new ($args['exception'])($args['message']);
+        throw new ($args['exception'])($args['message'] ?? '');
     }
 }
