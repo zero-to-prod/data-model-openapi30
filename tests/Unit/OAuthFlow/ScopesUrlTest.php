@@ -7,22 +7,19 @@ use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\OAuthFlow;
 
-class RefreshUrl extends TestCase
+class ScopesUrlTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25 */
     #[Test] public function default_value(): void
     {
-        $OAuthFlow = OAuthFlow::from([
-            OAuthFlow::authorizationUrl => 'authorizationUrl',
-            OAuthFlow::tokenUrl => 'tokenUrl',
-            OAuthFlow::scopes => []
-        ]);
+        $this->expectException(PropertyRequiredException::class);
+        $this->expectExceptionMessage('Property `$scopes` is required.');
 
-        self::assertNull(
-            actual: $OAuthFlow->refreshUrl,
-            message: 'The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL. The OAuth2 standard requires the use of TLS.'
-        );
+        OAuthFlow::from([
+            OAuthFlow::tokenUrl => 'tokenUrl',
+            OAuthFlow::authorizationUrl => 'authorizationUrl'
+        ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25 */
@@ -32,12 +29,12 @@ class RefreshUrl extends TestCase
             OAuthFlow::authorizationUrl => 'authorizationUrl',
             OAuthFlow::tokenUrl => 'tokenUrl',
             OAuthFlow::refreshUrl => 'refreshUrl',
-            OAuthFlow::scopes => []
+            OAuthFlow::scopes => ['1' => 'one']
         ]);
 
         $this->assertEquals(
-            expected: 'refreshUrl',
-            actual: $OAuthFlow->refreshUrl,
+            expected: 'one',
+            actual: $OAuthFlow->scopes['1'],
             message: 'The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL. The OAuth2 standard requires the use of TLS.'
         );
     }

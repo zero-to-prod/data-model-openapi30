@@ -7,7 +7,7 @@ use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\OAuthFlow;
 
-class TokenUrl extends TestCase
+class TokenUrlTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25 */

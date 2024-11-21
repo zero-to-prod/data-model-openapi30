@@ -60,4 +60,21 @@ class OAuthFlows
      */
     #[Describe(['missing_as_null'])]
     public ?OAuthFlow $clientCredentials;
+
+    /**
+     * Configuration for the OAuth Authorization Code flow.
+     * Previously called `accessCode` in OpenAPI 2.0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    public const authorizationCode = 'authorizationCode';
+
+    /**
+     * Configuration for the OAuth Authorization Code flow.
+     * Previously called `accessCode` in OpenAPI 2.0.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    #[Describe(['missing_as_null'])]
+    public ?OAuthFlow $authorizationCode;
 }
