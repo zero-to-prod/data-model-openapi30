@@ -49,4 +49,21 @@ class SecurityScheme
         'required'
     ])]
     public string $type;
+
+    /**
+     * A description for security scheme. [CommonMark] syntax _MAY_
+     * be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    public const description = 'description';
+
+    /**
+     * A description for security scheme. [CommonMark] syntax _MAY_
+     * be used for rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    #[Describe(['missing_as_null' => true])]
+    public ?string $description;
 }
