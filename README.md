@@ -475,5 +475,6 @@ Defines a security scheme that can be used by the operations.
 |------------------|-------------------------------|--------------------|
 | authorizationUrl | [`string`](src/OAuthFlow.php) | :white_check_mark: |
 | tokenUrl         | [`string`](src/OAuthFlow.php) | :white_check_mark: |
+| refreshUrl       | [`string`](src/OAuthFlow.php) | :white_check_mark: |
 
 
