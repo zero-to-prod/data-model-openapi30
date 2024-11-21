@@ -7,17 +7,17 @@ use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\OAuthFlow;
 
-class AuthorizationUrlTest extends TestCase
+class TokenUrl extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25 */
     #[Test] public function default_value(): void
     {
         $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$tokenUrl` is required.');
+        $this->expectExceptionMessage('Property `$authorizationUrl` is required.');
 
         OAuthFlow::from([
-            OAuthFlow::authorizationUrl => 'authorizationUrl',
+            OAuthFlow::tokenUrl => 'tokenUrl',
             OAuthFlow::scopes => []
         ]);
     }
@@ -32,9 +32,9 @@ class AuthorizationUrlTest extends TestCase
         ]);
 
         $this->assertEquals(
-            expected: 'tokenUrl',
-            actual: $OAuthFlow->tokenUrl,
-            message: 'REQUIRED. The token URL to be used for this flow. This MUST be in the form of a URL. The OAuth2 standard requires the use of TLS.'
+            expected: 'authorizationUrl',
+            actual: $OAuthFlow->authorizationUrl,
+            message: 'REQUIRED. The authorization URL to be used for this flow. This MUST be in the form of a URL. The OAuth2 standard requires the use of TLS.'
         );
     }
 }
