@@ -6,13 +6,16 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
-class Description extends TestCase
+class DescriptionTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
-        $SecurityScheme = SecurityScheme::from([SecurityScheme::description => 'apiKey']);
+        $SecurityScheme = SecurityScheme::from([
+            SecurityScheme::type => 'apiKey',
+            SecurityScheme::name => 'name'
+        ]);
 
         self::assertNull(
             actual: $SecurityScheme->description,
@@ -26,6 +29,7 @@ class Description extends TestCase
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::description => 'description',
             SecurityScheme::type => 'apiKey',
+            SecurityScheme::name => 'name'
         ]);
 
         $this->assertEquals(

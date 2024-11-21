@@ -8,33 +8,22 @@ use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeTypeException;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
-class TypeTest extends TestCase
+class NameTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
         $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$type` is required.');
+        $this->expectExceptionMessage('Property `$name` is required.');
 
         SecurityScheme::from([
-            SecurityScheme::name => 'name'
+            SecurityScheme::type => 'apiKey',
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function invalid_value(): void
-    {
-        $this->expectException(InvalidSecuritySchemeTypeException::class);
-
-        SecurityScheme::from([
-            SecurityScheme::type => 'bogus',
-            SecurityScheme::name => 'name'
-        ]);
-    }
-
-    /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function type(): void
+    #[Test] public function name_property(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
@@ -42,9 +31,9 @@ class TypeTest extends TestCase
         ]);
 
         $this->assertEquals(
-            expected: 'apiKey',
-            actual: $SecurityScheme->type,
-            message: 'REQUIRED. The type of the security scheme. Valid values are "apiKey", "http", "oauth2", "openIdConnect".'
+            expected: 'name',
+            actual: $SecurityScheme->name,
+            message: 'REQUIRED. The name of the header, query or cookie parameter to be used.'
         );
     }
 }

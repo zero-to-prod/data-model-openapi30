@@ -64,6 +64,21 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null' => true])]
+    #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * **REQUIRED**. The name of the header, query or cookie parameter to be used.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    public const name = 'name';
+
+    /**
+     * **REQUIRED**. The name of the header, query or cookie parameter to be used.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    #[Describe(['required'])]
+    public string $name;
 }

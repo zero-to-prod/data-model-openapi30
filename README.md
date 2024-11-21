@@ -458,3 +458,4 @@ Defines a security scheme that can be used by the operations.
 |-------------|------------------------------------|--------------------|
 | type        | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 | description | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+| name        | [`string`](src/SecurityScheme.php) | :white_check_mark: |
