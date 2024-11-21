@@ -1,12 +1,11 @@
 <?php
 
-namespace Tests\Unit\Component;
+namespace Tests\Unit\Components;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
+use Zerotoprod\DataModelOpenapi30\Components;
 use Zerotoprod\DataModelOpenapi30\MediaType;
-use Zerotoprod\DataModelOpenapi30\Component;
 use Zerotoprod\DataModelOpenapi30\Reference;
 use Zerotoprod\DataModelOpenapi30\Response;
 
@@ -16,8 +15,8 @@ class ResponsesTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
-        $Component = Component::from([
-            Component::responses => [
+        $Component = Components::from([
+            Components::responses => [
                 'example1' => [
                     Reference::ref => 'ref'
                 ]
@@ -40,8 +39,8 @@ class ResponsesTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function response(): void
     {
-        $Component = Component::from([
-            Component::responses => [
+        $Component = Components::from([
+            Components::responses => [
                 '200' => [
                     Response::description => 'description',
                     Response::content => [

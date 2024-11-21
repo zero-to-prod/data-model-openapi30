@@ -13,7 +13,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  *
  * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
  */
-class Component
+class Components
 {
     use DataModel;
 

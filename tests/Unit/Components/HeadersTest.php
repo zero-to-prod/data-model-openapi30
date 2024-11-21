@@ -1,11 +1,10 @@
 <?php
 
-namespace Tests\Unit\Component;
+namespace Tests\Unit\Components;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Component;
-use Zerotoprod\DataModelOpenapi30\Example;
+use Zerotoprod\DataModelOpenapi30\Components;
 use Zerotoprod\DataModelOpenapi30\Header;
 use Zerotoprod\DataModelOpenapi30\Reference;
 
@@ -15,7 +14,7 @@ class HeadersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function nullable(): void
     {
-        $Component = Component::from();
+        $Component = Components::from();
 
         self::assertNull(
             actual: $Component->headers,
@@ -26,8 +25,8 @@ class HeadersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
-        $Component = Component::from([
-            Component::headers => [
+        $Component = Components::from([
+            Components::headers => [
                 'example1' => [
                     Reference::ref => 'ref'
                 ]
@@ -50,8 +49,8 @@ class HeadersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function header(): void
     {
-        $Component = Component::from([
-            Component::headers => [
+        $Component = Components::from([
+            Components::headers => [
                 'example1' => [
                     Header::description => 'description'
                 ]

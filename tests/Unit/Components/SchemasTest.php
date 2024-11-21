@@ -1,32 +1,32 @@
 <?php
 
-namespace Tests\Unit\Component;
+namespace Tests\Unit\Components;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
+use Zerotoprod\DataModelOpenapi30\Components;
 use Zerotoprod\DataModelOpenapi30\Example;
-use Zerotoprod\DataModelOpenapi30\Component;
 use Zerotoprod\DataModelOpenapi30\Reference;
 
-class ExamplesTest extends TestCase
+class SchemasTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function nullable(): void
     {
-        $Component = Component::from();
+        $Component = Components::from();
 
         self::assertNull(
-            actual: $Component->examples,
-            message: 'An object to hold reusable Example Objects.'
+            actual: $Component->schemas,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
-        $Component = Component::from([
-            Component::examples => [
+        $Component = Components::from([
+            Components::schemas => [
                 'example1' => [
                     Reference::ref => 'ref'
                 ]
@@ -35,22 +35,22 @@ class ExamplesTest extends TestCase
 
         self::assertInstanceOf(
             expected: Reference::class,
-            actual: $Component->examples['example1'],
-            message: 'An object to hold reusable Example Objects.'
+            actual: $Component->schemas['example1'],
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'ref',
-            actual: $Component->examples['example1']->ref,
-            message: 'An object to hold reusable Example Objects.'
+            actual: $Component->schemas['example1']->ref,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function example(): void
     {
-        $Component = Component::from([
-            Component::examples => [
+        $Component = Components::from([
+            Components::schemas => [
                 'example1' => [
                     Example::value => 'value'
                 ]
@@ -59,14 +59,14 @@ class ExamplesTest extends TestCase
 
         self::assertInstanceOf(
             expected: Example::class,
-            actual: $Component->examples['example1'],
-            message: 'An object to hold reusable Example Objects.'
+            actual: $Component->schemas['example1'],
+            message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
             expected: 'value',
-            actual: $Component->examples['example1']->value,
-            message: 'An object to hold reusable Example Objects.'
+            actual: $Component->schemas['example1']->value,
+            message: 'An object to hold reusable Schema Objects.'
         );
     }
 }

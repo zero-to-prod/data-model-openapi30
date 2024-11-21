@@ -145,4 +145,19 @@ class OpenApi
         'required'
     ])]
     public array $paths;
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
+     */
+    public const components = 'components';
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
+     */
+    #[Describe(['missing_as_null'])]
+    public ?Components $components;
 }

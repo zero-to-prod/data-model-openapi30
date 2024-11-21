@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Component;
+namespace Tests\Unit\Components;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Component;
+use Zerotoprod\DataModelOpenapi30\Components;
 use Zerotoprod\DataModelOpenapi30\MediaType;
 use Zerotoprod\DataModelOpenapi30\Reference;
 use Zerotoprod\DataModelOpenapi30\RequestBody;
@@ -15,7 +15,7 @@ class RequestBodiesTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function nullable(): void
     {
-        $Component = Component::from();
+        $Component = Components::from();
 
         self::assertNull(
             actual: $Component->requestBodies,
@@ -26,8 +26,8 @@ class RequestBodiesTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
-        $Component = Component::from([
-            Component::requestBodies => [
+        $Component = Components::from([
+            Components::requestBodies => [
                 'example1' => [
                     Reference::ref => 'ref'
                 ]
@@ -50,8 +50,8 @@ class RequestBodiesTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function example(): void
     {
-        $Component = Component::from([
-            Component::requestBodies => [
+        $Component = Components::from([
+            Components::requestBodies => [
                 'example1' => [
                     RequestBody::content => [
                         'content1' => [

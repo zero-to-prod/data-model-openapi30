@@ -26,16 +26,16 @@ This is the root object of the OpenAPI Description.
 
 #### [4.7.1.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields)
 
-| Field Name   | Type                                | Status             |
-|--------------|-------------------------------------|--------------------|
-| openapi      | [`string`](src/OpenApi.php)         | :white_check_mark: |
-| info         | [`Info Object`](src/Info.php)       | :white_check_mark: |
-| servers      | [`[Server Object]`](src/Server.php) | :white_check_mark: |
-| paths        | [`Paths Object`](src/PathItem.php)  | :white_check_mark: |
-| components   | `Components Object`                 |                    |
-| security     | `Security Requirement Object`       |                    |
-| tags         | `Tag Object`                        |                    |
-| externalDocs | `External Documentation Object`     |                    |
+| Field Name   | Type                                      | Status             |
+|--------------|-------------------------------------------|--------------------|
+| openapi      | [`string`](src/OpenApi.php)               | :white_check_mark: |
+| info         | [`Info Object`](src/Info.php)             | :white_check_mark: |
+| servers      | [`[Server Object]`](src/Server.php)       | :white_check_mark: |
+| paths        | [`Paths Object`](src/PathItem.php)        | :white_check_mark: |
+| components   | [`Components Object`](src/Components.php) | :white_check_mark: |
+| security     | `Security Requirement Object`             |                    |
+| tags         | `Tag Object`                              |                    |
+| externalDocs | `External Documentation Object`           |                    |
 
 ### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
 
@@ -105,17 +105,17 @@ Holds a set of reusable objects for different aspects of the OAS.
 
 ### [4.7.7.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5)
 
-| Field Name      | Type                                                                                                                              | Status             |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| schemas         | Map[[`string`](src/Component.php), [`Schema Object`](src/Schema.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
-| responses       | Map[[`string`](src/Component.php), [`Response Object`](src/Response.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
-| parameters      | Map[[`string`](src/Component.php), [`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]            | :white_check_mark: |
-| examples        | Map[[`string`](src/Component.php), [`Example Object`](src/Example.php) \| [`Reference Object`](src/Reference.php)]                | :white_check_mark: |
-| requestBodies   | Map[[`string`](src/Component.php), [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php)]       | :white_check_mark: |
-| headers         | Map[[`string`](src/Component.php), [`Header Object`](src/Header.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
-| securitySchemes | Map[[`string`](src/Component.php), [`Security Scheme Object`](src/SecurityScheme.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
-| links           | Map[[`string`](src/Component.php), [`Link Object`](src/Link.php) \| [`Reference Object`](src/Reference.php)]                      | :white_check_mark: |
-| callbacks       | Map[[`string`](src/Component.php), [`Callback Object`](src/PathItem.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
+| Field Name      | Type                                                                                                                               | Status             |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| schemas         | Map[[`string`](src/Components.php), [`Schema Object`](src/Schema.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
+| responses       | Map[[`string`](src/Components.php), [`Response Object`](src/Response.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
+| parameters      | Map[[`string`](src/Components.php), [`Parameter Object`](src/Parameter.php) \| [`Reference Object`](src/Reference.php)]            | :white_check_mark: |
+| examples        | Map[[`string`](src/Components.php), [`Example Object`](src/Example.php) \| [`Reference Object`](src/Reference.php)]                | :white_check_mark: |
+| requestBodies   | Map[[`string`](src/Components.php), [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php)]       | :white_check_mark: |
+| headers         | Map[[`string`](src/Components.php), [`Header Object`](src/Header.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
+| securitySchemes | Map[[`string`](src/Components.php), [`Security Scheme Object`](src/SecurityScheme.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
+| links           | Map[[`string`](src/Components.php), [`Link Object`](src/Link.php) \| [`Reference Object`](src/Reference.php)]                      | :white_check_mark: |
+| callbacks       | Map[[`string`](src/Components.php), [`Callback Object`](src/PathItem.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
 
 ### [4.7.8 Paths Object](https://spec.openapis.org/oas/v3.0.4.html#paths-object)
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Component;
+namespace Tests\Unit\Components;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Component;
+use Zerotoprod\DataModelOpenapi30\Components;
 use Zerotoprod\DataModelOpenapi30\Parameter;
 use Zerotoprod\DataModelOpenapi30\Reference;
 
@@ -14,7 +14,7 @@ class ParametersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function nullable(): void
     {
-        $Component = Component::from();
+        $Component = Components::from();
 
         self::assertNull(
             actual: $Component->parameters,
@@ -25,8 +25,8 @@ class ParametersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function ref(): void
     {
-        $Component = Component::from([
-            Component::parameters => [
+        $Component = Components::from([
+            Components::parameters => [
                 'param' => [
                     Reference::ref => 'ref'
                 ]
@@ -49,8 +49,8 @@ class ParametersTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5 */
     #[Test] public function parameter(): void
     {
-        $Component = Component::from([
-            Component::parameters => [
+        $Component = Components::from([
+            Components::parameters => [
                 'param' =>[
                     Parameter::name => 'name',
                     Parameter::in => 'in',
