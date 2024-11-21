@@ -69,7 +69,7 @@ class OpenapiTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields */
     #[Test] public function openapi(): void
     {
-        $OpenApi30 = OpenApi::from([
+        $OpenApi = OpenApi::from([
             OpenApi::openapi => '3.0.4',
             OpenApi::info => InfoFactory::factory()->make(),
             OpenApi::paths => []
@@ -77,7 +77,7 @@ class OpenapiTest extends TestCase
 
         self::assertEquals(
             expected: '3.0.4',
-            actual: $OpenApi30->openapi,
+            actual: $OpenApi->openapi,
             message: 'This string _MUST_ be the version number of the OpenAPI Specification that the OpenAPI Document uses.'
         );
     }

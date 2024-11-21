@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -16,24 +15,17 @@ class OAuthFlows
     use DataModel;
 
     /**
-     * **REQUIRED**. The reference string.
+     * Configuration for the OAuth Implicit flow
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    public const ref = '$ref';
+    public const implicit = 'implicit';
 
     /**
-     * **REQUIRED**. The reference string.
+     * Configuration for the OAuth Implicit flow
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['cast' => [self::class, 'ref']])]
-    public string $ref;
-
-    public static function ref($value, $context){
-        if(isset($context['$ref'])){
-            return $context['$ref'];
-        }
-        throw new PropertyRequiredException('Property `$ref` is required.');
-    }
+    #[Describe(['missing_as_null'])]
+    public ?OAuthFlow $implicit;
 }

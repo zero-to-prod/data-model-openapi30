@@ -20,7 +20,7 @@ class ServersTest extends TestCase
      */
     #[Test] public function no_servers(): void
     {
-        $OpenApi30 = OpenApi::from([
+        $OpenApi = OpenApi::from([
             OpenApi::openapi => '3.0.4',
             OpenApi::info => InfoFactory::factory()->make(),
             OpenApi::paths => []
@@ -28,7 +28,7 @@ class ServersTest extends TestCase
 
         self::assertEquals(
             expected: '/',
-            actual: $OpenApi30->servers->url,
+            actual: $OpenApi->servers->url,
             message: 'If the servers field is not provided, or is an empty array, the default value would be a Server Object with a url value of /'
         );
     }
@@ -37,7 +37,7 @@ class ServersTest extends TestCase
     #[Test] public function servers(): void
     {
         $Server = ServerFactory::factory()->make();
-        $OpenApi30 = OpenApi::from([
+        $OpenApi = OpenApi::from([
             OpenApi::openapi => '3.0.4',
             OpenApi::info => InfoFactory::factory()->make(),
             OpenApi::servers => [$Server],
@@ -46,7 +46,7 @@ class ServersTest extends TestCase
 
         self::assertEquals(
             expected: $Server->url,
-            actual: $OpenApi30->servers[0]->url,
+            actual: $OpenApi->servers[0]->url,
             message: 'An array of Server Objects, which provide connectivity information to a target server.'
         );
     }
