@@ -26,16 +26,16 @@ This is the root object of the OpenAPI Description.
 
 #### [4.7.1.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields)
 
-| Field Name   | Type                                             | Status             |
-|--------------|--------------------------------------------------|--------------------|
-| openapi      | [`string`](src/OpenApi.php)                      | :white_check_mark: |
-| info         | [`Info Object`](src/Info.php)                    | :white_check_mark: |
-| servers      | [`[Server Object]`](src/Server.php)              | :white_check_mark: |
-| paths        | [`Paths Object`](src/PathItem.php)               | :white_check_mark: |
-| components   | [`Components Object`](src/Components.php)        | :white_check_mark: |
-| security     | [`Security Requirement Object`](src/OpenApi.php) | :white_check_mark: |
-| tags         | [[`Tag Object`](src/Tag.php)]                    | :white_check_mark: |
-| externalDocs | `External Documentation Object`                  |                    |
+| Field Name   | Type                                                             | Status             |
+|--------------|------------------------------------------------------------------|--------------------|
+| openapi      | [`string`](src/OpenApi.php)                                      | :white_check_mark: |
+| info         | [`Info Object`](src/Info.php)                                    | :white_check_mark: |
+| servers      | [`[Server Object]`](src/Server.php)                              | :white_check_mark: |
+| paths        | [`Paths Object`](src/PathItem.php)                               | :white_check_mark: |
+| components   | [`Components Object`](src/Components.php)                        | :white_check_mark: |
+| security     | [`Security Requirement Object`](src/OpenApi.php)                 | :white_check_mark: |
+| tags         | [[`Tag Object`](src/Tag.php)]                                    | :white_check_mark: |
+| externalDocs | [`External Documentation Object`](src/ExternalDocumentation.php) | :white_check_mark: |
 
 ### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
 

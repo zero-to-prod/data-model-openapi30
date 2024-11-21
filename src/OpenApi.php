@@ -207,4 +207,19 @@ class OpenApi
         'type' => Tag::class,
     ])]
     public ?array $tags;
+
+    /**
+     * Additional external documentation for this tag.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    public const externalDocs = 'externalDocs';
+
+    /**
+     * Additional external documentation for this tag.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    #[Describe(['missing_as_null'])]
+    public ?ExternalDocumentation $externalDocs;
 }
