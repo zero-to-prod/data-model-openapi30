@@ -471,10 +471,9 @@ Defines a security scheme that can be used by the operations.
 
 #### [4.7.29.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25)
 
-| Field Name       | Type                          | Status             |
-|------------------|-------------------------------|--------------------|
-| authorizationUrl | [`string`](src/OAuthFlow.php) | :white_check_mark: |
-| tokenUrl         | [`string`](src/OAuthFlow.php) | :white_check_mark: |
-| refreshUrl       | [`string`](src/OAuthFlow.php) | :white_check_mark: |
-
-
+| Field Name       | Type                                                              | Status             |
+|------------------|-------------------------------------------------------------------|--------------------|
+| authorizationUrl | [`string`](src/OAuthFlow.php)                                     | :white_check_mark: |
+| tokenUrl         | [`string`](src/OAuthFlow.php)                                     | :white_check_mark: |
+| refreshUrl       | [`string`](src/OAuthFlow.php)                                     | :white_check_mark: |
+| scopes           | Map[[`string`](src/OAuthFlow.php), [`string`](src/OAuthFlow.php)] | :white_check_mark: |
