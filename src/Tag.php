@@ -48,4 +48,19 @@ class Tag
      */
     #[Describe(['missing_as_null'])]
     public ?string $description;
+
+    /**
+     * Additional external documentation for this tag.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     */
+    public const externalDocs = 'externalDocs';
+
+    /**
+     * Additional external documentation for this tag.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     */
+    #[Describe(['missing_as_null'])]
+    public ?ExternalDocumentation $externalDocs;
 }
