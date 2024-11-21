@@ -187,4 +187,24 @@ class OpenApi
      */
     #[Describe(['default' => []])]
     public array $security;
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    public const tags = 'tags';
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @var ?Tag[] $tags
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    #[Describe([
+        'cast' => [self::class, 'mapOf'],
+        'type' => Tag::class,
+    ])]
+    public ?array $tags;
 }

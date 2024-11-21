@@ -34,7 +34,7 @@ This is the root object of the OpenAPI Description.
 | paths        | [`Paths Object`](src/PathItem.php)               | :white_check_mark: |
 | components   | [`Components Object`](src/Components.php)        | :white_check_mark: |
 | security     | [`Security Requirement Object`](src/OpenApi.php) | :white_check_mark: |
-| tags         | `Tag Object`                                     |                    |
+| tags         | [[`Tag Object`](src/Tag.php)]                    | :white_check_mark: |
 | externalDocs | `External Documentation Object`                  |                    |
 
 ### [4.7.2 Info Object](https://spec.openapis.org/oas/v3.0.4.html#info-object)
@@ -370,9 +370,11 @@ instances.
 
 #### [4.7.22.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18)
 
-| Field | Type                    | Status             |
-|-------|-------------------------|--------------------|
-| name  | [`string`](src/Tag.php) | :white_check_mark: |
+| Field       | Type                                                             | Status             |
+|-------------|------------------------------------------------------------------|--------------------|
+| name        | [`string`](src/Tag.php)                                          | :white_check_mark: |
+| description | [`string`](src/Tag.php)                                          | :white_check_mark: |
+| description | [`External Documentation Object`](src/ExternalDocumentation.php) | :white_check_mark: |
 
 ### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)
 
