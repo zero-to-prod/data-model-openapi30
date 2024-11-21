@@ -23,6 +23,7 @@ DataModels for OpenAPI 3.0.*
 | [4.7.4.2 License Object Example](https://spec.openapis.org/oas/v3.0.4.html#license-object-example)       | :white_check_mark: |
 | [4.7.5.2 Server Object Example](https://spec.openapis.org/oas/v3.0.4.html#server-object-example)         | :white_check_mark: |
 | [4.7.7.2 Components Object Example](https://spec.openapis.org/oas/v3.0.4.html#components-object-example) | :white_check_mark: |
+| [4.7.8.3 Paths Object Example](https://spec.openapis.org/oas/v3.0.4.html#paths-object-example)           | :white_check_mark: |
 
 ## Properties
 
