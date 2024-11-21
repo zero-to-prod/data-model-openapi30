@@ -21,6 +21,7 @@ class TypeTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
     }
 
@@ -34,6 +35,7 @@ class TypeTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
     }
 
@@ -45,6 +47,7 @@ class TypeTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
 
         $this->assertEquals(

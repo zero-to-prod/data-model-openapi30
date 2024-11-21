@@ -22,6 +22,7 @@ class InTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::type => 'apiKey',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
     }
 
@@ -35,17 +36,19 @@ class InTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'bogus',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function type(): void
+    #[Test] public function in(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
 
         $this->assertEquals(

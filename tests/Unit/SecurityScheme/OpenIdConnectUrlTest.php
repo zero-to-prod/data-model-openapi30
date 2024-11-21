@@ -8,25 +8,25 @@ use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeTypeException;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
-class NameTest extends TestCase
+class OpenIdConnectUrlTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
         $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$name` is required.');
+        $this->expectExceptionMessage('Property `$openIdConnectUrl` is required.');
 
         SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
-            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
+            SecurityScheme::name => 'name',
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function name_property(): void
+    #[Test] public function openIdConnectUrl(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
@@ -37,9 +37,9 @@ class NameTest extends TestCase
         ]);
 
         $this->assertEquals(
-            expected: 'name',
-            actual: $SecurityScheme->name,
-            message: 'REQUIRED. The name of the header, query or cookie parameter to be used.'
+            expected: 'openIdConnectUrl',
+            actual: $SecurityScheme->openIdConnectUrl,
+            message: 'REQUIRED. Well-known URL to discover the [OpenID-Connect-Discovery] provider metadata.'
         );
     }
 }

@@ -22,17 +22,19 @@ class SchemeTest extends TestCase
             SecurityScheme::name => 'name',
             SecurityScheme::type => 'apiKey',
             SecurityScheme::in => 'query',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function type(): void
+    #[Test] public function schema(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::name => 'name',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
+            SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
 
         $this->assertEquals(
