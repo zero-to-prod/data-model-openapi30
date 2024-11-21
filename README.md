@@ -113,7 +113,7 @@ Holds a set of reusable objects for different aspects of the OAS.
 | examples        | Map[[`string`](src/Component.php), [`Example Object`](src/Example.php) \| [`Reference Object`](src/Reference.php)]                | :white_check_mark: |
 | requestBodies   | Map[[`string`](src/Component.php), [`Request Body Object`](src/RequestBody.php) \| [`Reference Object`](src/Reference.php)]       | :white_check_mark: |
 | headers         | Map[[`string`](src/Component.php), [`Header Object`](src/Header.php) \| [`Reference Object`](src/Reference.php)]                  | :white_check_mark: |
-| securitySchemes | Map[[`string`](src/Component.php), [`Security Scheme Object`](src/SecurityScheme.php) \| [`Reference Object`](src/Reference.php)] |                    |
+| securitySchemes | Map[[`string`](src/Component.php), [`Security Scheme Object`](src/SecurityScheme.php) \| [`Reference Object`](src/Reference.php)] | :white_check_mark: |
 | links           | Map[[`string`](src/Component.php), [`Link Object`](src/Link.php) \| [`Reference Object`](src/Reference.php)]                      | :white_check_mark: |
 | callbacks       | Map[[`string`](src/Component.php), [`Callback Object`](src/PathItem.php) \| [`Reference Object`](src/Reference.php)]              | :white_check_mark: |
 

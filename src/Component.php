@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -217,6 +216,40 @@ class Component
                 static fn($value) => isset($value[Reference::ref])
                     ? Reference::from($value)
                     : Header::from($value),
+                $value
+            )
+            : null;
+    }
+
+    /**
+     * An object to hold reusable Security Scheme Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public const securitySchemes = 'securitySchemes';
+
+    /**
+     * An object to hold reusable Security Scheme Objects.
+     *
+     * @var null|array<string, SecurityScheme|Reference> $securitySchemes
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    #[Describe(['cast' => [self::class, 'securitySchemes']])]
+    public ?array $securitySchemes;
+
+    /**
+     * An object to hold reusable Security Scheme Objects.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     */
+    public static function securitySchemes($value, array $context): ?array
+    {
+        return isset($context[self::securitySchemes])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : SecurityScheme::from($value),
                 $value
             )
             : null;
