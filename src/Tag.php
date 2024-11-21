@@ -31,4 +31,21 @@ class Tag
      */
     #[Describe(['required'])]
     public string $name;
+
+    /**
+     * A description for the tag. [CommonMark] syntax _MAY_ be used for
+     * rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     */
+    public const description = 'description';
+
+    /**
+     * A description for the tag. [CommonMark] syntax _MAY_ be used for
+     * rich text representation.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     */
+    #[Describe(['missing_as_null'])]
+    public ?string $description;
 }
