@@ -28,7 +28,7 @@ This is the root object of the OpenAPI Description.
 
 | Field Name   | Type                                | Status             |
 |--------------|-------------------------------------|--------------------|
-| openapi      | [`string`](src/OpenApi30.php)       | :white_check_mark: |
+| openapi      | [`string`](src/OpenApi.php)       | :white_check_mark: |
 | info         | [`Info Object`](src/Info.php)       | :white_check_mark: |
 | servers      | [`[Server Object]`](src/Server.php) | :white_check_mark: |
 | paths        | [`Paths Object`](src/PathItem.php)  | :white_check_mark: |

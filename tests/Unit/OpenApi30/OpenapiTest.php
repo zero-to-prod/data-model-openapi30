@@ -7,7 +7,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\InvalidOpenAPIVersionException;
-use Zerotoprod\DataModelOpenapi30\OpenApi30;
+use Zerotoprod\DataModelOpenapi30\OpenApi;
 
 class OpenapiTest extends TestCase
 {
@@ -24,9 +24,9 @@ class OpenapiTest extends TestCase
     {
         $this->expectException(InvalidOpenAPIVersionException::class);
 
-        OpenApi30::from([
-            OpenApi30::openapi => [3.0],
-            OpenApi30::info => InfoFactory::factory()->make()
+        OpenApi::from([
+            OpenApi::openapi => [3.0],
+            OpenApi::info => InfoFactory::factory()->make()
         ]);
     }
 
@@ -42,9 +42,9 @@ class OpenapiTest extends TestCase
     {
         $this->expectException(InvalidOpenAPIVersionException::class);
 
-        OpenApi30::from([
-            OpenApi30::openapi => 3.0,
-            OpenApi30::info => InfoFactory::factory()->make()
+        OpenApi::from([
+            OpenApi::openapi => 3.0,
+            OpenApi::info => InfoFactory::factory()->make()
         ]);
     }
 
@@ -61,18 +61,18 @@ class OpenapiTest extends TestCase
         $this->expectException(PropertyRequiredException::class);
         $this->expectExceptionMessage('Property `$openapi` is required.');
 
-        OpenApi30::from([
-            OpenApi30::info => InfoFactory::factory()->make()
+        OpenApi::from([
+            OpenApi::info => InfoFactory::factory()->make()
         ]);
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields */
     #[Test] public function openapi(): void
     {
-        $OpenApi30 = OpenApi30::from([
-            OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => InfoFactory::factory()->make(),
-            OpenApi30::paths => []
+        $OpenApi30 = OpenApi::from([
+            OpenApi::openapi => '3.0.4',
+            OpenApi::info => InfoFactory::factory()->make(),
+            OpenApi::paths => []
         ]);
 
         self::assertEquals(
@@ -92,8 +92,8 @@ class OpenapiTest extends TestCase
     {
         $this->expectException(InvalidOpenAPIVersionException::class);
 
-        OpenApi30::from([
-            OpenApi30::openapi => '3.1.0'
+        OpenApi::from([
+            OpenApi::openapi => '3.1.0'
         ]);
     }
 
@@ -107,8 +107,8 @@ class OpenapiTest extends TestCase
     {
         $this->expectException(InvalidOpenAPIVersionException::class);
 
-        OpenApi30::from([
-            OpenApi30::openapi => '2.0.0'
+        OpenApi::from([
+            OpenApi::openapi => '2.0.0'
         ]);
     }
 }

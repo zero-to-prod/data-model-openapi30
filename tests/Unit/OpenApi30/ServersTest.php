@@ -6,7 +6,7 @@ use Factories\InfoFactory;
 use Factories\ServerFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\OpenApi30;
+use Zerotoprod\DataModelOpenapi30\OpenApi;
 
 class ServersTest extends TestCase
 {
@@ -20,10 +20,10 @@ class ServersTest extends TestCase
      */
     #[Test] public function no_servers(): void
     {
-        $OpenApi30 = OpenApi30::from([
-            OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => InfoFactory::factory()->make(),
-            OpenApi30::paths => []
+        $OpenApi30 = OpenApi::from([
+            OpenApi::openapi => '3.0.4',
+            OpenApi::info => InfoFactory::factory()->make(),
+            OpenApi::paths => []
         ]);
 
         self::assertEquals(
@@ -37,11 +37,11 @@ class ServersTest extends TestCase
     #[Test] public function servers(): void
     {
         $Server = ServerFactory::factory()->make();
-        $OpenApi30 = OpenApi30::from([
-            OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => InfoFactory::factory()->make(),
-            OpenApi30::servers => [$Server],
-            OpenApi30::paths => []
+        $OpenApi30 = OpenApi::from([
+            OpenApi::openapi => '3.0.4',
+            OpenApi::info => InfoFactory::factory()->make(),
+            OpenApi::servers => [$Server],
+            OpenApi::paths => []
         ]);
 
         self::assertEquals(

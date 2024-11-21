@@ -8,7 +8,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 use Zerotoprod\DataModelSemver\Semver;
 use Zerotoprod\ValidateSemVer\ValidateSemVer;
 
-class OpenApi30
+class OpenApi
 {
     use DataModel;
 

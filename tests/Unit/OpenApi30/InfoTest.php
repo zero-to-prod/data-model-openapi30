@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Info;
-use Zerotoprod\DataModelOpenapi30\OpenApi30;
+use Zerotoprod\DataModelOpenapi30\OpenApi;
 use Zerotoprod\DataModelOpenapi30\Operation;
 
 class InfoTest extends TestCase
@@ -23,8 +23,8 @@ class InfoTest extends TestCase
         $this->expectException(PropertyRequiredException::class);
         $this->expectExceptionMessage('Property `$info` is required.');
 
-        OpenApi30::from([
-            OpenApi30::openapi => '3.0.4'
+        OpenApi::from([
+            OpenApi::openapi => '3.0.4'
         ]);
     }
 
@@ -36,13 +36,13 @@ class InfoTest extends TestCase
      */
     #[Test] public function info(): void
     {
-        $OpenApi30 = OpenApi30::from([
-            OpenApi30::openapi => '3.0.4',
-            OpenApi30::info => [
+        $OpenApi30 = OpenApi::from([
+            OpenApi::openapi => '3.0.4',
+            OpenApi::info => [
                 Info::title => 'title',
                 Info::version => '1.0.0'
             ],
-            OpenApi30::paths => []
+            OpenApi::paths => []
         ]);
 
         self::assertEquals(
