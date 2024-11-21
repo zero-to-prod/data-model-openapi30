@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\OpenApi30;
+namespace Tests\Unit\OpenApi;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;

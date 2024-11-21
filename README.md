@@ -28,7 +28,7 @@ This is the root object of the OpenAPI Description.
 
 | Field Name   | Type                                | Status             |
 |--------------|-------------------------------------|--------------------|
-| openapi      | [`string`](src/OpenApi.php)       | :white_check_mark: |
+| openapi      | [`string`](src/OpenApi.php)         | :white_check_mark: |
 | info         | [`Info Object`](src/Info.php)       | :white_check_mark: |
 | servers      | [`[Server Object]`](src/Server.php) | :white_check_mark: |
 | paths        | [`Paths Object`](src/PathItem.php)  | :white_check_mark: |
@@ -462,6 +462,17 @@ Defines a security scheme that can be used by the operations.
 | in               | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 | scheme           | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 | bearerFormat     | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| flows            | [`string`](src/OauthFlows.php)     |                    |
+| flows            | [`string`](src/OAuthFlows.php)     |                    |
 | openIdConnectUrl | [`string`](src/SecurityScheme.php) | :white_check_mark: |
+
+### [4.7.29 OAuth Flow Object](https://spec.openapis.org/oas/v3.0.4.html#security-scheme-object-0)
+
+Defines a security scheme that can be used by the operations.
+
+#### [4.7.29.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25)
+
+| Field Name       | Type                          | Status             |
+|------------------|-------------------------------|--------------------|
+| authorizationUrl | [`string`](src/OAuthFlow.php) | :white_check_mark: |
+
 
