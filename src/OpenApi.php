@@ -8,6 +8,18 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 use Zerotoprod\DataModelSemver\Semver;
 use Zerotoprod\ValidateSemVer\ValidateSemVer;
 
+/**
+ *  This section describes the structure of the OpenAPI Description format.
+ * This text is the only normative description of the format. A JSON Schema
+ * is hosted on spec.openapis.org for informational purposes. If the JSON
+ * Schema differs from this section, then this section _MUST_ be
+ * considered authoritative.
+ *
+ * In the following description, if a field is not explicitly **REQUIRED** or
+ * described with a _MUST_ or _SHALL_, it can be considered _OPTIONAL_.
+ *
+ * @link https://spec.openapis.org/oas/v3.0.4.html#schema-0
+ */
 class OpenApi
 {
     use DataModel;
@@ -125,7 +137,7 @@ class OpenApi
      * Object in order to construct the full URL. The Paths Object
      * _MAY_ be empty, due to Access Control List (ACL) constraints.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
     public const paths = 'paths';
 
@@ -137,7 +149,7 @@ class OpenApi
      *
      * @var array<string, PathItem> $paths
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#paths-object
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
@@ -149,15 +161,30 @@ class OpenApi
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
     public const components = 'components';
 
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
     #[Describe(['missing_as_null'])]
     public ?Components $components;
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    public const security = 'security';
+
+    /**
+     * An element to hold various Objects for the OpenAPI Description.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     */
+    #[Describe(['default' => []])]
+    public array $security;
 }
