@@ -363,15 +363,26 @@ For more complex scenarios, the content field can define the media type and sche
 |------------|---------------------------------------------------------------------------|--------------------|
 | content    | Map[[`string`](src/Header.php), [`Media Type Object`](src/MediaType.php)] | :white_check_mark: |
 
+### [4.7.22 Tag Object](https://spec.openapis.org/oas/v3.0.4.html#tag-object)
+
+Adds metadata to a single tag that is used by the Operation Object. It is not mandatory to have a Tag Object per tag defined in the Operation Object
+instances.
+
+#### [4.7.22.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18)
+
+| Field | Type                    | Status             |
+|-------|-------------------------|--------------------|
+| name  | [`string`](src/Tag.php) | :white_check_mark: |
+
 ### [4.7.23 Reference Object](https://spec.openapis.org/oas/v3.0.4.html#reference-object)
 
 A simple object to allow referencing other components in the OpenAPI Description, internally and externally.
 
 #### [4.7.23.1 Fixed Fields](https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19)
 
-| Field | Type     | Status             |
-|-------|----------|--------------------|
-| $ref  | `string` | :white_check_mark: |
+| Field | Type                          | Status             |
+|-------|-------------------------------|--------------------|
+| $ref  | [`string`](src/Reference.php) | :white_check_mark: |
 
 ### [4.7.24 Schema Object](https://spec.openapis.org/oas/v3.0.4.html#schema-object)
 
