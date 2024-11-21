@@ -5,28 +5,32 @@ namespace Tests\Unit\SecurityScheme;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
+use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeInException;
 use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeTypeException;
+use Zerotoprod\DataModelOpenapi30\OAuthFlow;
+use Zerotoprod\DataModelOpenapi30\OAuthFlows;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
-class NameTest extends TestCase
+class FlowsTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
         $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$name` is required.');
+        $this->expectExceptionMessage('Property `$flows` is required.');
 
         SecurityScheme::from([
+            SecurityScheme::name => 'name',
             SecurityScheme::type => 'apiKey',
-            SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
             SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
+            SecurityScheme::in => 'query',
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function name_property(): void
+    #[Test] public function flows(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
@@ -34,13 +38,19 @@ class NameTest extends TestCase
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
             SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
-            SecurityScheme::flows => [],
+            SecurityScheme::flows => [
+                OAuthFlows::authorizationCode => [
+                    OAuthFlow::authorizationUrl => 'authorizationUrl',
+                    OAuthFlow::tokenUrl => 'tokenUrl',
+                    OAuthFlow::scopes => []
+                ]
+            ],
         ]);
 
         $this->assertEquals(
-            expected: 'name',
-            actual: $SecurityScheme->name,
-            message: 'REQUIRED. The name of the header, query or cookie parameter to be used.'
+            expected: 'tokenUrl',
+            actual: $SecurityScheme->flows->authorizationCode->tokenUrl,
+            message: 'REQUIRED. An object containing configuration information for the flow types supported.'
         );
     }
 }

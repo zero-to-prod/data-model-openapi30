@@ -462,7 +462,7 @@ Defines a security scheme that can be used by the operations.
 | in               | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 | scheme           | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 | bearerFormat     | [`string`](src/SecurityScheme.php) | :white_check_mark: |
-| flows            | [`string`](src/OAuthFlows.php)     |                    |
+| flows            | [`string`](src/OAuthFlows.php)     | :white_check_mark: |
 | openIdConnectUrl | [`string`](src/SecurityScheme.php) | :white_check_mark: |
 
 ### [4.7.28 OAuth Flows Object](https://spec.openapis.org/oas/v3.0.4.html#oauth-flows-object)

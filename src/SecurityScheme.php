@@ -85,7 +85,7 @@ class SecurityScheme
 
     /**
      * **REQUIRED**. The type of the security scheme. Valid values are
-     * `"apiKey"`, `"http"`, `"oauth2"`, `"openIdConnect"`.
+     * `"query"`, `"header"`, `"cookie"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
@@ -171,4 +171,21 @@ class SecurityScheme
      */
     #[Describe(['required'])]
     public string $openIdConnectUrl;
+
+    /**
+     * **REQUIRED**. An object containing configuration information for the
+     * flow types supported.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    public const flows = 'flows';
+
+    /**
+     * **REQUIRED**. An object containing configuration information for the
+     * flow types supported.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     */
+    #[Describe(['required'])]
+    public OAuthFlows $flows;
 }

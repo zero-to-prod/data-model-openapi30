@@ -35,6 +35,7 @@ class SchemeTest extends TestCase
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
             SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
+            SecurityScheme::flows => [],
         ]);
 
         $this->assertEquals(
