@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -42,7 +41,9 @@ class SecurityScheme
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => 'in_array(strtolower($value), array_map("strtolower", ["apiKey", "http", "oauth2", "openIdConnect"]), true)',
+        'eval' => <<<'PHP'
+            in_array(strtolower($value), array_map("strtolower", ["apiKey", "http", "oauth2", "openIdConnect"]), true)
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidSecuritySchemeTypeException::class,
         'message' => 'Valid values are "apiKey", "http", "oauth2", "openIdConnect".',
@@ -81,4 +82,30 @@ class SecurityScheme
      */
     #[Describe(['required'])]
     public string $name;
+
+    /**
+     * **REQUIRED**. The type of the security scheme. Valid values are
+     * `"apiKey"`, `"http"`, `"oauth2"`, `"openIdConnect"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    public const in = 'in';
+
+    /**
+     * **REQUIRED**. The type of the security scheme. Valid values are
+     * `"apiKey"`, `"http"`, `"oauth2"`, `"openIdConnect"`.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     */
+    #[Describe([
+        'cast' => [self::class, 'when'],
+        'eval' => <<<'PHP'
+            in_array(strtolower($value), array_map("strtolower", ["query", "header", "cookie"]), true)
+        PHP,
+        'false' => [self::class, 'throwException'],
+        'exception' => InvalidSecuritySchemeInException::class,
+        'message' => 'Valid values are "query", "header", and "cookie".',
+        'required'
+    ])]
+    public string $in;
 }

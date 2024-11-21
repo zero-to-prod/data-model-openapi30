@@ -74,7 +74,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value > 0',
+        'eval' => <<<'PHP'
+            $value > 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMultipleException::class,
         'message' => '$multipleOf must be a positive integer'
@@ -235,7 +237,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMaxLengthException::class,
         'message' => '$maxLength must be a positive integer'
@@ -278,7 +282,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMinLengthException::class,
         'message' => '$minLength must be a positive integer'
@@ -375,7 +381,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMaxItemsException::class,
         'message' => '$maxItems must be greater than, or equal to, 0.'
@@ -412,7 +420,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMinItemsException::class,
         'message' => '$minItems must be greater than, or equal to, 0.'
@@ -471,7 +481,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMaxPropertiesException::class,
         'message' => '$maxProperties must be greater than, or equal to, 0.'
@@ -508,7 +520,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => '$value >= 0',
+        'eval' => <<<'PHP'
+            $value >= 0
+         PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidMinPropertiesException::class,
         'message' => '$minProperties must be greater than, or equal to, 0.'
@@ -541,7 +555,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => 'count($value) && count(array_filter($value, "is_string")) === count($value)',
+        'eval' => <<<'PHP'
+            count($value) && count(array_filter($value, "is_string")) === count($value)
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidRequiredException::class,
         'message' => '$required must have at least 1 element, all as strings.'
@@ -576,7 +592,9 @@ class Schema
      */
     #[Describe([
         'cast' => [self::class, 'when'],
-        'eval' => 'count($value)',
+        'eval' => <<<'PHP'
+            count($value)
+        PHP,
         'false' => [self::class, 'throwException'],
         'exception' => InvalidEnumException::class,
         'message' => '$enum must have at least 1 element'

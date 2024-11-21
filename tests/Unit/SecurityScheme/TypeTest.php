@@ -18,7 +18,8 @@ class TypeTest extends TestCase
         $this->expectExceptionMessage('Property `$type` is required.');
 
         SecurityScheme::from([
-            SecurityScheme::name => 'name'
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'query',
         ]);
     }
 
@@ -29,7 +30,8 @@ class TypeTest extends TestCase
 
         SecurityScheme::from([
             SecurityScheme::type => 'bogus',
-            SecurityScheme::name => 'name'
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'query',
         ]);
     }
 
@@ -38,7 +40,8 @@ class TypeTest extends TestCase
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
-            SecurityScheme::name => 'name'
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'query',
         ]);
 
         $this->assertEquals(

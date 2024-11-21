@@ -14,7 +14,8 @@ class DescriptionTest extends TestCase
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
-            SecurityScheme::name => 'name'
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'query',
         ]);
 
         self::assertNull(
@@ -29,7 +30,8 @@ class DescriptionTest extends TestCase
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::description => 'description',
             SecurityScheme::type => 'apiKey',
-            SecurityScheme::name => 'name'
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'query',
         ]);
 
         $this->assertEquals(

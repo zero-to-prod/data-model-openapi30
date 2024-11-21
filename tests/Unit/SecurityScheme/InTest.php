@@ -5,26 +5,39 @@ namespace Tests\Unit\SecurityScheme;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
+use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeInException;
 use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeTypeException;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
-class NameTest extends TestCase
+class InTest extends TestCase
 {
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
         $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$name` is required.');
+        $this->expectExceptionMessage('Property `$in` is required.');
 
         SecurityScheme::from([
-            SecurityScheme::type => 'apiKey',
-            SecurityScheme::in => 'query',
+            SecurityScheme::name => 'name',
+            SecurityScheme::type => 'apiKey'
         ]);
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
-    #[Test] public function name_property(): void
+    #[Test] public function invalid_value(): void
+    {
+        $this->expectException(InvalidSecuritySchemeInException::class);
+
+        SecurityScheme::from([
+            SecurityScheme::type => 'apiKey',
+            SecurityScheme::name => 'name',
+            SecurityScheme::in => 'bogus'
+        ]);
+    }
+
+    /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
+    #[Test] public function type(): void
     {
         $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
@@ -33,9 +46,9 @@ class NameTest extends TestCase
         ]);
 
         $this->assertEquals(
-            expected: 'name',
-            actual: $SecurityScheme->name,
-            message: 'REQUIRED. The name of the header, query or cookie parameter to be used.'
+            expected: 'query',
+            actual: $SecurityScheme->in,
+            message: 'REQUIRED. The location of the API key. Valid values are "query", "header", or "cookie".'
         );
     }
 }
