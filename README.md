@@ -8,6 +8,13 @@
 
 DataModels for OpenAPI 3.0.*
 
+## Usage
+```php
+use Zerotoprod\DataModelOpenapi30\OpenApi;
+
+$OpenApi = OpenApi::from(json_decode($json, true));
+```
+
 ## Testing
 
 ```shell
