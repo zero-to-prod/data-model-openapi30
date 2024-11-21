@@ -47,8 +47,8 @@ class OAuthFlow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      */
-    #[Describe(['required'])]
-    public string $tokenUrl;
+    #[Describe(['missing_as_null'])]
+    public ?string $tokenUrl;
 
     /**
      * The URL to be used for obtaining refresh tokens. This _MUST_ be in the

@@ -5,8 +5,8 @@ namespace Tests\Unit\Components;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Components;
-use Zerotoprod\DataModelOpenapi30\Example;
 use Zerotoprod\DataModelOpenapi30\Reference;
+use Zerotoprod\DataModelOpenapi30\Schema;
 
 class SchemasTest extends TestCase
 {
@@ -52,20 +52,20 @@ class SchemasTest extends TestCase
         $Component = Components::from([
             Components::schemas => [
                 'example1' => [
-                    Example::value => 'value'
+                    Schema::type => 'type'
                 ]
             ],
         ]);
 
         self::assertInstanceOf(
-            expected: Example::class,
+            expected: Schema::class,
             actual: $Component->schemas['example1'],
             message: 'An object to hold reusable Schema Objects.'
         );
 
         self::assertEquals(
-            expected: 'value',
-            actual: $Component->schemas['example1']->value,
+            expected: 'type',
+            actual: $Component->schemas['example1']->type,
             message: 'An object to hold reusable Schema Objects.'
         );
     }

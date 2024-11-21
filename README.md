@@ -14,6 +14,18 @@ DataModels for OpenAPI 3.0.*
 ./vendor/bin/phpunit
 ```
 
+## Acceptance Tests
+
+| Test                                                                                                     | Status             |
+|----------------------------------------------------------------------------------------------------------|--------------------|
+| [4.7.2.2 Info Object Example](https://spec.openapis.org/oas/v3.0.4.html#info-object-example)             | :white_check_mark: |
+| [4.7.3.2 Contact Object Example](https://spec.openapis.org/oas/v3.0.4.html#contact-object-example)       | :white_check_mark: |
+| [4.7.4.2 License Object Example](https://spec.openapis.org/oas/v3.0.4.html#license-object-example)       | :white_check_mark: |
+| [4.7.5.2 Server Object Example](https://spec.openapis.org/oas/v3.0.4.html#server-object-example)         | :white_check_mark: |
+| [4.7.7.2 Components Object Example](https://spec.openapis.org/oas/v3.0.4.html#components-object-example) | :white_check_mark: |
+
+## Properties
+
 # [4.0 Specification](https://spec.openapis.org/oas/v3.0.4.html#specification)
 
 ## [4.7 Schema](https://spec.openapis.org/oas/v3.0.4.html#schema-0)

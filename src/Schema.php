@@ -789,10 +789,12 @@ class Schema
      * Property definitions _MUST_ be a Schema Object and not a standard
      * JSON Schema (inline or referenced).
      *
+     * @var null|Reference|self[]
+     *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     #[Describe(['cast' => [self::class, 'properties']])]
-    public null|self|Reference $properties;
+    public null|array|Reference $properties;
 
     /**
      * Property definitions _MUST_ be a Schema Object and not a standard
@@ -800,15 +802,16 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
-    public static function properties($value, array $context): Schema|Reference|null
+    public static function properties($value, array $context): Schema|array|null
     {
-        if (!isset($context[self::properties])) {
-            return null;
-        }
-
-        return isset($value[Reference::ref])
-            ? Reference::from($value)
-            : self::from($value);
+        return isset($context[self::properties])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : self::from($value),
+                $value
+            )
+            : null;
     }
 
     /**

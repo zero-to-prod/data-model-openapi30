@@ -14,15 +14,17 @@ class OpenIdConnectUrlTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
-        $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$openIdConnectUrl` is required.');
-
-        SecurityScheme::from([
+        $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
             SecurityScheme::name => 'name',
         ]);
+
+        $this->assertNull(
+            actual: $SecurityScheme->openIdConnectUrl,
+            message: 'REQUIRED. Well-known URL to discover the [OpenID-Connect-Discovery] provider metadata.'
+        );
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */

@@ -14,15 +14,17 @@ class NameTest extends TestCase
     /** @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */
     #[Test] public function default_value(): void
     {
-        $this->expectException(PropertyRequiredException::class);
-        $this->expectExceptionMessage('Property `$name` is required.');
-
-        SecurityScheme::from([
+        $SecurityScheme = SecurityScheme::from([
             SecurityScheme::type => 'apiKey',
             SecurityScheme::in => 'query',
             SecurityScheme::scheme => 'scheme',
             SecurityScheme::openIdConnectUrl => 'openIdConnectUrl',
         ]);
+
+        $this->assertNull(
+            actual: $SecurityScheme->name,
+            message: 'REQUIRED. The name of the header, query or cookie parameter to be used.'
+        );
     }
 
     /** @link @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23 */

@@ -26,19 +26,21 @@ class PropertiesTest extends TestCase
     {
         $Schema = Schema::from([
             Schema::properties => [
-                Reference::ref => 'ref'
+                'property1' => [
+                    Reference::ref => 'ref'
+                ]
             ]
         ]);
 
         self::assertInstanceOf(
             expected: Reference::class,
-            actual: $Schema->properties,
+            actual: $Schema->properties['property1'],
             message: 'Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).'
         );
 
         self::assertEquals(
             expected: 'ref',
-            actual: $Schema->properties->ref,
+            actual: $Schema->properties['property1']->ref,
             message: 'Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).'
         );
     }
@@ -48,19 +50,21 @@ class PropertiesTest extends TestCase
     {
         $Schema = Schema::from([
             Schema::properties => [
-                Schema::example => 'example'
+                'property1' => [
+                    Schema::example => 'example'
+                ]
             ]
         ]);
 
         self::assertInstanceOf(
             expected: Schema::class,
-            actual: $Schema->properties,
+            actual: $Schema->properties['property1'],
             message: 'Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).'
         );
 
         self::assertEquals(
             expected: 'example',
-            actual: $Schema->properties->example,
+            actual: $Schema->properties['property1']->example,
             message: 'Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).'
         );
     }

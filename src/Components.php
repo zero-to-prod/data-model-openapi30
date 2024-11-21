@@ -45,7 +45,7 @@ class Components
             ? array_map(
                 static fn($value) => isset($value[Reference::ref])
                     ? Reference::from($value)
-                    : Example::from($value),
+                    : Schema::from($value),
                 $value
             )
             : null;

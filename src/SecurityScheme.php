@@ -80,8 +80,8 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['required'])]
-    public string $name;
+    #[Describe(['missing_as_null'])]
+    public ?string $name;
 
     /**
      * **REQUIRED**. The type of the security scheme. Valid values are
@@ -105,9 +105,8 @@ class SecurityScheme
         'false' => [self::class, 'throwException'],
         'exception' => InvalidSecuritySchemeInException::class,
         'message' => 'Valid values are "query", "header", and "cookie".',
-        'required'
     ])]
-    public string $in;
+    public ?string $in;
 
     /**
      * **REQUIRED**. The name of the HTTP Authentication scheme to be used
@@ -129,11 +128,8 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'required'
-    ])]
-    public string $scheme;
+    #[Describe(['missing_as_null'])]
+    public ?string $scheme;
 
     /**
      * A hint to the client to identify how the bearer token is formatted.
@@ -169,8 +165,8 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['required'])]
-    public string $openIdConnectUrl;
+    #[Describe(['missing_as_null'])]
+    public ?string $openIdConnectUrl;
 
     /**
      * **REQUIRED**. An object containing configuration information for the
@@ -186,6 +182,6 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['required'])]
-    public OAuthFlows $flows;
+    #[Describe(['missing_as_null'])]
+    public ?OAuthFlows $flows;
 }

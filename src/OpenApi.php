@@ -108,6 +108,8 @@ class OpenApi
      * empty array, the default value would be a Server Object with a
      * url value of `/`
      *
+     * @var Server[]|Server
+     *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
     #[Describe([
