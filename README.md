@@ -13,6 +13,8 @@ DataModels for OpenAPI 3.0.*
 use Zerotoprod\DataModelOpenapi30\OpenApi;
 
 $OpenApi = OpenApi::from(json_decode($json, true));
+
+$OpenApi->components->schemas['pet']->description;
 ```
 
 ## Testing
