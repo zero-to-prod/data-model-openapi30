@@ -6,7 +6,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/data-model-openapi30?color=f28d1a)](https://packagist.org/packages/zero-to-prod/data-model-openapi30)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/data-model-openapi30?color=red)](https://github.com/zero-to-prod/data-model-openapi30/blob/main/LICENSE.md)
 
-DataModels for OpenAPI 3.0.*
+DataModels for OpenAPI 3.0.* [specification](https://spec.openapis.org/oas/v3.0.4.html).
 
 ## Usage
 ```php
