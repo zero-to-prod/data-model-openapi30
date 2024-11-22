@@ -35,6 +35,7 @@ $OpenApi = OpenApi::from(json_decode($json, true));
 | [4.7.10.2 Operation Object Example](https://spec.openapis.org/oas/v3.0.4.html#operation-object-example)                           | :white_check_mark: |
 | [4.7.11.2 External Documentation Object Example](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object-example) | :white_check_mark: |
 | [4.7.12.5 Parameter Object Examples](https://spec.openapis.org/oas/v3.0.4.html#parameter-object-examples) | :white_check_mark: |
+| [4.7.13.2 Request Body Examples](https://spec.openapis.org/oas/v3.0.4.html#request-body-examples) | :white_check_mark: |
 
 ## Properties
 
