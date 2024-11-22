@@ -9,6 +9,7 @@
 DataModels for OpenAPI 3.0.* [specification](https://spec.openapis.org/oas/v3.0.4.html).
 
 ## Usage
+
 ```php
 use Zerotoprod\DataModelOpenapi30\OpenApi;
 
@@ -36,9 +37,9 @@ $OpenApi->components->schemas['pet']->description;
 | [4.7.9.2 Path Item Object Example](https://spec.openapis.org/oas/v3.0.4.html#path-item-object-example)                            | :white_check_mark: |
 | [4.7.10.2 Operation Object Example](https://spec.openapis.org/oas/v3.0.4.html#operation-object-example)                           | :white_check_mark: |
 | [4.7.11.2 External Documentation Object Example](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object-example) | :white_check_mark: |
-| [4.7.12.5 Parameter Object Examples](https://spec.openapis.org/oas/v3.0.4.html#parameter-object-examples) | :white_check_mark: |
-| [4.7.13.2 Request Body Examples](https://spec.openapis.org/oas/v3.0.4.html#request-body-examples) | :white_check_mark: |
-| [4.7.14.2 Media Type Examples](https://spec.openapis.org/oas/v3.0.4.html#media-type-examples-0) | :white_check_mark: |
+| [4.7.12.5 Parameter Object Examples](https://spec.openapis.org/oas/v3.0.4.html#parameter-object-examples)                         | :white_check_mark: |
+| [4.7.13.2 Request Body Examples](https://spec.openapis.org/oas/v3.0.4.html#request-body-examples)                                 | :white_check_mark: |
+| [4.7.14.2 Media Type Examples](https://spec.openapis.org/oas/v3.0.4.html#media-type-examples-0)                                   | :white_check_mark: |
 
 ## Properties
 
