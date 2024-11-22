@@ -26,7 +26,7 @@ class Contact
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $name;
 
     /**

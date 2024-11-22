@@ -44,7 +44,7 @@ class Encoding
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $contentType;
 
     /**
@@ -109,7 +109,7 @@ class Encoding
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $style;
 
     /**

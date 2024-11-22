@@ -100,7 +100,7 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -365,7 +365,7 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public mixed $example;
 
     /**

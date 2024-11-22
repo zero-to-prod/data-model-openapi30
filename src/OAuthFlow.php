@@ -47,7 +47,7 @@ class OAuthFlow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $tokenUrl;
 
     /**
@@ -64,7 +64,7 @@ class OAuthFlow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $refreshUrl;
 
     /**

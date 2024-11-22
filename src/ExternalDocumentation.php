@@ -30,7 +30,7 @@ class ExternalDocumentation
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**

@@ -42,7 +42,7 @@ class Header
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -90,7 +90,7 @@ class Header
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $style;
 
     /**
@@ -152,7 +152,7 @@ class Header
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public mixed $example;
 
     /**

@@ -26,7 +26,7 @@ class OAuthFlows
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?OAuthFlow $implicit;
 
     /**
@@ -41,7 +41,7 @@ class OAuthFlows
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?OAuthFlow $password;
 
     /**
@@ -58,7 +58,7 @@ class OAuthFlows
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?OAuthFlow $clientCredentials;
 
     /**
@@ -75,6 +75,6 @@ class OAuthFlows
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?OAuthFlow $authorizationCode;
 }

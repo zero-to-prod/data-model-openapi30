@@ -38,7 +38,7 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $operationRef;
 
     /**
@@ -55,7 +55,7 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $operationId;
 
     /**
@@ -84,7 +84,7 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?array $parameters;
 
     /**
@@ -101,7 +101,7 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public mixed $requestBody;
 
     /**
@@ -118,7 +118,7 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -133,6 +133,6 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Server $server;
 }

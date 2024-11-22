@@ -33,7 +33,7 @@ class Example
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $summary;
 
     /**
@@ -50,7 +50,7 @@ class Example
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-15
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**

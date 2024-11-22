@@ -65,7 +65,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -80,7 +80,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $name;
 
     /**
@@ -128,7 +128,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $scheme;
 
     /**
@@ -147,7 +147,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $bearerFormat;
 
     /**
@@ -165,7 +165,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $openIdConnectUrl;
 
     /**
@@ -182,6 +182,6 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?OAuthFlows $flows;
 }

@@ -33,7 +33,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?array $tags;
 
     /**
@@ -48,7 +48,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $summary;
 
     /**
@@ -67,7 +67,7 @@ class Operation
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  https://spec.commonmark.org/
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -82,7 +82,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;
 
     /**
@@ -105,7 +105,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $operationId;
 
     /**
@@ -330,7 +330,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?array $security;
 
     /**

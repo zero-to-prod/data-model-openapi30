@@ -42,7 +42,7 @@ class Xml
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $name;
 
     /**
@@ -75,7 +75,7 @@ class Xml
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $prefix;
 
     /**

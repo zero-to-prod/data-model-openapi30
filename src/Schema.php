@@ -49,7 +49,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $title;
 
     /**
@@ -109,7 +109,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public null|int|float $maximum;
 
     /**
@@ -169,7 +169,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.4
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public null|int|float $minimum;
 
     /**
@@ -613,7 +613,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $type;
 
     /**
@@ -867,7 +867,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -884,7 +884,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $format;
 
     /**
@@ -907,7 +907,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public mixed $default;
 
     /**
@@ -951,7 +951,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Discriminator $discriminator;
 
     /**
@@ -1074,7 +1074,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Xml $xml;
 
     /**
@@ -1089,7 +1089,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;
 
     /**
@@ -1127,6 +1127,6 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public mixed $example;
 }

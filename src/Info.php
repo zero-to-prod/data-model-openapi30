@@ -49,7 +49,7 @@ class Info
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      * @see  https://spec.commonmark.org/
      */
-    #[Describe(['missing_as_null' => true])]
+    #[Describe(['nullable' => true])]
     public ?string $description;
 
     /**
@@ -103,7 +103,7 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Contact $contact;
 
     /**
@@ -118,6 +118,6 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?License $license;
 }

@@ -172,7 +172,7 @@ class OpenApi
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Components $components;
 
     /**
@@ -222,6 +222,6 @@ class OpenApi
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;
 }

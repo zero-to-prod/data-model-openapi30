@@ -43,7 +43,7 @@ class PathItem
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-item-object
      * @see  https://spec.openapis.org/oas/v3.0.4.html#relative-references-in-urls
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $ref;
 
     /**
@@ -60,7 +60,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $summary;
 
     /**
@@ -81,7 +81,7 @@ class PathItem
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      * @see  https://spec.commonmark.org/
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?string $description;
 
     /**
@@ -96,7 +96,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $get;
 
     /**
@@ -111,7 +111,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $put;
 
     /**
@@ -126,7 +126,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $post;
 
     /**
@@ -141,7 +141,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $delete;
 
     /**
@@ -156,7 +156,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $options;
 
     /**
@@ -171,7 +171,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $head;
 
     /**
@@ -186,7 +186,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $patch;
 
     /**
@@ -201,7 +201,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?Operation $trace;
 
     /**

@@ -57,6 +57,6 @@ class Discriminator
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
      */
-    #[Describe(['missing_as_null'])]
+    #[Describe(['nullable'])]
     public ?array $mapping;
 }
