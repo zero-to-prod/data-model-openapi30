@@ -26,6 +26,7 @@ DataModels for OpenAPI 3.0.*
 | [4.7.8.3 Paths Object Example](https://spec.openapis.org/oas/v3.0.4.html#paths-object-example)           | :white_check_mark: |
 | [4.7.9.2 Path Item Object Example](https://spec.openapis.org/oas/v3.0.4.html#path-item-object-example)   | :white_check_mark: |
 | [4.7.10.2 Operation Object Example](https://spec.openapis.org/oas/v3.0.4.html#operation-object-example)  | :white_check_mark: |
+| [4.7.11.2 External Documentation Object Example](https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object-example)  | :white_check_mark: |
 
 ## Properties
 
