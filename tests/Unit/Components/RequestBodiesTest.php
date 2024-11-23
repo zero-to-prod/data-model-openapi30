@@ -17,7 +17,7 @@ class RequestBodiesTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->requestBodies,
             message: 'An object to hold reusable Request Body Objects.'
         );

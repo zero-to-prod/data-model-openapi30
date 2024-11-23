@@ -16,7 +16,7 @@ class CallbacksTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->callbacks,
             message: 'An object to hold reusable Callback Objects.'
         );

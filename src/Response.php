@@ -94,8 +94,9 @@ class Response
     #[Describe([
         'cast' => [self::class, 'mapOf'],
         'type' => MediaType::class,
+        'default' => []
     ])]
-    public ?array $content;
+    public array $content;
 
     /**
      * A map of operations links that can be followed from the response.

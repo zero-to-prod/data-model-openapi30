@@ -19,7 +19,7 @@ class ExamplesTest extends TestCase
             Parameter::in => 'query',
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Parameter->examples,
             message: 'Examples of the parameter’s potential value; see Working With Examples.'
         );

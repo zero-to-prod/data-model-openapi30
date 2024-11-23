@@ -559,10 +559,11 @@ class Schema
             count($value) && count(array_filter($value, "is_string")) === count($value)
         PHP,
         'false' => [self::class, 'throwException'],
+        'default' => [],
         'exception' => InvalidRequiredException::class,
         'message' => '$required must have at least 1 element, all as strings.'
     ])]
-    public null|array $required;
+    public array $required;
 
     /**
      * The value of this keyword _MUST_ be an array.  This array _SHOULD_ have
@@ -794,7 +795,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     #[Describe(['cast' => [self::class, 'properties']])]
-    public null|array|Reference $properties;
+    public array|Reference $properties;
 
     /**
      * Property definitions _MUST_ be a Schema Object and not a standard
@@ -811,7 +812,7 @@ class Schema
                     : self::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**

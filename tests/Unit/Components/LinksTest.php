@@ -16,7 +16,7 @@ class LinksTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->links,
             message: 'An object to hold reusable Link Objects.'
         );

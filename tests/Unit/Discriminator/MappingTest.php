@@ -16,7 +16,7 @@ class MappingTest extends TestCase
             Discriminator::propertyName => 'propertyName'
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Discriminator->mapping,
             message: 'An object to hold mappings between payload values and schema names or URI references.'
         );

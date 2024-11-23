@@ -74,8 +74,9 @@ class Server
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
-        'type' => ServerVariable::class
+        'type' => ServerVariable::class,
+        'default' => []
     ])]
-    public ?array $variables;
+    public array $variables;
 
 }

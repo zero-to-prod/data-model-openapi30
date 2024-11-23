@@ -84,8 +84,8 @@ class Link
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      */
-    #[Describe(['nullable'])]
-    public ?array $parameters;
+    #[Describe(['default' => []])]
+    public array $parameters;
 
     /**
      * A literal value or {expression} to use as a request body when calling

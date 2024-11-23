@@ -14,7 +14,7 @@ class TagsTest extends TestCase
     {
         $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Operation->tags,
             message: 'A list of tags for API documentation control. Tags can be used for logical grouping of operations by resources or any other qualifier.'
         );

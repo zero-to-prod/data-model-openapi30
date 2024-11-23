@@ -16,7 +16,7 @@ class ExamplesTest extends TestCase
     {
         $Header = Header::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Header->examples,
             message: 'Examples of the parameter’s potential value; see Working With Examples.'
         );

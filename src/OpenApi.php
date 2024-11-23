@@ -207,8 +207,9 @@ class OpenApi
     #[Describe([
         'cast' => [self::class, 'mapOf'],
         'type' => Tag::class,
+        'default' => []
     ])]
-    public ?array $tags;
+    public array $tags;
 
     /**
      * Additional external documentation for this tag.

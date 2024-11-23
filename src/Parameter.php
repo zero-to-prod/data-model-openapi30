@@ -384,17 +384,17 @@ class Parameter
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
     #[Describe(['cast' => [self::class, 'examples']])]
-    public ?array $examples;
+    public array $examples;
 
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @return ?array<string, Example|Reference>
+     * @return array<string, Example|Reference>
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      */
-    public static function examples($value, array $context): ?array
+    public static function examples($value, array $context): array
     {
         return isset($context[self::examples])
             ? array_map(
@@ -403,7 +403,7 @@ class Parameter
                     : Example::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -427,6 +427,7 @@ class Parameter
     #[Describe([
         'cast' => [self::class, 'mapOf'],
         'type' => MediaType::class,
+        'default' => []
     ])]
-    public ?array $content;
+    public array $content;
 }

@@ -224,9 +224,10 @@ class PathItem
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
-        'type' => Server::class
+        'type' => Server::class,
+        'default' => [],
     ])]
-    public ?array $servers;
+    public array $servers;
 
     /**
      * A list of parameters that are applicable for this operation. If a parameter
@@ -254,8 +255,11 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    #[Describe(['cast' => [self::class, 'parameters']])]
-    public ?array $parameters;
+    #[Describe([
+        'cast' => [self::class, 'parameters'],
+        'default' => []
+    ])]
+    public array $parameters;
 
     /**
      * A list of parameters that are applicable for this operation. If a parameter
@@ -268,7 +272,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      */
-    public static function parameters($value, array $context): ?array
+    public static function parameters($value, array $context): array
     {
         return isset($context[self::parameters])
             ? array_map(
@@ -277,7 +281,7 @@ class PathItem
                     : Parameter::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
 }

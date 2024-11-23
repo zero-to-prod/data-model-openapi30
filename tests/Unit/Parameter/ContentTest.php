@@ -18,7 +18,7 @@ class ContentTest extends TestCase
             Parameter::in => 'query',
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Parameter->content,
             message: 'A map containing the representations for the parameter.'
         );

@@ -16,7 +16,7 @@ class ServersTest extends TestCase
     {
         $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Operation->servers,
             message: 'An alternative servers array to service this operation.'
         );

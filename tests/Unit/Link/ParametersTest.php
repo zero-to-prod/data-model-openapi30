@@ -13,7 +13,7 @@ class ParametersTest extends TestCase
     {
         $Link = Link::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Link->parameters,
             message: 'A map representing parameters to pass to an operation as specified with operationId or identified via operationRef. The key is the parameter name to be used (optionally qualified with the parameter location, e.g. path.id for an id parameter in the path), whereas the value can be a constant or an expression to be evaluated and passed to the linked operation.'
         );

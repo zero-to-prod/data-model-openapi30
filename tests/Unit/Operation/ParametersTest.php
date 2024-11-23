@@ -16,7 +16,7 @@ class ParametersTest extends TestCase
     {
         $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Operation->parameters,
             message: 'A list of parameters that are applicable for this operation.'
         );

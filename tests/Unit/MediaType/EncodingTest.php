@@ -15,7 +15,7 @@ class EncodingTest extends TestCase
     {
         $Media = MediaType::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Media->encoding,
             message: 'A map between a property name and its encoding information. '
         );

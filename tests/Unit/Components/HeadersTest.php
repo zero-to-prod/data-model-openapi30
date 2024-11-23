@@ -16,7 +16,7 @@ class HeadersTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->headers,
             message: 'An object to hold reusable Header Objects.'
         );
