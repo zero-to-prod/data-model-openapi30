@@ -17,12 +17,12 @@
   ],
   "require": {
     "php": ">=8.1.0",
-    "zero-to-prod/data-model": "^81.6",
-    "zero-to-prod/transformable": "^71.0",
-    "zero-to-prod/data-model-helper": "^81.5",
-    "zero-to-prod/data-model-factory": "^71.3",
-    "zero-to-prod/validate-semver": "^71.0",
-    "zero-to-prod/data-model-semver": "^71.0"
+    "zero-to-prod/data-model": "^81.7",
+    "zero-to-prod/transformable": "^71.0.9",
+    "zero-to-prod/data-model-helper": "^v81.11.3",
+    "zero-to-prod/data-model-factory": "^71.3.2",
+    "zero-to-prod/validate-semver": "^71.0.4",
+    "zero-to-prod/data-model-semver": "^71.0.1"
   },
   "autoload": {
     "psr-4": {
