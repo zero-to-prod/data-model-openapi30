@@ -31,7 +31,7 @@ class EnumTest extends TestCase
             ServerVariable::default => 'default',
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $ServerVariable->enum,
             message: 'An enumeration of string values to be used if the substitution options are from a limited set. The array _SHOULD_ NOT be empty.'
         );

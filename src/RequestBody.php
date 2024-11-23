@@ -58,9 +58,9 @@ class RequestBody
     #[Describe([
         'cast' => [self::class, 'mapOf'],
         'type' => MediaType::class,
-        'required'
+        'default' => []
     ])]
-    public ?array $content;
+    public array $content;
 
     /**
      * Determines if the request body is required in the request. Defaults to `false`.

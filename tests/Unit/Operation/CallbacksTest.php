@@ -18,7 +18,7 @@ class CallbacksTest extends TestCase
             Operation::responses => ['example1' => [Reference::ref => 'ref']],
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Operation->callbacks,
             message: 'A map of possible out-of band callbacks related to the parent operation.'
         );

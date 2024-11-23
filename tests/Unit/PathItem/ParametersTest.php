@@ -16,7 +16,7 @@ class ParametersTest extends TestCase
     {
         $PathItem = PathItem::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $PathItem->parameters,
             message: 'A list of parameters that are applicable for this operation.'
         );

@@ -16,7 +16,7 @@ class ExamplesTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->examples,
             message: 'An object to hold reusable Example Objects.'
         );

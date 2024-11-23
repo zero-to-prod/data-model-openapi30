@@ -14,7 +14,7 @@ class RequiredTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Schema->required,
         );
     }

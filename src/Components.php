@@ -32,14 +32,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'schemas']])]
-    public ?array $schemas;
+    public array $schemas;
 
     /**
      * An object to hold reusable Schema Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function schemas($value, array $context): ?array
+    public static function schemas($value, array $context): array
     {
         return isset($context[self::schemas])
             ? array_map(
@@ -48,7 +48,7 @@ class Components
                     : Schema::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -66,14 +66,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'responses']])]
-    public ?array $responses;
+    public array $responses;
 
     /**
      * An object to hold reusable Response Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function responses($value, array $context): ?array
+    public static function responses($value, array $context): array
     {
         return isset($context[self::responses])
             ? array_map(
@@ -82,7 +82,7 @@ class Components
                     : Response::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -100,14 +100,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'parameters']])]
-    public ?array $parameters;
+    public array $parameters;
 
     /**
      * An object to hold reusable Parameter Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function parameters($value, array $context): ?array
+    public static function parameters($value, array $context): array
     {
         return isset($context[self::parameters])
             ? array_map(
@@ -116,7 +116,7 @@ class Components
                     : Parameter::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -129,19 +129,19 @@ class Components
     /**
      * An object to hold reusable Example Objects.
      *
-     * @var null|array<string, Example|Reference> $examples
+     * @var array<string, Example|Reference> $examples
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'examples']])]
-    public ?array $examples;
+    public array $examples;
 
     /**
      * An object to hold reusable Example Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function examples($value, array $context): ?array
+    public static function examples($value, array $context): array
     {
         return isset($context[self::examples])
             ? array_map(
@@ -150,7 +150,7 @@ class Components
                     : Example::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -168,14 +168,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'requestBodies']])]
-    public ?array $requestBodies;
+    public array $requestBodies;
 
     /**
      * An object to hold reusable Request Body Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function requestBodies($value, array $context): ?array
+    public static function requestBodies($value, array $context): array
     {
         return isset($context[self::requestBodies])
             ? array_map(
@@ -184,7 +184,7 @@ class Components
                     : RequestBody::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -197,19 +197,19 @@ class Components
     /**
      * An object to hold reusable Header Objects.
      *
-     * @var null|array<string, Header|Reference> $headers
+     * @var array<string, Header|Reference> $headers
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'headers']])]
-    public ?array $headers;
+    public array $headers;
 
     /**
      * An object to hold reusable Header Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function headers($value, array $context): ?array
+    public static function headers($value, array $context): array
     {
         return isset($context[self::headers])
             ? array_map(
@@ -218,7 +218,7 @@ class Components
                     : Header::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -236,14 +236,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'securitySchemes']])]
-    public ?array $securitySchemes;
+    public array $securitySchemes;
 
     /**
      * An object to hold reusable Security Scheme Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function securitySchemes($value, array $context): ?array
+    public static function securitySchemes($value, array $context): array
     {
         return isset($context[self::securitySchemes])
             ? array_map(
@@ -252,7 +252,7 @@ class Components
                     : SecurityScheme::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -265,19 +265,19 @@ class Components
     /**
      * An object to hold reusable Link Objects.
      *
-     * @var null|array<string, Link|Reference> $links
+     * @var array<string, Link|Reference> $links
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'links']])]
-    public ?array $links;
+    public array $links;
 
     /**
      * An object to hold reusable Link Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function links($value, array $context): ?array
+    public static function links($value, array $context): array
     {
         return isset($context[self::links])
             ? array_map(
@@ -286,7 +286,7 @@ class Components
                     : Link::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -304,14 +304,14 @@ class Components
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
     #[Describe(['cast' => [self::class, 'callbacks']])]
-    public ?array $callbacks;
+    public array $callbacks;
 
     /**
      * An object to hold reusable Callback Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
-    public static function callbacks($value, array $context): ?array
+    public static function callbacks($value, array $context): array
     {
         return isset($context[self::callbacks])
             ? array_map(
@@ -320,6 +320,6 @@ class Components
                     : array_map(static fn($item) => PathItem::from($item), $value),
                 $value
             )
-            : null;
+            : [];
     }
 }

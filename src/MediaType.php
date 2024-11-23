@@ -85,14 +85,14 @@ class MediaType
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      */
     #[Describe(['cast' => [self::class, 'examples']])]
-    public ?array $examples;
+    public array $examples;
 
     /**
      * Examples of the media type; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      */
-    public static function examples($value, array $context): ?array
+    public static function examples($value, array $context): array
     {
         return isset($context[self::examples])
             ? array_map(
@@ -101,7 +101,7 @@ class MediaType
                     : Example::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -134,7 +134,8 @@ class MediaType
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
-        'type' => Encoding::class
+        'type' => Encoding::class,
+        'default' => []
     ])]
-    public ?array $encoding;
+    public array $encoding;
 }

@@ -18,7 +18,7 @@ class SecuritySchemesTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->securitySchemes,
             message: 'An object to hold reusable Security Scheme Objects.'
         );

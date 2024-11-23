@@ -43,7 +43,7 @@ class VariablesTest extends TestCase
             Server::description => 'description',
         ]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Server->variables,
             message: 'A map between a variable name and its value. The value is used for substitution in the server’s URL template.'
         );

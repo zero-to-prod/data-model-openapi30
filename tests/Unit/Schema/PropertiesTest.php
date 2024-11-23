@@ -15,7 +15,7 @@ class PropertiesTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Schema->properties,
             message: 'Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).'
         );

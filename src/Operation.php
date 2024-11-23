@@ -33,8 +33,8 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['nullable'])]
-    public ?array $tags;
+    #[Describe(['default' => []])]
+    public array $tags;
 
     /**
      * A short summary of what the operation does.
@@ -135,7 +135,7 @@ class Operation
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     #[Describe(['cast' => [self::class, 'parameters']])]
-    public ?array $parameters;
+    public array $parameters;
 
     /**
      * A list of parameters that are applicable for this operation. If a parameter
@@ -148,7 +148,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    public static function parameters($value, array $context): ?array
+    public static function parameters($value, array $context): array
     {
         return isset($context[self::parameters])
             ? array_map(
@@ -157,7 +157,7 @@ class Operation
                     : Parameter::from($value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -230,7 +230,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    public static function responses($value, array $context): ?array
+    public static function responses($value, array $context): array
     {
         if (!isset($context[self::responses])) {
             throw new PropertyRequiredException('Property `$responses` is required.');
@@ -264,7 +264,7 @@ class Operation
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
     #[Describe(['cast' => [self::class, 'callbacks']])]
-    public ?array $callbacks;
+    public array $callbacks;
 
     /**
      * A map of possible out-of band callbacks related to the parent operation.
@@ -273,7 +273,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    public static function callbacks($value, array $context): ?array
+    public static function callbacks($value, array $context): array
     {
         return isset($context[self::callbacks])
             ? array_map(
@@ -282,7 +282,7 @@ class Operation
                     : array_map(static fn($item) => PathItem::from($item), $value),
                 $value
             )
-            : null;
+            : [];
     }
 
     /**
@@ -330,8 +330,8 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      */
-    #[Describe(['nullable'])]
-    public ?array $security;
+    #[Describe(['default' => []])]
+    public array $security;
 
     /**
      * An alternative `servers` array to service this operation. If a `servers`
@@ -353,7 +353,8 @@ class Operation
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
-        'type' => Server::class
+        'type' => Server::class,
+        'default' => []
     ])]
-    public ?array $servers;
+    public array $servers;
 }

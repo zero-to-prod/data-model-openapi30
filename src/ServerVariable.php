@@ -31,8 +31,8 @@ class ServerVariable
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      */
-    #[Describe(['nullable'])]
-    public ?array $enum;
+    #[Describe(['default' => []])]
+    public array $enum;
 
     /**
      * **REQUIRED**. The default value to use for substitution, which _SHALL_

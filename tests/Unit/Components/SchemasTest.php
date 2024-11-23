@@ -16,7 +16,7 @@ class SchemasTest extends TestCase
     {
         $Component = Components::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Component->schemas,
             message: 'An object to hold reusable Schema Objects.'
         );

@@ -15,7 +15,7 @@ class SecurityTest extends TestCase
     {
         $Operation = Operation::from([Operation::responses => ['example1' => [Reference::ref => 'ref']]]);
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Operation->security,
             message: 'A declaration of which security mechanisms can be used for this operation.'
         );

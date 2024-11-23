@@ -16,7 +16,7 @@ class ServersTest extends TestCase
     {
         $PathItem = PathItem::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $PathItem->servers,
             message: 'An alternative servers array to service this operation.'
         );
