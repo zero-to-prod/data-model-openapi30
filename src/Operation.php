@@ -21,6 +21,7 @@ class Operation
      * qualifier.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $tags
      */
     public const tags = 'tags';
 
@@ -40,6 +41,7 @@ class Operation
      * A short summary of what the operation does.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $summary
      */
     public const summary = 'summary';
 
@@ -57,6 +59,7 @@ class Operation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
@@ -74,6 +77,7 @@ class Operation
      * Additional external documentation for this operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $externalDocs
      */
     public const externalDocs = 'externalDocs';
 
@@ -93,6 +97,7 @@ class Operation
      * to follow common programming naming conventions.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $operationId
      */
     public const operationId = 'operationId';
 
@@ -118,6 +123,7 @@ class Operation
      * `components.parameters`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $parameters
      */
     public const parameters = 'parameters';
 
@@ -147,6 +153,7 @@ class Operation
      * `components.parameters`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $parameters
      */
     public static function parameters($value, array $context): array
     {
@@ -168,6 +175,7 @@ class Operation
      * ignored by consumers.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $requestBody
      */
     public const requestBody = 'requestBody';
 
@@ -193,6 +201,7 @@ class Operation
      * `components.parameters`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $requestBody
      */
     public static function requestBody($value, array $context): null|RequestBody|Reference
     {
@@ -210,6 +219,7 @@ class Operation
      * from executing this operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $responses
      */
     public const responses = 'responses';
 
@@ -229,6 +239,7 @@ class Operation
      * from executing this operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $responses
      */
     public static function responses($value, array $context): array
     {
@@ -250,6 +261,7 @@ class Operation
      * the map is a Callback Object that describes a request that may be
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $callbacks
      */
     public const callbacks = 'callbacks';
 
@@ -272,6 +284,7 @@ class Operation
      * the map is a Callback Object that describes a request that may be
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $callbacks
      */
     public static function callbacks($value, array $context): array
     {
@@ -290,6 +303,7 @@ class Operation
      * from usage of the declared operation. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $deprecated
      */
     public const deprecated = 'deprecated';
 
@@ -313,6 +327,7 @@ class Operation
      * array can be used.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $security
      */
     public const security = 'security';
 
@@ -339,6 +354,7 @@ class Operation
      * it will be overridden by this value.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  $servers
      */
     public const servers = 'servers';
 
