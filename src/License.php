@@ -18,6 +18,7 @@ class License
      * **REQUIRED**. The license name used for the API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#license-object
+     * @see  $name
      */
     public const name = 'name';
 
@@ -33,6 +34,7 @@ class License
      * A URL for the license used for the API. This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#license-object
+     * @see  $url
      */
     public const url = 'url';
 
