@@ -20,6 +20,7 @@ class ServerVariable
      * options are from a limited set. The array _SHOULD_ NOT be empty.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  $enum
      */
     public const enum = 'enum';
 
@@ -43,6 +44,7 @@ class ServerVariable
      * rather than inserting the value into the data.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  $default
      */
     public const default = 'default';
 
@@ -71,6 +73,7 @@ class ServerVariable
      * rather than inserting the value into the data.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  $default
      */
     public static function validateDefault(mixed $value, array $context): void
     {
@@ -88,6 +91,7 @@ class ServerVariable
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
