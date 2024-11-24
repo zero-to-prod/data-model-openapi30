@@ -29,6 +29,7 @@ class Link
      * of the `operationId `field, and _MUST_ point to an Operation Object.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $operationRef
      */
     public const operationRef = 'operationRef';
 
@@ -46,6 +47,7 @@ class Link
      * `operationId`. This field is mutually exclusive of the operationRef field.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $operationId
      */
     public const operationId = 'operationId';
 
@@ -68,6 +70,7 @@ class Link
      * operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $parameters
      */
     public const parameters = 'parameters';
 
@@ -92,6 +95,7 @@ class Link
      * the target operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $requestBody
      */
     public const requestBody = 'requestBody';
 
@@ -109,6 +113,7 @@ class Link
      * text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $description
      */
     public const description = 'description';
 
@@ -125,6 +130,7 @@ class Link
      * A server object to be used by the target operation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  $server
      */
     public const server = 'server';
 
