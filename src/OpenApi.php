@@ -31,6 +31,7 @@ class OpenApi
      * This is not related to the API info.version string
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $openapi
      */
     public const openapi = 'openapi';
 
@@ -55,6 +56,7 @@ class OpenApi
      * This is not related to the API `info.version` string
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $openapi
      */
     public static function openapi($value): string
     {
@@ -80,6 +82,7 @@ class OpenApi
      * be used by tooling as required.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $info
      */
     public const info = 'info';
 
@@ -99,6 +102,7 @@ class OpenApi
      * url value of /
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $servers
      */
     public const servers = 'servers';
 
@@ -125,6 +129,7 @@ class OpenApi
      * url value of `/`
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $servers
      */
     public static function servers(mixed $value): array|Server
     {
@@ -140,6 +145,7 @@ class OpenApi
      * _MAY_ be empty, due to Access Control List (ACL) constraints.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $paths
      */
     public const paths = 'paths';
 
@@ -164,6 +170,7 @@ class OpenApi
      * An element to hold various Objects for the OpenAPI Description.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $components
      */
     public const components = 'components';
 
@@ -179,6 +186,7 @@ class OpenApi
      * An element to hold various Objects for the OpenAPI Description.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $security
      */
     public const security = 'security';
 
@@ -194,6 +202,7 @@ class OpenApi
      * An element to hold various Objects for the OpenAPI Description.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $tags
      */
     public const tags = 'tags';
 
@@ -215,6 +224,7 @@ class OpenApi
      * Additional external documentation for this tag.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  $externalDocs
      */
     public const externalDocs = 'externalDocs';
 
