@@ -28,6 +28,7 @@ class Xml
      * it will be ignored.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  $name
      */
     public const name = 'name';
 
@@ -49,6 +50,7 @@ class Xml
      * The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  $namespace
      */
     public const namespace = 'namespace';
 
@@ -67,6 +69,7 @@ class Xml
      * The prefix to be used for the name.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  $prefix
      */
     public const prefix = 'prefix';
 
@@ -83,6 +86,7 @@ class Xml
      * instead of an element. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  $attribute
      */
     public const attribute = 'attribute';
 
@@ -103,6 +107,7 @@ class Xml
      * being `"array"` (outside the `items`).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  $wrapped
      */
     public const wrapped = 'wrapped';
 
