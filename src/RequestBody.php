@@ -23,6 +23,7 @@ class RequestBody
      * of use. [CommonMark] syntax MAY be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  $description
      */
     public const description = 'description';
 
@@ -42,6 +43,7 @@ class RequestBody
      * applicable. e.g. `"text/plain"` overrides `"text/*"`
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  $content
      */
     public const content = 'content';
 
@@ -66,6 +68,7 @@ class RequestBody
      * Determines if the request body is required in the request. Defaults to `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  $required
      */
     public const required = 'required';
 
