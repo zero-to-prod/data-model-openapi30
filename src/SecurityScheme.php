@@ -30,6 +30,7 @@ class SecurityScheme
      * `"apiKey"`, `"http"`, `"oauth2"`, `"openIdConnect"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $type
      */
     public const type = 'type';
 
@@ -56,6 +57,7 @@ class SecurityScheme
      * be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $description
      */
     public const description = 'description';
 
@@ -72,6 +74,7 @@ class SecurityScheme
      * **REQUIRED**. The name of the header, query or cookie parameter to be used.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $name
      */
     public const name = 'name';
 
@@ -88,6 +91,7 @@ class SecurityScheme
      * `"query"`, `"header"`, `"cookie"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $in
      */
     public const in = 'in';
 
@@ -116,6 +120,7 @@ class SecurityScheme
      * RFC7235] Section 2.1.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $scheme
      */
     public const scheme = 'scheme';
 
@@ -137,6 +142,7 @@ class SecurityScheme
      * this information is primarily for documentation purposes.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $bearerFormat
      */
     public const bearerFormat = 'bearerFormat';
 
@@ -155,6 +161,7 @@ class SecurityScheme
      * provider metadata.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
+     * @see  $openIdConnectUrl
      */
     public const openIdConnectUrl = 'openIdConnectUrl';
 
@@ -173,6 +180,7 @@ class SecurityScheme
      * flow types supported.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     * @see  $flows
      */
     public const flows = 'flows';
 
