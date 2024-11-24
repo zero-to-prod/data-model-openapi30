@@ -21,6 +21,7 @@ class Components
      * An object to hold reusable Schema Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $schemas
      */
     public const schemas = 'schemas';
 
@@ -38,6 +39,7 @@ class Components
      * An object to hold reusable Schema Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $schemas
      */
     public static function schemas($value, array $context): array
     {
@@ -55,6 +57,7 @@ class Components
      * An object to hold reusable Response Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $responses
      */
     public const responses = 'responses';
 
@@ -72,6 +75,7 @@ class Components
      * An object to hold reusable Response Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $responses
      */
     public static function responses($value, array $context): array
     {
@@ -89,6 +93,7 @@ class Components
      * An object to hold reusable Parameter Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $parameters
      */
     public const parameters = 'parameters';
 
@@ -106,6 +111,7 @@ class Components
      * An object to hold reusable Parameter Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $parameters
      */
     public static function parameters($value, array $context): array
     {
@@ -123,6 +129,7 @@ class Components
      * An object to hold reusable Example Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $examples
      */
     public const examples = 'examples';
 
@@ -140,6 +147,7 @@ class Components
      * An object to hold reusable Example Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $examples
      */
     public static function examples($value, array $context): array
     {
@@ -157,6 +165,7 @@ class Components
      * An object to hold reusable Request Body Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $requestBodies
      */
     public const requestBodies = 'requestBodies';
 
@@ -174,6 +183,7 @@ class Components
      * An object to hold reusable Request Body Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $requestBodies
      */
     public static function requestBodies($value, array $context): array
     {
@@ -191,6 +201,7 @@ class Components
      * An object to hold reusable Header Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $headers
      */
     public const headers = 'headers';
 
@@ -208,6 +219,7 @@ class Components
      * An object to hold reusable Header Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $headers
      */
     public static function headers($value, array $context): array
     {
@@ -225,6 +237,7 @@ class Components
      * An object to hold reusable Security Scheme Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $securitySchemes
      */
     public const securitySchemes = 'securitySchemes';
 
@@ -242,6 +255,7 @@ class Components
      * An object to hold reusable Security Scheme Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $securitySchemes
      */
     public static function securitySchemes($value, array $context): array
     {
@@ -259,6 +273,7 @@ class Components
      * An object to hold reusable Link Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $links
      */
     public const links = 'links';
 
@@ -276,6 +291,7 @@ class Components
      * An object to hold reusable Link Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $links
      */
     public static function links($value, array $context): array
     {
@@ -293,6 +309,7 @@ class Components
      * An object to hold reusable Callback Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $callbacks
      */
     public const callbacks = 'callbacks';
 
@@ -310,6 +327,7 @@ class Components
      * An object to hold reusable Callback Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  $callbacks
      */
     public static function callbacks($value, array $context): array
     {

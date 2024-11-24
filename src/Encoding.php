@@ -32,6 +32,7 @@ class Encoding
      * shown in the table below.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  $contentType
      */
     public const contentType = 'contentType';
 
@@ -54,6 +55,7 @@ class Encoding
      * body media type is not a multipart.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  $headers
      */
     public const headers = 'headers';
 
@@ -68,6 +70,15 @@ class Encoding
     #[Describe(['cast' => [self::class, 'headers']])]
     public null|Header|Reference $headers;
 
+    /**
+     * A map allowing additional information to be provided as headers.
+     * `Content-Type` is described separately and _SHALL_ be ignored
+     * in this section. This field _SHALL_ be ignored if the request
+     * body media type is not a multipart.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  $headers
+     */
     public static function headers($value, array $context): Header|Reference|null
     {
         if (!isset($context[self::headers])) {
@@ -92,6 +103,7 @@ class Encoding
      * `application/x-www-form-urlencoded`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  $style
      */
     public const style = 'style';
 
@@ -123,6 +135,7 @@ class Encoding
      * `application/x-www-form-urlencoded`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $explode
      */
     public const explode = 'explode';
 
@@ -157,6 +170,7 @@ class Encoding
      * not `application/x-www-form-urlencoded`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $allowReserved
      */
     public const allowReserved = 'allowReserved';
 

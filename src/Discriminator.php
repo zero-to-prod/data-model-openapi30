@@ -29,6 +29,7 @@ class Discriminator
      * undefined.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
+     * @see  $propertyName
      */
     public const propertyName = 'propertyName';
 
@@ -48,6 +49,7 @@ class Discriminator
      * URI references.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#discriminator-object
+     * @see  $mapping
      */
     public const mapping = 'mapping';
 

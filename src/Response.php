@@ -20,6 +20,7 @@ class Response
      * _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $description
      */
     public const description = 'description';
 
@@ -38,6 +39,7 @@ class Response
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $headers
      */
     public const headers = 'headers';
 
@@ -57,6 +59,7 @@ class Response
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $headers
      */
     public static function headers($value, array $context): Header|Reference|null
     {
@@ -77,6 +80,7 @@ class Response
      * overrides `"text/*"`
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $content
      */
     public const content = 'content';
 
@@ -104,6 +108,7 @@ class Response
      * naming constraints of the names for Component Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $links
      */
     public const links = 'links';
 
@@ -123,6 +128,7 @@ class Response
      * naming constraints of the names for Component Objects.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  $links
      */
     public static function links($value, array $context): Link|Reference|null
     {

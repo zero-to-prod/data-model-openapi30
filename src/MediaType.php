@@ -28,6 +28,7 @@ class MediaType
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $schema
      */
     public const schema = 'schema';
 
@@ -43,6 +44,7 @@ class MediaType
      * The schema defining the content of the request, response, parameter, or header.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $schema
      */
     public static function schema($value, array $context): Schema|Reference|null
     {
@@ -59,6 +61,7 @@ class MediaType
      * Example of the media type; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $example
      */
     public const example = 'example';
 
@@ -74,6 +77,7 @@ class MediaType
      * Examples of the media type; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $examples
      */
     public const examples = 'examples';
 
@@ -91,6 +95,7 @@ class MediaType
      * Examples of the media type; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $examples
      */
     public static function examples($value, array $context): array
     {
@@ -115,6 +120,7 @@ class MediaType
      * values documented for the Encoding Object.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  $encoding
      */
     public const encoding = 'encoding';
 

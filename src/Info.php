@@ -20,6 +20,7 @@ class Info
      * The title of the API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  $title
      */
     public const title = 'title';
 
@@ -38,6 +39,7 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      * @see  https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
@@ -57,6 +59,7 @@ class Info
      * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  $termsOfService
      */
     public const termsOfService = 'termsOfService';
 
@@ -78,6 +81,7 @@ class Info
      * or the version of the OpenAPI Description).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  $version
      */
     public const version = 'version';
 
@@ -95,6 +99,7 @@ class Info
      * The contact information for the exposed API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  $contact
      */
     public const contact = 'contact';
 
@@ -110,6 +115,7 @@ class Info
      * The license information for the exposed API.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
+     * @see  $licence
      */
     public const licence = 'licence';
 

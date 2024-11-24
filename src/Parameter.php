@@ -44,6 +44,7 @@ class Parameter
      * @see  https://spec.openapis.org/oas/v3.0.4.html#paths-path
      * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields:~:text=field%20in%20the-,Paths%20Object,-.%20See%20Path%20Templating
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-templating
+     * @see  $name
      */
     public const name = 'name';
 
@@ -72,6 +73,7 @@ class Parameter
      * `"header"`, `"path"` or `"cookie"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  $in
      */
     public const in = 'in';
 
@@ -90,6 +92,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
@@ -111,6 +114,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     * @see  $required
      */
     public const required = 'required';
 
@@ -134,6 +138,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     * @see  $required
      */
     public static function required($value, $context): bool
     {
@@ -151,6 +156,7 @@ class Parameter
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  $deprecated
      */
     public const deprecated = 'deprecated';
 
@@ -178,6 +184,7 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
      * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
+     * @see  $allowEmptyValue
      */
     public const allowEmptyValue = 'allowEmptyValue';
 
@@ -207,6 +214,7 @@ class Parameter
      * - `"simple"`; for `"cookie"` - `"form"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $style
      */
     public const style = 'style';
 
@@ -230,6 +238,7 @@ class Parameter
      * combination of false with `deepObject` is undefined.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $style
      */
     public static function style($value, $context): ?string
     {
@@ -255,6 +264,7 @@ class Parameter
      * combination of false with `deepObject` is undefined.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $explode
      */
     public const explode = 'explode';
 
@@ -278,6 +288,7 @@ class Parameter
      * - `"simple"`; for `"cookie"` - `"form"`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $explode
      */
     public static function explode($value, $context): bool
     {
@@ -304,6 +315,7 @@ class Parameter
      * default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $allowReserved
      */
     public const allowReserved = 'allowReserved';
 
@@ -329,6 +341,7 @@ class Parameter
      * The schema defining the type used for the parameter.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $schema
      */
     public const schema = 'schema';
 
@@ -340,6 +353,12 @@ class Parameter
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
 
+    /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $schema
+     */
     public static function schema($value, array $context): Schema|Reference|null
     {
         if (!isset($context[self::schema])) {
@@ -356,6 +375,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see $example
      */
     public const example = 'example';
 
@@ -372,6 +392,7 @@ class Parameter
      * Examples of the parameter’s potential value; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see $examples
      */
     public const examples = 'examples';
 
@@ -393,6 +414,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see $examples
      */
     public static function examples($value, array $context): array
     {
@@ -412,6 +434,7 @@ class Parameter
      * entry.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     * @see $content
      */
     public const content = 'content';
 

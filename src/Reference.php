@@ -24,6 +24,7 @@ class Reference
      * **REQUIRED**. The reference string.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @see  $ref
      */
     public const ref = '$ref';
 
@@ -35,6 +36,12 @@ class Reference
     #[Describe(['cast' => [self::class, 'ref']])]
     public string $ref;
 
+    /**
+     * **REQUIRED**. The reference string.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @see  $ref
+     */
     public static function ref($value, $context){
         if(isset($context['$ref'])){
             return $context['$ref'];

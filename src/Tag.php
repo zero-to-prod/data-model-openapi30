@@ -21,6 +21,7 @@ class Tag
      * **REQUIRED**. The name of the tag.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  $name
      */
     public const name = 'name';
 
@@ -37,6 +38,7 @@ class Tag
      * rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  $description
      */
     public const description = 'description';
 
@@ -53,6 +55,7 @@ class Tag
      * Additional external documentation for this tag.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  $externalDocs
      */
     public const externalDocs = 'externalDocs';
 

@@ -18,6 +18,7 @@ class Contact
      * The identifying name of the contact person/organization.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  $name
      */
     public const name = 'name';
 
@@ -34,6 +35,7 @@ class Contact
      * This _MUST_ be in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  $url
      */
     public const url = 'url';
 
@@ -54,6 +56,7 @@ class Contact
      * This _MUST_ be in the form of an email address.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  $email
      */
     public const email = 'email';
 

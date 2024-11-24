@@ -15,7 +15,7 @@ class AllOfTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Schema->allOf,
             message: 'Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.'
         );
@@ -26,19 +26,19 @@ class AllOfTest extends TestCase
     {
         $Schema = Schema::from([
             Schema::allOf => [
-                Reference::ref => 'ref'
+                [Reference::ref => 'ref']
             ]
         ]);
 
         self::assertInstanceOf(
             expected: Reference::class,
-            actual: $Schema->allOf,
+            actual: $Schema->allOf[0],
             message: 'Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.'
         );
 
         self::assertEquals(
             expected: 'ref',
-            actual: $Schema->allOf->ref,
+            actual: $Schema->allOf[0]->ref,
             message: 'Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.'
         );
     }
@@ -48,19 +48,19 @@ class AllOfTest extends TestCase
     {
         $Schema = Schema::from([
             Schema::allOf => [
-                Schema::example => 'example'
+                [Schema::example => 'example']
             ]
         ]);
 
         self::assertInstanceOf(
             expected: Schema::class,
-            actual: $Schema->allOf,
+            actual: $Schema->allOf[0],
             message: 'Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.'
         );
 
         self::assertEquals(
             expected: 'example',
-            actual: $Schema->allOf->example,
+            actual: $Schema->allOf[0]->example,
             message: 'Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.'
         );
     }

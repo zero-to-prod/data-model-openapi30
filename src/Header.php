@@ -33,6 +33,7 @@ class Header
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $description
      */
     public const description = 'description';
 
@@ -49,6 +50,7 @@ class Header
      * Determines whether this header is mandatory. The default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $required
      */
     public const required = 'required';
 
@@ -65,6 +67,7 @@ class Header
      * usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $deprecated
      */
     public const deprecated = 'deprecated';
 
@@ -81,6 +84,7 @@ class Header
      * legal value for headers) is `"simple`".
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $style
      */
     public const style = 'style';
 
@@ -100,6 +104,7 @@ class Header
      * types this field has no effect. The default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  $explode
      */
     public const explode = 'explode';
 
@@ -118,6 +123,7 @@ class Header
      * The schema defining the type used for the parameter.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $schema
      */
     public const schema = 'schema';
 
@@ -129,6 +135,12 @@ class Header
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
 
+    /**
+     * The schema defining the type used for the parameter.
+     *
+     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $schema
+     */
     public static function schema($value, array $context): Schema|Reference|null
     {
         if (!isset($context[self::schema])) {
@@ -144,6 +156,7 @@ class Header
      * Example of the parameter’s potential value; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  $example
      */
     public const example = 'example';
 
@@ -160,6 +173,7 @@ class Header
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see  $examples
      */
     public const examples = 'examples';
 
@@ -181,6 +195,7 @@ class Header
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @see  $examples
      */
     public static function examples($value, array $context): array
     {
@@ -200,6 +215,7 @@ class Header
      * one entry.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     * @see  $content
      */
     public const content = 'content';
 

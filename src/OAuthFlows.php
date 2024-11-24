@@ -18,6 +18,7 @@ class OAuthFlows
      * Configuration for the OAuth Implicit flow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     * @see  $implicit
      */
     public const implicit = 'implicit';
 
@@ -33,6 +34,7 @@ class OAuthFlows
      * Configuration for the OAuth Resource Owner Password flow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     * @see  $password
      */
     public const password = 'password';
 
@@ -49,6 +51,7 @@ class OAuthFlows
      * Previously called `application` in OpenAPI 2.0.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     * @see  $clientCredentials
      */
     public const clientCredentials = 'clientCredentials';
 
@@ -66,6 +69,7 @@ class OAuthFlows
      * Previously called `accessCode` in OpenAPI 2.0.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-24
+     * @see  $authorizationCode
      */
     public const authorizationCode = 'authorizationCode';
 

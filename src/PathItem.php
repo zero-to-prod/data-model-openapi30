@@ -28,6 +28,7 @@ class PathItem
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-item-object
      * @see  https://spec.openapis.org/oas/v3.0.4.html#relative-references-in-urls
+     * @see  $ref
      */
     public const ref = 'ref';
 
@@ -51,6 +52,7 @@ class PathItem
      * in this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $summary
      */
     public const summary = 'summary';
 
@@ -70,6 +72,7 @@ class PathItem
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
      * @see  https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
@@ -88,6 +91,7 @@ class PathItem
      * A definition of a GET operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $get
      */
     public const get = 'get';
 
@@ -103,6 +107,7 @@ class PathItem
      * A definition of a PUT operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $put
      */
     public const put = 'put';
 
@@ -118,6 +123,7 @@ class PathItem
      * A definition of a POST operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $post
      */
     public const post = 'post';
 
@@ -133,6 +139,7 @@ class PathItem
      * A definition of a DELETE operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $delete
      */
     public const delete = 'delete';
 
@@ -148,6 +155,7 @@ class PathItem
      * A definition of a OPTIONS operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $options
      */
     public const options = 'options';
 
@@ -163,6 +171,7 @@ class PathItem
      * A definition of a HEAD operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $head
      */
     public const head = 'head';
 
@@ -178,6 +187,7 @@ class PathItem
      * A definition of a PATCH operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $patch
      */
     public const patch = 'patch';
 
@@ -193,6 +203,7 @@ class PathItem
      * A definition of a TRACE operation on this path.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $trace
      */
     public const trace = 'trace';
 
@@ -210,6 +221,7 @@ class PathItem
      * it will be overridden by this value.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $servers
      */
     public const servers = 'servers';
 
@@ -239,6 +251,7 @@ class PathItem
      * `components.parameters`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $parameters
      */
     public const parameters = 'parameters';
 
@@ -271,6 +284,7 @@ class PathItem
      * `components.parameters`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-6
+     * @see  $parameters
      */
     public static function parameters($value, array $context): array
     {
