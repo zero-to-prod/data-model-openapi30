@@ -28,12 +28,13 @@ class Schema
      *
      * Both of these keywords can be used to decorate a user interface with
      * information about the data produced by this user interface.  A title
-     * will preferrably be short, whereas a description will provide
+     * will preferably be short, whereas a description will provide
      * explanation about the purpose of the instance described by this
      * schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @see  $title
      */
     public const title = 'title';
 
@@ -60,6 +61,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
+     * @see  $multipleOf
      */
     public const multipleOf = 'multipleOf';
 
@@ -94,6 +96,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
+     * @see  $maximum
      */
     public const maximum = 'maximum';
 
@@ -124,6 +127,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.3
+     * @see  $exclusiveMaximum
      */
     public const exclusiveMaximum = 'exclusiveMaximum';
 
@@ -154,6 +158,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.4
+     * @see  $minimum
      */
     public const minimum = 'minimum';
 
@@ -184,6 +189,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.5
+     * @see  $exclusiveMinimum
      */
     public const exclusiveMinimum = 'exclusiveMinimum';
 
@@ -217,6 +223,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
+     * @see  $maxLength
      */
     public const maxLength = 'maxLength';
 
@@ -261,6 +268,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     * @see  $minLength
      */
     public const minLength = 'minLength';
 
@@ -302,6 +310,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.8
+     * @see  $pattern
      */
     public const pattern = 'pattern';
 
@@ -339,6 +348,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     * @see  $pattern
      */
     public static function pattern($value, array $context): ?string
     {
@@ -366,6 +376,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
+     * @see  $maxItems
      */
     public const maxItems = 'maxItems';
 
@@ -402,6 +413,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
+     * @see  $minItems
      */
     public const minItems = 'minItems';
 
@@ -441,6 +453,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.12
+     * @see  $uniqueItems
      */
     public const uniqueItems = 'uniqueItems';
 
@@ -466,6 +479,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
+     * @see  $maxProperties
      */
     public const maxProperties = 'maxProperties';
 
@@ -502,6 +516,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
+     * @see  $minProperties
      */
     public const minProperties = 'minProperties';
 
@@ -539,6 +554,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
+     * @see  $required
      */
     public const required = 'required';
 
@@ -576,6 +592,7 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
+     * @see  $enum
      */
     public const enum = 'enum';
 
@@ -606,6 +623,7 @@ class Schema
      * Value _MUST_ be a string. Multiple types via an array are not supported
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $type
      */
     public const type = 'type';
 
@@ -621,99 +639,114 @@ class Schema
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $allOf
      */
     public const allOf = 'allOf';
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
+     * @var array<int, self|Reference> $allOf
+     *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     #[Describe(['cast' => [self::class, 'allOf']])]
-    public null|self|Reference $allOf;
+    public array $allOf;
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $allOf
      */
-    public static function allOf($value, array $context): Schema|Reference|null
+    public static function allOf($value, array $context): array
     {
-        if (!isset($context[self::allOf])) {
-            return null;
-        }
-
-        return isset($value[Reference::ref])
-            ? Reference::from($value)
-            : self::from($value);
+        return isset($context[self::allOf])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : self::from($value),
+                $value
+            )
+            : [];
     }
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $oneOf
      */
     public const oneOf = 'oneOf';
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
+     * @var array<int, self|Reference> $oneOf
+     *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     #[Describe(['cast' => [self::class, 'oneOf']])]
-    public null|self|Reference $oneOf;
+    public array $oneOf;
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $oneOf
      */
-    public static function oneOf($value, array $context): Schema|Reference|null
+    public static function oneOf($value, array $context): array
     {
-        if (!isset($context[self::oneOf])) {
-            return null;
-        }
-
-        return isset($value[Reference::ref])
-            ? Reference::from($value)
-            : self::from($value);
+        return isset($context[self::oneOf])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : self::from($value),
+                $value
+            )
+            : [];
     }
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $anyOf
      */
     public const anyOf = 'anyOf';
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
+     * @var array<int, self|Reference> $anyOf
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
     #[Describe(['cast' => [self::class, 'anyOf']])]
-    public null|self|Reference $anyOf;
+    public array $anyOf;
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $anyOf
      */
-    public static function anyOf($value, array $context): Schema|Reference|null
+    public static function anyOf($value, array $context): array
     {
-        if (!isset($context[self::anyOf])) {
-            return null;
-        }
-
-        return isset($value[Reference::ref])
-            ? Reference::from($value)
-            : self::from($value);
+        return isset($context[self::anyOf])
+            ? array_map(
+                static fn($value) => isset($value[Reference::ref])
+                    ? Reference::from($value)
+                    : self::from($value),
+                $value
+            )
+            : [];
     }
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $not
      */
     public const not = 'not';
 
@@ -729,6 +762,7 @@ class Schema
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $not
      */
     public static function not($value, array $context): Schema|Reference|null
     {
@@ -747,6 +781,7 @@ class Schema
      * `items` _MUST_ be present if type is "array".
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $items
      */
     public const items = 'items';
 
@@ -766,6 +801,7 @@ class Schema
      * `items` _MUST_ be present if type is "array".
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $items
      */
     public static function items($value, array $context): Schema|Reference|null
     {
@@ -783,6 +819,7 @@ class Schema
      * JSON Schema (inline or referenced).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $properties
      */
     public const properties = 'properties';
 
@@ -802,6 +839,7 @@ class Schema
      * JSON Schema (inline or referenced).
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $properties
      */
     public static function properties($value, array $context): Schema|array|null
     {
@@ -821,6 +859,7 @@ class Schema
      * Schema, `additionalProperties` defaults to `true`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $additionalProperties
      */
     public const additionalProperties = 'additionalProperties';
 
@@ -840,6 +879,7 @@ class Schema
      * Schema, `additionalProperties` defaults to `true`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $additionalProperties
      */
     public static function additionalProperties($value, array $context): Schema|Reference|bool
     {
@@ -860,6 +900,7 @@ class Schema
      * [CommonMark] syntax MAY be used for rich text representation.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $description
      */
     public const description = 'description';
 
@@ -876,6 +917,7 @@ class Schema
      * additional predefined formats.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $format
      */
     public const format = 'format';
 
@@ -896,6 +938,7 @@ class Schema
      * `"string"`, then `default` can be `"foo"` but cannot be 1.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  $default
      */
     public const default = 'default';
 
@@ -920,6 +963,7 @@ class Schema
      * default `type` unmodified. The default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $nullable
      */
     public const nullable = 'nullable';
 
@@ -942,6 +986,7 @@ class Schema
      * Composition and Inheritance for more details.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $discriminator
      */
     public const discriminator = 'discriminator';
 
@@ -966,6 +1011,7 @@ class Schema
      * is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $readOnly
      */
     public const readOnly = 'readOnly';
 
@@ -995,6 +1041,7 @@ class Schema
      * is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $readOnly
      */
     public static function readOnly($value, array $context): bool
     {
@@ -1018,6 +1065,7 @@ class Schema
      * is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $writeOnly
      */
     public const writeOnly = 'writeOnly';
 
@@ -1047,6 +1095,7 @@ class Schema
      * is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $writeOnly
      */
     public static function writeOnly($value, array $context): bool
     {
@@ -1065,6 +1114,7 @@ class Schema
      * representation of this property.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $xml
      */
     public const xml = 'xml';
 
@@ -1082,6 +1132,7 @@ class Schema
      * Additional external documentation for this schema.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $externalDocs
      */
     public const externalDocs = 'externalDocs';
 
@@ -1098,6 +1149,7 @@ class Schema
      * out of usage. Default value is `false`.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $deprecated
      */
     public const deprecated = 'deprecated';
 
@@ -1117,6 +1169,7 @@ class Schema
      * where necessary.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  $example
      */
     public const example = 'example';
 
