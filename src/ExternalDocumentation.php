@@ -20,6 +20,7 @@ class ExternalDocumentation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
+     * @see $description
      */
     public const description = 'description';
 
@@ -38,6 +39,7 @@ class ExternalDocumentation
      * in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @see $url
      */
     public const url = 'url';
 
