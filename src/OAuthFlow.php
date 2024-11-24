@@ -20,6 +20,7 @@ class OAuthFlow
      * use of TLS.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  $authorizationUrl
      */
     public const authorizationUrl = 'authorizationUrl';
 
@@ -38,6 +39,7 @@ class OAuthFlow
      * in the form of a URL. The OAuth2 standard requires the use of TLS.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  $tokenUrl
      */
     public const tokenUrl = 'tokenUrl';
 
@@ -55,6 +57,7 @@ class OAuthFlow
      * form of a URL. The OAuth2 standard requires the use of TLS.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  $refreshUrl
      */
     public const refreshUrl = 'refreshUrl';
 
@@ -73,6 +76,7 @@ class OAuthFlow
      * The map _MAY_ be empty.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  $scopes
      */
     public const scopes = 'scopes';
 
