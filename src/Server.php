@@ -22,6 +22,7 @@ class Server
      * is named in {braces}.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  $url
      */
     public const url = 'url';
 
@@ -43,6 +44,7 @@ class Server
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @link https://spec.commonmark.org/
+     * @see  $description
      */
     public const description = 'description';
 
@@ -61,6 +63,7 @@ class Server
      * for substitution in the server’s URL template.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  $variables
      */
     public const variables = 'variables';
 
