@@ -4,9 +4,8 @@ namespace Tests\Unit\Header;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelOpenapi30\MediaType;
 use Zerotoprod\DataModelOpenapi30\Header;
+use Zerotoprod\DataModelOpenapi30\MediaType;
 
 class ContentTest extends TestCase
 {
