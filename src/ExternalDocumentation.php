@@ -20,7 +20,7 @@ class ExternalDocumentation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
-     * @see $description
+     * @see  $description
      */
     public const description = 'description';
 
@@ -39,7 +39,7 @@ class ExternalDocumentation
      * in the form of a URL.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
-     * @see $url
+     * @see  $url
      */
     public const url = 'url';
 
@@ -49,10 +49,6 @@ class ExternalDocumentation
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      */
-    #[Describe([
-        'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidUrlException::class,
-        'required'
-    ])]
-    public string $url;
+    #[Describe(['nullable'])]
+    public ?string $url;
 }
