@@ -4,7 +4,6 @@ namespace Tests\Unit\Parameter;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Parameter;
 
 class AllowReservedTest extends TestCase
