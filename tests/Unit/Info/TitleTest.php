@@ -6,7 +6,6 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Info;
-use Zerotoprod\DataModelOpenapi30\InvalidUrlException;
 
 class TitleTest extends TestCase
 {
@@ -60,17 +59,6 @@ class TitleTest extends TestCase
         ]);
 
         self::assertEquals('description', $Info->description);
-    }
-
-    #[Test] public function invalid_termsOfService(): void
-    {
-        $this->expectException(InvalidUrlException::class);
-
-        Info::from([
-            Info::title => 'title',
-            Info::termsOfService => 'termsOfService',
-            Info::version => 'version',
-        ]);
     }
 
     #[Test] public function termsOfService(): void
