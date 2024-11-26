@@ -4,7 +4,6 @@ namespace Tests\Unit\Discriminator;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Discriminator;
 
 class MappingTest extends TestCase
