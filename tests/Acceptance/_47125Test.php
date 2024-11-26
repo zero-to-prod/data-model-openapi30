@@ -203,7 +203,6 @@ class _47125Test extends TestCase
         );
     }
 
-
     /** @link https://spec.openapis.org/oas/v3.0.4.html#parameter-object-examples */
     #[Test] public function free_form_query_parameter(): void
     {
