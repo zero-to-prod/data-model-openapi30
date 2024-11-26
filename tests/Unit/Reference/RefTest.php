@@ -7,7 +7,6 @@ use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Reference;
 
-
 class RefTest extends TestCase
 {
     /**
