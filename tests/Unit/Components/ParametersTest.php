@@ -51,7 +51,7 @@ class ParametersTest extends TestCase
     {
         $Component = Components::from([
             Components::parameters => [
-                'param' =>[
+                'param' => [
                     Parameter::name => 'name',
                     Parameter::in => 'in',
                 ]
