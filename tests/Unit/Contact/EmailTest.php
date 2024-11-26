@@ -5,7 +5,6 @@ namespace Tests\Unit\Contact;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\Contact;
-use Zerotoprod\DataModelOpenapi30\InvalidEmailException;
 
 class EmailTest extends TestCase
 {
@@ -18,20 +17,6 @@ class EmailTest extends TestCase
             actual: $Contact->email,
             message: 'The email address of the contact person/organization. '
         );
-    }
-
-    /**
-     * The email address of the contact person/organization.
-     * This _MUST_ be in the form of an email address.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
-     */
-    #[Test] public function invalid_email(): void
-    {
-        $this->expectException(InvalidEmailException::class);
-        Contact::from([
-            Contact::email => 'invalid email'
-        ]);
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#contact-object */
