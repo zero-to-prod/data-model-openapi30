@@ -45,10 +45,7 @@ class Contact
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
-    #[Describe([
-        'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidUrlException::class,
-    ])]
+    #[Describe(['nullable'])]
     public ?string $url;
 
     /**
@@ -66,9 +63,6 @@ class Contact
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
      */
-    #[Describe([
-        'cast' => [self::class, 'isEmail'],
-        'exception' => InvalidEmailException::class,
-    ])]
+    #[Describe(['nullable'])]
     public ?string $email;
 }
