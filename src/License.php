@@ -43,9 +43,6 @@ class License
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#license-object
      */
-    #[Describe([
-        'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidUrlException::class,
-    ])]
+    #[Describe(['nullable'])]
     public ?string $url;
 }
