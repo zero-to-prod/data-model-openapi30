@@ -4,7 +4,6 @@ namespace Tests\Unit\Schema;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\InvalidPatternException;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
 class PatternTest extends TestCase
@@ -14,19 +13,10 @@ class PatternTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEquals(
+            expected: 0,
             actual: $Schema->pattern,
         );
-    }
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function invalid_pattern(): void
-    {
-        $this->expectException(InvalidPatternException::class);
-
-        Schema::from([
-            Schema::pattern => '////',
-        ]);
     }
 
     /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */

@@ -4,9 +4,7 @@ namespace Tests\Unit\Info;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Info;
-use Zerotoprod\DataModelOpenapi30\InvalidUrlException;
 
 class DescriptionTest extends TestCase
 {

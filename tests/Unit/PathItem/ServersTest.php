@@ -5,7 +5,6 @@ namespace Tests\Unit\PathItem;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModelOpenapi30\PathItem;
-use Zerotoprod\DataModelOpenapi30\Reference;
 use Zerotoprod\DataModelOpenapi30\Server;
 
 class ServersTest extends TestCase

@@ -4,8 +4,6 @@ namespace Tests\Unit\Schema;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\InvalidMaxLengthException;
-use Zerotoprod\DataModelOpenapi30\InvalidMinLengthException;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
 class MinLengthTest extends TestCase
@@ -15,7 +13,8 @@ class MinLengthTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEquals(
+            expected: 0,
             actual: $Schema->minLength,
         );
     }
@@ -57,15 +56,5 @@ class MinLengthTest extends TestCase
             expected: 0,
             actual: $Schema->minLength,
         );
-    }
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function non_zero(): void
-    {
-        $this->expectException(InvalidMinLengthException::class);
-
-        Schema::from([
-            Schema::minLength => -1,
-        ]);
     }
 }

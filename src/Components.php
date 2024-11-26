@@ -28,7 +28,7 @@ class Components
     /**
      * An object to hold reusable Schema Objects.
      *
-     * @var null|array<string, Schema|Reference> $schemas
+     * @var ?array<string, Schema|Reference> $schemas
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
@@ -64,7 +64,7 @@ class Components
     /**
      * An object to hold reusable Response Objects.
      *
-     * @var null|array<string, Response|Reference> $responses
+     * @var ?array<string, Response|Reference> $responses
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
@@ -100,7 +100,7 @@ class Components
     /**
      * An object to hold reusable Parameter Objects.
      *
-     * @var null|array<string, Parameter|Reference> $parameters
+     * @var ?array<string, Parameter|Reference> $parameters
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
@@ -172,7 +172,7 @@ class Components
     /**
      * An object to hold reusable Request Body Objects.
      *
-     * @var null|array<string, RequestBody|Reference> $requestBodies
+     * @var ?array<string, RequestBody|Reference> $requestBodies
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */
@@ -244,7 +244,7 @@ class Components
     /**
      * An object to hold reusable Security Scheme Objects.
      *
-     * @var null|array<string, SecurityScheme|Reference> $securitySchemes
+     * @var ?array<string, SecurityScheme|Reference> $securitySchemes
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      */

@@ -117,7 +117,7 @@ class _4792Test extends TestCase
             actual: $OpenApi->paths['/pets']->parameters[0]->description,
         );
         self::assertTrue(
-            condition:  $OpenApi->paths['/pets']->parameters[0]->required,
+            condition: $OpenApi->paths['/pets']->parameters[0]->required,
         );
         self::assertEquals(
             expected: 'array',

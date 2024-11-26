@@ -4,7 +4,6 @@ namespace Acceptance;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\Info;
 use Zerotoprod\DataModelOpenapi30\OpenApi;
 
 class _4772Test extends TestCase

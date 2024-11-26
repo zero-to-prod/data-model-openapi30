@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**

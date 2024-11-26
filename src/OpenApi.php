@@ -3,10 +3,7 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
-use Zerotoprod\DataModelSemver\Semver;
-use Zerotoprod\ValidateSemVer\ValidateSemVer;
 
 /**
  *  This section describes the structure of the OpenAPI Description format.
@@ -43,39 +40,8 @@ class OpenApi
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */
-    #[Describe([
-        'required',
-        'cast' => [self::class, 'openapi']
-    ])]
+    #[Describe(['default' => ''])]
     public string $openapi;
-
-    /**
-     * **REQUIRED**. This string _MUST_ be the version number of the OpenAPI
-     * Specification that the OpenAPI Document uses. The openapi field
-     * _SHOULD_ be used by tooling to interpret the OpenAPI Document.
-     * This is not related to the API `info.version` string
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
-     * @see  $openapi
-     */
-    public static function openapi($value): string
-    {
-        if (!$value) {
-            throw new PropertyRequiredException('Property `$openapi` is required.');
-        }
-
-        if (!ValidateSemVer::isValid($value)) {
-            throw new InvalidOpenAPIVersionException('`$openapi` is an invalid version.');
-        }
-
-        $Semver = Semver::from($value);
-
-        if ($Semver->major !== 3 || $Semver->minor !== 0 || $Semver->patch < 0) {
-            throw new InvalidOpenAPIVersionException('Version should be 3.0.*');
-        }
-
-        return $value;
-    }
 
     /**
      * **REQUIRED**. Provides metadata about the API. The metadata _MAY_
@@ -209,7 +175,7 @@ class OpenApi
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @var ?Tag[] $tags
+     * @var Tag[] $tags
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      */

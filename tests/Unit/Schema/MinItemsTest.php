@@ -4,7 +4,6 @@ namespace Tests\Unit\Schema;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\InvalidMinItemsException;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
 class MinItemsTest extends TestCase
@@ -14,7 +13,8 @@ class MinItemsTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEquals(
+            expected: 0,
             actual: $Schema->minItems,
         );
     }
@@ -56,15 +56,5 @@ class MinItemsTest extends TestCase
             expected: 0,
             actual: $Schema->minItems,
         );
-    }
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function non_zero(): void
-    {
-        $this->expectException(InvalidMinItemsException::class);
-
-        Schema::from([
-            Schema::minItems => -1,
-        ]);
     }
 }

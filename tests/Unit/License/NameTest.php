@@ -5,7 +5,6 @@ namespace Tests\Unit\License;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelOpenapi30\Contact;
 use Zerotoprod\DataModelOpenapi30\License;
 
 class NameTest extends TestCase

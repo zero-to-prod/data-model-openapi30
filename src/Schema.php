@@ -2,7 +2,6 @@
 
 namespace Zerotoprod\DataModelOpenapi30;
 
-use Throwable;
 use Zerotoprod\DataModel\Describe;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
@@ -74,15 +73,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value > 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMultipleException::class,
-        'message' => '$multipleOf must be a positive integer'
-    ])]
+    #[Describe(['nullable'])]
     public null|float|int $multipleOf;
 
     /**
@@ -242,16 +233,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMaxLengthException::class,
-        'message' => '$maxLength must be a positive integer'
-    ])]
-    public null|int $maxLength;
+    #[Describe(['nullable'])]
+    public ?int $maxLength;
 
     /**
      * A string instance is valid against this keyword if its length is
@@ -288,16 +271,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMinLengthException::class,
-        'message' => '$minLength must be a positive integer'
-    ])]
-    public null|int $minLength;
+    #[Describe(['default' => 0])]
+    public int $minLength;
 
     /**
      * The value of this keyword _MUST_ be a string.  This string SHOULD be a
@@ -330,42 +305,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
      */
-    #[Describe(['cast' => [self::class, 'pattern']])]
-    public null|string $pattern;
-
-    /**
-     * A string instance is valid against this keyword if its length is
-     * greater than, or equal to, the value of this keyword.
-     *
-     * The length of a string instance is defined as the number of its
-     * characters as defined by RFC 7159 [RFC7159].
-     *
-     * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
-     * greater than, or equal to, 0.
-     *
-     * "pattern", if absent, may be considered as being present with
-     * integer value 0.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
-     * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
-     * @see  $pattern
-     */
-    public static function pattern($value, array $context): ?string
-    {
-        if (!isset($context[self::pattern])) {
-            return null;
-        }
-
-        try {
-            if (@preg_match($value, '') === false) {
-                throw new InvalidPatternException('$pattern must be a valid regular expression');
-            }
-        } catch (Throwable $e) {
-            throw new InvalidPatternException('$pattern must be a valid regular expression', 0, $e);
-        }
-
-        return $value;
-    }
+    #[Describe(['default' => 0])]
+    public int|string $pattern;
 
     /**
      * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
@@ -390,16 +331,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMaxItemsException::class,
-        'message' => '$maxItems must be greater than, or equal to, 0.'
-    ])]
-    public null|int $maxItems;
+    #[Describe(['nullable'])]
+    public ?int $maxItems;
 
     /**
      * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
@@ -430,16 +363,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMinItemsException::class,
-        'message' => '$minItems must be greater than, or equal to, 0.'
-    ])]
-    public null|int $minItems;
+    #[Describe(['default' => 0])]
+    public int $minItems;
 
     /**
      * The value of this keyword _MUST_ be a boolean.
@@ -493,16 +418,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMaxPropertiesException::class,
-        'message' => '$maxProperties must be greater than, or equal to, 0.'
-    ])]
-    public null|int $maxProperties;
+    #[Describe(['nullable'])]
+    public ?int $maxProperties;
 
     /**
      * The value of this keyword _MUST_ be an integer.  This integer _MUST_ be
@@ -533,16 +450,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            $value >= 0
-         PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidMinPropertiesException::class,
-        'message' => '$minProperties must be greater than, or equal to, 0.'
-    ])]
-    public null|int $minProperties;
+    #[Describe(['default' => 0])]
+    public int $minProperties;
 
     /**
      * The value of this keyword _MUST_ be an array.  This array _MUST_ have at
@@ -569,16 +478,7 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            count($value) && count(array_filter($value, "is_string")) === count($value)
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'default' => [],
-        'exception' => InvalidRequiredException::class,
-        'message' => '$required must have at least 1 element, all as strings.'
-    ])]
+    #[Describe(['default' => []])]
     public array $required;
 
     /**
@@ -608,16 +508,8 @@ class Schema
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            count($value)
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidEnumException::class,
-        'message' => '$enum must have at least 1 element'
-    ])]
-    public null|array $enum;
+    #[Describe(['default' => []])]
+    public array $enum;
 
     /**
      * Value _MUST_ be a string. Multiple types via an array are not supported
@@ -827,7 +719,7 @@ class Schema
      * Property definitions _MUST_ be a Schema Object and not a standard
      * JSON Schema (inline or referenced).
      *
-     * @var null|Reference|self[]
+     * @var ?Reference|self[]
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      */
@@ -1027,32 +919,8 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['cast' => [self::class, 'readOnly']])]
+    #[Describe(['default' => false])]
     public bool $readOnly;
-
-    /**
-     * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “read only”. This means that it _MAY_ be sent as part
-     * of a response but _SHOULD_NOT_ be sent as part of the request.
-     * If the property is marked as `readOnly` being `true` and is in
-     * the `required` list, the `required` will take effect on the
-     * response only. A property _MUST NOT_ be marked as both
-     * `readOnly` and `writeOnly` being `true`. Default value
-     * is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     * @see  $readOnly
-     */
-    public static function readOnly($value, array $context): bool
-    {
-        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
-            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
-        }
-
-        return isset($context[self::readOnly])
-            ? $value
-            : false;
-    }
 
     /**
      * Relevant only for Schema Object `properties` definitions. Declares the
@@ -1081,32 +949,8 @@ class Schema
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      */
-    #[Describe(['cast' => [self::class, 'writeOnly']])]
+    #[Describe(['default' => false])]
     public bool $writeOnly;
-
-    /**
-     * Relevant only for Schema Object `properties` definitions. Declares the
-     * property as “write only”. Therefore, it _MAY_ be sent as part of a
-     * request but _SHOULD_NOT_ be sent as part of the response. If the
-     * property is marked as `writeOnly` being `true` and is in the
-     * `required` list, the `required` will take effect on the
-     * request only. A property _MUST NOT_ be marked as both
-     * `readOnly` and `writeOnly` being `true`. Default value
-     * is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
-     * @see  $writeOnly
-     */
-    public static function writeOnly($value, array $context): bool
-    {
-        if (isset($context[self::readOnly], $context[self::writeOnly]) && $context[self::readOnly] && $context[self::writeOnly]) {
-            throw new InvalidReadAndWriteOnlyException('$readOnly and $writeOnly cannot be true at the same time');
-        }
-
-        return isset($context[self::writeOnly])
-            ? $value
-            : false;
-    }
 
     /**
      * This _MAY_ be used only on property schemas. It has no effect on

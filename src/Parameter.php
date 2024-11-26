@@ -127,29 +127,8 @@ class Parameter
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      */
-    #[Describe(['cast' => [self::class, 'required']])]
+    #[Describe(['default' => false])]
     public bool $required;
-
-    /**
-     * Determines whether this parameter is mandatory. If the parameter
-     * location is `"path"`, this field is **REQUIRED** and its value ***_MUST_***
-     * be `true`. Otherwise, the field _MAY_ be included and its default
-     * value is `false`.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
-     * @see  $required
-     */
-    public static function required($value, $context): bool
-    {
-        if (!$value && isset($context[self::in]) && $context[self::in] === 'path') {
-            throw new InvalidInValueException('Property $required Should be true when $in is "path"');
-        }
-
-        return empty($value)
-            ? false
-            : $value;
-    }
 
     /**
      * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
@@ -375,7 +354,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
-     * @see $example
+     * @see  $example
      */
     public const example = 'example';
 
@@ -392,7 +371,7 @@ class Parameter
      * Examples of the parameter’s potential value; see Working With Examples.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see $examples
+     * @see  $examples
      */
     public const examples = 'examples';
 
@@ -414,7 +393,7 @@ class Parameter
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
-     * @see $examples
+     * @see  $examples
      */
     public static function examples($value, array $context): array
     {
@@ -434,7 +413,7 @@ class Parameter
      * entry.
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
-     * @see $content
+     * @see  $content
      */
     public const content = 'content';
 

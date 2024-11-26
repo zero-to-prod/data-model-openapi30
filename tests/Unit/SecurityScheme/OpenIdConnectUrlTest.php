@@ -4,8 +4,6 @@ namespace Tests\Unit\SecurityScheme;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
-use Zerotoprod\DataModelOpenapi30\InvalidSecuritySchemeTypeException;
 use Zerotoprod\DataModelOpenapi30\SecurityScheme;
 
 class OpenIdConnectUrlTest extends TestCase
