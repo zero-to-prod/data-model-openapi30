@@ -58,32 +58,8 @@ class ServerVariable
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      */
-    #[Describe([
-        'pre' => [self::class, 'validateDefault'],
-        'required'
-    ])]
-    public string $default;
-
-    /**
-     * **REQUIRED**. The default value to use for substitution, which _SHALL_
-     * be sent if an alternate value is not supplied. If the enum is
-     * defined, the value _SHOULD_ exist in the enum’s values. Note
-     * that this behavior is different from the Schema Object’s
-     * default keyword, which documents the receiver’s behavior
-     * rather than inserting the value into the data.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
-     * @see  $default
-     */
-    public static function validateDefault(mixed $value, array $context): void
-    {
-        if (!isset($context[self::enum])) {
-            return;
-        }
-        if (!in_array($value, $context[self::enum], true)) {
-            throw new DefaultMissingInEnumException();
-        }
-    }
+    #[Describe(['nullable'])]
+    public ?string $default;
 
     /**
      * An optional description for the server variable. [CommonMark]
