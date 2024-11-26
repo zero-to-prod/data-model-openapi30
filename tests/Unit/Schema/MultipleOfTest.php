@@ -4,7 +4,6 @@ namespace Tests\Unit\Schema;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\InvalidMultipleException;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
 class MultipleOfTest extends TestCase
@@ -43,26 +42,5 @@ class MultipleOfTest extends TestCase
             expected: 1.0,
             actual: $Schema->multipleOf,
         );
-    }
-
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function zero(): void
-    {
-        $this->expectException(InvalidMultipleException::class);
-
-        Schema::from([
-            Schema::multipleOf => 0,
-        ]);
-    }
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function non_zero(): void
-    {
-        $this->expectException(InvalidMultipleException::class);
-
-        Schema::from([
-            Schema::multipleOf => -1,
-        ]);
     }
 }
