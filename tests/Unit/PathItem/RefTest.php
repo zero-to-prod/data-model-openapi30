@@ -4,7 +4,6 @@ namespace Tests\Unit\PathItem;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\PathItem;
 
 class RefTest extends TestCase
