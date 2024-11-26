@@ -40,17 +40,8 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            in_array(strtolower($value), array_map("strtolower", ["apiKey", "http", "oauth2", "openIdConnect"]), true)
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidSecuritySchemeTypeException::class,
-        'message' => 'Valid values are "apiKey", "http", "oauth2", "openIdConnect".',
-        'required'
-    ])]
-    public string $type;
+    #[Describe(['nullable'])]
+    public ?string $type;
 
     /**
      * A description for security scheme. [CommonMark] syntax _MAY_
@@ -101,15 +92,7 @@ class SecurityScheme
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-23
      */
-    #[Describe([
-        'cast' => [self::class, 'when'],
-        'eval' => <<<'PHP'
-            in_array(strtolower($value), array_map("strtolower", ["query", "header", "cookie"]), true)
-        PHP,
-        'false' => [self::class, 'throwException'],
-        'exception' => InvalidSecuritySchemeInException::class,
-        'message' => 'Valid values are "query", "header", and "cookie".',
-    ])]
+    #[Describe(['nullable'])]
     public ?string $in;
 
     /**
