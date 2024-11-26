@@ -69,10 +69,7 @@ class Info
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-0
      */
-    #[Describe([
-        'cast' => [self::class, 'isUrl'],
-        'exception' => InvalidUrlException::class,
-    ])]
+    #[Describe(['nullable'])]
     public ?string $termsOfService;
 
     /**
