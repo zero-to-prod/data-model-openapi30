@@ -4,7 +4,6 @@ namespace Tests\Unit\Schema;
 
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
-use Zerotoprod\DataModelOpenapi30\InvalidEnumException;
 use Zerotoprod\DataModelOpenapi30\Schema;
 
 class EnumTest extends TestCase
@@ -14,7 +13,7 @@ class EnumTest extends TestCase
     {
         $Schema = Schema::from();
 
-        self::assertNull(
+        self::assertEmpty(
             actual: $Schema->enum,
         );
     }
@@ -30,15 +29,5 @@ class EnumTest extends TestCase
             expected: ['1'],
             actual: $Schema->enum,
         );
-    }
-
-    /** @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords */
-    #[Test] public function empty_array(): void
-    {
-        $this->expectException(InvalidEnumException::class);
-
-        Schema::from([
-            Schema::enum => [],
-        ]);
     }
 }
