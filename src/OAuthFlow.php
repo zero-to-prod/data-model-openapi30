@@ -67,8 +67,7 @@ class OAuthFlow
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      */
-    #[Describe(['nullable'])]
-    public ?string $refreshUrl;
+    public ?string $refreshUrl = null;
 
     /**
      * **REQUIRED**. The available scopes for the OAuth2 security scheme.

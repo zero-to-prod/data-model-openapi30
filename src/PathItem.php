@@ -30,7 +30,7 @@ class PathItem
      * @see  https://spec.openapis.org/oas/v3.0.4.html#relative-references-in-urls
      * @see  $ref
      */
-    public const ref = 'ref';
+    public const ref = '$ref';
 
     /**
      * Allows for a referenced definition of this path item. The value
@@ -44,8 +44,8 @@ class PathItem
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-item-object
      * @see  https://spec.openapis.org/oas/v3.0.4.html#relative-references-in-urls
      */
-    #[Describe(['nullable'])]
-    public ?string $ref;
+    #[Describe(['from' => self::ref])]
+    public ?string $ref = null;
 
     /**
      * An optional string summary, intended to apply to all operations
