@@ -33,20 +33,6 @@ class Reference
      *
      * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
      */
-    #[Describe(['cast' => [self::class, 'ref']])]
+    #[Describe(['from' => self::ref, 'required'])]
     public string $ref;
-
-    /**
-     * **REQUIRED**. The reference string.
-     *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
-     * @see  $ref
-     */
-    public static function ref($value, $context)
-    {
-        if (isset($context['$ref'])) {
-            return $context['$ref'];
-        }
-        throw new PropertyRequiredException('Property `$ref` is required.');
-    }
 }
