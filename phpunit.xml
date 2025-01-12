@@ -4,6 +4,9 @@
          bootstrap="vendor/autoload.php"
          cacheDirectory=".phpunit.cache"
          executionOrder="depends,defects"
+         requireCoverageMetadata="false"
+         beStrictAboutCoverageMetadata="false"
+         beStrictAboutOutputDuringTests="true"
          displayDetailsOnPhpunitDeprecations="true"
          failOnPhpunitDeprecation="true"
          failOnRisky="true"
@@ -20,10 +23,7 @@
         </testsuite>
     </testsuites>
 
-    <source restrictDeprecations="true"
-            restrictNotices="true"
-            restrictWarnings="true"
-    >
+    <source>
         <include>
             <directory>src</directory>
         </include>
