@@ -23,7 +23,7 @@ class FlowsTest extends TestCase
         ]);
 
         $this->assertNull(
-            actual: $SecurityScheme->flows->authorizationCode->tokenUrl,
+            actual: $SecurityScheme->flows?->authorizationCode->tokenUrl,
             message: 'REQUIRED. An object containing configuration information for the flow types supported.'
         );
     }
