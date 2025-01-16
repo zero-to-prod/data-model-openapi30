@@ -53,6 +53,9 @@
     "phpunit/phpunit": "^10.0",
     "zero-to-prod/package-helper": "^1.0"
   },
+  "bin": [
+    "bin/data-model-openapi30"
+  ],
   "suggest": {
     "zero-to-prod/data-model": "Transform Data to Type-Safe DTOs",
     "zero-to-prod/data-model-helper": "Helpers for a DataModel."
