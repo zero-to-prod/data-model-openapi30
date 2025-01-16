@@ -36,7 +36,8 @@
     "zero-to-prod/data-model": "^81.7",
     "zero-to-prod/transformable": "^71.0.9",
     "zero-to-prod/data-model-helper": "^v81.11.3",
-    "zero-to-prod/data-model-factory": "^71.3.2"
+    "zero-to-prod/data-model-factory": "^71.3.2",
+    "zero-to-prod/package-helper": "^1.0"
   },
   "autoload": {
     "psr-4": {
@@ -50,8 +51,7 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.0",
-    "zero-to-prod/package-helper": "^1.0"
+    "phpunit/phpunit": "^10.0"
   },
   "bin": [
     "bin/data-model-openapi30"
