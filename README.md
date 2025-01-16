@@ -16,6 +16,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Publishing DataModels](#publishing-datamodels)
 - [Local Development](./LOCAL_DEVELOPMENT.md)
 - [Contributing](#contributing)
 
@@ -47,10 +48,12 @@ $OpenApi = OpenApi::from(json_decode($json, true));
 $OpenApi->components->schemas['pet']->description;
 ```
 
-## Testing
+## Publishing DataModels
+
+You can directly import these files into your project like this:
 
 ```shell
-./vendor/bin/phpunit
+./vendor/bin/data-model-openapi30 app/DataModels
 ```
 
 ## Acceptance Tests
