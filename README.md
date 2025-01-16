@@ -53,7 +53,7 @@ $OpenApi->components->schemas['pet']->description;
 You can directly import these files into your project like this:
 
 ```shell
-./vendor/bin/data-model-openapi30 app/DataModels
+./vendor/bin/data-model-openapi30 app/DataModelOpenapi30
 ```
 
 ## Acceptance Tests
