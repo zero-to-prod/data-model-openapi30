@@ -8,7 +8,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 /**
  * An object representing a Server.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#server-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#server-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Server
 {
@@ -21,8 +22,9 @@ class Server
      * being served. Variable substitutions will be made when a variable
      * is named in {braces}.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @see  $url
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const url = 'url';
 
@@ -33,7 +35,8 @@ class Server
      * being served. Variable substitutions will be made when a variable
      * is named in {braces}.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public string $url;
@@ -42,9 +45,10 @@ class Server
      * An optional string describing the host designated by the URL.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
-     * @link https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.commonmark.org/
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -52,8 +56,9 @@ class Server
      * An optional string describing the host designated by the URL.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
-     * @link https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.commonmark.org
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -62,8 +67,9 @@ class Server
      * A map between a variable name and its value. The value is used
      * for substitution in the server’s URL template.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
      * @see  $variables
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const variables = 'variables';
 
@@ -73,7 +79,8 @@ class Server
      *
      * @var ServerVariable[]
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-3
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],

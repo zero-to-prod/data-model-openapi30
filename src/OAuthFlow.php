@@ -8,7 +8,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 /**
  * Configuration details for a supported OAuth Flow
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#oauth-flow-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#oauth-flow-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class OAuthFlow
 {
@@ -19,8 +20,9 @@ class OAuthFlow
      * _MUST_ be in the form of a URL. The OAuth2 standard requires the
      * use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      * @see  $authorizationUrl
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const authorizationUrl = 'authorizationUrl';
 
@@ -29,7 +31,8 @@ class OAuthFlow
      * _MUST_ be in the form of a URL. The OAuth2 standard requires the
      * use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public string $authorizationUrl;
@@ -38,8 +41,9 @@ class OAuthFlow
      * **REQUIRED**. The token URL to be used for this flow. This _MUST_ be
      * in the form of a URL. The OAuth2 standard requires the use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      * @see  $tokenUrl
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const tokenUrl = 'tokenUrl';
 
@@ -47,7 +51,8 @@ class OAuthFlow
      * **REQUIRED**. The token URL to be used for this flow. This _MUST_ be
      * in the form of a URL. The OAuth2 standard requires the use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $tokenUrl;
@@ -56,8 +61,9 @@ class OAuthFlow
      * The URL to be used for obtaining refresh tokens. This _MUST_ be in the
      * form of a URL. The OAuth2 standard requires the use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      * @see  $refreshUrl
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const refreshUrl = 'refreshUrl';
 
@@ -65,7 +71,8 @@ class OAuthFlow
      * The URL to be used for obtaining refresh tokens. This _MUST_ be in the
      * form of a URL. The OAuth2 standard requires the use of TLS.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public ?string $refreshUrl = null;
 
@@ -74,8 +81,9 @@ class OAuthFlow
      * A map between the scope name and a short description for it.
      * The map _MAY_ be empty.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
      * @see  $scopes
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const scopes = 'scopes';
 
@@ -86,7 +94,8 @@ class OAuthFlow
      *
      * @var array<string, string> $scopes
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-25
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public array $scopes;

@@ -9,7 +9,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * Describes a single response from an API operation, including design-time,
  * static links to operations based on the response.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#response-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#response-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Response
 {
@@ -19,8 +20,9 @@ class Response
      * **REQUIRED**. A description of the response. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -28,7 +30,8 @@ class Response
      * **REQUIRED**. A description of the response. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -38,8 +41,9 @@ class Response
      * header names are case-insensitive. If a response header is defined
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const headers = 'headers';
 
@@ -48,7 +52,8 @@ class Response
      * header names are case-insensitive. If a response header is defined
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'headers']])]
     public null|Header|Reference $headers;
@@ -58,8 +63,9 @@ class Response
      * header names are case insensitive. If a response header is defined
      * with the name `"Content-Type"`, it _SHALL_ be ignored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function headers($value, array $context): Header|Reference|null
     {
@@ -79,8 +85,9 @@ class Response
      * only the most specific key is applicable. e.g. `"text/plain"`
      * overrides `"text/*"`
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $content
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const content = 'content';
 
@@ -93,7 +100,8 @@ class Response
      *
      * @var array<string, MediaType> $content
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
@@ -107,8 +115,9 @@ class Response
      * The key of the map is a short name for the link, following the
      * naming constraints of the names for Component Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $links
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const links = 'links';
 
@@ -117,7 +126,8 @@ class Response
      * The key of the map is a short name for the link, following the
      * naming constraints of the names for Component Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'links']])]
     public null|Link|Reference $links;
@@ -127,8 +137,9 @@ class Response
      * The key of the map is a short name for the link, following the
      * naming constraints of the names for Component Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-14
      * @see  $links
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function links($value, array $context): Link|Reference|null
     {

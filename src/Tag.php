@@ -10,7 +10,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * It is not mandatory to have a Tag Object per tag defined in the
  * Operation Object instances.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#tag-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#tag-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Tag
 {
@@ -19,15 +20,17 @@ class Tag
     /**
      * **REQUIRED**. The name of the tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
      * @see  $name
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const name = 'name';
 
     /**
      * **REQUIRED**. The name of the tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public string $name;
@@ -36,8 +39,9 @@ class Tag
      * A description for the tag. [CommonMark] syntax _MAY_ be used for
      * rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -45,7 +49,8 @@ class Tag
      * A description for the tag. [CommonMark] syntax _MAY_ be used for
      * rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -53,15 +58,17 @@ class Tag
     /**
      * Additional external documentation for this tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
      * @see  $externalDocs
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const externalDocs = 'externalDocs';
 
     /**
      * Additional external documentation for this tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-18
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;

@@ -15,7 +15,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * In the following description, if a field is not explicitly **REQUIRED** or
  * described with a _MUST_ or _SHALL_, it can be considered _OPTIONAL_.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#schema-0
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#schema-0
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class OpenApi
 {
@@ -27,8 +28,9 @@ class OpenApi
      * _SHOULD_ be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API info.version string
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $openapi
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const openapi = 'openapi';
 
@@ -38,7 +40,8 @@ class OpenApi
      * _SHOULD_ be used by tooling to interpret the OpenAPI Document.
      * This is not related to the API `info.version` string
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => ''])]
     public string $openapi;
@@ -47,8 +50,9 @@ class OpenApi
      * **REQUIRED**. Provides metadata about the API. The metadata _MAY_
      * be used by tooling as required.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $info
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const info = 'info';
 
@@ -56,7 +60,8 @@ class OpenApi
      * **REQUIRED**. Provides metadata about the API. The metadata _MAY_
      * be used by tooling as required.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public Info $info;
@@ -67,8 +72,9 @@ class OpenApi
      * empty array, the default value would be a Server Object with a
      * url value of /
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $servers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const servers = 'servers';
 
@@ -80,7 +86,8 @@ class OpenApi
      *
      * @var Server[]|Server
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'servers'],
@@ -94,8 +101,9 @@ class OpenApi
      * empty array, the default value would be a Server Object with a
      * url value of `/`
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $servers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function servers(mixed $value): array|Server
     {
@@ -110,8 +118,9 @@ class OpenApi
      * Object in order to construct the full URL. The Paths Object
      * _MAY_ be empty, due to Access Control List (ACL) constraints.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $paths
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const paths = 'paths';
 
@@ -123,7 +132,8 @@ class OpenApi
      *
      * @var array<string, PathItem> $paths
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
@@ -135,15 +145,17 @@ class OpenApi
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $components
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const components = 'components';
 
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?Components $components;
@@ -151,15 +163,17 @@ class OpenApi
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $security
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const security = 'security';
 
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $security;
@@ -167,8 +181,9 @@ class OpenApi
     /**
      * An element to hold various Objects for the OpenAPI Description.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $tags
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const tags = 'tags';
 
@@ -177,7 +192,8 @@ class OpenApi
      *
      * @var Tag[] $tags
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
@@ -189,15 +205,17 @@ class OpenApi
     /**
      * Additional external documentation for this tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
      * @see  $externalDocs
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const externalDocs = 'externalDocs';
 
     /**
      * Additional external documentation for this tag.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;

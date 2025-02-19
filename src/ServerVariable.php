@@ -9,7 +9,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * An object representing a Server Variable for server URL
  * template substitution.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#server-variable-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#server-variable-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class ServerVariable
 {
@@ -19,8 +20,9 @@ class ServerVariable
      * An enumeration of string values to be used if the substitution
      * options are from a limited set. The array _SHOULD_ NOT be empty.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  $enum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const enum = 'enum';
 
@@ -30,7 +32,8 @@ class ServerVariable
      *
      * @var string[]
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $enum;
@@ -43,8 +46,9 @@ class ServerVariable
      * default keyword, which documents the receiver’s behavior
      * rather than inserting the value into the data.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  $default
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const default = 'default';
 
@@ -56,7 +60,8 @@ class ServerVariable
      * default keyword, which documents the receiver’s behavior
      * rather than inserting the value into the data.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $default;
@@ -65,9 +70,10 @@ class ServerVariable
      * An optional description for the server variable. [CommonMark]
      * syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
      * @see  https://spec.commonmark.org/
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -75,8 +81,9 @@ class ServerVariable
      * An optional description for the server variable. [CommonMark]
      * syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
-     * @see  https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-4
+     * @see  https://spec.commonmark.org
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;

@@ -14,9 +14,10 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * Schema Validation. Unless stated otherwise, the keyword definitions
  * follow those of JSON Schema and do not add any additional semantics.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#schema-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#schema-object
  * @see  https://spec.openapis.org/oas/v3.0.4.html#bib-json-schema-05
  * @see  https://spec.openapis.org/oas/v3.0.4.html#bib-json-schema-validation-05
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Schema
 {
@@ -31,9 +32,10 @@ class Schema
      * explanation about the purpose of the instance described by this
      * schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
      * @see  $title
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const title = 'title';
 
@@ -46,8 +48,9 @@ class Schema
      * explanation about the purpose of the instance described by this
      * schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-6.1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $title;
@@ -58,9 +61,10 @@ class Schema
      * A numeric instance is only valid if division by this keyword's value
      * results in an integer.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
      * @see  $multipleOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const multipleOf = 'multipleOf';
 
@@ -70,8 +74,9 @@ class Schema
      * A numeric instance is only valid if division by this keyword's value
      * results in an integer.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public null|float|int $multipleOf;
@@ -85,9 +90,10 @@ class Schema
      * value, or else if the instance is less than or exactly equal to the
      * provided value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
      * @see  $maximum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const maximum = 'maximum';
 
@@ -100,8 +106,9 @@ class Schema
      * value, or else if the instance is less than or exactly equal to the
      * provided value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.2
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public null|int|float $maximum;
@@ -116,9 +123,10 @@ class Schema
      * false (or not specified), then a numeric instance MAY be equal to the
      * value of "maximum".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.3
      * @see  $exclusiveMaximum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const exclusiveMaximum = 'exclusiveMaximum';
 
@@ -132,8 +140,9 @@ class Schema
      * false (or not specified), then a numeric instance MAY be equal to the
      * value of "maximum".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.3
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $exclusiveMaximum;
@@ -147,9 +156,10 @@ class Schema
      * value, or else if the instance is greater than or exactly equal to
      * the provided value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.4
      * @see  $minimum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const minimum = 'minimum';
 
@@ -162,8 +172,9 @@ class Schema
      * value, or else if the instance is greater than or exactly equal to
      * the provided value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.4
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public null|int|float $minimum;
@@ -178,9 +189,10 @@ class Schema
      * false (or not specified), then a numeric instance MAY be equal to the
      * value of "minimum".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.5
      * @see  $exclusiveMinimum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const exclusiveMinimum = 'exclusiveMinimum';
 
@@ -194,8 +206,9 @@ class Schema
      * false (or not specified), then a numeric instance MAY be equal to the
      * value of "minimum".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $exclusiveMinimum;
@@ -212,9 +225,10 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
      * @see  $maxLength
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const maxLength = 'maxLength';
 
@@ -230,8 +244,9 @@ class Schema
      * The length of a string instance is defined as the number of its
      * characters as defined by RFC 7159 [RFC7159].
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.6
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?int $maxLength;
@@ -249,9 +264,10 @@ class Schema
      * "minLength", if absent, may be considered as being present with
      * integer value 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
      * @see  $minLength
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const minLength = 'minLength';
 
@@ -268,8 +284,9 @@ class Schema
      * "minLength", if absent, may be considered as being present with
      * integer value 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => 0])]
     public int $minLength;
@@ -283,9 +300,10 @@ class Schema
      * matches the instance successfully.  Recall: regular expressions are
      * not implicitly anchored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.8
      * @see  $pattern
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const pattern = 'pattern';
 
@@ -302,8 +320,9 @@ class Schema
      * "pattern", if absent, may be considered as being present with
      * integer value 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => 0])]
     public int|string $pattern;
@@ -315,9 +334,10 @@ class Schema
      * An array instance is valid against "maxItems" if its size is less
      * than, or equal to, the value of this keyword.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
      * @see  $maxItems
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const maxItems = 'maxItems';
 
@@ -328,8 +348,9 @@ class Schema
      * An array instance is valid against "maxItems" if its size is less
      * than, or equal to, the value of this keyword.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.10
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?int $maxItems;
@@ -344,9 +365,10 @@ class Schema
      * If this keyword is not present, it may be considered present with a
      * value of 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
      * @see  $minItems
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const minItems = 'minItems';
 
@@ -360,8 +382,9 @@ class Schema
      * If this keyword is not present, it may be considered present with a
      * value of 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.11
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => 0])]
     public int $minItems;
@@ -376,9 +399,10 @@ class Schema
      * If not present, this keyword may be considered present with boolean
      * value false.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.12
      * @see  $uniqueItems
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const uniqueItems = 'uniqueItems';
 
@@ -389,8 +413,9 @@ class Schema
      * An object instance is valid against "maxProperties" if its number of
      * properties is less than, or equal to, the value of this keyword.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $uniqueItems;
@@ -402,9 +427,10 @@ class Schema
      * An object instance is valid against "maxProperties" if its number of
      * properties is less than, or equal to, the value of this keyword.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
      * @see  $maxProperties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const maxProperties = 'maxProperties';
 
@@ -415,8 +441,9 @@ class Schema
      * An object instance is valid against "maxProperties" if its number of
      * properties is less than, or equal to, the value of this keyword.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.13
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?int $maxProperties;
@@ -431,9 +458,10 @@ class Schema
      * If this keyword is not present, it may be considered present with a
      * value of 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
      * @see  $minProperties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const minProperties = 'minProperties';
 
@@ -447,8 +475,9 @@ class Schema
      * If this keyword is not present, it may be considered present with a
      * value of 0.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.14
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => 0])]
     public int $minProperties;
@@ -461,9 +490,10 @@ class Schema
      * An object instance is valid against this keyword if its property set
      * contains all elements in this keyword's array value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
      * @see  $required
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const required = 'required';
 
@@ -475,8 +505,9 @@ class Schema
      * An object instance is valid against this keyword if its property set
      * contains all elements in this keyword's array value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.15
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $required;
@@ -490,9 +521,10 @@ class Schema
      * An instance validates successfully against this keyword if its value
      * is equal to one of the elements in this keyword's array value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
      * @see  $enum
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const enum = 'enum';
 
@@ -505,8 +537,9 @@ class Schema
      * An instance validates successfully against this keyword if its value
      * is equal to one of the elements in this keyword's array value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  https://datatracker.ietf.org/doc/html/draft-wright-json-schema-validation-00#section-5.20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $enum;
@@ -514,15 +547,17 @@ class Schema
     /**
      * Value _MUST_ be a string. Multiple types via an array are not supported
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $type
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const type = 'type';
 
     /**
      * Value _MUST_ be a string. Multiple types via an array are not supported
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $type;
@@ -530,8 +565,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $allOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const allOf = 'allOf';
 
@@ -540,7 +576,8 @@ class Schema
      *
      * @var array<int, self|Reference> $allOf
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'allOf']])]
     public array $allOf;
@@ -548,8 +585,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $allOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function allOf($value, array $context): array
     {
@@ -566,8 +604,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $oneOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const oneOf = 'oneOf';
 
@@ -576,7 +615,8 @@ class Schema
      *
      * @var array<int, self|Reference> $oneOf
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'oneOf']])]
     public array $oneOf;
@@ -584,8 +624,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $oneOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function oneOf($value, array $context): array
     {
@@ -602,8 +643,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $anyOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const anyOf = 'anyOf';
 
@@ -611,7 +653,8 @@ class Schema
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
      * @var array<int, self|Reference> $anyOf
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'anyOf']])]
     public array $anyOf;
@@ -619,8 +662,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $anyOf
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function anyOf($value, array $context): array
     {
@@ -637,15 +681,17 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $not
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const not = 'not';
 
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'not']])]
     public null|self|Reference $not;
@@ -653,8 +699,9 @@ class Schema
     /**
      * Inline or referenced schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $not
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function not($value, array $context): Schema|Reference|null
     {
@@ -672,8 +719,9 @@ class Schema
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $items
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const items = 'items';
 
@@ -682,7 +730,8 @@ class Schema
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'items']])]
     public null|self|Reference $items;
@@ -692,8 +741,9 @@ class Schema
      * schema _MUST_ be of a Schema Object and not a standard JSON Schema.
      * `items` _MUST_ be present if type is "array".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $items
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function items($value, array $context): Schema|Reference|null
     {
@@ -710,8 +760,9 @@ class Schema
      * Property definitions _MUST_ be a Schema Object and not a standard
      * JSON Schema (inline or referenced).
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $properties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const properties = 'properties';
 
@@ -721,7 +772,8 @@ class Schema
      *
      * @var ?Reference|self[]
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'properties']])]
     public array|Reference $properties;
@@ -730,8 +782,9 @@ class Schema
      * Property definitions _MUST_ be a Schema Object and not a standard
      * JSON Schema (inline or referenced).
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $properties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function properties($value, array $context): Schema|array|null
     {
@@ -750,8 +803,9 @@ class Schema
      * Schema Object and not a standard JSON Schema. Consistent with JSON
      * Schema, `additionalProperties` defaults to `true`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $additionalProperties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const additionalProperties = 'additionalProperties';
 
@@ -760,7 +814,8 @@ class Schema
      * Schema Object and not a standard JSON Schema. Consistent with JSON
      * Schema, `additionalProperties` defaults to `true`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'additionalProperties']])]
     public bool|self|Reference $additionalProperties;
@@ -770,8 +825,9 @@ class Schema
      * Schema Object and not a standard JSON Schema. Consistent with JSON
      * Schema, `additionalProperties` defaults to `true`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $additionalProperties
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function additionalProperties($value, array $context): Schema|Reference|bool
     {
@@ -791,15 +847,17 @@ class Schema
     /**
      * [CommonMark] syntax MAY be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
     /**
      * [CommonMark] syntax MAY be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -808,8 +866,9 @@ class Schema
      * While relying on JSON Schema’s defined formats, the OAS offers a few
      * additional predefined formats.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $format
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const format = 'format';
 
@@ -817,7 +876,8 @@ class Schema
      * While relying on JSON Schema’s defined formats, the OAS offers a few
      * additional predefined formats.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $format;
@@ -829,8 +889,9 @@ class Schema
      * Object defined at the same level. For example, if `type` is
      * `"string"`, then `default` can be `"foo"` but cannot be 1.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
      * @see  $default
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const default = 'default';
 
@@ -841,7 +902,8 @@ class Schema
      * Object defined at the same level. For example, if `type` is
      * `"string"`, then `default` can be `"foo"` but cannot be 1.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#json-schema-keywords
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $default;
@@ -854,8 +916,9 @@ class Schema
      * the use of `null` as a value. A `false` value leaves the specified or
      * default `type` unmodified. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $nullable
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const nullable = 'nullable';
 
@@ -867,7 +930,8 @@ class Schema
      * the use of `null` as a value. A `false` value leaves the specified or
      * default `type` unmodified. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $nullable;
@@ -877,8 +941,9 @@ class Schema
      * which of a set of schemas a payload is expected to satisfy. See
      * Composition and Inheritance for more details.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $discriminator
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const discriminator = 'discriminator';
 
@@ -887,7 +952,8 @@ class Schema
      * which of a set of schemas a payload is expected to satisfy. See
      * Composition and Inheritance for more details.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?Discriminator $discriminator;
@@ -902,8 +968,9 @@ class Schema
      * `readOnly` and `writeOnly` being `true`. Default value
      * is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $readOnly
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const readOnly = 'readOnly';
 
@@ -917,7 +984,8 @@ class Schema
      * `readOnly` and `writeOnly` being `true`. Default value
      * is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $readOnly;
@@ -932,8 +1000,9 @@ class Schema
      * `readOnly` and `writeOnly` being `true`. Default value
      * is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $writeOnly
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const writeOnly = 'writeOnly';
 
@@ -947,7 +1016,8 @@ class Schema
      * `readOnly` and `writeOnly` being `true`. Default value
      * is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $writeOnly;
@@ -957,8 +1027,9 @@ class Schema
      * root schemas. Adds additional metadata to describe the XML
      * representation of this property.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $xml
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const xml = 'xml';
 
@@ -967,7 +1038,8 @@ class Schema
      * root schemas. Adds additional metadata to describe the XML
      * representation of this property.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?Xml $xml;
@@ -975,15 +1047,17 @@ class Schema
     /**
      * Additional external documentation for this schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $externalDocs
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const externalDocs = 'externalDocs';
 
     /**
      * Additional external documentation for this schema.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;
@@ -992,8 +1066,9 @@ class Schema
      * Specifies that a schema is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $deprecated
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const deprecated = 'deprecated';
 
@@ -1001,7 +1076,8 @@ class Schema
      * Specifies that a schema is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
@@ -1012,8 +1088,9 @@ class Schema
      * YAML, a string value can be used to contain the example with escaping
      * where necessary.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
      * @see  $example
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const example = 'example';
 
@@ -1023,7 +1100,8 @@ class Schema
      * YAML, a string value can be used to contain the example with escaping
      * where necessary.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $example;

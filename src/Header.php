@@ -22,7 +22,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * `allowReserved` _MUST NOT_ be used, and style, if used, _MUST_ be limited
  * to "simple".
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#reference-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#reference-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Header
 {
@@ -32,8 +33,9 @@ class Header
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -41,7 +43,8 @@ class Header
      * A brief description of the header. This could contain examples of use.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -49,15 +52,17 @@ class Header
     /**
      * Determines whether this header is mandatory. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $required
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const required = 'required';
 
     /**
      * Determines whether this header is mandatory. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $required;
@@ -66,15 +71,17 @@ class Header
      * Specifies that the header is deprecated and _SHOULD_ be transitioned out of
      * usage. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $deprecated
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const deprecated = 'deprecated';
 
     /**
      * Determines whether this header is mandatory. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
@@ -83,8 +90,9 @@ class Header
      * Describes how the header value will be serialized. The default (and only
      * legal value for headers) is `"simple`".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $style
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const style = 'style';
 
@@ -92,7 +100,8 @@ class Header
      * Describes how the header value will be serialized. The default (and only
      * legal value for headers) is `"simple`".
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $style;
@@ -103,8 +112,9 @@ class Header
      * key-value pairs of the map, see Style Examples. For other data
      * types this field has no effect. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $explode
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const explode = 'explode';
 
@@ -114,7 +124,8 @@ class Header
      * key-value pairs of the map, see Style Examples. For other data
      * types this field has no effect. The default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $explode;
@@ -122,15 +133,17 @@ class Header
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const schema = 'schema';
 
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
@@ -138,8 +151,9 @@ class Header
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function schema($value, array $context): Schema|Reference|null
     {
@@ -155,15 +169,17 @@ class Header
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $example
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const example = 'example';
 
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-20
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $example;
@@ -171,9 +187,10 @@ class Header
     /**
      * Examples of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const examples = 'examples';
 
@@ -182,8 +199,9 @@ class Header
      *
      * @var array<string, Example|Reference> $examples
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'examples']])]
     public array $examples;
@@ -193,9 +211,10 @@ class Header
      *
      * @return array<string, Example|Reference>
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function examples($value, array $context): array
     {
@@ -214,8 +233,9 @@ class Header
      * media type and the value describes it. The map _MUST_ only contain
      * one entry.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
      * @see  $content
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const content = 'content';
 
@@ -226,7 +246,8 @@ class Header
      *
      * @var array<string, MediaType> $content
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content-0
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],

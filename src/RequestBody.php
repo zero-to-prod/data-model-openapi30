@@ -12,7 +12,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * In other cases where the HTTP spec is vague (such as GET, HEAD and
  * DELETE), `requestBody` _SHALL_ be ignored by consumers.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#request-body-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#request-body-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class RequestBody
 {
@@ -22,8 +23,9 @@ class RequestBody
      * A brief description of the request body. This could contain examples
      * of use. [CommonMark] syntax MAY be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -31,7 +33,8 @@ class RequestBody
      * A brief description of the request body. This could contain examples
      * of use. [CommonMark] syntax MAY be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -42,8 +45,9 @@ class RequestBody
      * For requests that match multiple keys, only the most specific key is
      * applicable. e.g. `"text/plain"` overrides `"text/*"`
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
      * @see  $content
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const content = 'content';
 
@@ -55,7 +59,8 @@ class RequestBody
      *
      * @var array<string, MediaType> $content
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],
@@ -67,15 +72,17 @@ class RequestBody
     /**
      * Determines if the request body is required in the request. Defaults to `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
      * @see  $required
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const required = 'required';
 
     /**
      * Determines if the request body is required in the request. Defaults to `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-10
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $required;

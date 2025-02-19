@@ -3,7 +3,6 @@
 namespace Zerotoprod\DataModelOpenapi30;
 
 use Zerotoprod\DataModel\Describe;
-use Zerotoprod\DataModel\PropertyRequiredException;
 use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 
 /**
@@ -14,7 +13,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * For this specification, reference resolution is accomplished as defined by the JSON Reference
  * specification and not by the JSON Schema specification.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#reference-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#reference-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Reference
 {
@@ -23,15 +23,17 @@ class Reference
     /**
      * **REQUIRED**. The reference string.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
      * @see  $ref
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const ref = '$ref';
 
     /**
      * **REQUIRED**. The reference string.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-19
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['from' => self::ref, 'required'])]
     public string $ref;

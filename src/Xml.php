@@ -12,7 +12,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * forms) and the name field _SHOULD_ be used to add that information.
  * See examples for expected behavior.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#xml-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#xml-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Xml
 {
@@ -27,8 +28,9 @@ class Xml
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      * @see  $name
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const name = 'name';
 
@@ -41,7 +43,8 @@ class Xml
      * only if `wrapped` is `true`. If `wrapped` is `false`,
      * it will be ignored.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $name;
@@ -49,15 +52,17 @@ class Xml
     /**
      * The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      * @see  $namespace
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const namespace = 'namespace';
 
     /**
      * The URI of the namespace definition. Value _MUST_ be in the form of a non-relative URI.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $namespace;
@@ -65,15 +70,17 @@ class Xml
     /**
      * The prefix to be used for the name.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      * @see  $prefix
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const prefix = 'prefix';
 
     /**
      * The prefix to be used for the name.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $prefix;
@@ -82,8 +89,9 @@ class Xml
      * Declares whether the property definition translates to an attribute
      * instead of an element. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      * @see  $attribute
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const attribute = 'attribute';
 
@@ -91,7 +99,8 @@ class Xml
      * Declares whether the property definition translates to an attribute
      * instead of an element. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $attribute;
@@ -103,8 +112,9 @@ class Xml
      * definition takes effect only when defined alongside `type`
      * being `"array"` (outside the `items`).
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
      * @see  $wrapped
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const wrapped = 'wrapped';
 
@@ -115,7 +125,8 @@ class Xml
      * definition takes effect only when defined alongside `type`
      * being `"array"` (outside the `items`).
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-22
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $wrapped;

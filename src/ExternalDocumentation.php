@@ -8,7 +8,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 /**
  * Allows referencing an external resource for extended documentation.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#external-documentation-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class ExternalDocumentation
 {
@@ -18,9 +19,10 @@ class ExternalDocumentation
      * A description of the target documentation. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  https://spec.commonmark.org/
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -28,8 +30,9 @@ class ExternalDocumentation
      * A description of the target documentation. [CommonMark] syntax
      * _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
-     * @see  https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @see  https://spec.commonmark.org
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -38,8 +41,9 @@ class ExternalDocumentation
      * **REQUIRED**. The URL for the target documentation. This _MUST_ be
      * in the form of a URL.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
      * @see  $url
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const url = 'url';
 
@@ -47,7 +51,8 @@ class ExternalDocumentation
      * **REQUIRED**. The URL for the target documentation. This _MUST_ be
      * in the form of a URL.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-8
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $url;

@@ -9,7 +9,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 /**
  * Describes a single API operation on a path.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#operation-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#operation-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Operation
 {
@@ -20,8 +21,9 @@ class Operation
      * for logical grouping of operations by resources or any other
      * qualifier.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $tags
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const tags = 'tags';
 
@@ -32,7 +34,8 @@ class Operation
      *
      * @var string[] $tags
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $tags;
@@ -40,15 +43,17 @@ class Operation
     /**
      * A short summary of what the operation does.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $summary
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const summary = 'summary';
 
     /**
      * A short summary of what the operation does.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $summary;
@@ -57,9 +62,10 @@ class Operation
      * A verbose explanation of the operation behavior. [CommonMark]
      * syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  https://spec.commonmark.org/
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -67,8 +73,9 @@ class Operation
      * A verbose explanation of the operation behavior. [CommonMark]
      * syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
-     * @see  https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.commonmark.org
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -76,15 +83,17 @@ class Operation
     /**
      * Additional external documentation for this operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $externalDocs
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const externalDocs = 'externalDocs';
 
     /**
      * Additional external documentation for this operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?ExternalDocumentation $externalDocs;
@@ -96,8 +105,9 @@ class Operation
      * to uniquely identify an operation, therefore, it is _RECOMMENDED_
      * to follow common programming naming conventions.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $operationId
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const operationId = 'operationId';
 
@@ -108,7 +118,8 @@ class Operation
      * to uniquely identify an operation, therefore, it is _RECOMMENDED_
      * to follow common programming naming conventions.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $operationId;
@@ -122,8 +133,9 @@ class Operation
      * to parameters that are defined in the OpenAPI Object’s
      * `components.parameters`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $parameters
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const parameters = 'parameters';
 
@@ -138,7 +150,8 @@ class Operation
      *
      * @var array<string, Parameter|Reference> $parameters
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'parameters']])]
     public array $parameters;
@@ -152,8 +165,9 @@ class Operation
      * to parameters that are defined in the OpenAPI Object’s
      * `components.parameters`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $parameters
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function parameters($value, array $context): array
     {
@@ -174,8 +188,9 @@ class Operation
      * HTTP spec is vague (such as GET, HEAD and DELETE), `requestBody` _SHALL_ be
      * ignored by consumers.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $requestBody
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const requestBody = 'requestBody';
 
@@ -186,7 +201,8 @@ class Operation
      * HTTP spec is vague (such as GET, HEAD and DELETE), `requestBody` _SHALL_ be
      * ignored by consumers.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'requestBody']])]
     public null|RequestBody|Reference $requestBody;
@@ -200,8 +216,9 @@ class Operation
      * to parameters that are defined in the OpenAPI Object’s
      * `components.parameters`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $requestBody
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function requestBody($value, array $context): null|RequestBody|Reference
     {
@@ -218,8 +235,9 @@ class Operation
      * **REQUIRED**. The list of possible responses as they are returned
      * from executing this operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $responses
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const responses = 'responses';
 
@@ -229,7 +247,8 @@ class Operation
      *
      * @var array<string, Response|Reference> $examples
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'responses']])]
     public array $responses;
@@ -238,8 +257,9 @@ class Operation
      * **REQUIRED**. The list of possible responses as they are returned
      * from executing this operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $responses
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function responses($value, array $context): array
     {
@@ -260,8 +280,9 @@ class Operation
      * The key is a unique identifier for the Callback Object. Each value in
      * the map is a Callback Object that describes a request that may be
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $callbacks
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const callbacks = 'callbacks';
 
@@ -273,7 +294,8 @@ class Operation
      *
      * @var array<string, array<string, PathItem>> $callbacks
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'callbacks']])]
     public array $callbacks;
@@ -283,8 +305,9 @@ class Operation
      * The key is a unique identifier for the Callback Object. Each value in
      * the map is a Callback Object that describes a request that may be
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $callbacks
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function callbacks($value, array $context): array
     {
@@ -302,8 +325,9 @@ class Operation
      * Declares this operation to be deprecated. Consumers _SHOULD_ refrain
      * from usage of the declared operation. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $deprecated
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const deprecated = 'deprecated';
 
@@ -311,7 +335,8 @@ class Operation
      * Declares this operation to be deprecated. Consumers _SHOULD_ refrain
      * from usage of the declared operation. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
@@ -326,8 +351,9 @@ class Operation
      * To remove a top-level `security` declaration, an empty
      * array can be used.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $security
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const security = 'security';
 
@@ -343,7 +369,8 @@ class Operation
      *
      * @var array<string, string[]> $security
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $security;
@@ -353,8 +380,9 @@ class Operation
      * array is specified at the Path Item Object or OpenAPI Object level,
      * it will be overridden by this value.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
      * @see  $servers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const servers = 'servers';
 
@@ -365,7 +393,8 @@ class Operation
      *
      * @var Server[]
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-7
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],

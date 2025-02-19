@@ -18,7 +18,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  *
  * See Appendix E for a detailed examination of percent-encoding concerns for form media types.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#encoding-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#encoding-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Encoding
 {
@@ -31,8 +32,9 @@ class Encoding
      * `image/*`). Default value depends on the property type as
      * shown in the table below.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      * @see  $contentType
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const contentType = 'contentType';
 
@@ -43,7 +45,8 @@ class Encoding
      * `image/*`). Default value depends on the property type as
      * shown in the table below.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $contentType;
@@ -54,8 +57,9 @@ class Encoding
      * in this section. This field _SHALL_ be ignored if the request
      * body media type is not a multipart.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const headers = 'headers';
 
@@ -65,7 +69,8 @@ class Encoding
      * in this section. This field _SHALL_ be ignored if the request
      * body media type is not a multipart.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'headers']])]
     public null|Header|Reference $headers;
@@ -76,8 +81,9 @@ class Encoding
      * in this section. This field _SHALL_ be ignored if the request
      * body media type is not a multipart.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function headers($value, array $context): Header|Reference|null
     {
@@ -102,8 +108,9 @@ class Encoding
      * the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
      * @see  $style
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const style = 'style';
 
@@ -119,7 +126,8 @@ class Encoding
      * the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-0
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $style;
@@ -134,8 +142,9 @@ class Encoding
      * _SHALL_ be ignored if the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $explode
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const explode = 'explode';
 
@@ -149,7 +158,8 @@ class Encoding
      * _SHALL_ be ignored if the request body media type is not
      * `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $explode;
@@ -169,8 +179,9 @@ class Encoding
      * ignored if the request body media type is
      * not `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
      * @see  $allowReserved
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const allowReserved = 'allowReserved';
 
@@ -189,7 +200,8 @@ class Encoding
      * ignored if the request body media type is
      * not `application/x-www-form-urlencoded`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields-1
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $allowReserved;

@@ -18,11 +18,11 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * not both. See Appendix B for a discussion of converting values of various
  * types to string representations.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#parameter-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-object
  * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-name
  * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
  * @see  https://spec.openapis.org/oas/v3.0.4.html#appendix-e-percent-encoding-and-form-media-types
- *
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Parameter
 {
@@ -39,12 +39,13 @@ class Parameter
      * - For all other cases, the `name` corresponds to the parameter name used
      * by the `in` field.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      * @see  https://spec.openapis.org/oas/v3.0.4.html#paths-path
      * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields:~:text=field%20in%20the-,Paths%20Object,-.%20See%20Path%20Templating
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-templating
      * @see  $name
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const name = 'name';
 
@@ -59,11 +60,12 @@ class Parameter
      * - For all other cases, the `name` corresponds to the parameter name used
      * by the `in` field.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      * @see  https://spec.openapis.org/oas/v3.0.4.html#paths-path
      * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields:~:text=field%20in%20the-,Paths%20Object,-.%20See%20Path%20Templating
      * @see  https://spec.openapis.org/oas/v3.0.4.html#path-templating
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public string $name;
@@ -72,8 +74,9 @@ class Parameter
      * **REQUIRED**. The location of the parameter. Possible values are `"query"`,
      * `"header"`, `"path"` or `"cookie"`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  $in
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const in = 'in';
 
@@ -81,7 +84,8 @@ class Parameter
      * **REQUIRED**. The location of the parameter. Possible values are `"query"`,
      * `"header"`, `"path"` or `"cookie"`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['required'])]
     public string $in;
@@ -90,9 +94,10 @@ class Parameter
      * A brief description of the parameter. This could contain examples of use.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.commonmark.org/
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -100,8 +105,9 @@ class Parameter
      * A brief description of the parameter. This could contain examples of use.
      * [CommonMark] syntax _MAY_ be used for rich text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
-     * @see  https://spec.commonmark.org/
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.commonmark.org
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -112,9 +118,10 @@ class Parameter
      * be `true`. Otherwise, the field _MAY_ be included and its default
      * value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
      * @see  $required
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const required = 'required';
 
@@ -124,8 +131,9 @@ class Parameter
      * be `true`. Otherwise, the field _MAY_ be included and its default
      * value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-in
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $required;
@@ -134,8 +142,9 @@ class Parameter
      * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  $deprecated
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const deprecated = 'deprecated';
 
@@ -143,7 +152,8 @@ class Parameter
      * Specifies that a parameter is deprecated and _SHOULD_ be transitioned
      * out of usage. Default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $deprecated;
@@ -160,10 +170,11 @@ class Parameter
      * this field is ***NOT _RECOMMENDED_***, and it is likely
      * to be removed in a later revision.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
      * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
      * @see  $allowEmptyValue
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const allowEmptyValue = 'allowEmptyValue';
 
@@ -179,9 +190,10 @@ class Parameter
      * this field is ***NOT _RECOMMENDED_***, and it is likely
      * to be removed in a later revision.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#parameter-style
      * @see  https://spec.openapis.org/oas/v3.0.4.html#style-examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $allowEmptyValue;
@@ -192,8 +204,9 @@ class Parameter
      * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
      * - `"simple"`; for `"cookie"` - `"form"`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $style
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const style = 'style';
 
@@ -203,7 +216,8 @@ class Parameter
      * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
      * - `"simple"`; for `"cookie"` - `"form"`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'style']])]
     public ?string $style;
@@ -216,8 +230,9 @@ class Parameter
      * Note that despite `false` being the default for `deepObject`, the
      * combination of false with `deepObject` is undefined.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $style
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function style($value, $context): ?string
     {
@@ -242,8 +257,9 @@ class Parameter
      * Note that despite `false` being the default for `deepObject`, the
      * combination of false with `deepObject` is undefined.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $explode
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const explode = 'explode';
 
@@ -255,7 +271,8 @@ class Parameter
      * Note that despite `false` being the default for `deepObject`, the
      * combination of false with `deepObject` is undefined.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'explode']])]
     public bool $explode;
@@ -266,8 +283,9 @@ class Parameter
      * for `"query"` - `"form"`; for `"path"` - `"simple"`; for `"header"`
      * - `"simple"`; for `"cookie"` - `"form"`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $explode
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function explode($value, $context): bool
     {
@@ -293,8 +311,9 @@ class Parameter
      * to parameters with an `in` value of `query`. The
      * default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $allowReserved
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const allowReserved = 'allowReserved';
 
@@ -311,7 +330,8 @@ class Parameter
      * to parameters with an `in` value of `query`. The
      * default value is `false`.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => false])]
     public bool $allowReserved;
@@ -319,15 +339,17 @@ class Parameter
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const schema = 'schema';
 
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
@@ -335,8 +357,9 @@ class Parameter
     /**
      * The schema defining the type used for the parameter.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-schema
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function schema($value, array $context): Schema|Reference|null
     {
@@ -352,17 +375,19 @@ class Parameter
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      * @see  $example
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const example = 'example';
 
     /**
      * Example of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $example;
@@ -370,8 +395,9 @@ class Parameter
     /**
      * Examples of the parameter’s potential value; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const examples = 'examples';
 
@@ -380,8 +406,9 @@ class Parameter
      *
      * @var array<string, Example|Reference> $examples
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'examples']])]
     public array $examples;
@@ -391,9 +418,10 @@ class Parameter
      *
      * @return array<string, Example|Reference>
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#common-fixed-fields
      * @see  https://spec.openapis.org/oas/v3.0.4.html#working-with-examples
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function examples($value, array $context): array
     {
@@ -412,8 +440,9 @@ class Parameter
      * media type and the value describes it. The map _MUST_ only contain one
      * entry.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
      * @see  $content
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const content = 'content';
 
@@ -424,7 +453,8 @@ class Parameter
      *
      * @var array<string, MediaType> $content
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-for-use-with-content
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],

@@ -18,7 +18,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * specifying examples, including non-JSON/YAML
  * values.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#media-type-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#media-type-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class MediaType
 {
@@ -27,15 +28,17 @@ class MediaType
     /**
      * The schema defining the content of the request, response, parameter, or header.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const schema = 'schema';
 
     /**
      * The schema defining the content of the request, response, parameter, or header.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'schema']])]
     public null|Schema|Reference $schema;
@@ -43,8 +46,9 @@ class MediaType
     /**
      * The schema defining the content of the request, response, parameter, or header.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $schema
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function schema($value, array $context): Schema|Reference|null
     {
@@ -60,15 +64,17 @@ class MediaType
     /**
      * Example of the media type; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $example
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const example = 'example';
 
     /**
      * The schema defining the content of the request, response, parameter, or header.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $example;
@@ -76,8 +82,9 @@ class MediaType
     /**
      * Examples of the media type; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const examples = 'examples';
 
@@ -86,7 +93,8 @@ class MediaType
      *
      * @var array<string, Example|Reference> $examples
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'examples']])]
     public array $examples;
@@ -94,8 +102,9 @@ class MediaType
     /**
      * Examples of the media type; see Working With Examples.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function examples($value, array $context): array
     {
@@ -119,8 +128,9 @@ class MediaType
      * the behavior is determined by the default
      * values documented for the Encoding Object.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
      * @see  $encoding
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const encoding = 'encoding';
 
@@ -136,7 +146,8 @@ class MediaType
      *
      * @var array<string, Encoding> $encoding
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-11
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe([
         'cast' => [self::class, 'mapOf'],

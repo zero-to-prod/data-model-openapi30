@@ -8,7 +8,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
 /**
  * Contact information for the exposed API.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Contact
 {
@@ -17,15 +18,17 @@ class Contact
     /**
      * The identifying name of the contact person/organization.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
      * @see  $name
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const name = 'name';
 
     /**
      * The identifying name of the contact person/organization.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $name;
@@ -34,8 +37,9 @@ class Contact
      * The URL for the contact information.
      * This _MUST_ be in the form of a URL.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
      * @see  $url
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const url = 'url';
 
@@ -43,7 +47,8 @@ class Contact
      * The URL for the contact information.
      * This _MUST_ be in the form of a URL.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $url;
@@ -52,8 +57,9 @@ class Contact
      * The email address of the contact person/organization.
      * This _MUST_ be in the form of an email address.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
      * @see  $email
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const email = 'email';
 
@@ -61,7 +67,8 @@ class Contact
      * The email address of the contact person/organization.
      * This _MUST_ be in the form of an email address.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#contact-object
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $email;

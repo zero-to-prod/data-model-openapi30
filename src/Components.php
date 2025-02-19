@@ -11,7 +11,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * effect on the API unless they are explicitly referenced from
  * outside the Components Object.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#components-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#components-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Components
 {
@@ -20,8 +21,9 @@ class Components
     /**
      * An object to hold reusable Schema Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $schemas
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const schemas = 'schemas';
 
@@ -30,7 +32,8 @@ class Components
      *
      * @var ?array<string, Schema|Reference> $schemas
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'schemas']])]
     public array $schemas;
@@ -38,8 +41,9 @@ class Components
     /**
      * An object to hold reusable Schema Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $schemas
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function schemas($value, array $context): array
     {
@@ -56,8 +60,9 @@ class Components
     /**
      * An object to hold reusable Response Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $responses
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const responses = 'responses';
 
@@ -66,7 +71,8 @@ class Components
      *
      * @var ?array<string, Response|Reference> $responses
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'responses']])]
     public array $responses;
@@ -74,8 +80,9 @@ class Components
     /**
      * An object to hold reusable Response Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $responses
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function responses($value, array $context): array
     {
@@ -92,8 +99,9 @@ class Components
     /**
      * An object to hold reusable Parameter Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $parameters
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const parameters = 'parameters';
 
@@ -102,7 +110,8 @@ class Components
      *
      * @var ?array<string, Parameter|Reference> $parameters
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'parameters']])]
     public array $parameters;
@@ -110,8 +119,9 @@ class Components
     /**
      * An object to hold reusable Parameter Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $parameters
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function parameters($value, array $context): array
     {
@@ -128,8 +138,9 @@ class Components
     /**
      * An object to hold reusable Example Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const examples = 'examples';
 
@@ -138,7 +149,8 @@ class Components
      *
      * @var array<string, Example|Reference> $examples
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'examples']])]
     public array $examples;
@@ -146,8 +158,9 @@ class Components
     /**
      * An object to hold reusable Example Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $examples
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function examples($value, array $context): array
     {
@@ -164,8 +177,9 @@ class Components
     /**
      * An object to hold reusable Request Body Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $requestBodies
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const requestBodies = 'requestBodies';
 
@@ -174,7 +188,8 @@ class Components
      *
      * @var ?array<string, RequestBody|Reference> $requestBodies
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'requestBodies']])]
     public array $requestBodies;
@@ -182,8 +197,9 @@ class Components
     /**
      * An object to hold reusable Request Body Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $requestBodies
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function requestBodies($value, array $context): array
     {
@@ -200,8 +216,9 @@ class Components
     /**
      * An object to hold reusable Header Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const headers = 'headers';
 
@@ -210,7 +227,8 @@ class Components
      *
      * @var array<string, Header|Reference> $headers
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'headers']])]
     public array $headers;
@@ -218,8 +236,9 @@ class Components
     /**
      * An object to hold reusable Header Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $headers
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function headers($value, array $context): array
     {
@@ -236,8 +255,9 @@ class Components
     /**
      * An object to hold reusable Security Scheme Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $securitySchemes
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const securitySchemes = 'securitySchemes';
 
@@ -246,7 +266,8 @@ class Components
      *
      * @var ?array<string, SecurityScheme|Reference> $securitySchemes
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'securitySchemes']])]
     public array $securitySchemes;
@@ -254,8 +275,9 @@ class Components
     /**
      * An object to hold reusable Security Scheme Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $securitySchemes
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function securitySchemes($value, array $context): array
     {
@@ -272,8 +294,9 @@ class Components
     /**
      * An object to hold reusable Link Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $links
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const links = 'links';
 
@@ -282,7 +305,8 @@ class Components
      *
      * @var array<string, Link|Reference> $links
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'links']])]
     public array $links;
@@ -290,8 +314,9 @@ class Components
     /**
      * An object to hold reusable Link Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $links
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function links($value, array $context): array
     {
@@ -308,8 +333,9 @@ class Components
     /**
      * An object to hold reusable Callback Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $callbacks
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const callbacks = 'callbacks';
 
@@ -318,7 +344,8 @@ class Components
      *
      * @var array<string, array<string, PathItem>> $callbacks
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['cast' => [self::class, 'callbacks']])]
     public array $callbacks;
@@ -326,8 +353,9 @@ class Components
     /**
      * An object to hold reusable Callback Objects.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-5
      * @see  $callbacks
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public static function callbacks($value, array $context): array
     {

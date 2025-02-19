@@ -18,7 +18,8 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  * expression is used for accessing values in an operation and using them
  * as parameters while invoking the linked operation.
  *
- * @link https://spec.openapis.org/oas/v3.0.4.html#link-object
+ * @see  https://spec.openapis.org/oas/v3.0.4.html#link-object
+ * @link https://github.com/zero-to-prod/data-model-openapi30
  */
 class Link
 {
@@ -28,8 +29,9 @@ class Link
      * A URI reference to an OAS operation. This field is mutually exclusive
      * of the `operationId `field, and _MUST_ point to an Operation Object.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $operationRef
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const operationRef = 'operationRef';
 
@@ -37,7 +39,8 @@ class Link
      * A URI reference to an OAS operation. This field is mutually exclusive
      * of the `operationId` field, and _MUST_ point to an Operation Object.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $operationRef;
@@ -46,8 +49,9 @@ class Link
      * The name of an existing, resolvable OAS operation, as defined with a unique
      * `operationId`. This field is mutually exclusive of the operationRef field.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $operationId
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const operationId = 'operationId';
 
@@ -55,7 +59,8 @@ class Link
      * The name of an existing, resolvable OAS operation, as defined with a unique
      * `operationId`. This field is mutually exclusive of the operationRef field.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $operationId;
@@ -69,8 +74,9 @@ class Link
      * expression to be evaluated and passed to the linked
      * operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $parameters
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const parameters = 'parameters';
 
@@ -85,7 +91,8 @@ class Link
      *
      * @var array<string, mixed> $parameters
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['default' => []])]
     public array $parameters;
@@ -94,8 +101,9 @@ class Link
      * A literal value or {expression} to use as a request body when calling
      * the target operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $requestBody
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const requestBody = 'requestBody';
 
@@ -103,7 +111,8 @@ class Link
      * A literal value or {expression} to use as a request body when calling
      * the target operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public mixed $requestBody;
@@ -112,8 +121,9 @@ class Link
      * A description of the link. [CommonMark] syntax MAY be used for rich
      * text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $description
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const description = 'description';
 
@@ -121,7 +131,8 @@ class Link
      * A description of the link. [CommonMark] syntax MAY be used for rich
      * text representation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?string $description;
@@ -129,15 +140,17 @@ class Link
     /**
      * A server object to be used by the target operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
      * @see  $server
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     public const server = 'server';
 
     /**
      * A server object to be used by the target operation.
      *
-     * @link https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @see  https://spec.openapis.org/oas/v3.0.4.html#fixed-fields-16
+     * @link https://github.com/zero-to-prod/data-model-openapi30
      */
     #[Describe(['nullable'])]
     public ?Server $server;
