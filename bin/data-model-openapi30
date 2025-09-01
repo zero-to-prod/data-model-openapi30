@@ -1,37 +1,32 @@
 #!/usr/bin/env php
 <?php
 
-require getcwd() . '/vendor/autoload.php';
+/**
+ * Zero-to-Prod Data Model OpenAPI 3.0 Documentation Publisher
+ *
+ * Publishes the README.md file to the user's documentation directory.
+ */
+
+require getcwd().'/vendor/autoload.php';
 
 use Zerotoprod\PackageHelper\PackageHelper;
 
-if ($argc !== 2) {
-    die("Usage: <targetDir>\n");
+$target_path = getcwd().'/docs/zero-to-prod/data-model-openapi30/';
+if (isset($argv[1])) {
+    $target_path = rtrim($argv[1], '/').'/';
 }
 
-$from = __DIR__ . '/../src';
-if (!is_dir($from)) {
-    throw new RuntimeException("Source directory '$from' not found.");
+$source_file = __DIR__.'/../README.md';
+
+if (!file_exists($source_file)) {
+    fwrite(STDERR, "Error: Not found $source_file\n");
+    exit(1);
 }
 
-$composer_json_file_path = getcwd() . '/composer.json';
-if (!is_file($composer_json_file_path)) {
-    throw new RuntimeException("composer.json not found.");
+try {
+    PackageHelper::copy($source_file, $target_path);
+    exit(0);
+} catch (RuntimeException $e) {
+    fwrite(STDERR, "Error: ".$e->getMessage()."\n");
+    exit(1);
 }
-
-$composer_json_data = json_decode(file_get_contents($composer_json_file_path), true);
-$psr_4 = $composer_json_data['autoload']['psr-4'] ?? null;
-
-if (!$psr_4) {
-    throw new RuntimeException('PSR-4 autoload section missing in composer.json.');
-}
-
-$to = rtrim($argv[1], '/');
-PackageHelper::publish(
-    $from,
-    $to,
-    PackageHelper::determineNamespace($psr_4, $to),
-    static function(string $from, string $to){
-        echo "Copied: $from to $to" . PHP_EOL;
-    }
-);

@@ -16,6 +16,8 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Documentation Publishing](#documentation-publishing)
+    - [Automatic Documentation Publishing](#automatic-documentation-publishing)
 - [Usage](#usage)
 - [Publishing DataModels](#publishing-datamodels)
 - [Local Development](./LOCAL_DEVELOPMENT.md)
@@ -37,7 +39,40 @@ Install `Zerotoprod\DataModelOpenapi30` via [Composer](https://getcomposer.org/)
 composer require zero-to-prod/data-model-openapi30
 ```
 
-This will add the package to your project’s dependencies and create an autoloader entry for it.
+This will add the package to your project's dependencies and create an autoloader entry for it.
+
+## Documentation Publishing
+
+You can publish this README to your local documentation directory.
+
+This can be useful for providing documentation for AI agents.
+
+This can be done using the included script:
+
+```bash
+# Publish to default location (./docs/zero-to-prod/data-model-openapi30)
+vendor/bin/data-model-openapi30
+
+# Publish to custom directory
+vendor/bin/data-model-openapi30 /path/to/your/docs
+```
+
+### Automatic Documentation Publishing
+
+You can automatically publish documentation by adding the following to your `composer.json`:
+
+```json
+{
+    "scripts": {
+        "post-install-cmd": [
+            "data-model-openapi30"
+        ],
+        "post-update-cmd": [
+            "data-model-openapi30"
+        ]
+    }
+}
+```
 
 ## Usage
 

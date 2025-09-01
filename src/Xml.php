@@ -14,6 +14,7 @@ use Zerotoprod\DataModelOpenapi30\Helpers\DataModel;
  *
  * @see  https://spec.openapis.org/oas/v3.0.4.html#xml-object
  * @link https://github.com/zero-to-prod/data-model-openapi30
+ * DataModels for OpenAPI 3.0.*
  */
 class Xml
 {
